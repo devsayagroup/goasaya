@@ -27,8 +27,8 @@ export default function SingleEventPage({ event }: EventProps) {
             priority
           />
           <div className="absolute inset-0 bg-black/85 md:bg-black/75" />
-          <div className="absolute bottom-6 left-6 flex flex-col">
-            <h1 className="text-3xl md:text-5xl mb-2 font-style text-white uppercase">
+          <div className="absolute bottom-6 left-4 md:left-8 flex flex-col">
+            <h1 className="text-2xl md:text-5xl mb-2 font-style text-white uppercase">
               {event.title}
             </h1>
             <p className="text-white font-semibold">
@@ -38,25 +38,25 @@ export default function SingleEventPage({ event }: EventProps) {
          
         </div>
 
-        <div className="flex flex-col md:flex-row gap-4 md:gap-12 text-left space-y-6 font-text max-w-3xl">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-12 text-left space-y-6 font-text max-w-5xl">
           {/* <p className="text-maroon font-semibold">
             {event.date} · {event.time}
           </p> */}
 
-          {
-            event.content && (
-            <Image
-              src={event.content}
-              alt={event.title}
-              width={400}
-              height={400}
-              className="rounded-md"
-            />
-            )
-          }
+          {event.content && (
+            <div className="flex-shrink-0 shrink-0">
+              <Image
+                src={event.content}
+                alt={event.title}
+                width={500}
+                height={500}
+                className="rounded-md object-cover w-[500px] h-auto md:w-[420px] lg:w-[480px]"
+              />
+            </div>
+          )}
           <div className="">
             <div
-              className="prose prose-invert max-w-none text-lg leading-relaxed"
+              className="prose prose-invert max-w-2xl text-lg leading-relaxed"
               dangerouslySetInnerHTML={{ __html: event.desc }}
             />
 

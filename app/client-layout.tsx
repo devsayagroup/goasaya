@@ -42,7 +42,7 @@ export default function ClientLayout({
           <Header />
           <ScrollToTop />
           <WhatsappButton />
-          {/* <FirstVisitModal/> */}
+          <FirstVisitModal/>
           <SmoothScroll>{children}</SmoothScroll>
           <Footer />
         </>

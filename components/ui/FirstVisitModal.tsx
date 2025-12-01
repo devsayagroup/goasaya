@@ -187,7 +187,7 @@ export default function FirstVisitModal() {
         transition={{ duration: 0.35, ease: "easeOut" }}
         className="relative rounded-lg overflow-hidden shadow-2xl will-change-transform"
       >
-        <div className="relative mx-auto h-[360px] w-[280px] rounded-xl md:h-[400px] md:w-[320px]">
+        <div className="relative mx-auto h-[480px] w-[280px] rounded-xl md:h-[520px] md:w-[320px]">
           <Image
             src={highlightedEvent.image}
             alt={highlightedEvent.title}

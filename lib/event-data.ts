@@ -10,7 +10,7 @@ export interface EventType {
   desc: string;
 }
 
-export const highlightedEventId = 3; 
+export const highlightedEventId = 4; 
 
 export const EVENTS = [
   {
@@ -79,4 +79,38 @@ export const EVENTS = [
           <b>IDR 599.000 / Hookah Pipe</b><br/>
           <i>RSVP Only | Limited Spots Available</i>`
   },
+  {
+    id: 4,
+    title: "North Pole Christmas",
+    subtitle: "Festive Christmas Dining",
+    tracking: "north_pole_christmas",
+    slug: "north-pole-christmas-at-goa-saya",
+    date: "7 – 30 December 2025",
+    time: "All Day (4 Dining Sessions)",
+    image: "/events/christmas-northpole.png",
+    content: "/events/christmas-northpole.png",
+    homedesc: `Experience the Magic of the North Pole at GOA SAYA. A festive journey filled with holiday warmth, exquisite dining, and enchanting entertainment.`,
+    desc: `
+      From <b>7 – 30 December</b>, indulge in an exclusive <b>Festive Set Menu starting from IDR 699.000++</b> — crafted to bring the warmth and wonder of the holiday season to your table.<br/><br/>
+
+      Enjoy daily live entertainment featuring:<br/>
+      🎷 Solo Saxophone<br/>
+      🎄 Christmas Jazz<br/>
+      🎸 Live Band<br/>
+      💃 Lighting Dancer<br/>
+      🎧🔥 LIVE DJ<br/><br/>
+
+      <b>Dining Time (2 Hours Each Session)</b><br/>
+      1️⃣ 11:00 – 13:00<br/>
+      2️⃣ 14:00 – 16:00<br/>
+      3️⃣ 17:00 – 19:00<br/>
+      4️⃣ 20:00 – 22:00<br/><br/>
+
+      Secure your preferred time slot before it’s fully booked.<br/>
+      Celebrate the season with us and make this Christmas truly magical! 🎁✨<br/><br/>
+
+      <i>RSVP Only | Limited Seats Available</i>
+    `,
+  }
+
 ];
