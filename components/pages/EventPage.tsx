@@ -52,6 +52,7 @@ export default function EventsPage() {
                 </p>
             </motion.div>
         </div>
+
          <div className="px-6 md:px-16 py-12 md:py-20">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
             {EVENTS.slice(0, visibleCount).map((event, idx) => (

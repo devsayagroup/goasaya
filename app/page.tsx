@@ -1,5 +1,6 @@
 import HeroSection from "@/components/sections/HeroSection";
 import AboutSection from "@/components/sections/AboutSection";
+import SpecialEventSection from "@/components/sections/SpecialEventSection";
 import EventSection from "@/components/sections/EventSection";
 import { generatePageMetadata } from "@/lib/metadata";
 
@@ -15,6 +16,7 @@ export default function Home() {
     <>
       <HeroSection/>
       <AboutSection/>
+      <SpecialEventSection/>
       <EventSection/>
     </>
   );
