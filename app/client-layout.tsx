@@ -7,6 +7,7 @@ import Footer from "@/components/layout/Footer";
 import Loading from "./loading";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import WhatsappButton from "@/components/ui/WhatsappButton";
+import SmoothScroll from "@/components/ui/SmoothScroll";
 import FirstVisitModal from "@/components/ui/FirstVisitModal";
 
 const textFont = Inria_Serif({
@@ -33,7 +34,7 @@ export default function ClientLayout({
   }, []);
 
   return (
-    <div className={`${textFont.variable} ${styeFont.variable}`}>
+    <div className={`${textFont.variable} ${styeFont.variable} font-text`}>
       {loading ? (
         <Loading />
       ) : (
@@ -42,7 +43,7 @@ export default function ClientLayout({
           <ScrollToTop />
           <WhatsappButton />
           {/* <FirstVisitModal/> */}
-          <main>{children}</main>
+          <SmoothScroll>{children}</SmoothScroll>
           <Footer />
         </>
       )}

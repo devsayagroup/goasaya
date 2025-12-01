@@ -9,8 +9,8 @@ export default function EventsSection() {
   const latestEvents = EVENTS.slice(0, 3);
 
   return (
-    <section className="bg-cream text-black py-24 px-8 md:px-16 overflow-hidden">
-        <div className="flex flex-col md:flex-row justify-between items-start mb-12 md:mb-32 md:items-center">
+    <section className="container mx-auto bg-cream text-black py-24 px-8 md:px-16 overflow-hidden">
+        <div className=" flex flex-col md:flex-row justify-between items-start mb-12 md:mb-32 md:items-center">
             <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}

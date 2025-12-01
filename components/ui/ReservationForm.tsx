@@ -167,9 +167,8 @@ export default function ReservationForm() {
                   onChange={handleChange}
                   className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all"
                 >
-                  <option value="No Smoking" className="text-black">No Smoking</option>
-                  <option value="Smoking" className="text-black">Smoking</option>
-                  <option value="E-Cigarette" className="text-black">E-Cigarette</option>
+                  <option value="Main Dining" className="text-black">Main Dining Room</option>
+                  <option value="Glass Room" className="text-black">Glass Room (Smoking)</option>
                   <option value="The Cave" className="text-black">VIP The Cave (up to 8 pax)</option>
                   <option value="The Hole" className="text-black">VIP The Hole (up to 12 pax)</option>
                 </select>

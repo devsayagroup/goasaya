@@ -18,7 +18,7 @@ export default function EventsPage() {
 
   return (
     <section className="w-full text-white overflow-hidden">
-        <div className="relative container mx-auto pt-32">
+        <div className="relative  pt-32">
             <div className="absolute inset-0 -z-10">
                 <Image
                     src="/images/bg-goa.jpg" 
@@ -30,7 +30,7 @@ export default function EventsPage() {
                 <div className="absolute inset-0 bg-black/85" />
             </div>
 
-        <div className="flex flex-col md:flex-row justify-between items-start px-6 md:px-14 md:items-center">
+        <div className="container mx-auto flex flex-col md:flex-row justify-between items-start px-6 md:px-14 md:items-center">
             <motion.h1
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -53,7 +53,7 @@ export default function EventsPage() {
             </motion.div>
         </div>
 
-         <div className="px-6 md:px-16 py-12 md:py-20">
+         <div className="container mx-auto px-6 md:px-16 py-12 md:py-20">
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
             {EVENTS.slice(0, visibleCount).map((event, idx) => (
                 <motion.div

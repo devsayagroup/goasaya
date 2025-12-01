@@ -10,7 +10,7 @@ const navLinks = [
   { name: "About", href: "/about" },
   { name: "Experience", href: "/experience" },
   { name: "Menu", href: "/menu" },
-  { name: "Facilities", href: "/facilities" },
+  // { name: "Facilities", href: "/facilities" },
   { name: "Events", href: "/events" },
 ];
 
@@ -58,12 +58,12 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.4 }}
           >
-            {/* <Link
+            <Link
               href="/reservation"
               className="font-style rounded-md text-sm bg-[#FFE3AF] px-6 py-2 text-black hover:bg-maroon hover:text-white transition"
             >
               Book a table
-            </Link> */}
+            </Link>
           </motion.div>
 
           <button
