@@ -16,6 +16,13 @@ export default function EventsPage() {
     setVisibleCount((prev) => prev + ITEMS_PER_PAGE);
   };
 
+  // --------- SORT EVENTS BY ID (LATEST FIRST) ---------
+  const sortedEvents = [...EVENTS].sort((a, b) => {
+    const idA = Number(a.id);
+    const idB = Number(b.id);
+    return idB - idA; // newest first
+  });
+
   return (
     <section className="w-full text-white overflow-hidden">
         <div className="relative  pt-32">
@@ -24,10 +31,10 @@ export default function EventsPage() {
                     src="/images/bg-goa.jpg" 
                     alt="GOASAYA Background"
                     fill
-                    className="object-cover"
+                    className="object-fit"
                     priority
                 />
-                <div className="absolute inset-0 bg-black/85" />
+                <div className="absolute inset-0 bg-maroon/85" />
             </div>
 
         <div className="container mx-auto flex flex-col md:flex-row justify-between items-start px-6 md:px-14 md:items-center">
@@ -54,8 +61,8 @@ export default function EventsPage() {
         </div>
 
          <div className="container mx-auto px-6 md:px-16 py-12 md:py-20">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-14">
-            {EVENTS.slice(0, visibleCount).map((event, idx) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-24">
+            {sortedEvents.slice(0, visibleCount).map((event, idx) => (
                 <motion.div
                     key={event.slug}
                     initial={{ opacity: 0, y: 40 }}
@@ -69,7 +76,7 @@ export default function EventsPage() {
                     viewport={{ once: true }}
                     className="group relative overflow-hidden bg-black rounded-md"
                     >
-                        <div className="relative w-full h-[320px]">
+                        <div className="relative w-full h-[500px]">
                             <Image
                             src={event.image}
                             alt={event.title}

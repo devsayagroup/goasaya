@@ -6,27 +6,49 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
 
 interface FacilityItem {
-  title: string;
-  icon: React.FC;
+    title: string;
+    icon: React.FC;
 }
 
 interface RoomItem {
-  id: string;
-  title: string;
-  subtitle: string;
-  price: string;
-  capacity: string;
-  deposit: string;
-  image: string;
-  features: string[];
+    id: string;
+    title: string;
+    subtitle: string;
+    price: string;
+    capacity: string;
+    deposit: string;
+    image: string;
+    features: {
+        label: string;
+        icon: React.FC;
+    }[];
 }
 
 type IconDotProps = {
   className?: string;
 };
 
-const IconBase: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+// const IconBase: React.FC<{ children: React.ReactNode }> = ({ children }) => (
+//   <svg
+//     width="40"
+//     height="40"
+//     viewBox="0 0 24 24"
+//     fill="none"
+//     aria-hidden="true"
+//   >
+//     {children}
+//   </svg>
+// );
+
+/* ----------------------------------------------------
+   ICON BASE
+---------------------------------------------------- */
+const IconBase: React.FC<{ children: React.ReactNode; className?: string }> = ({
+  children,
+  className,
+}) => (
   <svg
+    className={className}
     width="40"
     height="40"
     viewBox="0 0 24 24"
@@ -36,6 +58,7 @@ const IconBase: React.FC<{ children: React.ReactNode }> = ({ children }) => (
     {children}
   </svg>
 );
+
 
 const IconCave: React.FC = () => (
   <IconBase>
@@ -73,13 +96,99 @@ const IconDining: React.FC = () => (
   </IconBase>
 );
 
-const IconSmoking: React.FC = () => (
+// const IconSmoking: React.FC = () => (
+//   <IconBase>
+//     <path d="M3 13h12v3H3z" stroke="currentColor" strokeWidth="1.6" />
+//     <path d="M15 13c1 1 2 1 2 3" stroke="currentColor" strokeWidth="1.6" />
+//   </IconBase>
+// );
+
+// const IconTV: React.FC = () => (
+//   <IconBase>
+//     <rect
+//       x="2"
+//       y="4"
+//       width="20"
+//       height="14"
+//       rx="2"
+//       stroke="currentColor"
+//       strokeWidth="1.6"
+//     />
+//     <path d="M8 20h8" stroke="currentColor" strokeWidth="1.6" />
+//   </IconBase>
+// );
+
+const IconPet: React.FC = () => (
   <IconBase>
-    <path d="M3 13h12v3H3z" stroke="currentColor" strokeWidth="1.6" />
-    <path d="M15 13c1 1 2 1 2 3" stroke="currentColor" strokeWidth="1.6" />
+    <path
+      d="M12 11c1.5-2 3-2 4-2s2 1 2 2-1 2-2 2-2 0-4-2z"
+      stroke="currentColor"
+      strokeWidth="1.6"
+    />
+    <circle cx="6" cy="9" r="1.8" stroke="currentColor" strokeWidth="1.6" />
+    <circle cx="18" cy="9" r="1.8" stroke="currentColor" strokeWidth="1.6" />
   </IconBase>
 );
 
+// const IconDecor: React.FC = () => (
+//   <IconBase>
+//     <path d="M12 2v20" stroke="currentColor" strokeWidth="1.6" />
+//     <path d="M2 12h20" stroke="currentColor" strokeWidth="1.6" />
+//   </IconBase>
+// );
+
+// const IconDecor2: React.FC = () => (
+//   <IconBase>
+//     <path d="M12 4l3 8H9l3-8z" stroke="currentColor" strokeWidth="1.6" />
+//     <circle cx="12" cy="18" r="2" stroke="currentColor" strokeWidth="1.6" />
+//   </IconBase>
+// );
+
+// const IconMenu: React.FC = () => (
+//   <IconBase>
+//     <path d="M4 6h16" stroke="currentColor" strokeWidth="1.6" />
+//     <path d="M4 12h16" stroke="currentColor" strokeWidth="1.6" />
+//     <path d="M4 18h16" stroke="currentColor" strokeWidth="1.6" />
+//   </IconBase>
+// );
+
+// const IconClock: React.FC = () => (
+//   <IconBase>
+//     <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
+//     <path d="M12 7v6l4 2" stroke="currentColor" strokeWidth="1.6" />
+//   </IconBase>
+// );
+
+// const IconDot: React.FC<IconDotProps> = ({ className }) => (
+//   <svg className={className} width="12" height="12" viewBox="0 0 24 24" fill="none">
+//     <circle cx="12" cy="12" r="5" fill="currentColor" />
+//   </svg>
+// );
+
+
+/* ----------------------------------------------------
+   ICONS
+---------------------------------------------------- */
+
+/* Capacity Icon (people silhouettes) */
+const IconCapacity: React.FC = () => (
+  <IconBase>
+    <circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="1.6" />
+    <circle cx="16" cy="8" r="3" stroke="currentColor" strokeWidth="1.6" />
+    <path
+      d="M4.5 18c0-3 2-4.5 3.5-4.5s3.5 1.5 3.5 4.5"
+      stroke="currentColor"
+      strokeWidth="1.6"
+    />
+    <path
+      d="M12.5 18c0-3 2-4.5 3.5-4.5s3.5 1.5 3.5 4.5"
+      stroke="currentColor"
+      strokeWidth="1.6"
+    />
+  </IconBase>
+);
+
+/* TV Icon (existing) */
 const IconTV: React.FC = () => (
   <IconBase>
     <rect
@@ -95,32 +204,15 @@ const IconTV: React.FC = () => (
   </IconBase>
 );
 
-const IconPet: React.FC = () => (
+/* Smoking Icon (existing) */
+const IconSmoking: React.FC = () => (
   <IconBase>
-    <path
-      d="M12 11c1.5-2 3-2 4-2s2 1 2 2-1 2-2 2-2 0-4-2z"
-      stroke="currentColor"
-      strokeWidth="1.6"
-    />
-    <circle cx="6" cy="9" r="1.8" stroke="currentColor" strokeWidth="1.6" />
-    <circle cx="18" cy="9" r="1.8" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M3 13h12v3H3z" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M15 13c1 1 2 1 2 3" stroke="currentColor" strokeWidth="1.6" />
   </IconBase>
 );
 
-const IconDecor: React.FC = () => (
-  <IconBase>
-    <path d="M12 2v20" stroke="currentColor" strokeWidth="1.6" />
-    <path d="M2 12h20" stroke="currentColor" strokeWidth="1.6" />
-  </IconBase>
-);
-
-const IconDecor2: React.FC = () => (
-  <IconBase>
-    <path d="M12 4l3 8H9l3-8z" stroke="currentColor" strokeWidth="1.6" />
-    <circle cx="12" cy="18" r="2" stroke="currentColor" strokeWidth="1.6" />
-  </IconBase>
-);
-
+/* Menu Icon (existing) */
 const IconMenu: React.FC = () => (
   <IconBase>
     <path d="M4 6h16" stroke="currentColor" strokeWidth="1.6" />
@@ -129,18 +221,99 @@ const IconMenu: React.FC = () => (
   </IconBase>
 );
 
-const IconClock: React.FC = () => (
+/* Camera Icon (Photographer) */
+const IconCamera: React.FC = () => (
   <IconBase>
-    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
-    <path d="M12 7v6l4 2" stroke="currentColor" strokeWidth="1.6" />
+    <rect
+      x="3"
+      y="7"
+      width="18"
+      height="12"
+      rx="2"
+      stroke="currentColor"
+      strokeWidth="1.6"
+    />
+    <path
+      d="M8 7l2-3h4l2 3"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
+    <circle cx="12" cy="13" r="3" stroke="currentColor" strokeWidth="1.6" />
   </IconBase>
 );
 
-const IconDot: React.FC<IconDotProps> = ({ className }) => (
-  <svg className={className} width="12" height="12" viewBox="0 0 24 24" fill="none">
+/* Decoration Icon (existing) */
+const IconDecor: React.FC = () => (
+  <IconBase>
+    <path d="M12 2v20" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M2 12h20" stroke="currentColor" strokeWidth="1.6" />
+  </IconBase>
+);
+
+/* Decoration (self-decor allowed) */
+const IconDecor2: React.FC = () => (
+  <IconBase>
+    <path d="M12 4l3 8H9l3-8z" stroke="currentColor" strokeWidth="1.6" />
+    <circle cx="12" cy="18" r="2" stroke="currentColor" strokeWidth="1.6" />
+  </IconBase>
+);
+
+/* Mic Icon (MC / Host) */
+const IconMic: React.FC = () => (
+  <IconBase>
+    <rect
+      x="9"
+      y="2"
+      width="6"
+      height="10"
+      rx="3"
+      stroke="currentColor"
+      strokeWidth="1.6"
+    />
+    <path
+      d="M12 12v6"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
+    <path
+      d="M8 18h8"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+    />
+  </IconBase>
+);
+
+/* Music Icon (Band / DJ) */
+const IconMusic: React.FC = () => (
+  <IconBase>
+    <path
+      d="M8 5v10a3 3 0 1 0 2 2.8V9l8-2v6a3 3 0 1 0 2 2.8V3L8 5z"
+      stroke="currentColor"
+      strokeWidth="1.6"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </IconBase>
+);
+
+/* Clock Icon (Photoshoot duration) */
+const IconClock: React.FC = () => (
+  <IconBase>
+    <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
+    <path d="M12 7v5l3 2" stroke="currentColor" strokeWidth="1.6" />
+  </IconBase>
+);
+
+/* Dot Icon (bullet) */
+const IconDot: React.FC<{ className?: string }> = ({ className }) => (
+  <svg className={className} width="12" height="12" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="5" fill="currentColor" />
   </svg>
 );
+
 
 
 const FACILITIES_OVERVIEW: FacilityItem[] = [
@@ -163,112 +336,103 @@ const ROOMS: RoomItem[] = [
     title: "The Hole",
     subtitle: "Intimate, warm, and fully private.",
     price: "IDR 10,000,000",
-    capacity: "12 pax",
+    capacity: "10–12",
     deposit: "50%",
     image: "/images/goa1.jpg",
     features: [
-      "Smoking allowed",
-      "75” TV",
-      "Self-decor allowed",
-      "Pet-friendly",
-      "Overtime charge IDR 250,000 / hour",
-      "A la carte or set menu",
-      "In-house decoration service IDR 1,000,000",
-      "3 hours + 1 hour complimentary extension",
+      { label: "10–12 Capacity", icon: IconCapacity },
+      { label: "LED TV 75”", icon: IconTV },
+      { label: "Smoking Area", icon: IconSmoking },
+      { label: "Set Menu", icon: IconMenu },
+      { label: "Photographer", icon: IconCamera },
+      { label: "Decoration", icon: IconDecor },
     ],
   },
+
   {
     id: "the-cave",
     title: "The Cave",
     subtitle: "Perfect for small gatherings or private meetings.",
-    price: "IDR 5,000,000",
-    capacity: "6 pax",
+    price: "IDR 6,500,000",
+    capacity: "6–8",
     deposit: "50%",
     image: "/images/goa1.jpg",
     features: [
-      "Smoking allowed",
-      "75” TV",
-      "Self-decor allowed",
-      "Pet-friendly",
-      "Overtime charge IDR 250,000 / hour",
-      "A la carte or set menu",
-      "In-house decoration service IDR 1,000,000",
-      "3 hours + 1 hour complimentary extension",
+      { label: "6–8 Capacity", icon: IconCapacity },
+      { label: "LED TV 75”", icon: IconTV },
+      { label: "Smoking Area", icon: IconSmoking },
+      { label: "Set Menu", icon: IconMenu },
+      { label: "Photographer", icon: IconCamera },
+      { label: "Decoration", icon: IconDecor },
     ],
   },
+
   {
     id: "glass-room",
     title: "Glass Room",
     subtitle: "Bright by day, glowing by night.",
-    price: "IDR 10,000,000",
-    capacity: "15–26 pax",
+    price: "IDR 15,000,000",
+    capacity: "25–28",
     deposit: "50%",
     image: "/images/goa1.jpg",
     features: [
-      "Smoking allowed",
-      "75” TV",
-      "Self-decor allowed",
-      "Pet-friendly if book whole glass room",
-      "Overtime charge IDR 250,000 / hour",
-      "A la carte or set menu",
-      "In-house decoration service IDR 1,000,000",
-      "3 hours + 1 hour complimentary extension",
+      { label: "25–28 Capacity", icon: IconCapacity },
+      { label: "LED TV 75”", icon: IconTV },
+      { label: "Smoking Area", icon: IconSmoking },
+      { label: "Set Menu", icon: IconMenu },
+      { label: "Photographer", icon: IconCamera },
+      { label: "Decoration", icon: IconDecor },
     ],
   },
+
   {
     id: "main-dining",
     title: "Main Dining Room",
-    subtitle: "The heart of Goa Saya. Ideal for private dinners and launches.",
-    price: "IDR 25,000,000",
-    capacity: "50 pax",
+    subtitle: "The heart of Goa Saya.",
+    price: "IDR 35,000,000",
+    capacity: "30–50",
     deposit: "50%",
     image: "/images/goa1.jpg",
     features: [
-      "Smoking not allowed",
-      "75” TV",
-      "Self-decor allowed",
-      "External band allowed (electricity charge IDR 1 Mio)",
-      "3 hours + 1 hour complimentary extension",
-      "A la carte or set menu",
-      "In-house decoration service IDR 1,000,000",
-      "Overtime charge IDR 250,000 / hour",
+      { label: "30–50 Capacity", icon: IconCapacity },
+      { label: "LED TV 75”", icon: IconTV },
+      { label: "MC or Host", icon: IconMic },
+      { label: "Set Menu", icon: IconMenu },
+      { label: "Photographer", icon: IconCamera },
+      { label: "Decoration", icon: IconDecor },
     ],
   },
+
   {
     id: "a-whole-goa",
     title: "A Whole Goa",
     subtitle: "An unforgettable full-space experience.",
-    price: "IDR 75,500,000",
-    capacity: "94 pax",
+    price: "IDR 100,000,000",
+    capacity: "94",
     deposit: "50%",
     image: "/images/goa1.jpg",
     features: [
-      "Smoking allowed",
-      "75” TV",
-      "Self-decor allowed",
-      "External band allowed (electricity charge IDR 1 Mio)",
-      "3 hours + 1 hour complimentary extension",
-      "A la carte or set menu",
-      "In-house decoration service IDR 1,000,000",
-      "Overtime charge IDR 250,000 / hour",
+      { label: "94 Capacity", icon: IconCapacity },
+      { label: "LED TV 75”", icon: IconTV },
+      { label: "MC or Host", icon: IconMic },
+      { label: "Band or DJ", icon: IconMusic },
+      { label: "Set Menu", icon: IconMenu },
+      { label: "Photographer", icon: IconCamera },
+      { label: "Decoration", icon: IconDecor },
     ],
   },
+
   {
-    id: "table-booking",
-    title: "Table Booking for Event",
+    id: "shooting-venue",
+    title: "Shooting Venue",
     subtitle: "A simple and flexible option for small celebrations.",
-    price: "IDR 500,000 / person",
-    capacity: "4 pax",
+    price: "IDR 10.000.000",
+    capacity: "",
     deposit: "50%",
     image: "/images/goa1.jpg",
     features: [
-      "Smoking allowed",
-      "Self-decor allowed",
-      "Overtime charge IDR 250,000 / hour",
-      "A la carte or set menu",
-      "In-house decoration service IDR 1,000,000",
-      "3 hours + 1 hour complimentary extension",
-
+      { label: "3 Hours (07:00–10:00)", icon: IconClock },
+      { label: "Self-decor allowed", icon: IconDecor2 },
     ],
   },
 ];
@@ -296,8 +460,7 @@ const RoomPanel: React.FC<{ room: RoomItem; idx: number }> = ({
 }) => {
   return (
     <section id={room.id} className="relative scroll-mt-32 md:scroll-mt-36">
-      <div className="grid md:grid-cols-2 gap-6 items-start">
-        {/* Image */}
+      <div className="grid md:grid-cols-2 gap-2 items-start">
         <div className="relative h-96 md:h-full rounded-lg overflow-hidden">
           <Image
             src={room.image}
@@ -308,12 +471,15 @@ const RoomPanel: React.FC<{ room: RoomItem; idx: number }> = ({
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
         </div>
 
-        {/* Content */}
         <div className="bg-white/3 p-6 md:p-8 rounded-lg backdrop-blur-md">
-            <h3 className="text-3xl text-white uppercase font-style mb-2">
-                {room.title}
-            </h3>
-            <p className="text-sm text-gray-300 mb-6">{room.subtitle}</p>
+            <div className="flex flex-row justify-between gap-4 mb-6">
+                <div className="flex flex-col">
+                    <h3 className="text-2xl md:text-3xl text-white uppercase font-style">
+                    {room.title}
+                    </h3>
+                    <p className="text-sm text-gray-300">{room.subtitle}</p>
+                </div>
+            </div>
 
             <div className="flex items-start gap-6 md:gap-12 mb-8">
                 <div>
@@ -331,17 +497,20 @@ const RoomPanel: React.FC<{ room: RoomItem; idx: number }> = ({
                 </div>
             </div>
 
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-6">
-            {room.features.map((feature, i) => (
-                <div key={i} className="flex items-start gap-3">
-                
-                <div className="w-4 h-4 shrink-0 rounded-md bg-white/5 flex items-center justify-center text-amber-100">
-                    <IconDot className="w-2 h-2 shrink-0" /> 
-                </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-4 mb-8">
+                {room.features.map((item, i) => {
+                    const Icon = item.icon;
+                    return (
+                    <div key={i} className="flex items-center gap-3">
+                        
+                        <div className="w-6 h-6 flex items-center justify-center text-white">
+                            <Icon />
+                        </div>
 
-                <p className="text-sm text-gray-200">{feature}</p>
-                </div>
-            ))}
+                        <p className="text-sm text-gray-200">{item.label}</p>
+                    </div>
+                    );
+                })}
             </div>
 
             <div className="flex flex-col md:flex-row gap-4">
@@ -351,12 +520,6 @@ const RoomPanel: React.FC<{ room: RoomItem; idx: number }> = ({
                 >
                 Request Booking
                 </Link>
-                {/* <a
-                href="#top"
-                className="px-5 py-2 rounded-lg border border-white/10 text-white/90"
-                >
-                Back to top
-                </a> */}
             </div>
         </div>
       </div>
@@ -413,19 +576,7 @@ const FacilitiesPage: React.FC = () => {
                         Natural stone textures, warm lighting and considered service
                         create a calm, memorable place for gatherings of any kind.
                     </p>
-                    <div className="mt-4 flex justify-end gap-4">
-                        {/* <Link
-                        href="/reservation"
-                        className="bg-creamlight text-[#3b1f17] px-6 py-3 rounded-md font-semibold shadow"
-                        >
-                        Enquire & Book
-                        </Link>
-                        <Link
-                        href="/menu"
-                        className="border border-white/10 px-6 py-3 rounded-md text-white/90"
-                        >
-                        See Menus
-                        </Link> */}
+                    <div className="mt-4 flex justify-start md:justify-end gap-4">
                         <Link
                         href="/reservation"
                         className="text-sm font-medium border-b border-gray-500 hover:border-white transition-all duration-300"

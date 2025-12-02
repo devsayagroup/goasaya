@@ -85,13 +85,13 @@ export const EVENTS = [
     subtitle: "Festive Christmas Dining",
     tracking: "north_pole_christmas",
     slug: "north-pole-christmas-at-goa-saya",
-    date: "7 – 30 December 2025",
+    date: "11 – 30 December 2025",
     time: "All Day (4 Dining Sessions)",
-    image: "/events/christmas-northpole.png",
-    content: "/events/christmas-northpole.png",
-    homedesc: `Experience the Magic of the North Pole at GOA SAYA. A festive journey filled with holiday warmth, exquisite dining, and enchanting entertainment.`,
+    image: "/events/northpole-christmas.png",
+    content: "/events/northpole-christmas.png",
+    homedesc: `A festive journey filled with holiday warmth, exquisite dining, and enchanting entertainment.`,
     desc: `
-      From <b>7 – 30 December</b>, indulge in an exclusive <b>Festive Set Menu starting from IDR 699.000++</b> — crafted to bring the warmth and wonder of the holiday season to your table.<br/><br/>
+      From <b>11 – 30 December</b>, indulge in an exclusive <b>Festive Set Menu starting from IDR 699.000++</b> — crafted to bring the warmth and wonder of the holiday season to your table.<br/><br/>
 
       Enjoy daily live entertainment featuring:<br/>
       🎷 Solo Saxophone<br/>

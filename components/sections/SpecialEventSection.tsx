@@ -584,6 +584,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function CelebrateGoasaya() {
   const ref = useRef(null);
@@ -614,24 +615,36 @@ export default function CelebrateGoasaya() {
          </div>
 
     <div className="container mx-auto px-6 md:px-14">
-        <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}
-            className="text-4xl text-white md:text-6xl leading-snug font-style uppercase mb-6"
-        >
-            Celebrate With GoaSaya
-        </motion.h2>
+        <div className="flex flex-col md:flex-row justify-between items-center text-white mb-10">
+            <motion.h1
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8 }}
+                className="text-4xl md:text-6xl font-style uppercase leading-tight max-w-xl"
+            >
+                Celebrate With GoaSaya
+            </motion.h1>
 
-        <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-gray-300 font-text max-w-2xl leading-loose mb-10"
-        >
-            From birthdays to corporate gatherings, we help bring your ideas to life with a space that
-            feels warm, intimate, and memorable.
-        </motion.p>
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1 }}
+                className="mt-8 md:mt-0 md:text-right max-w-lg text-gray-300"
+            >
+                <p className="font-text text-md leading-loose">
+                    From birthdays to corporate gatherings, we help bring your ideas to life with a space that
+                    feels warm, intimate, and memorable.
+                </p>
+                <div className="mt-4 flex justify-start md:justify-end gap-4">
+                    <Link
+                    href="/facilities"
+                    className="text-sm font-medium border-b border-gray-500 hover:border-white transition-all duration-300"
+                    >
+                    See Facilities
+                    </Link>
+                </div>
+            </motion.div>
+        </div>
 
         {/* EVENT TYPE GRID */}
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -673,10 +686,10 @@ export default function CelebrateGoasaya() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className="mt-16"
+            className="mt-16 text-center"
         >
-            <h3 className="text-3xl text-white font-style mb-4">Complete Your Event</h3>
-            <p className="text-gray-300 font-text mb-6 max-w-xl">
+            <h3 className="text-3xl text-white font-style mb-2">Complete Your Event</h3>
+            <p className="text-gray-300 font-text mb-6 max-w-xl mx-auto">
             Choose from a variety of add on services that help create a complete and polished experience.
             </p>
 

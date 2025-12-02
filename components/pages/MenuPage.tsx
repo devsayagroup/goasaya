@@ -225,7 +225,7 @@ export default function MenuPage() {
                     />
                     <div className="absolute inset-0 bg-black/90" />
                 </div>
-            <div className="flex flex-col md:flex-row gap-2 md:gap-16">
+            <div className="container mx-auto flex flex-col md:flex-row gap-2 md:gap-16">
                 <aside className="w-full md:w-64 md:sticky md:top-24 self-start">
                     <div className="md:hidden mb-6">
                         <motion.details
