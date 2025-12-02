@@ -7,7 +7,7 @@ export default function ReservationPage() {
         <section className="relative w-full text-white overflow-hidden">
             <div className="absolute inset-0">
                 <Image
-                src="/images/goa9.jpg"
+                src="/images/goa9.JPG"
                 alt="Goa Saya"
                 fill
                 priority
