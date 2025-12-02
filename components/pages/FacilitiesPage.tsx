@@ -661,7 +661,7 @@ const FacilitiesPage: React.FC = () => {
         <section className="relative bg-[#2f160f] py-24">
             <div className="absolute inset-0">
                 <Image
-                src="/images/goa9.jpg"
+                src="/images/goa9.JPG"
                 alt="Asian dining background"
                 fill
                 priority
