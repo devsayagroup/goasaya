@@ -484,7 +484,7 @@ const RoomPanel: React.FC<{ room: RoomItem; idx: number }> = ({
             <div className="flex items-start gap-6 md:gap-12 mb-8">
                 <div>
                 <p className="text-sm text-gray-300">Price</p>
-                <p className="text-2xl md:text-3xl text-white font-semibold">
+                <p className="text-xl md:text-3xl text-white font-semibold">
                     {room.price}
                 </p>
                 <p className="text-xs text-gray-400 mt-1">
@@ -493,7 +493,7 @@ const RoomPanel: React.FC<{ room: RoomItem; idx: number }> = ({
                 </div>
                 <div>
                 <p className="text-sm text-gray-300">Payment terms</p>
-                <p className="text-3xl text-white font-semibold">{room.deposit}</p>
+                <p className="text-2xl text-white font-semibold">{room.deposit}</p>
                 </div>
             </div>
 
