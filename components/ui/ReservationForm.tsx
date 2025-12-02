@@ -78,7 +78,7 @@ export default function ReservationForm() {
   };
 
   return (
-    <section className="bg-black/75 rounded-md text-white py-12 md:py-20 px-6 md:px-12">
+    <section className="bg-black/85 rounded-md text-white py-12 md:py-20 px-6 md:px-12">
       <div className="md:max-w-2xl mx-auto">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}

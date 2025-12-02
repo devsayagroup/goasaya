@@ -338,7 +338,7 @@ const ROOMS: RoomItem[] = [
     price: "IDR 10,000,000",
     capacity: "10–12",
     deposit: "50%",
-    image: "/images/goa1.jpg",
+    image: "/images/goa12.JPG",
     features: [
       { label: "10–12 Capacity", icon: IconCapacity },
       { label: "LED TV 75”", icon: IconTV },
@@ -554,7 +554,7 @@ const FacilitiesPage: React.FC = () => {
             />
             <div className="absolute inset-0 bg-black/75"></div>
         </div>
-        <section className="relative container mx-auto py-32 overflow-hidden">
+        <section className="relative container mx-auto pt-32 overflow-hidden">
             <div className="flex flex-col md:flex-row justify-between items-start px-6 md:px-14 md:items-center">
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
@@ -594,11 +594,10 @@ const FacilitiesPage: React.FC = () => {
             </div>
         </section>
 
-        <section className="relative container flex flex-col md:flex-row items-center justify-between mx-auto px-6 md:px-14 py-6 md:py-24">
+        <section className="relative container flex flex-col md:flex-row items-center justify-between mx-auto px-6 md:px-14 py-6 md:py-32">
             <SectionTitle
-            //   eyebrow="About Our Facilities"
-            title="About Our Home"
-            intro="Perfectly positioned within PIK 2’s entertainment district, GoaSaya is surrounded by Jakarta’s most exciting lifestyle destinations."
+                title="About Our Home"
+                intro="Perfectly positioned within PIK 2’s entertainment district, GoaSaya is surrounded by Jakarta’s most exciting lifestyle destinations."
             />
 
             <div className="max-w-2xl grid grid-cols-3 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
@@ -659,22 +658,22 @@ const FacilitiesPage: React.FC = () => {
             </div>
         </section>
 
-        <section className="relative bg-[#2f160f] py-36">
+        <section className="relative bg-[#2f160f] py-24">
             <div className="absolute inset-0">
                 <Image
-                src="/images/Japanese_Theme_Karaoke_2.jpg"
+                src="/images/goa9.jpg"
                 alt="Asian dining background"
                 fill
                 priority
-                className="object-cover object-center brightness-75"
+                className="object-cover object-center brightness-100"
                 />
                 <div className="absolute inset-0 bg-black/75"></div>
             </div>
-            <div className="relative container mx-auto px-6 md:px-12 text-center">
-                <h3 className="text-4xl font-style text-white leading-snug uppercase mb-4">
+            <div className="relative container max-w-2xl mx-auto px-6 md:px-12 text-center">
+                <h3 className="text-4xl md:text-6xl font-style text-white leading-snug uppercase mb-4">
                     Ready to host your moment?
                 </h3>
-                <p className="text-gray-300 max-w-xl font-text mx-auto mb-6">
+                <p className="text-gray-300 max-w-md font-text mx-auto mb-6">
                     Get in touch for bespoke packages and availability. We will help you
                     plan every detail.
                 </p>

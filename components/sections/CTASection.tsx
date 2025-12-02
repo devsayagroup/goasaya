@@ -8,8 +8,8 @@ export default function CTASection() {
     return (
       <section className="relative mt-32 h-[500px] flex items-center justify-center text-center overflow-hidden">
         <Image
-          src="/images/goaexp.jpg" 
-          alt="GOASAYA Evening"
+          src="/images/goa9.JPG" 
+          alt="GOASAYA"
           fill
           className="object-cover brightness-75"
         />
@@ -30,7 +30,7 @@ export default function CTASection() {
           </p>
           <Link
             href="/reservation"
-            className="inline-block bg-orangecream rounded-md text-white px-10 py-4"
+            className="inline-block bg-orangecream rounded-md text-white px-6 py-2"
           >
             Reserve Your Experience
           </Link>

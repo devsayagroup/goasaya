@@ -15,7 +15,7 @@ export default function AboutSection() {
           priority
           className="object-cover object-center brightness-75"
         />
-        <div className="absolute inset-0 bg-maroon/75"></div>
+        <div className="absolute inset-0 bg-maroon/85"></div>
       </div>
 
       {/* Content */}

@@ -61,7 +61,7 @@ export default function EventsPage() {
         </div>
 
          <div className="container mx-auto px-6 md:px-16 py-12 md:py-20">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10 md:gap-24">
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-10">
             {sortedEvents.slice(0, visibleCount).map((event, idx) => (
                 <motion.div
                     key={event.slug}
@@ -76,7 +76,7 @@ export default function EventsPage() {
                     viewport={{ once: true }}
                     className="group relative overflow-hidden bg-black rounded-md"
                     >
-                        <div className="relative w-full h-[500px]">
+                        <div className="relative w-full h-[420px]">
                             <Image
                             src={event.image}
                             alt={event.title}
@@ -96,14 +96,14 @@ export default function EventsPage() {
 
                 <div className="p-6">
                     <div className="text-left mb-4">
-                        <h3 className="text-2xl font-style text-white drop-shadow-md">
+                        <h3 className="text-xl font-style text-white uppercase drop-shadow-md">
                             {event.title}
                         </h3>
-                        <p className="text-white/70 text-sm mt-1 font-text">
+                        <p className="text-white/70 text-xs mt-1 font-text">
                             {event.date} 
                         </p>
                     </div>
-                    <p className="text-white/80 text-sm font-text line-clamp-3 mb-4">
+                    <p className="text-white/80 text-xs font-text line-clamp-3 mb-4">
                         {event.homedesc}
                     </p>
                     <Link

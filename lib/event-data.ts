@@ -15,7 +15,7 @@ export const highlightedEventId = 4;
 export const EVENTS = [
   {
     id: 1,
-    title: "Be the First to explore GOA",
+    title: "Explore GOA",
     subtitle: "Exclusive Dinner",
     tracking: "explore_goa",
     slug: "be-the-first-to-explore-goa",

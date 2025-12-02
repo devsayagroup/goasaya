@@ -7,8 +7,8 @@ export default function ReservationPage() {
         <section className="relative w-full text-white overflow-hidden">
             <div className="absolute inset-0">
                 <Image
-                src="/images/Japanese_Theme_Karaoke_2.jpg"
-                alt="Asian dining background"
+                src="/images/goa9.jpg"
+                alt="Goa Saya"
                 fill
                 priority
                 className="object-cover object-center brightness-75"
