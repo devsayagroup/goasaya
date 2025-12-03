@@ -87,7 +87,7 @@ export const EVENTS = [
     slug: "north-pole-christmas-at-goa-saya",
     date: "11 – 30 December 2025",
     time: "All Day (4 Dining Sessions)",
-    image: "/events/northpole/01.png",
+    image: "/events/northpole/01.jpeg",
     content: ["/events/northpole/01.jpeg", "/events/northpole/02.png", "/events/northpole/03.png", "/events/northpole/04.png", "/events/northpole/06.jpg", "/events/northpole/07.jpeg"],
     homedesc: `A festive journey filled with holiday warmth, exquisite dining, and enchanting entertainment.`,
     desc: `
