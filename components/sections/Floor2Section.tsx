@@ -43,7 +43,7 @@ export default function Floor2Section() {
                         <h1 className="font-style text-5xl md:text-7xl mb-4">
                         2nd Floor
                         </h1>
-                        <Link href="/reservation" className="text-sm font-medium transition-all duration-300">
+                        <Link href="/onepercentlounge" className="text-sm font-medium transition-all duration-300">
                             <Image
                                 src="/images/reservewhite.png"
                                 alt="GOASAYA Reservation"

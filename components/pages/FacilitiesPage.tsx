@@ -4,6 +4,7 @@ import { useRef } from "react";
 import Image from "next/image";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
+import { trackEvent } from '@/lib/analytics'
 
 interface FacilityItem {
     title: string;
@@ -28,21 +29,6 @@ type IconDotProps = {
   className?: string;
 };
 
-// const IconBase: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-//   <svg
-//     width="40"
-//     height="40"
-//     viewBox="0 0 24 24"
-//     fill="none"
-//     aria-hidden="true"
-//   >
-//     {children}
-//   </svg>
-// );
-
-/* ----------------------------------------------------
-   ICON BASE
----------------------------------------------------- */
 const IconBase: React.FC<{ children: React.ReactNode; className?: string }> = ({
   children,
   className,
@@ -96,28 +82,6 @@ const IconDining: React.FC = () => (
   </IconBase>
 );
 
-// const IconSmoking: React.FC = () => (
-//   <IconBase>
-//     <path d="M3 13h12v3H3z" stroke="currentColor" strokeWidth="1.6" />
-//     <path d="M15 13c1 1 2 1 2 3" stroke="currentColor" strokeWidth="1.6" />
-//   </IconBase>
-// );
-
-// const IconTV: React.FC = () => (
-//   <IconBase>
-//     <rect
-//       x="2"
-//       y="4"
-//       width="20"
-//       height="14"
-//       rx="2"
-//       stroke="currentColor"
-//       strokeWidth="1.6"
-//     />
-//     <path d="M8 20h8" stroke="currentColor" strokeWidth="1.6" />
-//   </IconBase>
-// );
-
 const IconPet: React.FC = () => (
   <IconBase>
     <path
@@ -130,47 +94,6 @@ const IconPet: React.FC = () => (
   </IconBase>
 );
 
-// const IconDecor: React.FC = () => (
-//   <IconBase>
-//     <path d="M12 2v20" stroke="currentColor" strokeWidth="1.6" />
-//     <path d="M2 12h20" stroke="currentColor" strokeWidth="1.6" />
-//   </IconBase>
-// );
-
-// const IconDecor2: React.FC = () => (
-//   <IconBase>
-//     <path d="M12 4l3 8H9l3-8z" stroke="currentColor" strokeWidth="1.6" />
-//     <circle cx="12" cy="18" r="2" stroke="currentColor" strokeWidth="1.6" />
-//   </IconBase>
-// );
-
-// const IconMenu: React.FC = () => (
-//   <IconBase>
-//     <path d="M4 6h16" stroke="currentColor" strokeWidth="1.6" />
-//     <path d="M4 12h16" stroke="currentColor" strokeWidth="1.6" />
-//     <path d="M4 18h16" stroke="currentColor" strokeWidth="1.6" />
-//   </IconBase>
-// );
-
-// const IconClock: React.FC = () => (
-//   <IconBase>
-//     <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
-//     <path d="M12 7v6l4 2" stroke="currentColor" strokeWidth="1.6" />
-//   </IconBase>
-// );
-
-// const IconDot: React.FC<IconDotProps> = ({ className }) => (
-//   <svg className={className} width="12" height="12" viewBox="0 0 24 24" fill="none">
-//     <circle cx="12" cy="12" r="5" fill="currentColor" />
-//   </svg>
-// );
-
-
-/* ----------------------------------------------------
-   ICONS
----------------------------------------------------- */
-
-/* Capacity Icon (people silhouettes) */
 const IconCapacity: React.FC = () => (
   <IconBase>
     <circle cx="8" cy="8" r="3" stroke="currentColor" strokeWidth="1.6" />
@@ -204,7 +127,6 @@ const IconTV: React.FC = () => (
   </IconBase>
 );
 
-/* Smoking Icon (existing) */
 const IconSmoking: React.FC = () => (
   <IconBase>
     <path d="M3 13h12v3H3z" stroke="currentColor" strokeWidth="1.6" />
@@ -212,7 +134,6 @@ const IconSmoking: React.FC = () => (
   </IconBase>
 );
 
-/* Menu Icon (existing) */
 const IconMenu: React.FC = () => (
   <IconBase>
     <path d="M4 6h16" stroke="currentColor" strokeWidth="1.6" />
@@ -221,7 +142,6 @@ const IconMenu: React.FC = () => (
   </IconBase>
 );
 
-/* Camera Icon (Photographer) */
 const IconCamera: React.FC = () => (
   <IconBase>
     <rect
@@ -243,7 +163,6 @@ const IconCamera: React.FC = () => (
   </IconBase>
 );
 
-/* Decoration Icon (existing) */
 const IconDecor: React.FC = () => (
   <IconBase>
     <path d="M12 2v20" stroke="currentColor" strokeWidth="1.6" />
@@ -251,7 +170,6 @@ const IconDecor: React.FC = () => (
   </IconBase>
 );
 
-/* Decoration (self-decor allowed) */
 const IconDecor2: React.FC = () => (
   <IconBase>
     <path d="M12 4l3 8H9l3-8z" stroke="currentColor" strokeWidth="1.6" />
@@ -259,7 +177,6 @@ const IconDecor2: React.FC = () => (
   </IconBase>
 );
 
-/* Mic Icon (MC / Host) */
 const IconMic: React.FC = () => (
   <IconBase>
     <rect
@@ -286,7 +203,6 @@ const IconMic: React.FC = () => (
   </IconBase>
 );
 
-/* Music Icon (Band / DJ) */
 const IconMusic: React.FC = () => (
   <IconBase>
     <path
@@ -299,7 +215,6 @@ const IconMusic: React.FC = () => (
   </IconBase>
 );
 
-/* Clock Icon (Photoshoot duration) */
 const IconClock: React.FC = () => (
   <IconBase>
     <circle cx="12" cy="12" r="9" stroke="currentColor" strokeWidth="1.6" />
@@ -307,13 +222,11 @@ const IconClock: React.FC = () => (
   </IconBase>
 );
 
-/* Dot Icon (bullet) */
 const IconDot: React.FC<{ className?: string }> = ({ className }) => (
   <svg className={className} width="12" height="12" viewBox="0 0 24 24">
     <circle cx="12" cy="12" r="5" fill="currentColor" />
   </svg>
 );
-
 
 
 const FACILITIES_OVERVIEW: FacilityItem[] = [
@@ -322,12 +235,9 @@ const FACILITIES_OVERVIEW: FacilityItem[] = [
   { title: "Main Dining Room", icon: IconDining },
   { title: "Smoking Room", icon: IconSmoking },
   { title: "75” TV in every room", icon: IconTV },
-//   { title: "Pet-friendly", icon: IconPet },
   { title: "In-house or external decoration", icon: IconDecor },
   { title: "Decor-friendly policy", icon: IconDecor2 },
   { title: "Set menu or à la carte", icon: IconMenu },
-//   { title: "Free 1-hour extension every 3-hour booking", icon: IconClock },
-//   { title: "Free 1-hour extension*", icon: IconClock },
 ];
 
 const ROOMS: RoomItem[] = [
@@ -454,9 +364,10 @@ const SectionTitle: React.FC<{
 };
 
 
-const RoomPanel: React.FC<{ room: RoomItem; idx: number }> = ({
+const RoomPanel: React.FC<{ room: RoomItem; idx: number, handleReserve:any }> = ({
   room,
   idx,
+  handleReserve
 }) => {
   return (
     <section id={room.id} className="relative scroll-mt-32 md:scroll-mt-36">
@@ -514,12 +425,20 @@ const RoomPanel: React.FC<{ room: RoomItem; idx: number }> = ({
             </div>
 
             <div className="flex flex-col md:flex-row gap-4">
-                <Link
-                href="/reservation"
-                className="bg-creamlight text-black font-text text-center md:text-left px-5 py-2 rounded-md font-semibold"
-                >
-                Request Booking
-                </Link>
+              {/* <Link
+              href="/reservation"
+              className="bg-creamlight text-black font-text text-center md:text-left px-5 py-2 rounded-md font-semibold"
+              >
+              Request Booking
+              </Link> */}
+              <button
+                aria-label="Special Event"
+                type="button"
+                onClick={handleReserve}
+                className="block bg-[#FFE3AF] text-[#3b1f17] px-4 py-2 rounded-lg text-center font-semibold cursor-pointer"
+              >
+                Request Availability
+              </button>
             </div>
         </div>
       </div>
@@ -541,6 +460,15 @@ const FacilitiesPage: React.FC = () => {
 
   const yLeft = useSpring(leftRaw, { stiffness: 60, damping: 22, mass: 0.25 });
   const yRight = useSpring(rightRaw, { stiffness: 60, damping: 22, mass: 0.25 });
+
+  const handleReserve = () => {
+    trackEvent('special_event', {
+      category: 'tracking',
+      label: 'Special Event',
+    })
+    window.open('https://wa.me/62895428289088?text=Hi%20Goasaya,%20I%20want%20to%20have%20a%20special%20event.', '_blank', 'noopener,noreferrer')
+  }
+
 
   return (
     <main ref={ref} className="relative min-h-screen bg-[#3b1f17] text-white" id="top">
@@ -623,7 +551,7 @@ const FacilitiesPage: React.FC = () => {
 
             <div className="w-full lg:w-3/4 space-y-24">
                 {ROOMS.map((room, idx) => (
-                <RoomPanel key={room.id} room={room} idx={idx} />
+                <RoomPanel key={room.id} room={room} idx={idx} handleReserve={handleReserve} />
                 ))}
             </div>
 
@@ -646,12 +574,20 @@ const FacilitiesPage: React.FC = () => {
                 </nav>
 
                 <div className="mt-6">
-                    <Link
+                    {/* <Link
                     href="/reservation"
                     className="block bg-[#FFE3AF] text-[#3b1f17] px-4 py-2 rounded-lg text-center font-semibold"
                     >
                     Request Availability
-                    </Link>
+                    </Link> */}
+                    <button
+                      aria-label="Special Event"
+                      type="button"
+                      onClick={handleReserve}
+                      className="block bg-[#FFE3AF] text-[#3b1f17] px-4 py-2 rounded-lg text-center font-semibold cursor-pointer"
+                    >
+                      Request Availability
+                    </button>
                 </div>
                 </div>
             </aside>
@@ -677,12 +613,20 @@ const FacilitiesPage: React.FC = () => {
                     Get in touch for bespoke packages and availability. We will help you
                     plan every detail.
                 </p>
-                <Link
+                {/* <Link
                     href="/reservation"
                     className="inline-block bg-creamlight text-black px-8 py-3 rounded-md font-semibold shadow"
                 >
                     Enquire Now
-                </Link>
+                </Link> */}
+                <button
+                  aria-label="Special Event"
+                  type="button"
+                  onClick={handleReserve}
+                  className="block bg-[#FFE3AF] text-[#3b1f17] px-4 py-2 rounded-lg text-center font-semibold cursor-pointer"
+                >
+                  Enquire Now
+                </button>
             </div>
         </section>
     </main>

@@ -59,8 +59,9 @@ export default function Header() {
             transition={{ delay: 0.4, duration: 0.4 }}
           >
             <Link
-              href="/reservation"
+              href="https://cho.pe/web_goasayarestaurant"
               className="font-style rounded-md text-sm bg-[#FFE3AF] px-6 py-2 text-black hover:bg-maroon hover:text-white transition"
+              target="_blank"
             >
               Book a table
             </Link>
@@ -105,13 +106,14 @@ export default function Header() {
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: 0.4 }}
             >
-            {/* <Link
-                href="/reservation"
+            <Link
+                href="/https://cho.pe/web_goasayarestaurant"
                 className="font-style text-sm bg-[#FFE3AF] rounded-md px-6 py-2 text-black hover:bg-maroon hover:text-white transition"
                 onClick={() => setMenuOpen(false)}
+                target="_blank"
             >
               Book a table
-            </Link> */}
+            </Link>
             </motion.div>
         </motion.nav>
       )}
