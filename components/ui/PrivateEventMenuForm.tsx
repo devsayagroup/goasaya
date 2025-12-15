@@ -87,14 +87,119 @@ export default function PrivateEventMenuForm() {
                 Request Menu for Kitchen
             </h1>
 
-        <div className="grid grid-cols-2 border rounded-lg p-4 gap-4">
-            <input placeholder="Client Name" required onChange={e => setName(e.target.value)} />
-            <input type="number" placeholder="Pax" required onChange={e => setPax(+e.target.value)} />
-            <input type="date" required onChange={e => setDate(e.target.value)} />
-            <input type="time" required onChange={e => setTime(e.target.value)} />
+       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 border rounded-md p-4">
+            <div className="flex flex-col gap-1">
+                <label className="text-sm font-medium text-gray-200">
+                Client Name
+                </label>
+                <input
+                type="text"
+                placeholder="Client Name"
+                required
+                onChange={e => setName(e.target.value)}
+                className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-white focus:outline-none"
+                />
+            </div>
+
+            <div className="flex flex-col gap-1">
+                <label className="text-sm font-medium text-gray-200">
+                Pax
+                </label>
+                <input
+                type="number"
+                min={1}
+                placeholder="Number of Guests"
+                required
+                onChange={e => setPax(+e.target.value)}
+                className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-white focus:outline-none"
+                />
+            </div>
+
+            <div className="flex flex-col gap-1">
+                <label className="text-sm font-medium text-gray-200">
+                Event Date
+                </label>
+                <input
+                type="date"
+                required
+                onChange={e => setDate(e.target.value)}
+                className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-white focus:outline-none"
+                />
+            </div>
+
+            <div className="flex flex-col gap-1">
+                <label className="text-sm font-medium text-gray-200">
+                Event Time
+                </label>
+                <input
+                type="time"
+                required
+                onChange={e => setTime(e.target.value)}
+                className="w-full rounded-md border border-gray-300 px-3 py-2 focus:border-white focus:outline-none"
+                />
+            </div>
         </div>
 
-        {menuData.map(category => (
+        <div className="space-y-6">
+            {menuData.map(category => (
+                <div
+                key={category.name}
+                className="border rounded-md overflow-hidden"
+                >
+                {/* Category Header */}
+                <div className="px-4 py-3 border-b">
+                    <h3 className="text-md font-semibold uppercase tracking-wide text-gray-100">
+                    {category.name}
+                    </h3>
+                </div>
+
+                {/* Items */}
+                <div className="divide-y">
+                    {category.items.map(item => (
+                    <div
+                        key={item.title}
+                        className="flex items-center gap-4 px-4 py-3"
+                    >
+                        <span className="flex-1 text-sm text-gray-100">
+                        {item.title}
+                        </span>
+
+                        <input
+                        type="number"
+                        min={0}
+                        placeholder="0"
+                        onChange={e =>
+                            updateItem(
+                            category.name,
+                            item.title,
+                            Number(e.target.value)
+                            )
+                        }
+                        className="w-20 rounded-md border border-gray-300 px-3 py-1.5 text-sm text-center focus:border-white focus:outline-none"
+                        />
+                    </div>
+                    ))}
+                </div>
+                </div>
+            ))}
+        </div>
+
+        <div className="border rounded-md p-4">
+            <label className="block text-md font-medium text-gray-100 mb-2">
+                Notes for Kitchen
+            </label>
+
+            <textarea
+                placeholder="Special requests, allergies, timing notes, etc."
+                rows={4}
+                onChange={e => setNotes(e.target.value)}
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-white focus:outline-none resize-none"
+            />
+        </div>
+
+
+
+        {/* {menuData.map(category => (
             <div key={category.name} className="border rounded-lg p-4">
             <h3 className="text-lg font-semibold mb-3">
                 {category.name}
@@ -127,7 +232,7 @@ export default function PrivateEventMenuForm() {
             placeholder="Notes for kitchen"
             className="w-full border p-3 rounded"
             onChange={e => setNotes(e.target.value)}
-        />
+        /> */}
 
         <button
             type="submit"
