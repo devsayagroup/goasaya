@@ -469,7 +469,6 @@ const FacilitiesPage: React.FC = () => {
     window.open('https://wa.me/62895428289088?text=Hi%20Goasaya,%20I%20want%20to%20have%20a%20special%20event.', '_blank', 'noopener,noreferrer')
   }
 
-
   return (
     <main ref={ref} className="relative min-h-screen bg-[#3b1f17] text-white" id="top">
         <div className="absolute inset-0">
@@ -623,7 +622,7 @@ const FacilitiesPage: React.FC = () => {
                   aria-label="Special Event"
                   type="button"
                   onClick={handleReserve}
-                  className="block bg-[#FFE3AF] text-[#3b1f17] px-4 py-2 rounded-lg text-center font-semibold cursor-pointer"
+                  className="bg-[#FFE3AF] text-[#3b1f17] px-4 py-2 rounded-lg text-center font-semibold cursor-pointer"
                 >
                   Enquire Now
                 </button>
