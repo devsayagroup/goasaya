@@ -1,13 +1,12 @@
 import { google } from "googleapis";
-import serviceAccount from "@/credentials/google-service-account.json";
 
 const auth = new google.auth.JWT({
-    email: serviceAccount.client_email,
-    key: serviceAccount.private_key,
-    scopes: [
+  email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+  key: process.env.GOOGLE_SHEETS_PRIVATE_KEY!.replace(/\\n/g, "\n"),
+  scopes: [
     "https://www.googleapis.com/auth/spreadsheets",
-    "https://www.googleapis.com/auth/calendar",
-    ]
+    "https://www.googleapis.com/auth/calendar"
+  ],
 });
 
 export const sheets = google.sheets({ version: "v4", auth });
