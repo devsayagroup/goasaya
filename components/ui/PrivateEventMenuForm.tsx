@@ -146,19 +146,17 @@ export default function PrivateEventMenuForm() {
                 key={category.name}
                 className="border rounded-md overflow-hidden"
                 >
-                {/* Category Header */}
                 <div className="px-4 py-3 border-b">
                     <h3 className="text-md font-semibold uppercase tracking-wide text-gray-100">
                     {category.name}
                     </h3>
                 </div>
 
-                {/* Items */}
                 <div className="divide-y">
                     {category.items.map(item => (
                     <div
                         key={item.title}
-                        className="flex items-center gap-4 px-4 py-3"
+                        className="flex items-center gap-2 px-4 py-2"
                     >
                         <span className="flex-1 text-sm text-gray-100">
                         {item.title}
@@ -196,8 +194,6 @@ export default function PrivateEventMenuForm() {
                 className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm focus:border-white focus:outline-none resize-none"
             />
         </div>
-
-
 
         {/* {menuData.map(category => (
             <div key={category.name} className="border rounded-lg p-4">

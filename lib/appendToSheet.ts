@@ -12,6 +12,17 @@ export async function appendToSheet(data: PrivateEventMenuRequest) {
         })
         .join("\n");
 
+    // const menuSummary = data.menu
+    //     .map(category => {
+    //     const items = category.items
+    //         .filter(item => item.quantity > 0)
+    //         .map(item => `  ◦ ${item.title} x${item.quantity}`)
+    //         .join("\n");
+
+    //     return `• ${category.category}\n${items}`;
+    //     })
+    //     .join("\n\n"); 
+
     const row = [
         data.name,
         data.date,
