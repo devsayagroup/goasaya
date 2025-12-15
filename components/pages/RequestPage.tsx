@@ -1,7 +1,6 @@
 "use client";
 
 import Image from "next/image";
-// import ReservationForm from "../ui/ReservationForm";
 import PrivateEventMenuForm from "@/components/ui/PrivateEventMenuForm";
 
 export default function RequestPage() {
