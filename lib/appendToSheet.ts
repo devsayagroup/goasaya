@@ -1,7 +1,12 @@
 import { sheets } from "./google";
 import { PrivateEventMenuRequest } from "@/types/private-event";
 
-export async function appendToSheet(data: PrivateEventMenuRequest) {
+
+type AppendPayload = PrivateEventMenuRequest & {
+  calendarEventId?: string;
+};
+
+export async function appendToSheet(data: AppendPayload) {
     const menuSummary = data.menu
         .map(category => {
         const items = category.items
@@ -12,16 +17,9 @@ export async function appendToSheet(data: PrivateEventMenuRequest) {
         })
         .join("\n");
 
-    // const menuSummary = data.menu
-    //     .map(category => {
-    //     const items = category.items
-    //         .filter(item => item.quantity > 0)
-    //         .map(item => `  ◦ ${item.title} x${item.quantity}`)
-    //         .join("\n");
-
-    //     return `• ${category.category}\n${items}`;
-    //     })
-    //     .join("\n\n"); 
+    const calendarLink = data.calendarEventId
+    ? `https://calendar.google.com/calendar/u/0/r/eventedit/${data.calendarEventId}`
+    : "";
 
     const row = [
         data.name,
@@ -31,7 +29,7 @@ export async function appendToSheet(data: PrivateEventMenuRequest) {
         menuSummary,
         data.notes || "",
         data.status,             
-        "",                        
+        calendarLink,                        
     ];
 
     await sheets.spreadsheets.values.append({
