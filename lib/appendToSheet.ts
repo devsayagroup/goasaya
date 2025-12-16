@@ -17,10 +17,6 @@ export async function appendToSheet(data: AppendPayload) {
         })
         .join("\n");
 
-    const calendarLink = data.calendarEventId
-    ? `https://calendar.google.com/calendar/u/0/r/eventedit/${data.calendarEventId}`
-    : "";
-
     const row = [
         data.name,
         data.date,
@@ -29,7 +25,7 @@ export async function appendToSheet(data: AppendPayload) {
         menuSummary,
         data.notes || "",
         data.status,             
-        calendarLink,                        
+        data.calendarLink,                        
     ];
 
     await sheets.spreadsheets.values.append({
