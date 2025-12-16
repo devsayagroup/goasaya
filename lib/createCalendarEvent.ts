@@ -66,10 +66,10 @@ export async function createCalendarEvent(
             },
         },
         });
-
-        return event.data.id!;
+      
+        return event.data.htmlLink!;
     } catch (err: any) {
-        console.error("❌ Calendar Insert Error:", err?.response?.data || err);
+        console.error("Calendar Insert Error:", err?.response?.data || err);
         throw err;
     }
 }

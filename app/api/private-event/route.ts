@@ -18,12 +18,12 @@ export async function POST(req: Request) {
       }
     });
 
-    const calendarEventId = await createCalendarEvent(body);
+    const calendarLink = await createCalendarEvent(body);
 
     await appendToSheet({
       ...body,
       status: "PENDING",
-      calendarEventId
+      calendarLink
     });
     return NextResponse.json({ success: true });
   } catch (error) {

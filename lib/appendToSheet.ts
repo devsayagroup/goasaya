@@ -3,7 +3,7 @@ import { PrivateEventMenuRequest } from "@/types/private-event";
 
 
 type AppendPayload = PrivateEventMenuRequest & {
-  calendarEventId?: string;
+  calendarLink?: string;
 };
 
 export async function appendToSheet(data: AppendPayload) {
