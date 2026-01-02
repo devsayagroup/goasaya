@@ -492,7 +492,7 @@ export default function MenuPage() {
                 .map((category) => (
                   <motion.div
                     key={category.name}
-                    ref={(el) => (sectionRefs.current[category.name] = el)}
+                    ref={(el) => {sectionRefs.current[category.name] = el}}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
