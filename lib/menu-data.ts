@@ -9,16 +9,16 @@ export interface MenuCategory {
   name: string;
   items: MenuItem[];
   isBeverage?: boolean;
-  heroImage?: string;     // category image
-  caption?: string;       // short editorial text
-  featured?: string[];    // titles of featured items
+  heroImage?: string;
+  caption?: string;     
+  featured?: string[]; 
 }
 
 export const menuData: MenuCategory[] = [
   // ------------------ TO START ------------------
   {
     name: "To Start",
-    heroImage: "/menu/to-start-1.jpg",
+    heroImage: "/menu/to-start.jpg",
     // featured: ["Soft Shell Crab", "Griffin’s Signature"],
     items: [
       {
@@ -51,7 +51,7 @@ export const menuData: MenuCategory[] = [
   // ------------------ TO SHARE ------------------
   {
     name: "To Share",
-    heroImage: "/menu/to-share-1.jpg",
+    heroImage: "/menu/to-share.jpg",
     // featured: ["Soft Shell Crab", "Griffin’s Signature"],
     items: [
       {
@@ -114,7 +114,7 @@ export const menuData: MenuCategory[] = [
   // ------------------ PASTA ------------------
   {
     name: "Pasta",
-    heroImage: "/menu/pasta-1.jpg",
+    heroImage: "/menu/pasta.jpg",
     // featured: ["Soft Shell Crab", "Griffin’s Signature"],
     items: [
       {
@@ -147,7 +147,7 @@ export const menuData: MenuCategory[] = [
   // ------------------ FOR YOU ------------------
   {
     name: "For You",
-    heroImage: "/menu/for-you-1.jpg",
+    heroImage: "/menu/for-you.jpg",
     // featured: ["The Beef Burger", "Lemon Butter Salmon"],
     items: [
       {
@@ -345,6 +345,7 @@ export const menuData: MenuCategory[] = [
   {
     name: "Signature Cocktails",
     isBeverage: true,
+    heroImage: "/menu/cocktails-1.jpg",
     items: [
       { title: "Pink Sakura", description: "Dry Gin, Orange Liqueur, Cordial Sakura & Foamer.", price: "135.000", image: "/cocktail-goasunset.jpg" },
       { title: "The Chambers", description: "Dry Gin, St.Germani, Cucumber & Kina.", price: "150.000", image: "/cocktail-goasunset.jpg" },
@@ -360,6 +361,7 @@ export const menuData: MenuCategory[] = [
   // ------------------ CLASSIC COCKTAILS ------------------
   {
     name: "Classic Cocktails",
+    heroImage: "/menu/cocktails.jpg",
     isBeverage: true,
     items: [
       { title: "Lychee Martini", description: "Martini with Gin & lychee liqueur.", price: "130.000", image: "/classic-negroni.jpg" },
@@ -374,6 +376,7 @@ export const menuData: MenuCategory[] = [
   {
     name: "Mocktails",
     isBeverage: true,
+    heroImage: "/menu/mocktails.jpg",
     items: [
       { title: "Autumn Spice", description: "Cranberry, Orange, Green Apple & Ginger Soda.", price: "120.000", image: "/mock-berry.jpg" },
       { title: "Blue Ocean", description: "Curacao, Pineapple, Coconut Water & Citrus.", price: "120.000", image: "/mock-citrus.jpg" },
