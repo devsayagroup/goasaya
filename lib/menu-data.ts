@@ -18,7 +18,7 @@ export const menuData: MenuCategory[] = [
   // ------------------ TO START ------------------
   {
     name: "To Start",
-    heroImage: "/menu/to-start.jpg",
+    heroImage: "/menu/to-start.webp",
     // featured: ["Soft Shell Crab", "Griffin’s Signature"],
     items: [
       {
@@ -51,7 +51,7 @@ export const menuData: MenuCategory[] = [
   // ------------------ TO SHARE ------------------
   {
     name: "To Share",
-    heroImage: "/menu/to-share.jpg",
+    heroImage: "/menu/to-share.webp",
     // featured: ["Soft Shell Crab", "Griffin’s Signature"],
     items: [
       {
@@ -114,7 +114,7 @@ export const menuData: MenuCategory[] = [
   // ------------------ PASTA ------------------
   {
     name: "Pasta",
-    heroImage: "/menu/pasta.jpg",
+    heroImage: "/menu/pasta.webp",
     // featured: ["Soft Shell Crab", "Griffin’s Signature"],
     items: [
       {
@@ -147,7 +147,7 @@ export const menuData: MenuCategory[] = [
   // ------------------ FOR YOU ------------------
   {
     name: "For You",
-    heroImage: "/menu/for-you.jpg",
+    heroImage: "/menu/for-you.webp",
     // featured: ["The Beef Burger", "Lemon Butter Salmon"],
     items: [
       {
@@ -216,7 +216,7 @@ export const menuData: MenuCategory[] = [
   // ------------------ DESSERT ------------------
   {
     name: "The Perfect Final Touch",
-    heroImage: "/menu/final-touch.jpg",
+    heroImage: "/menu/final-touch.webp",
     // featured: ["Soft Shell Crab", "Griffin’s Signature"],
     items: [
       {
@@ -332,6 +332,7 @@ export const menuData: MenuCategory[] = [
   },
   {
     name: "Healthy Juice",
+    heroImage: "/menu/juice.webp",
     isBeverage: true,
     items: [
       { title: "Energy Booster", description: "Orange, Carrot & Ginger.", price: "60.000", image: "/juice-green.jpg" },
@@ -345,7 +346,7 @@ export const menuData: MenuCategory[] = [
   {
     name: "Signature Cocktails",
     isBeverage: true,
-    heroImage: "/menu/cocktails-1.jpg",
+    heroImage: "/menu/cocktails-1.webp",
     items: [
       { title: "Pink Sakura", description: "Dry Gin, Orange Liqueur, Cordial Sakura & Foamer.", price: "135.000", image: "/cocktail-goasunset.jpg" },
       { title: "The Chambers", description: "Dry Gin, St.Germani, Cucumber & Kina.", price: "150.000", image: "/cocktail-goasunset.jpg" },
@@ -361,7 +362,7 @@ export const menuData: MenuCategory[] = [
   // ------------------ CLASSIC COCKTAILS ------------------
   {
     name: "Classic Cocktails",
-    heroImage: "/menu/cocktails.jpg",
+    heroImage: "/menu/cocktails.webp",
     isBeverage: true,
     items: [
       { title: "Lychee Martini", description: "Martini with Gin & lychee liqueur.", price: "130.000", image: "/classic-negroni.jpg" },
@@ -376,7 +377,7 @@ export const menuData: MenuCategory[] = [
   {
     name: "Mocktails",
     isBeverage: true,
-    heroImage: "/menu/mocktails.jpg",
+    heroImage: "/menu/mocktails.webp",
     items: [
       { title: "Autumn Spice", description: "Cranberry, Orange, Green Apple & Ginger Soda.", price: "120.000", image: "/mock-berry.jpg" },
       { title: "Blue Ocean", description: "Curacao, Pineapple, Coconut Water & Citrus.", price: "120.000", image: "/mock-citrus.jpg" },
