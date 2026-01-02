@@ -248,7 +248,7 @@ const ROOMS: RoomItem[] = [
     price: "IDR 10,000,000",
     capacity: "10–12",
     deposit: "50%",
-    image: "/images/goa12.JPG",
+    image: "/rooms/hole.jpeg",
     features: [
       { label: "10–12 Capacity", icon: IconCapacity },
       { label: "LED TV 75”", icon: IconTV },
@@ -266,7 +266,7 @@ const ROOMS: RoomItem[] = [
     price: "IDR 6,500,000",
     capacity: "6–8",
     deposit: "50%",
-    image: "/images/goa1.jpg",
+    image: "/rooms/cave.jpeg",
     features: [
       { label: "6–8 Capacity", icon: IconCapacity },
       { label: "LED TV 75”", icon: IconTV },
@@ -284,7 +284,7 @@ const ROOMS: RoomItem[] = [
     price: "IDR 15,000,000",
     capacity: "25–28",
     deposit: "50%",
-    image: "/images/goa1.jpg",
+    image: "/rooms/glass.jpeg",
     features: [
       { label: "25–28 Capacity", icon: IconCapacity },
       { label: "LED TV 75”", icon: IconTV },
@@ -302,7 +302,7 @@ const ROOMS: RoomItem[] = [
     price: "IDR 35,000,000",
     capacity: "30–50",
     deposit: "50%",
-    image: "/images/goa1.jpg",
+    image: "/rooms/main.jpeg",
     features: [
       { label: "30–50 Capacity", icon: IconCapacity },
       { label: "LED TV 75”", icon: IconTV },
@@ -320,7 +320,7 @@ const ROOMS: RoomItem[] = [
     price: "IDR 100,000,000",
     capacity: "94",
     deposit: "50%",
-    image: "/images/goa1.jpg",
+    image: "/rooms/main-2.jpeg",
     features: [
       { label: "94 Capacity", icon: IconCapacity },
       { label: "LED TV 75”", icon: IconTV },
@@ -339,7 +339,7 @@ const ROOMS: RoomItem[] = [
     price: "IDR 10.000.000",
     capacity: "",
     deposit: "50%",
-    image: "/images/goa1.jpg",
+    image: "/rooms/shoot.jpeg",
     features: [
       { label: "3 Hours (07:00–10:00)", icon: IconClock },
       { label: "Self-decor allowed", icon: IconDecor2 },
