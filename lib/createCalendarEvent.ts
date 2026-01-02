@@ -58,6 +58,7 @@ export async function createCalendarEvent(
             reminders: {
             useDefault: false,
             overrides: [
+                { method: "popup", minutes: 2880 },
                 { method: "popup", minutes: 1440 },
                 { method: "popup", minutes: 120 },
                 { method: "popup", minutes: 30 },
@@ -67,7 +68,11 @@ export async function createCalendarEvent(
         },
         });
       
-        return event.data.htmlLink!;
+        return {
+            eventId: event.data.id!,
+            eventLink: event.data.htmlLink!, 
+        };
+        
     } catch (err: any) {
         console.error("Calendar Insert Error:", err?.response?.data || err);
         throw err;

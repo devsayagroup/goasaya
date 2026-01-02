@@ -1,9 +1,9 @@
 import { sheets } from "./google";
 import { PrivateEventMenuRequest } from "@/types/private-event";
 
-
 type AppendPayload = PrivateEventMenuRequest & {
-  calendarLink?: string;
+    eventId?: string;
+    eventLink?: string;
 };
 
 export async function appendToSheet(data: AppendPayload) {
@@ -25,7 +25,9 @@ export async function appendToSheet(data: AppendPayload) {
         menuSummary,
         data.notes || "",
         data.status,             
-        data.calendarLink,                        
+        data.eventId,                        
+        data.eventLink,  
+        new Date().toISOString(),    
     ];
 
     await sheets.spreadsheets.values.append({
