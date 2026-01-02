@@ -19,7 +19,6 @@ export const menuData: MenuCategory[] = [
   {
     name: "To Start",
     heroImage: "/menu/to-start-1.jpg",
-    caption: "Designed for the table. Bold flavours, generous portions.",
     // featured: ["Soft Shell Crab", "Griffin’s Signature"],
     items: [
       {
@@ -53,7 +52,6 @@ export const menuData: MenuCategory[] = [
   {
     name: "To Share",
     heroImage: "/menu/to-share-1.jpg",
-    caption: "Designed for the table. Bold flavours, generous portions.",
     // featured: ["Soft Shell Crab", "Griffin’s Signature"],
     items: [
       {
@@ -117,7 +115,6 @@ export const menuData: MenuCategory[] = [
   {
     name: "Pasta",
     heroImage: "/menu/pasta-1.jpg",
-    caption: "Designed for the table. Bold flavours, generous portions.",
     // featured: ["Soft Shell Crab", "Griffin’s Signature"],
     items: [
       {
@@ -151,7 +148,6 @@ export const menuData: MenuCategory[] = [
   {
     name: "For You",
     heroImage: "/menu/for-you-1.jpg",
-    caption: "Designed for the table. Bold flavours, generous portions.",
     // featured: ["The Beef Burger", "Lemon Butter Salmon"],
     items: [
       {
@@ -221,7 +217,6 @@ export const menuData: MenuCategory[] = [
   {
     name: "The Perfect Final Touch",
     heroImage: "/menu/final-touch.jpg",
-    caption: "Designed for the table. Bold flavours, generous portions.",
     // featured: ["Soft Shell Crab", "Griffin’s Signature"],
     items: [
       {
