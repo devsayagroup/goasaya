@@ -148,7 +148,7 @@ export const menuData: MenuCategory[] = [
   {
     name: "For You",
     heroImage: "/menu/for-you.webp",
-    // featured: ["The Beef Burger", "Lemon Butter Salmon"],
+    featured: [ "The Goa Steak", "Minang Fried Rice"],
     items: [
       {
         title: "The Beef Burger",
@@ -172,7 +172,7 @@ export const menuData: MenuCategory[] = [
         title: "Minang Fried Rice",
         description: "Bold fragrant flavour with braised beef tongue.",
         price: "199.000",
-        image: "/for-you-minang-fried-rice.jpg",
+        image: "/menu/minang-friedrice.jpg",
       },
       {
         title: "Aromatic Grilled Chicken",
@@ -208,7 +208,7 @@ export const menuData: MenuCategory[] = [
         title: "The Goa Steak",
         description: "Prepared only upon your request.",
         price: "999.000",
-        image: "/for-you-goa-steak.jpg",
+        image: "/menu/goa-steak.jpg",
       },
     ],
   },
@@ -217,7 +217,7 @@ export const menuData: MenuCategory[] = [
   {
     name: "The Perfect Final Touch",
     heroImage: "/menu/final-touch.webp",
-    // featured: ["Soft Shell Crab", "Griffin’s Signature"],
+    featured: ["Jiggly Mushroom", "Zen Stone"],
     items: [
       {
         title: "Putu Derry",
@@ -235,7 +235,7 @@ export const menuData: MenuCategory[] = [
         title: "Jiggly Mushroom",
         description: "Chocolate and vanilla pudding with chocolate soil and anglaise.",
         price: "125.000",
-        image: "/dessert-jiggly-mushroom.jpg",
+        image: "/menu/jiggly-mushroom.jpg",
       },
       {
         title: "Sekarung Kopi Emas",
@@ -265,7 +265,7 @@ export const menuData: MenuCategory[] = [
         title: "Zen Stone",
         description: "Milk chocolate with earl grey and lychee fillings.",
         price: "160.000",
-        image: "/dessert-zen-stone.jpg",
+        image: "/menu/zen-stone.jpg",
       },
     ],
   },

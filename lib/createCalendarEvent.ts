@@ -4,13 +4,7 @@ import { PrivateEventMenuRequest } from "@/types/private-event";
 export async function createCalendarEvent(
     data: PrivateEventMenuRequest
     ) {
-    // const menuSummary = data.menu
-    //     .map(cat =>
-    //     `${cat.category}: ${cat.items
-    //         .map(i => `${i.title} x${i.quantity}`)
-    //         .join(", ")}`
-    //     )
-    //     .join("\n");
+   
 
     const menuSummary = data.menu
         .map(category => {
@@ -72,7 +66,7 @@ export async function createCalendarEvent(
             eventId: event.data.id!,
             eventLink: event.data.htmlLink!, 
         };
-        
+
     } catch (err: any) {
         console.error("Calendar Insert Error:", err?.response?.data || err);
         throw err;

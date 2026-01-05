@@ -357,16 +357,19 @@
 //     );
 // }
 
+
 "use client";
 
 import { useState, useRef, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { menuData } from "@/lib/menu-data";
+import { MenuItem } from "@/lib/menu-data";
 import Image from "next/image";
 
 export default function MenuPage() {
   const [active, setActive] = useState(menuData[0].name);
   const [hasInteracted, setHasInteracted] = useState(false);
+  const [activeItem, setActiveItem] = useState<MenuItem | null>(null);
 
   const beverageNames = [
     "Coffee",
@@ -394,6 +397,14 @@ export default function MenuPage() {
     sectionRefs.current[active]?.scrollIntoView({ behavior: "smooth" });
   }, [active]);
 
+  useEffect(() => {
+    document.body.style.overflow = activeItem ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [activeItem]);
+
+
   const activeClass =
     "relative bg-white/10 ring-1 ring-white/20 transition-all";
   const inactiveClass = "hover:bg-white/5 transition-all";
@@ -410,7 +421,7 @@ export default function MenuPage() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/90" />
+          <div className="absolute inset-0 bg-black/98" />
         </div>
 
         <div className="container mx-auto flex flex-col md:flex-row gap-6 md:gap-16">
@@ -535,30 +546,65 @@ export default function MenuPage() {
                         <p className="text-xs tracking-widest text-white/40 mb-4">
                           SIGNATURE SELECTION
                         </p>
-                        <div className="grid md:grid-cols-2 gap-4">
+                        <motion.div
+                          className="grid grid-cols-1 sm:grid-cols-2 gap-10"
+                          initial="hidden"
+                          animate="show"
+                          variants={{
+                            hidden: {},
+                            show: {
+                              transition: {
+                                staggerChildren: 0.05,
+                              },
+                            },
+                          }}
+                        >
                           {category.items
                             .filter((i) =>
                               category.featured?.includes(i.title)
                             )
                             .map((item) => (
-                              <div
+                              <motion.div
                                 key={item.title}
-                                className="p-5 rounded-xl bg-white/5 border border-white/10"
+                                variants={{
+                                  hidden: { opacity: 0, y: 10 },
+                                  show: { opacity: 1, y: 0 },
+                                }}
+                                transition={{ duration: 0.35 }}
+                                className="bg-white/5 p-6 rounded-xl shadow-xl border border-white/10 flex gap-5"
+                            >
+                              <div
+                                onClick={() => setActiveItem(item)}
+                                className="w-28 h-24 relative rounded-md overflow-hidden bg-white/10 cursor-pointer group"
                               >
-                                <div className="flex justify-between">
-                                  <h3 className="uppercase tracking-wide font-medium">
+                                <Image
+                                  src={item.image || "/placeholder.jpg"}
+                                  alt={item.title}
+                                  fill
+                                  className="object-cover"
+                                />
+
+                                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition" />
+                              </div>
+
+
+                              <div className="flex-1">
+                                <div className="flex flex-col md:flex-row  justify-between items-start mb-2 gap-1.5">
+                                  <h3 className="text-lg font-medium tracking-wide">
                                     {item.title}
                                   </h3>
-                                  <span className="font-semibold">
+                                  <span className="font-semibold whitespace-nowrap">
                                     Rp {item.price}
                                   </span>
                                 </div>
-                                <p className="mt-2 text-sm text-white/60">
+
+                                <p className="text-sm text-white/70 leading-relaxed">
                                   {item.description}
                                 </p>
                               </div>
-                            ))}
-                        </div>
+                            </motion.div>
+                          ))}
+                        </motion.div>
                       </div>
                     )}
 
@@ -590,9 +636,72 @@ export default function MenuPage() {
                   </motion.div>
                 ))}
             </AnimatePresence>
+
+            {/* Image Popup Modul  */}
+            <AnimatePresence>
+              {activeItem && (
+                <motion.div
+                  className="fixed inset-0 z-50 flex items-center justify-center px-4"
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                >
+                  <div
+                    className="absolute inset-0 bg-black/70 backdrop-blur-xs"
+                    onClick={() => setActiveItem(null)}
+                  />
+
+                  {/* Modal */}
+                  <motion.div
+                    initial={{ scale: 0.95, y: 20, opacity: 0 }}
+                    animate={{ scale: 1, y: 0, opacity: 1 }}
+                    exit={{ scale: 0.95, y: 20, opacity: 0 }}
+                    transition={{ type: "spring", stiffness: 260, damping: 22 }}
+                    className="relative bg-stone-950 border border-white/10 rounded-2xl overflow-hidden max-w-lg w-full z-10"
+                  >
+                    {/* Image */}
+                    <div className="relative aspect-[4/3]">
+                      <Image
+                        src={activeItem.image || "/placeholder.jpg"}
+                        alt={activeItem.title}
+                        fill
+                        className="object-cover"
+                      />
+                    </div>
+
+                    {/* Content */}
+                    <div className="p-6 space-y-3">
+                      <div className="flex justify-between items-start">
+                        <h3 className="text-xl font-medium tracking-wide">
+                          {activeItem.title}
+                        </h3>
+                        <span className="font-semibold whitespace-nowrap">
+                          Rp {activeItem.price}
+                        </span>
+                      </div>
+
+                      <p className="text-sm text-white/70 leading-relaxed">
+                        {activeItem.description}
+                      </p>
+                    </div>
+
+                    {/* Close */}
+                    <button
+                      onClick={() => setActiveItem(null)}
+                      className="absolute top-3 right-3 text-white/60 hover:text-white transition"
+                      aria-label="Close"
+                    >
+                      ✕
+                    </button>
+                  </motion.div>
+                </motion.div>
+              )}
+            </AnimatePresence>
+
           </div>
         </div>
       </div>
     </section>
   );
 }
+
