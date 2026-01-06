@@ -127,7 +127,7 @@ export const menuData: MenuCategory[] = [
         title: "Seafood Marinara",
         description: "Italian classic tomato sauce with fragrant herbs and fresh seafood.",
         price: "220.000",
-        image: "/menu/pasta/seafood-marinara.png",
+        image: "/menu/pasta/seafood-marinara.jpeg",
       },
       {
         title: "Coastal White Wine",
