@@ -296,7 +296,7 @@ export const menuData: MenuCategory[] = [
 
   // ------------------ Matcha Series ------------------
   {
-    name: "Matcha Series (Hot/Iced)",
+    name: "Matcha Series",
     isBeverage: true,
     items: [
       { title: "Artisan Matcha", description: "Matcha & Fresh Milk.", price: "65.000", image: "/bev-water.jpg" },
