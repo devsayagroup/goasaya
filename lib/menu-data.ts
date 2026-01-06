@@ -215,7 +215,7 @@ export const menuData: MenuCategory[] = [
 
   // ------------------ DESSERT ------------------
   {
-    name: "The Perfect Final Touch",
+    name: "The Dessert",
     heroImage: "/menu/dessert/zen-stone.webp",
     items: [
       {
