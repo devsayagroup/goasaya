@@ -5,6 +5,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import { trackEvent } from "@/lib/analytics";
 
 const navLinks = [
   { name: "About", href: "/about" },
@@ -16,6 +17,14 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+
+  const handleReserve = () => {
+    trackEvent('cta_button_header', {
+      category: 'tracking',
+      label: 'CTA Book Now',
+    })
+    window.open('https://cho.pe/web_goasayarestaurant', '_blank', 'noopener,noreferrer')
+  }
 
   return (
     <header className="fixed top-0 z-50 w-full bg-black backdrop-blur-sm py-6 md:py-8">
@@ -58,14 +67,16 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4, duration: 0.4 }}
           >
-            <Link
-              href="https://cho.pe/web_goasayarestaurant"
-              className="font-style rounded-md text-sm bg-[#FFE3AF] px-6 py-2 text-black hover:bg-maroon hover:text-white transition"
-              target="_blank"
+            <motion.button
+              aria-label="CTA Button"
+              type="button"
+              onClick={handleReserve}
+              className="font-style cursor-pointer rounded-md text-sm bg-[#FFE3AF] px-6 py-2 text-black hover:bg-maroon hover:text-white transition"
             >
               Book a table
-            </Link>
+            </motion.button>
           </motion.div>
+         
 
           <button
             className="md:hidden text-white"
