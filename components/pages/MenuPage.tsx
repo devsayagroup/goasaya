@@ -69,10 +69,10 @@ export default function MenuPage() {
           <aside className="w-full md:w-64 md:sticky md:top-24 self-start">
             {/* Mobile */}
             {/* ================= MOBILE FLOATING MENU ================= */}
-            <div className="md:hidden fixed bottom-20 left-0 right-0 z-50 px-4">
+            <div className="md:hidden fixed top-22 left-0 right-0 z-50 px-6">
               <motion.details
                 ref={detailsRef}
-                className="bg-black/70 backdrop-blur-lg rounded-lg border border-white/10 shadow-2xl"
+                className="bg-maroon/80 backdrop-blur-xl rounded-lg border border-white/10 shadow-2xl"
               >
                 {/* Trigger */}
                 <summary className="flex items-center justify-between p-4 cursor-pointer list-none">
@@ -180,7 +180,7 @@ export default function MenuPage() {
           </aside>
 
           {/* ================= CONTENT ================= */}
-          <div className="flex-1">
+          <div className="flex-1 mt-10 md:mt-0">
             <AnimatePresence mode="wait">
               {menuData
                 .filter((c) => c.name === active)
@@ -192,12 +192,12 @@ export default function MenuPage() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: -10 }}
                     transition={{ duration: 0.4 }}
-                    className="space-y-12"
+                    className="space-y-6"
                   >
                     {/* ===== HERO IMAGE ===== */}
                     {category.heroImage ? (
                       <div className="relative overflow-hidden rounded-xl">
-                        <div className="relative aspect-[10/7] md:aspect-[16/7]">
+                        <div className="relative aspect-[11/7] md:aspect-[16/7]">
                           <Image
                             src={category.heroImage}
                             alt={category.name}
