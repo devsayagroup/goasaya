@@ -55,27 +55,71 @@ export default function MenuPage() {
         {/* Background */}
         <div className="absolute inset-0 -z-10">
           <Image
-            src="/images/goa1.jpg"
+            src="/images/goa9.JPG"
             alt="GOASAYA Background"
             fill
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-black/98" />
+          <div className="absolute inset-0 bg-black/95" />
         </div>
 
         <div className="container mx-auto flex flex-col md:flex-row gap-6 md:gap-16">
           {/* ================= SIDEBAR ================= */}
           <aside className="w-full md:w-64 md:sticky md:top-24 self-start">
             {/* Mobile */}
-            <div className="md:hidden">
+            {/* ================= MOBILE FLOATING MENU ================= */}
+            <div className="md:hidden fixed bottom-20 left-0 right-0 z-50 px-4">
+              <motion.details
+                ref={detailsRef}
+                className="bg-black/70 backdrop-blur-lg rounded-lg border border-white/10 shadow-2xl"
+              >
+                {/* Trigger */}
+                <summary className="flex items-center justify-between p-4 cursor-pointer list-none">
+                  <span className="text-sm font-medium truncate">
+                    {active}
+                  </span>
+                  <span className="text-white/50 text-xs tracking-wide">
+                    All Menu
+                  </span>
+                </summary>
+
+                {/* Bottom Sheet */}
+                <div className="max-h-[75vh] overflow-y-auto px-3 pb-4 pt-2">
+                  {menuData.map((cat, index) => (
+                    <div key={cat.name}>
+                      {index === beverageStartIndex && (
+                        <div className="my-4 border-t border-white/20 pt-4 text-xs tracking-widest text-white/40">
+                          BEVERAGES
+                        </div>
+                      )}
+
+                      <button
+                        onClick={() => {
+                          setActive(cat.name);
+                          setHasInteracted(true);
+                          detailsRef.current && (detailsRef.current.open = false);
+                        }}
+                        className={`w-full text-left py-2 px-3 rounded-lg text-sm ${
+                          cat.name === active ? activeClass : inactiveClass
+                        }`}
+                      >
+                        {cat.name}
+                      </button>
+                    </div>
+                  ))}
+                </div>
+              </motion.details>
+            </div>
+
+            {/* <div className="md:hidden">
               <motion.details
                 ref={detailsRef}
                 className="bg-black/40 py-2 px-4 rounded-2xl border border-white/5"
               >
                 <summary className="text-lg cursor-pointer py-2 flex justify-between">
                   <span>{active}</span>
-                  <span className="text-white/50 text-sm">Tap</span>
+                  <span className="text-white/50 text-sm">All Menu</span>
                 </summary>
 
                 <div className="mt-4 space-y-1">
@@ -102,7 +146,7 @@ export default function MenuPage() {
                   ))}
                 </div>
               </motion.details>
-            </div>
+            </div> */}
 
             {/* Desktop */}
             <div className="hidden md:block bg-black/40 p-6 rounded-2xl border border-white/5">

@@ -470,7 +470,8 @@ const FacilitiesPage: React.FC = () => {
   }
 
   return (
-    <main ref={ref} className="relative min-h-screen bg-[#3b1f17] text-white" id="top">
+    <main ref={ref} className="relative min-h-screen bg-maroon text-white" id="top"> 
+    {/* bg-[#3b1f17] */}
         <div className="absolute inset-0">
             <Image
             src="/images/Japanese_Theme_Karaoke_2.jpg"
@@ -545,7 +546,7 @@ const FacilitiesPage: React.FC = () => {
             </div>
         </section>
 
-        <section className="relative w-full bg-black px-6 md:px-14 py-32">
+        <section className="relative w-full bg-maroon px-6 md:px-14 py-32">
             <div className="container mx-auto flex gap-6">
 
             <div className="w-full lg:w-3/4 space-y-24">
