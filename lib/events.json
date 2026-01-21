@@ -1,0 +1,20 @@
+[
+  {
+    "id": "SE20260118M",
+    "name": "Astra Corporate Dinner",
+    "date": "2026-01-18",
+    "time": "18:30 – 21:30",
+    "area": "MAIN",
+    "type": "Corporate Dinner",
+    "pic": "Rina Wijaya"
+  },
+  {
+    "id": "SE20260122G",
+    "name": "Michelle & Kevin Wedding Dinner",
+    "date": "2026-01-22",
+    "time": "19:00 – 22:00",
+    "area": "GLASS",
+    "type": "Wedding",
+    "pic": "Kevin Wong"
+  }
+]

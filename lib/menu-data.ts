@@ -91,12 +91,6 @@ export const menuData: MenuCategory[] = [
         image: "/menu/toshare/calamari-fritters.webp",
       },
       {
-        title: "Soft Shell Crab",
-        description: "Crispy on the outside, tender on the inside, coated in rich salted egg yolk.",
-        price: "257.000",
-        image: "/menu/toshare/soft-shell-crab.webp",
-      },
-      {
         title: "Oxtail Soup",
         description: "Slow simmered soup with tender meat and Indonesian spices.",
         price: "336.000",

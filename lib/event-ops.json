@@ -1,0 +1,805 @@
+[
+  {
+    "id": "SE20260118M",
+    "event": {
+      "name": "Astra Corporate Dinner",
+      "type": "Corporate Dinner",
+      "date": "2026-01-18",
+      "startTime": "18:30",
+      "endTime": "21:30",
+      "area": "MAIN",
+      "totalPax": 32,
+      "notes": "VIP guests attending. Smooth pacing required."
+    },
+    "pic": {
+      "name": "Rina Wijaya",
+      "phone": "+62 812-3456-7890",
+      "company": "PT Astra International"
+    },
+    "tables": {
+      "M6": {
+        "capacity": 8,
+        "notes": "Host table",
+        "guests": [
+          {
+            "name": "Mr. Budi Santoso",
+            "role": "Host",
+            "orders": [
+              { "menuName": "Cured Salmon", "qty": 1 },
+              { "menuName": "The Goa Steak", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Old Fashioned", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Anita Santoso",
+            "orders": [
+              { "menuName": "Shrimp Secret", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Strawberry Swings", "qty": 1 },
+              { "menuName": "Lychee Martini", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Rudi Hartono",
+            "orders": [
+              { "menuName": "Thai Beef Salad", "qty": 1 },
+              { "menuName": "Beef Pappardelle", "qty": 1 },
+              { "menuName": "Italian Glass", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Maya Hartono",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Chamomile Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Andi Pratama",
+            "orders": [
+              { "menuName": "Cauliflower Tempura", "qty": 1 },
+              { "menuName": "Aromatic Grilled Chicken", "qty": 1 },
+              { "menuName": "Rain Forest Wood", "qty": 1 },
+              { "menuName": "Whiskey Sour", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Sinta Pratama",
+            "orders": [
+              { "menuName": "Soft Shell Crab", "qty": 1 },
+              { "menuName": "Seared Barramundi", "qty": 1 },
+              { "menuName": "Coconut Shell", "qty": 1 },
+              { "menuName": "Sparkling Apple", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Dimas Putra",
+            "orders": [
+              { "menuName": "Griffin’s Signature", "qty": 1 },
+              { "menuName": "Beef of Goa", "qty": 1 },
+              { "menuName": "Sekarung Kopi Emas", "qty": 1 },
+              { "menuName": "Espresso", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Laila Putra",
+            "orders": [
+              { "menuName": "Calamari Fritters", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Jiggly Mushroom", "qty": 1 },
+              { "menuName": "Pink Sakura", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "M8": {
+        "capacity": 6,
+        "guests": [
+          {
+            "name": "Mr. Daniel Tan",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Italian Glass", "qty": 1 },
+              { "menuName": "Mineral Water", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Michelle Tan",
+            "orders": [
+              { "menuName": "Cured Salmon", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Chamomile Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Kevin Wong",
+            "orders": [
+              { "menuName": "Cauliflower Tempura", "qty": 1 },
+              { "menuName": "Beef of Goa", "qty": 1 },
+              { "menuName": "Rain Forest Wood", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Olivia Wong",
+            "orders": [
+              { "menuName": "Soft Shell Crab", "qty": 1 },
+              { "menuName": "Seared Barramundi", "qty": 1 },
+              { "menuName": "Coconut Shell", "qty": 1 },
+              { "menuName": "Sparkling Apple", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Steven Lim",
+            "orders": [
+              { "menuName": "Shrimp Secret", "qty": 1 },
+              { "menuName": "The Goa Steak", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Whiskey Sour", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Clara Lim",
+            "orders": [
+              { "menuName": "Calamari Fritters", "qty": 1 },
+              { "menuName": "Aromatic Grilled Chicken", "qty": 1 },
+              { "menuName": "Strawberry Swings", "qty": 1 },
+              { "menuName": "Lychee Martini", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "M10": {
+        "capacity": 6,
+        "guests": [
+          {
+            "name": "Mr. Arif Rahman",
+            "orders": [
+              { "menuName": "Thai Beef Salad", "qty": 1 },
+              { "menuName": "Beef Pappardelle", "qty": 1 },
+              { "menuName": "Italian Glass", "qty": 1 },
+              { "menuName": "Espresso", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Nadia Rahman",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Green Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Fajar Nugroho",
+            "orders": [
+              { "menuName": "Cauliflower Tempura", "qty": 1 },
+              { "menuName": "The Goa Steak", "qty": 1 },
+              { "menuName": "Rain Forest Wood", "qty": 1 },
+              { "menuName": "Old Fashioned", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Rani Nugroho",
+            "orders": [
+              { "menuName": "Soft Shell Crab", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Coconut Shell", "qty": 1 },
+              { "menuName": "Sparkling Apple", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Yoga Prasetya",
+            "orders": [
+              { "menuName": "Shrimp Secret", "qty": 1 },
+              { "menuName": "Beef of Goa", "qty": 1 },
+              { "menuName": "Italian Glass", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Dewi Prasetya",
+            "orders": [
+              { "menuName": "Calamari Fritters", "qty": 1 },
+              { "menuName": "Seared Barramundi", "qty": 1 },
+              { "menuName": "Jiggly Mushroom", "qty": 1 },
+              { "menuName": "Pink Sakura", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "M11": {
+        "capacity": 4,
+        "guests": [
+          {
+            "name": "Mr. Hendra Wijaya",
+            "orders": [
+              { "menuName": "Cured Salmon", "qty": 1 },
+              { "menuName": "The Goa Steak", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Espresso", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Lina Wijaya",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Strawberry Swings", "qty": 1 },
+              { "menuName": "Green Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Bayu Kurniawan",
+            "orders": [
+              { "menuName": "Cauliflower Tempura", "qty": 1 },
+              { "menuName": "Beef of Goa", "qty": 1 },
+              { "menuName": "Rain Forest Wood", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Intan Kurniawan",
+            "orders": [
+              { "menuName": "Soft Shell Crab", "qty": 1 },
+              { "menuName": "Seared Barramundi", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Chamomile Tea", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "M12": {
+        "capacity": 4,
+        "guests": [
+          {
+            "name": "Mr. Ryo Nakamura",
+            "orders": [
+              { "menuName": "Cured Salmon", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Italian Glass", "qty": 1 },
+              { "menuName": "Green Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Emi Nakamura",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Seared Barramundi", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Jasmine Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Aditya Putra",
+            "orders": [
+              { "menuName": "Cauliflower Tempura", "qty": 1 },
+              { "menuName": "Beef of Goa", "qty": 1 },
+              { "menuName": "Rain Forest Wood", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Nabila Putra",
+            "orders": [
+              { "menuName": "Shrimp Secret", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Jiggly Mushroom", "qty": 1 },
+              { "menuName": "Pink Sakura", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "M13": {
+        "capacity": 4,
+        "guests": [
+          {
+            "name": "Mr. Johan Surya",
+            "orders": [
+              { "menuName": "Thai Beef Salad", "qty": 1 },
+              { "menuName": "The Goa Steak", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Old Fashioned", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Maria Surya",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Strawberry Swings", "qty": 1 },
+              { "menuName": "Chamomile Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Samuel Gunawan",
+            "orders": [
+              { "menuName": "Cauliflower Tempura", "qty": 1 },
+              { "menuName": "Beef of Goa", "qty": 1 },
+              { "menuName": "Rain Forest Wood", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Felicia Gunawan",
+            "orders": [
+              { "menuName": "Soft Shell Crab", "qty": 1 },
+              { "menuName": "Seared Barramundi", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Pink Sakura", "qty": 1 }
+            ]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "SE20260312G",
+    "event": {
+      "name": "Mandiri Priority Private Dinner",
+      "type": "Private Corporate Dinner",
+      "date": "2026-03-12",
+      "startTime": "18:00",
+      "endTime": "21:00",
+      "area": "GLASS",
+      "totalPax": 24,
+      "notes": "Glass Room exclusive. Quiet service preferred."
+    },
+    "pic": {
+      "name": "Agus Santoso",
+      "phone": "+62 813-9988-7766",
+      "company": "Bank Mandiri"
+    },
+    "tables": {
+      "G1": {
+        "capacity": 4,
+        "guests": [
+          {
+            "name": "Mr. Agus Santoso",
+            "role": "Host",
+            "orders": [
+              { "menuName": "Cured Salmon", "qty": 1 },
+              { "menuName": "The Goa Steak", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Old Fashioned", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Lestari Santoso",
+            "orders": [
+              { "menuName": "Shrimp Secret", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Strawberry Swings", "qty": 1 },
+              { "menuName": "Lychee Martini", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Hendra Wijaya",
+            "orders": [
+              { "menuName": "Thai Beef Salad", "qty": 1 },
+              { "menuName": "Beef Pappardelle", "qty": 1 },
+              { "menuName": "Jiggly Mushroom", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Lina Wijaya",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Snow Globe", "qty": 1 },
+              { "menuName": "Chamomile Tea", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "G2": {
+        "capacity": 4,
+        "guests": [
+          {
+            "name": "Mr. Daniel Tan",
+            "orders": [
+              { "menuName": "Cauliflower Tempura", "qty": 1 },
+              { "menuName": "Aromatic Grilled Chicken", "qty": 1 },
+              { "menuName": "Rain Forest Wood", "qty": 1 },
+              { "menuName": "Whiskey Sour", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Michelle Tan",
+            "orders": [
+              { "menuName": "Calamari Fritters", "qty": 1 },
+              { "menuName": "Seared Barramundi", "qty": 1 },
+              { "menuName": "Italian Glass", "qty": 1 },
+              { "menuName": "Pink Sakura", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Kevin Wong",
+            "orders": [
+              { "menuName": "Thai Beef Salad", "qty": 1 },
+              { "menuName": "The Goa Steak", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Olivia Wong",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Snow Globe", "qty": 1 },
+              { "menuName": "Sparkling Apple", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "G3": {
+        "capacity": 4,
+        "guests": [
+          {
+            "name": "Mr. Ryo Nakamura",
+            "orders": [
+              { "menuName": "Cured Salmon", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Green Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Emi Nakamura",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Seared Barramundi", "qty": 1 },
+              { "menuName": "Snow Globe", "qty": 1 },
+              { "menuName": "Chamomile Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Aditya Putra",
+            "orders": [
+              { "menuName": "Griffin’s Signature", "qty": 1 },
+              { "menuName": "Beef of Goa", "qty": 1 },
+              { "menuName": "Sekarung Kopi Emas", "qty": 1 },
+              { "menuName": "Espresso", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Nabila Putra",
+            "orders": [
+              { "menuName": "Calamari Fritters", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Jiggly Mushroom", "qty": 1 },
+              { "menuName": "Pink Sakura", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "G4": {
+        "capacity": 4,
+        "guests": [
+          {
+            "name": "Mr. Bayu Kurniawan",
+            "orders": [
+              { "menuName": "Thai Beef Salad", "qty": 1 },
+              { "menuName": "Aromatic Grilled Chicken", "qty": 1 },
+              { "menuName": "Italian Glass", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Intan Kurniawan",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Sparkling Apple", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Johan Surya",
+            "orders": [
+              { "menuName": "Cured Salmon", "qty": 1 },
+              { "menuName": "The Goa Steak", "qty": 1 },
+              { "menuName": "Snow Globe", "qty": 1 },
+              { "menuName": "Old Fashioned", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Maria Surya",
+            "orders": [
+              { "menuName": "Shrimp Secret", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Strawberry Swings", "qty": 1 },
+              { "menuName": "Lychee Martini", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "G5": {
+        "capacity": 4,
+        "guests": [
+          {
+            "name": "Mr. Samuel Gunawan",
+            "orders": [
+              { "menuName": "Thai Beef Salad", "qty": 1 },
+              { "menuName": "Beef Pappardelle", "qty": 1 },
+              { "menuName": "Jiggly Mushroom", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Felicia Gunawan",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Chamomile Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Steven Lim",
+            "orders": [
+              { "menuName": "Cauliflower Tempura", "qty": 1 },
+              { "menuName": "Aromatic Grilled Chicken", "qty": 1 },
+              { "menuName": "Rain Forest Wood", "qty": 1 },
+              { "menuName": "Whiskey Sour", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Clara Lim",
+            "orders": [
+              { "menuName": "Calamari Fritters", "qty": 1 },
+              { "menuName": "Seared Barramundi", "qty": 1 },
+              { "menuName": "Italian Glass", "qty": 1 },
+              { "menuName": "Pink Sakura", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "G6": {
+        "capacity": 4,
+        "guests": [
+          {
+            "name": "Mr. Fajar Nugroho",
+            "orders": [
+              { "menuName": "Griffin’s Signature", "qty": 1 },
+              { "menuName": "Beef of Goa", "qty": 1 },
+              { "menuName": "Sekarung Kopi Emas", "qty": 1 },
+              { "menuName": "Espresso", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Rani Nugroho",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Jiggly Mushroom", "qty": 1 },
+              { "menuName": "Sparkling Apple", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Yoga Prasetya",
+            "orders": [
+              { "menuName": "Thai Beef Salad", "qty": 1 },
+              { "menuName": "The Goa Steak", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Old Fashioned", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Dewi Prasetya",
+            "orders": [
+              { "menuName": "Shrimp Secret", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Snow Globe", "qty": 1 },
+              { "menuName": "Chamomile Tea", "qty": 1 }
+            ]
+          }
+        ]
+      }
+    }
+  },
+
+  {
+    "id": "SE20260205M",
+    "event": {
+      "name": "Michelle Tan Birthday Dinner",
+      "type": "Birthday Celebration",
+      "date": "2026-02-05",
+      "startTime": "19:00",
+      "endTime": "22:00",
+      "area": "MAIN",
+      "totalPax": 24,
+      "notes": "Birthday surprise at 20:30. Cake from outside."
+    },
+    "pic": {
+      "name": "Daniel Tan",
+      "phone": "+62 811-8899-2233",
+      "company": "Personal Event"
+    },
+    "tables": {
+      "M8": {
+        "capacity": 6,
+        "notes": "Birthday table",
+        "guests": [
+          {
+            "name": "Mrs. Michelle Tan",
+            "role": "Birthday Girl",
+            "orders": [
+              { "menuName": "Shrimp Secret", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Snow Globe", "qty": 1 },
+              { "menuName": "Lychee Martini", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Daniel Tan",
+            "orders": [
+              { "menuName": "Cured Salmon", "qty": 1 },
+              { "menuName": "The Goa Steak", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Old Fashioned", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Olivia Wong",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Seared Barramundi", "qty": 1 },
+              { "menuName": "Italian Glass", "qty": 1 },
+              { "menuName": "Chamomile Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Kevin Wong",
+            "orders": [
+              { "menuName": "Thai Beef Salad", "qty": 1 },
+              { "menuName": "Beef Pappardelle", "qty": 1 },
+              { "menuName": "Jiggly Mushroom", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Clara Lim",
+            "orders": [
+              { "menuName": "Calamari Fritters", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Strawberry Swings", "qty": 1 },
+              { "menuName": "Sparkling Apple", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Steven Lim",
+            "orders": [
+              { "menuName": "Soft Shell Crab", "qty": 1 },
+              { "menuName": "Aromatic Grilled Chicken", "qty": 1 },
+              { "menuName": "Rain Forest Wood", "qty": 1 },
+              { "menuName": "Whiskey Sour", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "M10": {
+        "capacity": 6,
+        "guests": [
+          {
+            "name": "Mr. Ryo Nakamura",
+            "orders": [
+              { "menuName": "Cauliflower Tempura", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Green Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Emi Nakamura",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Seared Barramundi", "qty": 1 },
+              { "menuName": "Snow Globe", "qty": 1 },
+              { "menuName": "Chamomile Tea", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Aditya Putra",
+            "orders": [
+              { "menuName": "Griffin’s Signature", "qty": 1 },
+              { "menuName": "Beef of Goa", "qty": 1 },
+              { "menuName": "Sekarung Kopi Emas", "qty": 1 },
+              { "menuName": "Espresso", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Nabila Putra",
+            "orders": [
+              { "menuName": "Calamari Fritters", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Jiggly Mushroom", "qty": 1 },
+              { "menuName": "Pink Sakura", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Bayu Kurniawan",
+            "orders": [
+              { "menuName": "Thai Beef Salad", "qty": 1 },
+              { "menuName": "Aromatic Grilled Chicken", "qty": 1 },
+              { "menuName": "Italian Glass", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Intan Kurniawan",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Sparkling Apple", "qty": 1 }
+            ]
+          }
+        ]
+      },
+
+      "M11": {
+        "capacity": 4,
+        "guests": [
+          {
+            "name": "Mr. Johan Surya",
+            "orders": [
+              { "menuName": "Cured Salmon", "qty": 1 },
+              { "menuName": "The Goa Steak", "qty": 1 },
+              { "menuName": "Snow Globe", "qty": 1 },
+              { "menuName": "Old Fashioned", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Maria Surya",
+            "orders": [
+              { "menuName": "Shrimp Secret", "qty": 1 },
+              { "menuName": "Lemon Butter Salmon", "qty": 1 },
+              { "menuName": "Strawberry Swings", "qty": 1 },
+              { "menuName": "Lychee Martini", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mr. Samuel Gunawan",
+            "orders": [
+              { "menuName": "Thai Beef Salad", "qty": 1 },
+              { "menuName": "Beef Pappardelle", "qty": 1 },
+              { "menuName": "Jiggly Mushroom", "qty": 1 },
+              { "menuName": "Americano", "qty": 1 }
+            ]
+          },
+          {
+            "name": "Mrs. Felicia Gunawan",
+            "orders": [
+              { "menuName": "The Goa Garden", "qty": 1 },
+              { "menuName": "Black Cod", "qty": 1 },
+              { "menuName": "Zen Stone", "qty": 1 },
+              { "menuName": "Chamomile Tea", "qty": 1 }
+            ]
+          }
+        ]
+      }
+    }
+  }
+
+]
+

@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { trackEvent } from '@/lib/analytics'
 
 const WhatsappButton = () => {
-    const handleReserve = () => {
+  const handleReserve = () => {
     trackEvent('whatsapp_button', {
       category: 'tracking',
       label: 'Whatsapp Button',
