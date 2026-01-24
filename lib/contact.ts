@@ -1,0 +1,1 @@
+export const admin = {phone: "6281338382845"}

@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { trackEvent } from '@/lib/analytics'
+import { admin } from '@/lib/contact'
 
 const WhatsappButton = () => {
   const handleReserve = () => {
@@ -9,7 +10,8 @@ const WhatsappButton = () => {
       category: 'tracking',
       label: 'Whatsapp Button',
     })
-    window.open('https://wa.me/6281338382845?text=Hi%20Goasaya,%20I%20want%20to%20reserve%20a%20table.', '_blank', 'noopener,noreferrer')
+    window.open(`https://wa.me/${admin.phone}?text=Hi%20GOASAYA%2C%20I%E2%80%99d%20like%20to%20get%20more%20information.%20Thank%20you.
+`, '_blank', 'noopener,noreferrer')
   }
   return (
     <motion.div

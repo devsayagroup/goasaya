@@ -5,7 +5,7 @@ import Image from "next/image";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
 import { trackEvent } from '@/lib/analytics'
-
+import { admin } from "@/lib/contact";
 interface FacilityItem {
     title: string;
     icon: React.FC;
@@ -466,7 +466,9 @@ const FacilitiesPage: React.FC = () => {
       category: 'tracking',
       label: 'Special Event',
     })
-    window.open('https://wa.me/62895428289088?text=Hi%20Goasaya,%20I%20want%20to%20have%20a%20special%20event.', '_blank', 'noopener,noreferrer')
+    window.open(
+      `https://wa.me/${admin.phone}?text=Hi%20GOASAYA%2C%0A%0AI%E2%80%99d%20like%20to%20check%20availability%20for%20a%20special%20event%20at%20GOASAYA.%0AThank%20you.
+      `, '_blank', 'noopener,noreferrer')
   }
 
   return (
