@@ -173,7 +173,7 @@ export const menuData: MenuCategory[] = [
         title: "Aromatic Grilled Chicken",
         description: "Tender chicken infused with fragrant herbs and smoky flavour.",
         price: "210.000",
-        image: "/menu/foryou/aromatic-grilled-chicken.webp",
+        image: "/menu/foryou/aromatic-chicken.webp",
       },
       {
         title: "Seared Barramundi",
@@ -197,7 +197,7 @@ export const menuData: MenuCategory[] = [
         title: "Beef of Goa",
         description: "Healthy meal served with broccoli and warm rice.",
         price: "288.000",
-        image: "/menu/foryou/beef-of-goa.webp",
+        image: "/menu/foryou/beef-goa.webp",
       },
       {
         title: "The Goa Steak",
