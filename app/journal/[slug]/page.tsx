@@ -55,7 +55,7 @@ export default async function ArticlePage({
 
       <section className="relative -mt-40 md:-mt-50 px-6 pb-20">
         <article className="max-w-3xl mx-auto">
-          <h1 className="text-white mt-4 text-3xl font-style md:text-5xl font-light leading-tight">
+          <h1 className="text-white mt-6 text-3xl font-style md:text-4xl font-light leading-tight">
             {meta.title}
           </h1>
           <div className="mt-4 mb-24 h-px w-24 bg-white" />

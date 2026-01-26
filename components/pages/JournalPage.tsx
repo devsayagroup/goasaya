@@ -50,7 +50,7 @@ export default async function JournalPage() {
                                 className="object-cover"
                             />
                         </div> */}
-                        <div className="relative aspect-[8/6] md:aspect-[6/9] overflow-hidden rounded-sm bg-black/5">
+                        <div className="relative aspect-[8/6] md:aspect-[8/14] overflow-hidden rounded-sm bg-black/5">
                             <Image
                             src={journal.heroImage}
                             alt={journal.title}
@@ -60,7 +60,7 @@ export default async function JournalPage() {
                             />
                         </div>
                         <div>
-                            <h2 className="mt-2 font-style text-2xl font-light leading-snug">
+                            <h2 className="font-style text-2xl font-light leading-snug">
                                 {journal.title}
                             </h2>
 

@@ -7,6 +7,8 @@ import KonsepGoa, {
 import PilosopiGoa, {
   meta as pilosopiGoaMeta,
 } from "./menu-philosophy-goasaya.mdx"
+import MustVisit, {meta as mustVisitMeta} from "./must-visit-pik-2-jakarta.mdx"
+
 
 export const articles = [
   {
@@ -23,5 +25,10 @@ export const articles = [
     slug: pilosopiGoaMeta.slug,
     meta: pilosopiGoaMeta,
     Content: PilosopiGoa,
+  },
+  {
+    slug: mustVisitMeta.slug,
+    meta: mustVisitMeta,
+    Content: MustVisit,
   },
 ];
