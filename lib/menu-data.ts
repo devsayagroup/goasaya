@@ -34,16 +34,16 @@ export const menuData: MenuCategory[] = [
         image: "/menu/tostart/beef-salad.webp",
       },
       {
-        title: "The Goa Garden",
-        description: "Warm salmon served with crisp salad, chukka wakame and refreshing dressing.",
-        price: "180.000",
-        image: "/menu/tostart/goa-garden.webp",
-      },
-      {
         title: "Cured Salmon",
         description: "Silky, tender and firm. Rich taste yet smooth paired with delicate dill crème.",
         price: "160.000",
         image: "/menu/tostart/cured-salmon.webp",
+      },
+      {
+        title: "The Goa Garden",
+        description: "Warm salmon served with crisp salad, chukka wakame and refreshing dressing.",
+        price: "180.000",
+        image: "/menu/tostart/goa-garden.webp",
       },
     ],
   },
@@ -118,23 +118,24 @@ export const menuData: MenuCategory[] = [
         image: "/menu/pasta/chicken-pasta.webp",
       },
       {
+        title: "Beef Pappardelle",
+        description: "Tender beef tossed with herbs and rich pasta sauce.",
+        price: "220.000",
+        image: "/menu/pasta/beef-pappardelle.webp",
+      },
+      {
         title: "Seafood Marinara",
         description: "Italian classic tomato sauce with fragrant herbs and fresh seafood.",
-        price: "220.000",
+        price: "230.000",
         image: "/menu/pasta/seafood-marinara.webp",
       },
       {
         title: "Coastal White Wine",
         description: "Ocean fresh pasta with garlic and herbs, inspired by aglio olio.",
-        price: "230.000",
+        price: "255.000",
         image: "/menu/pasta/coastal-white.webp",
       },
-      {
-        title: "Beef Pappardelle",
-        description: "Tender beef tossed with herbs and rich pasta sauce.",
-        price: "255.000",
-        image: "/menu/pasta/beef-pappardelle.webp",
-      },
+    
     ],
   },
 
@@ -151,16 +152,16 @@ export const menuData: MenuCategory[] = [
         image: "/menu/foryou/beef-burger.webp",
       },
       {
-        title: "Lemon Butter Salmon",
-        description: "Perfectly seared salmon, melt-in-your-mouth texture.",
-        price: "185.000",
-        image: "/menu/foryou/lemon-salmon.webp",
-      },
-      {
         title: "Desa Fried Rice",
         description: "Expertly stir-fried with authentic Indonesian seasoning.",
-        price: "195.000",
+        price: "185.000",
         image: "/menu/foryou/desa-fried-rice.webp",
+      },
+      {
+        title: "Lemon Butter Salmon",
+        description: "Perfectly seared salmon, melt-in-your-mouth texture.",
+        price: "195.000",
+        image: "/menu/foryou/lemon-salmon.webp",
       },
       {
         title: "Minang Fried Rice",
@@ -218,23 +219,29 @@ export const menuData: MenuCategory[] = [
         price: "55.000",
         image: "/menu/dessert/putu-derry.webp",
       },
+       {
+        title: "Jiggly Mushroom",
+        description: "Chocolate and vanilla pudding with chocolate soil and anglaise.",
+        price: "115.000",
+        image: "/menu/dessert/jiggly-mushroom.webp",
+      },
       {
         title: "Coconut Shell",
         description: "Fresh coconut mousse with pineapple compote and passion fruit curd.",
-        price: "115.000",
-        image: "/menu/dessert/coconut-shell.webp",
-      },
-      {
-        title: "Jiggly Mushroom",
-        description: "Chocolate and vanilla pudding with chocolate soil and anglaise.",
         price: "125.000",
-        image: "/menu/dessert/jiggly-mushroom.webp",
+        image: "/menu/dessert/coconut-shell.webp",
       },
       {
         title: "Sekarung Kopi Emas",
         description: "Unique coffee dessert inspired by a sack of beans.",
         price: "130.000",
         image: "/menu/dessert/kopi-emas.webp",
+      },
+      {
+        title: "The Italian Glass",
+        description: "Mascarpone cream layered with espresso soaked lady fingers.",
+        price: "150.000",
+        image: "/menu/dessert/italian-glass.webp",
       },
       {
         title: "Rain Forest Wood",
@@ -245,14 +252,8 @@ export const menuData: MenuCategory[] = [
       {
         title: "Strawberry Swings",
         description: "Strawberry ruby mousse with white chocolate and yogurt gel.",
-        price: "150.000",
-        image: "/menu/dessert/strawberry-swing.webp",
-      },
-      {
-        title: "The Italian Glass",
-        description: "Mascarpone cream layered with espresso soaked lady fingers.",
         price: "160.000",
-        image: "/menu/dessert/italian-glass.webp",
+        image: "/menu/dessert/strawberry-swing.webp",
       },
       {
         title: "Zen Stone",
