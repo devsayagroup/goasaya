@@ -4,6 +4,7 @@ import Image from "next/image";
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import MoreJournals from "@/components/mdx/MoreJournals";
 import { articles } from "@/content/articles";
+
 export const runtime = "nodejs";
 
 export async function generateStaticParams() {
