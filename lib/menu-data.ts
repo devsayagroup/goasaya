@@ -61,12 +61,6 @@ export const menuData: MenuCategory[] = [
         image: "/menu/toshare/cauliflower.webp",
       },
       {
-        title: "The Crispy Paru",
-        description: "A curated Indonesian snack. May cause instant obsession.",
-        price: "96.000",
-        image: "/menu/toshare/crispy-paru.webp",
-      },
-      {
         title: "Truffle Fries",
         description: "French fries with a rich earthy flavour, comes with dipping sauce.",
         price: "120.000",
@@ -99,8 +93,14 @@ export const menuData: MenuCategory[] = [
       {
         title: "Goa Roasted Ribs",
         description: "Slow cooked beef short ribs infused with kecombrang flower and Indonesian spices.",
-        price: "430.000",
+        price: "375.000",
         image: "/menu/toshare/roasted-ribs.webp",
+      },
+      {
+        title: "Ikan Bumbu Bali",
+        description: "Fresh fish marinated in traditional Balinese spices, grilled for a smoky and fragrant finish.",
+        price: "439.000",
+        image: "/menu/toshare/ikan-bali.webp",
       },
     ],
   },
@@ -130,6 +130,12 @@ export const menuData: MenuCategory[] = [
         image: "/menu/pasta/seafood-marinara.webp",
       },
       {
+        title: "Lobster Pasta",
+        description: "Al dente pasta tossed in spicy tomato arrabbiata with fresh lobster and basil.",
+        price: "252.000",
+        image: "/menu/pasta/lobster-pasta.webp",
+      },
+      {
         title: "Coastal White Wine",
         description: "Ocean fresh pasta with garlic and herbs, inspired by aglio olio.",
         price: "255.000",
@@ -150,12 +156,6 @@ export const menuData: MenuCategory[] = [
         description: "Goa-made patty, melty cheese, Australian style. Served with fries.",
         price: "185.000",
         image: "/menu/foryou/beef-burger.webp",
-      },
-      {
-        title: "Desa Fried Rice",
-        description: "Expertly stir-fried with authentic Indonesian seasoning.",
-        price: "185.000",
-        image: "/menu/foryou/desa-fried-rice.webp",
       },
       {
         title: "Lemon Butter Salmon",
@@ -198,6 +198,12 @@ export const menuData: MenuCategory[] = [
         description: "Healthy meal served with broccoli and warm rice.",
         price: "288.000",
         image: "/menu/foryou/beef-goa.webp",
+      },
+      {
+        title: "Charcoal Octopus",
+        description: "Charcoal-grilled octopus finished with citrus cream sauce and sautéed seasonal greens.",
+        price: "349.000",
+        image: "/menu/foryou/octopus.webp",
       },
       {
         title: "The Goa Steak",
@@ -261,6 +267,18 @@ export const menuData: MenuCategory[] = [
         price: "160.000",
         image: "/menu/dessert/zen-stone.webp",
       },
+       {
+        title: "Chinese Firework",
+        description: "Milk chocolate entremets with ginger crèmeux and a sparkling orange core, layered with almond jaconde and sablé, accented with mandarin segment jelly and sesame tuile bursting symbolizing luck and prosperity for the New Year.",
+        price: "-",
+        image: "/menu/dessert/firework.webp",
+      },
+      {
+        title: "LA ROSE ÉTERNELLE",
+        description: "A rose shaped chocolate entremets with a hidden raspberry heart, resting on pistachio financier beneath a delicate veil, finished with raspberry sauce and a white chocolate caramel tuile flame.",
+        price: "-",
+        image: "/menu/dessert/rose-eternelle.webp",
+      },
     ],
   },
   
@@ -272,6 +290,8 @@ export const menuData: MenuCategory[] = [
       { title: "Espresso", description: "", price: "55.000", image: "/bev-tea.jpg" },
       { title: "Picolo", description: "", price: "55.000", image: "/bev-milktea.jpg" },
       { title: "Latte", description: "(Hot/Iced)", price: "65.000", image: "/bev-water.jpg" },
+      { title: "Mocha Latte", description: "(Hot/Iced)", price: "65.000", image: "/bev-water.jpg" },
+      { title: "Pandan Latte", description: "(Hot/Iced)", price: "65.000", image: "/bev-water.jpg" },
        { title: "Capuccino", description: "(Hot/Iced)", price: "65.000", image: "/bev-tea.jpg" },
       { title: "Americano", description: "(Hot/Iced)", price: "65.000", image: "/bev-milktea.jpg" },
       { title: "Flat White", description: "", price: "65.000", image: "/bev-water.jpg" }

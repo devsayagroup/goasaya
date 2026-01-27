@@ -41,7 +41,7 @@ export default async function JournalPage() {
                     href={`/journal/${journal.slug}`}
                     className="group block"
                     >
-                    <div className="grid md:grid-cols-[120px_1fr] gap-4 md:gap-8 px-4 items-start">
+                    <div className="grid md:grid-cols-[120px_1fr] gap-4 md:gap-8 px-4 items-center">
                         {/* <div className="relative aspect-[3/4] overflow-hidden">
                             <Image
                                 src={journal.heroImage}
@@ -50,7 +50,7 @@ export default async function JournalPage() {
                                 className="object-cover"
                             />
                         </div> */}
-                        <div className="relative aspect-[8/6] md:aspect-[8/14] overflow-hidden rounded-sm bg-black/5">
+                        <div className="relative aspect-[8/6] md:aspect-[8/12] overflow-hidden rounded-sm bg-black/5">
                             <Image
                             src={journal.heroImage}
                             alt={journal.title}
@@ -60,7 +60,7 @@ export default async function JournalPage() {
                             />
                         </div>
                         <div>
-                            <h2 className="font-style text-2xl font-light leading-snug">
+                            {/* <h2 className="font-style text-2xl font-light leading-snug">
                                 {journal.title}
                             </h2>
 
@@ -68,6 +68,16 @@ export default async function JournalPage() {
                                 <p className="mt-2 text-md max-w-xl text-black/85 leading-relaxed">
                                 {journal.metaDescription}
                                 </p>
+                            )} */}
+
+                            <h2 className="font-style text-xl font-light leading-snug mb-3">
+                                {journal.title}
+                            </h2>
+
+                            {journal.metaDescription && (
+                            <p className="max-w-xl text-black/80 leading-relaxed font-text line-clamp-2">
+                                {journal.metaDescription}
+                            </p>
                             )}
 
                             <span className="inline-block mt-2 text-xs uppercase tracking-widest underline underline-offset-4 text-black">

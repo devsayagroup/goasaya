@@ -13,7 +13,7 @@ const navLinks = [
   { name: "Menu", href: "/menu" },
   { name: "Facilities", href: "/facilities" },
   { name: "Events", href: "/events" },
-  // { name: "Journal", href: "/journal" },
+  { name: "Journal", href: "/journal" },
 ];
 
 export default function Header() {

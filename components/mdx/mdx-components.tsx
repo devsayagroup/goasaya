@@ -25,6 +25,7 @@ export const mdxComponents: MDXComponents = {
   a: ({ href, children }) => (
     <Link
       href={href ?? "#"}
+      target="_blank"
       className="text-maroon underline underline-offset-4"
     >
       {children}
