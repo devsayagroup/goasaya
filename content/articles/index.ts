@@ -16,16 +16,16 @@ export const articles = [
     meta: spotFotoMeta,
     Content: SpotFoto,
   },
-   {
-    slug: konsepGoaMeta.slug,
-    meta: konsepGoaMeta,
-    Content: KonsepGoa,
-  },
-  {
-    slug: pilosopiGoaMeta.slug,
-    meta: pilosopiGoaMeta,
-    Content: PilosopiGoa,
-  },
+  //  {
+  //   slug: konsepGoaMeta.slug,
+  //   meta: konsepGoaMeta,
+  //   Content: KonsepGoa,
+  // },
+  // {
+  //   slug: pilosopiGoaMeta.slug,
+  //   meta: pilosopiGoaMeta,
+  //   Content: PilosopiGoa,
+  // },
   {
     slug: mustVisitMeta.slug,
     meta: mustVisitMeta,
