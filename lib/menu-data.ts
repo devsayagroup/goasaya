@@ -267,18 +267,19 @@ export const menuData: MenuCategory[] = [
         price: "160.000",
         image: "/menu/dessert/zen-stone.webp",
       },
-       {
-        title: "Chinese Firework",
-        description: "Milk chocolate entremets with ginger crèmeux and a sparkling orange core, layered with almond jaconde and sablé, accented with mandarin segment jelly and sesame tuile bursting symbolizing luck and prosperity for the New Year.",
-        price: "-",
-        image: "/menu/dessert/firework.webp",
-      },
       {
         title: "LA ROSE ÉTERNELLE",
         description: "A rose shaped chocolate entremets with a hidden raspberry heart, resting on pistachio financier beneath a delicate veil, finished with raspberry sauce and a white chocolate caramel tuile flame.",
-        price: "-",
+        price: "160.000",
         image: "/menu/dessert/rose-eternelle.webp",
       },
+       {
+        title: "Chinese Firework",
+        description: "Milk chocolate entremets with ginger crèmeux and a sparkling orange core, layered with almond jaconde and sablé, accented with mandarin segment jelly and sesame tuile bursting symbolizing luck and prosperity for the New Year.",
+        price: "180.000",
+        image: "/menu/dessert/firework.webp",
+      },
+      
     ],
   },
   
