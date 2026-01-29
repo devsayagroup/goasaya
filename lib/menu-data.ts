@@ -158,7 +158,7 @@ export const menuData: MenuCategory[] = [
         image: "/menu/foryou/beef-burger.webp",
       },
       {
-        title: "Lemon Butter Salmon",
+        title: "Rice Crusted Salmon",
         description: "Perfectly seared salmon, melt-in-your-mouth texture.",
         price: "195.000",
         image: "/menu/foryou/lemon-salmon.webp",
