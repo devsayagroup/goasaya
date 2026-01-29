@@ -91,12 +91,6 @@ export const menuData: MenuCategory[] = [
         image: "/menu/toshare/oxtail-soup.webp",
       },
       {
-        title: "Goa Roasted Ribs",
-        description: "Slow cooked beef short ribs infused with kecombrang flower and Indonesian spices.",
-        price: "375.000",
-        image: "/menu/toshare/roasted-ribs.webp",
-      },
-      {
         title: "Ikan Bumbu Bali",
         description: "Fresh fish marinated in traditional Balinese spices, grilled for a smoky and fragrant finish.",
         price: "439.000",
@@ -158,12 +152,6 @@ export const menuData: MenuCategory[] = [
         image: "/menu/foryou/beef-burger.webp",
       },
       {
-        title: "Rice Crusted Salmon",
-        description: "Perfectly seared salmon, melt-in-your-mouth texture.",
-        price: "195.000",
-        image: "/menu/foryou/lemon-salmon.webp",
-      },
-      {
         title: "Minang Fried Rice",
         description: "Bold fragrant flavour with braised beef tongue.",
         price: "199.000",
@@ -194,6 +182,12 @@ export const menuData: MenuCategory[] = [
         image: "/menu/foryou/duck-confit.webp",
       },
       {
+        title: "Rice Crusted Salmon",
+        description: "Perfectly seared salmon, melt-in-your-mouth texture.",
+        price: "269.000",
+        image: "/menu/foryou/lemon-salmon.webp",
+      },
+      {
         title: "Beef of Goa",
         description: "Healthy meal served with broccoli and warm rice.",
         price: "288.000",
@@ -204,6 +198,12 @@ export const menuData: MenuCategory[] = [
         description: "Charcoal-grilled octopus finished with citrus cream sauce and sautéed seasonal greens.",
         price: "349.000",
         image: "/menu/foryou/octopus.webp",
+      },
+        {
+        title: "Goa Roasted Ribs",
+        description: "Slow cooked beef short ribs infused with kecombrang flower and Indonesian spices.",
+        price: "375.000",
+        image: "/menu/toshare/roasted-ribs.webp",
       },
       {
         title: "The Goa Steak",
@@ -368,6 +368,9 @@ export const menuData: MenuCategory[] = [
       { title: "Bird of Paradise", description: "Saccharum, Aperol, Pineapple & Citrus.", price: "150.000", image: "/cocktail-midnight.jpg" },
       { title: "Gari-gari", description: "Spice Rum, Pina Gum & Gari-Gari.", price: "150.000", image: "/cocktail-goldenpalm.jpg" },
       { title: "Ruby Island", description: "Vodca, Dry Gin, Rum, Orange Liqueur, Red Cordial.", price: "155.000", image: "/cocktail-goasunset.jpg" },
+      { title: "Moonlight", description: "Gordon's Dry Gin, Martini Dry Flower Syrup & Saline Solution.", price: "155.000", image: "/cocktail-goasunset.jpg" },
+      { title: "Madam Clair", description: "J.Legrand Co Napoleon, Kahlua Coffee Liqueur The Royal Cream Liqueur, Millac, Freshmilk & Cinnamon Powder.", price: "155.000", image: "/cocktail-goasunset.jpg" },
+      { title: "La Fleur", description: "Gin, Paasion Fruit, Lychee Fruit & Sparklin Wine.", price: "155.000", image: "/cocktail-goasunset.jpg" },
       { title: "La Seniorita", description: "Anchitos Oro, Italian Bitters, Pina Gum & Citrus.", price: "165.000", image: "/cocktail-midnight.jpg" },
       { title: "Rhubarb Brandy", description: "Brandy, Ginger, Tangerine, Sweet Sour.", price: "165.000", image: "/cocktail-goldenpalm.jpg" },
       { title: "Neglated", description: "Clarified Negroni with Choco Nutella.", price: "165.000", image: "/cocktail-goldenpalm.jpg" },
