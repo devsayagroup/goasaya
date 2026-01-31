@@ -23,7 +23,7 @@ export const menuData: MenuCategory[] = [
     items: [
       {
         title: "Shrimp Secret",
-        description: "Freshness with a touch of crunch, savour the silky parmesan sauce with a mix of avocado.",
+        description: "Freshness with a Touch of Crunch, Savour Cream Cheese Sauce with Mix of Pomegranate.",
         price: "121.000",
         image: "/menu/tostart/shrimp-secret.webp",
       },
@@ -124,8 +124,8 @@ export const menuData: MenuCategory[] = [
         image: "/menu/pasta/seafood-marinara.webp",
       },
       {
-        title: "Lobster Pasta",
-        description: "Al dente pasta tossed in spicy tomato arrabbiata with fresh lobster and basil.",
+        title: "Spicy Creamy Arrabiata",
+        description: "Al Dente Pasta Tossed in Spicy Tomato Arrabbiata with Slowcook Lobster.",
         price: "252.000",
         image: "/menu/pasta/lobster-pasta.webp",
       },
@@ -152,6 +152,12 @@ export const menuData: MenuCategory[] = [
         image: "/menu/foryou/beef-burger.webp",
       },
       {
+        title: "Seared Barramundi",
+        description: "Crisp Exterior, Tender Interior, Light Buttery Feels, Served with Grill Aromatic Rice.",
+        price: "190.000",
+        image: "/menu/foryou/barramundi.webp",
+      },
+      {
         title: "Minang Fried Rice",
         description: "Bold fragrant flavour with braised beef tongue.",
         price: "199.000",
@@ -164,11 +170,12 @@ export const menuData: MenuCategory[] = [
         image: "/menu/foryou/aromatic-chicken.webp",
       },
       {
-        title: "Seared Barramundi",
-        description: "Crisp exterior, tender interior with signature mashed potato.",
-        price: "219.000",
-        image: "/menu/foryou/barramundi.webp",
+        title: "Charcoal Octopus",
+        description: "Charcoal-Grilled Octopus, Corn Sauce, Roasted Baby Potato & Salad with Chilli Jangachi Dressing.",
+        price: "240.000",
+        image: "/menu/foryou/octopus.webp",
       },
+      
       {
         title: "Black Cod",
         description: "Exquisite seafood with subtle glazed buttery flavour.",
@@ -193,12 +200,7 @@ export const menuData: MenuCategory[] = [
         price: "288.000",
         image: "/menu/foryou/beef-goa.webp",
       },
-      {
-        title: "Charcoal Octopus",
-        description: "Charcoal-grilled octopus finished with citrus cream sauce and sautéed seasonal greens.",
-        price: "349.000",
-        image: "/menu/foryou/octopus.webp",
-      },
+    
         {
         title: "Goa Roasted Ribs",
         description: "Slow cooked beef short ribs infused with kecombrang flower and Indonesian spices.",
