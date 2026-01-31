@@ -243,12 +243,12 @@ export const menuData: MenuCategory[] = [
         price: "130.000",
         image: "/menu/dessert/kopi-emas.webp",
       },
-      {
-        title: "LA ROSE ÉTERNELLE",
-        description: "A rose shaped chocolate entremets with a hidden raspberry heart, resting on pistachio financier beneath a delicate veil, finished with raspberry sauce and a white chocolate caramel tuile flame.",
-        price: "140.000",
-        image: "/menu/dessert/rose-eternelle.webp",
-      },
+      // {
+      //   title: "LA ROSE ÉTERNELLE",
+      //   description: "A rose shaped chocolate entremets with a hidden raspberry heart, resting on pistachio financier beneath a delicate veil, finished with raspberry sauce and a white chocolate caramel tuile flame.",
+      //   price: "140.000",
+      //   image: "/menu/dessert/rose-eternelle.webp",
+      // },
       {
         title: "The Italian Glass",
         description: "Mascarpone cream layered with espresso soaked lady fingers.",
@@ -273,13 +273,12 @@ export const menuData: MenuCategory[] = [
         price: "160.000",
         image: "/menu/dessert/zen-stone.webp",
       },
-      {
-        title: "Chinese Firework",
-        description: "Milk chocolate entremets with ginger crèmeux and a sparkling orange core, layered with almond jaconde and sablé, accented with mandarin segment jelly and sesame tuile bursting symbolizing luck and prosperity for the New Year.",
-        price: "160.000",
-        image: "/menu/dessert/firework.webp",
-      },
-      
+      // {
+      //   title: "Chinese Firework",
+      //   description: "Milk chocolate entremets with ginger crèmeux and a sparkling orange core, layered with almond jaconde and sablé, accented with mandarin segment jelly and sesame tuile bursting symbolizing luck and prosperity for the New Year.",
+      //   price: "160.000",
+      //   image: "/menu/dessert/firework.webp",
+      // },
     ],
   },
   
