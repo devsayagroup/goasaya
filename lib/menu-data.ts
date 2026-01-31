@@ -152,12 +152,6 @@ export const menuData: MenuCategory[] = [
         image: "/menu/foryou/beef-burger.webp",
       },
       {
-        title: "Seared Barramundi",
-        description: "Crisp Exterior, Tender Interior, Light Buttery Feels, Served with Grill Aromatic Rice.",
-        price: "190.000",
-        image: "/menu/foryou/barramundi.webp",
-      },
-      {
         title: "Minang Fried Rice",
         description: "Bold fragrant flavour with braised beef tongue.",
         price: "199.000",
@@ -170,12 +164,17 @@ export const menuData: MenuCategory[] = [
         image: "/menu/foryou/aromatic-chicken.webp",
       },
       {
+        title: "Seared Barramundi",
+        description: "Crisp Exterior, Tender Interior, Light Buttery Feels, Served with Grill Aromatic Rice.",
+        price: "220.000",
+        image: "/menu/foryou/barramundi.webp",
+      },
+      {
         title: "Charcoal Octopus",
         description: "Charcoal-Grilled Octopus, Corn Sauce, Roasted Baby Potato & Salad with Chilli Jangachi Dressing.",
         price: "240.000",
         image: "/menu/foryou/octopus.webp",
       },
-      
       {
         title: "Black Cod",
         description: "Exquisite seafood with subtle glazed buttery flavour.",
@@ -196,12 +195,11 @@ export const menuData: MenuCategory[] = [
       },
       {
         title: "Beef of Goa",
-        description: "Healthy meal served with broccoli and warm rice.",
+        description: "Healthy meal served with broccoli and aromatic rice.",
         price: "288.000",
         image: "/menu/foryou/beef-goa.webp",
       },
-    
-        {
+      {
         title: "Goa Roasted Ribs",
         description: "Slow cooked beef short ribs infused with kecombrang flower and Indonesian spices.",
         price: "375.000",
