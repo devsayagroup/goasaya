@@ -1,9 +1,11 @@
-import { events } from "@/content/events"; 
+import { events } from "@/content/events";
 
 export const eventIndex = events.map((e) => ({
-  id: e.meta.id,
-  slug: e.meta.slug,
-  title: e.meta.title,
-  image: e.meta.heroImage,
-  homedesc: e.meta.metaDescription,
+  slug: String(e.meta.slug),
+  title: String(e.meta.title),
+  image: String(e.meta.heroImage),
+  homedesc:
+    typeof e.meta.metaDescription === "string"
+      ? e.meta.metaDescription
+      : undefined,
 }));
