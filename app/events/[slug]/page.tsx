@@ -1,66 +1,45 @@
 import { notFound } from "next/navigation";
-import type { Metadata } from "next";
-import { EVENTS, EventType } from "@/lib/event-data";
-import SingleEventPage from "@/components/pages/SingleEventPage";
+import { getEventBySlug, getEventSlugs } from "@/lib/events";
+import EventClient from "@/components/pages/EventClientPage";
+import { mdxComponents } from "@/components/mdx/mdx-components";
+import { eventMdxComponents } from "@/components/mdx/event-mdx-components";
 
-const baseUrl = "https://goasaya.com";
+export const runtime = "nodejs";
+
+export async function generateStaticParams() {
+  return getEventSlugs().map((slug) => ({ slug }));
+}
 
 export async function generateMetadata({
   params,
 }: {
   params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
+}) {
   const { slug } = await params;
-  const event = EVENTS.find((e) => e.slug === slug);
-
-  if (!event) {
-    return {
-      title: "Event Not Found | GoaSaya",
-      description: "The event you’re looking for could not be found.",
-    };
-  }
+  const event = await getEventBySlug(slug);
+  if (!event) return {};
 
   return {
-    title: `${event.title} | GoaSaya Events`,
-    description: event.homedesc,
-    openGraph: {
-      title: `${event.title} | GoaSaya`,
-      description: event.homedesc,
-      images: [
-        {
-          url: `${baseUrl}${event.content}`,
-          width: 1200,
-          height: 630,
-          alt: event.title,
-        },
-      ],
-    },
-    twitter: {
-      card: "summary_large_image",
-      title: `${event.title} | GoaSaya`,
-      description: event.homedesc,
-      images: [`${baseUrl}${event.content}`],
-    },
+    title: `Event | ${event.meta.metaTitle ?? event.meta.title}`,
+    description: event.meta.metaDescription,
   };
 }
 
-export async function generateStaticParams() {
-  return EVENTS.map((event) => ({ slug: event.slug }));
-}
-
-export default async function SingleEvent({
+export default async function EventPage({
   params,
 }: {
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const event = EVENTS.find((e) => e.slug === slug);
-
+  const event = await getEventBySlug(slug);
   if (!event) return notFound();
 
+  const Content = event.Content;
+
   return (
-    <>
-      <SingleEventPage event={event as EventType}/>
-    </>
+    <EventClient meta={event.meta}>
+      {/* ✅ MDX rendered in SERVER */}
+      <Content components={eventMdxComponents} />
+    </EventClient>
   );
 }

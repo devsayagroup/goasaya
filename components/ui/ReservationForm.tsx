@@ -31,13 +31,6 @@ export default function ReservationForm() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    console.log({eventTracking})
-
-    // trackEvent(`${eventTracking}`, {
-    //   category: 'Events Tracking',
-    //   label: eventName,
-    // })
-    
     trackEvent(eventTracking || "reservation_submit", {
       category: "Events Tracking",
       label: eventName || "General Reservation",

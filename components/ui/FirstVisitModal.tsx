@@ -72,6 +72,7 @@
 //   );
 // }
 
+
 // "use client";
 
 // import { useState, useEffect } from "react";
@@ -103,44 +104,89 @@
 //   if (!isOpen) return null;
 
 //   return (
-//     <div className="fixed inset-0 z-[9999] flex justify-center items-center bg-black/60 backdrop-blur-sm p-4">
-//       <motion.div
-//         initial={{ opacity: 0, scale: 0.85 }}
-//         animate={{ opacity: 1, scale: 1 }}
-//         transition={{ duration: 0.35, ease: "easeOut" }}
-//         className="relative w-full max-w-lg rounded-xl overflow-hidden shadow-2xl"
+//      <div
+//       className="
+//         fixed inset-0 z-[99999] px-6
+//         flex items-center justify-center
+//         bg-black/60 backdrop-blur-sm
+//         pointer-events-auto
+//       "
+//     >
+//       <div
+//         className="
+//           relative w-full max-w-sm
+//           rounded-xl bg-white shadow-2xl
+//           pointer-events-auto
+//         "
 //       >
-//         <div className="relative h-[700px] w-full">
+//         {/* Header */}
+//         <div className="flex items-center justify-between bg-transparent px-4 py-3">
+//           <h3 className="text-sm font-semibold text-maroon">
+//             Featured Events
+//           </h3>
+
+//           <button
+//             type="button"
+//             onClick={() => setIsOpen(false)}
+//             className="
+//               h-6 w-6 rounded-full
+//               border border-maroon/70
+//               text-maroon
+//               pointer-events-auto
+//             "
+//           >
+//             ✕
+//           </button>
+//         </div>
+
+//         {/* Image */}
+//         <div className="relative h-110 w-full">
 //           <Image
 //             src={highlightedEvent.image}
 //             alt={highlightedEvent.title}
 //             fill
 //             className="object-cover"
 //           />
-//           <div className="absolute inset-0 bg-black/10" />
-
-//           <div className="absolute inset-0 flex flex-col justify-center items-center text-center py-4 px-8 md:px-14">
-//             <div className="absolute bottom-6 flex flex-row gap-4">
-//               <button
-//                 onClick={() => setIsOpen(false)}
-//                 className=" px-6 py-2 bg-white text-black rounded-xl cursor-pointer text-sm md:text-base font-medium hover:bg-cream transition"
-//               >
-//                 Close
-//               </button>
-//               <Link
-//                 href={`/events/${highlightedEvent.slug}`}
-//                 role="button"
-//                 onClick={() => setIsOpen(false)}
-//                 className="inline-flex items-center justify-center px-6 py-3 
-//                           bg-white text-black rounded-xl text-sm md:text-base font-medium
-//                           hover:bg-cream transition"
-//                 >
-//                 See Event
-//               </Link>
-//             </div>
-//           </div>
 //         </div>
-//       </motion.div>
+
+//         {/* Content */}
+//         <div className="px-5 py-4 space-y-2 text-sm text-neutral-700">
+//           <h4 className="text-base font-semibold text-neutral-900">
+//             {highlightedEvent.title}
+//           </h4>
+//           <p>
+//             {highlightedEvent.homedesc}
+//           </p>
+//         </div>
+
+//         {/* Actions */}
+//         <div className="flex gap-3 px-5 pb-5">
+//           <button
+//             type="button"
+//             onClick={() => setIsOpen(false)}
+//             className="
+//               flex-1 rounded-lg 
+//               px-4 py-2 text-sm font-medium
+//               pointer-events-auto
+//             "
+//           >
+//             Not Now
+//           </button>
+
+//           <Link
+//             href={`/events/${highlightedEvent.slug}`}
+//             onClick={() => setIsOpen(false)}
+//             className="
+//               flex-1 rounded-lg bg-orange
+//               px-4 py-2 text-center
+//               text-sm font-semibold text-white
+//               pointer-events-auto
+//             "
+//           >
+//             See Event
+//           </Link>
+//         </div>
+//       </div>
 //     </div>
 //   );
 // }
@@ -148,82 +194,119 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { EVENTS, highlightedEventId } from "@/lib/event-data";
+import { motion } from "framer-motion";
+
+import { eventIndex } from "@/content/events/event-index";
+import { highlightedEventSlug } from "@/content/events";
 
 export default function FirstVisitModal() {
   const [isOpen, setIsOpen] = useState(false);
-  const [mounted, setMounted] = useState(false);
   const [hasTracked, setHasTracked] = useState(false);
 
-  const highlightedEvent = EVENTS.find((e) => e.id === highlightedEventId);
-  if (!highlightedEvent) return null;
+  const highlightedEvent = eventIndex.find(
+    (e) => e.slug === highlightedEventSlug
+  );
 
   useEffect(() => {
-    const t = setTimeout(() => setMounted(true), 400);
-    return () => clearTimeout(t);
-  }, []);
-
-  useEffect(() => {
-    if (!mounted) return;
-
     const hasVisited = localStorage.getItem("goasaya_first_visit");
 
     if (!hasVisited) {
       setIsOpen(true);
-      localStorage.setItem("goasaya_first_visit", "true");
+      if (!hasTracked) {
+        setHasTracked(true);
+        localStorage.setItem("goasaya_first_visit", "true");
+      }
     }
-  }, [mounted]);
+  }, [hasTracked]);
 
-  if (!mounted || !isOpen) return null;
+  if (!isOpen || !highlightedEvent) return null;
 
   return (
-    <div className="fixed inset-0 z-[9999] flex justify-center items-center bg-black/60 backdrop-blur-sm p-4 will-change-opacity">
-      <motion.div
-        initial={{ opacity: 0, scale: 0.85 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.35, ease: "easeOut" }}
-        className="relative rounded-lg overflow-hidden shadow-2xl will-change-transform"
+    <div
+      className="
+        fixed inset-0 z-[99999] px-6
+        flex items-center justify-center
+        bg-black/60 backdrop-blur-sm
+        pointer-events-auto
+      "
+    >
+      <div
+        className="
+          relative w-full max-w-sm
+          rounded-xl bg-white shadow-2xl
+          pointer-events-auto
+        "
       >
-        <div className="relative mx-auto h-[480px] w-[280px] rounded-xl md:h-[520px] md:w-[320px]">
+        {/* Header */}
+        <div className="flex items-center justify-between bg-transparent px-4 py-3">
+          <h3 className="text-sm font-semibold text-maroon">
+            Featured Events
+          </h3>
+
+          <button
+            type="button"
+            onClick={() => setIsOpen(false)}
+            className="
+              h-6 w-6 rounded-full
+              border border-maroon/70
+              text-maroon
+              pointer-events-auto
+            "
+          >
+            ✕
+          </button>
+        </div>
+
+        {/* Image */}
+        <div className="relative h-110 w-full">
           <Image
             src={highlightedEvent.image}
             alt={highlightedEvent.title}
-            width={280}
-            height={360}
-            loading="lazy"
-            priority={false}
-            fetchPriority="low"
-            quality={70}
-            sizes="(max-width: 768px) 80vw, 280px"
-            className="w-full h-full object-cover"
+            fill
+            className="object-cover"
           />
-
-          <div className="absolute inset-0 bg-black/10" />
-
-          <div className="absolute inset-0 flex flex-col justify-end items-center pb-5">
-            <div className="flex flex-row gap-3 w-full px-4">
-              <button
-                onClick={() => setIsOpen(false)}
-                className="flex-1 px-4 py-2 cursor-pointer border border-white text-white backdrop-blur-xs rounded-xl text-sm font-medium transition"
-              >
-                Close
-              </button>
-
-              <Link
-                href={`/events/${highlightedEvent.slug}`}
-                onClick={() => setIsOpen(false)}
-                className="flex-1 inline-flex items-center justify-center px-4 py-2 bg-white text-black rounded-xl text-sm font-medium hover:bg-neutral-200 transition"
-              >
-                See Event
-              </Link>
-            </div>
-          </div>
         </div>
 
-      </motion.div>
+        {/* Content */}
+        <div className="px-5 py-4 space-y-2 text-sm text-neutral-700">
+          <h4 className="text-base font-semibold text-neutral-900">
+            {highlightedEvent.title}
+          </h4>
+          <p>
+            {highlightedEvent.homedesc}
+          </p>
+        </div>
+
+        {/* Actions */}
+        <div className="flex gap-3 px-5 pb-5">
+          <button
+            type="button"
+            onClick={() => setIsOpen(false)}
+            className="
+              flex-1 rounded-lg 
+              px-4 py-2 text-sm font-medium
+              pointer-events-auto
+            "
+          >
+            Not Now
+          </button>
+
+          <Link
+            href={`/events/${highlightedEvent.slug}`}
+            onClick={() => setIsOpen(false)}
+            className="
+              flex-1 rounded-lg bg-orange
+              px-4 py-2 text-center
+              text-sm font-semibold text-white
+              pointer-events-auto
+            "
+          >
+            See Event
+          </Link>
+        </div>
+      </div>
     </div>
   );
 }

@@ -10,7 +10,7 @@ export interface EventType {
   desc: string;
 }
 
-export const highlightedEventId = 4; 
+export const highlightedEventId = 5; 
 
 export const EVENTS = [
   {
@@ -111,6 +111,37 @@ export const EVENTS = [
 
       <i>RSVP Only | Limited Seats Available</i>
     `,
-  }
+  },
+  {
+    id: 5,
+    title: "Valentine at GoaSaya",
+    subtitle: "A Romantic Dining Experience",
+    tracking: "valentine_goasaya_2026",
+    slug: "valentine-at-goasaya",
+    date: "13 – 15 February 2026",
+    time: "All Day (Dining Sessions)",
+    image: "/events/valentine/1.png",
+    content: [
+      "/events/valentine/1.png",
+      "/events/valentine/2.png",
+      "/events/valentine/3.png",
+    ],
+    homedesc: `A romantic celebration of love, creativity, and intimate moments. Designed for couples to connect beyond dining.`,
+    desc: `
+      Celebrate love this <b>13 – 15 February</b> with an elevated Valentine experience at <b>GoaSaya</b> — where romance meets art, creativity, and indulgent dining.<br/><br/>
+
+      <b>Special Valentine Activities:</b><br/>
+      ❤️❤️ <b>Clay Polaroid Photo Holder Workshop</b><br/>
+      <i>14 February</i> — Create a handmade clay polaroid holder together and capture your moment of love.<br/><br/>
+
+      🎨🍷 <b>Painting & Wine Experience</b><br/>
+      <i>15 February</i> — Paint side by side on connected canvases while enjoying a curated wine experience, guided and intimate.<br/><br/>
+
+      Each experience is thoughtfully designed for couples seeking something more than just dinner — a moment to remember, create, and share.<br/><br/>
+
+      <i>RSVP Only | Limited Seats Available</i>
+    `
+}
+
 
 ];

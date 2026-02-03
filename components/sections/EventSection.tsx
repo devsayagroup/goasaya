@@ -4,15 +4,18 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { EVENTS } from "@/lib/event-data";
+import { getEventIndex } from "@/lib/event-index";
 
-export default function EventsSection() {
-  const sortedEvents = [...EVENTS].sort((a, b) => {
-    const idA = Number(a.id);
-    const idB = Number(b.id);
-    return idB - idA; 
-  });
+export default async function EventsSection() {
+  const events = await getEventIndex();
 
-  const latestEvents = sortedEvents.slice(0, 3);
+  // const sortedEvents = [events].sort((a, b) => {
+  //   const idA = Number(a.id);
+  //   const idB = Number(b.id);
+  //   return idB - idA; 
+  // });
+
+  const filterEvents = events.slice(0, 3);
 
   return (
     <section className="container mx-auto bg-cream text-black py-24 px-8 md:px-16 overflow-hidden">
@@ -41,7 +44,7 @@ export default function EventsSection() {
       </div>
 
       <div className="grid md:grid-cols-4 gap-8">
-        {latestEvents.map((event, idx) => (
+        {filterEvents.map((event, idx) => (
           <motion.div
             key={idx}
             initial={{ opacity: 0, y: idx % 2 === 0 ? 60 : -60 }}
@@ -70,7 +73,7 @@ export default function EventsSection() {
               <h1 className="mt-6 text-xl font-semibold font-style uppercase">
                 {event.title}
               </h1>
-              <h3 className="text-lg font-text">{event.subtitle}</h3>
+              <h3 className="text-lg font-text">{event.metaDescription}</h3>
               <p className="text-black/80 text-sm mt-1 font-text">
                 {event.date}
               </p>
