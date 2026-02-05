@@ -1,18 +1,11 @@
 import { google } from "googleapis";
 
-if (
-  !process.env.GOOGLE_SHEETS_CLIENT_EMAIL ||
-  !process.env.GOOGLE_SHEETS_PRIVATE_KEY
-) {
-  throw new Error("Missing Google service account env vars");
+export function getSheetsClient() {
+  const auth = new google.auth.JWT({
+    email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
+    key: process.env.GOOGLE_SHEETS_PRIVATE_KEY?.replace(/\\n/g, "\n"),
+    scopes: ["https://www.googleapis.com/auth/spreadsheets"],
+  });
+
+  return google.sheets({ version: "v4", auth });
 }
-
-const auth = new google.auth.JWT({
-  email: process.env.GOOGLE_SHEETS_CLIENT_EMAIL,
-  key: process.env.GOOGLE_SHEETS_PRIVATE_KEY.replace(/\\n/g, "\n"),
-  scopes: [
-    "https://www.googleapis.com/auth/spreadsheets",
-  ],
-});
-
-export const sheets = google.sheets({ version: "v4", auth });
