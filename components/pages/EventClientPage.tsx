@@ -1,6 +1,5 @@
 "use client";
 
-import clsx from "clsx";
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
@@ -33,8 +32,7 @@ export default function EventClient({
                 transition={{ duration: 0.8 }}
                 className="max-w-6xl mx-auto"
             >
-            {/* HERO */}
-            <div className="relative w-full h-[140px] md:h-[200px] overflow-hidden rounded-md shadow-lg mb-10">
+            <div className="relative w-full h-[140px] md:h-[200px] overflow-hidden rounded-md shadow-lg mb-6 md:mb-10">
             <Image
                 src={meta.background}
                 alt={meta.title}
@@ -55,10 +53,8 @@ export default function EventClient({
             </div>
             </div>
 
-            {/* CONTENT GRID */}
-            <div className="flex flex-col md:flex-row gap-6 md:gap-12  text-left font-text max-w-7xl">
+            <div className="flex flex-col md:flex-row gap-6 text-left font-text max-w-7xl">
 
-            {/* IMAGE content */}
             {meta.content && (
                 <div className="flex flex-col gap-4 flex-shrink-0">
                 {Array.isArray(meta.content) ? (
@@ -67,17 +63,19 @@ export default function EventClient({
                     title={meta.title}
                     />
                 ) : (
-                    <Image
-                    src={meta.content}
-                    alt={meta.title}
-                    width={600}
-                    height={600}
-                    className="
-                        rounded-md object-cover 
-                        w-[500px] h-auto 
-                        md:w-[900px]
-                    "
-                    />
+                    <div className="relative aspect-[6/6] md:aspect-[3/4] rounded-md overflow-hidden">
+                        <Image
+                        src={meta.content}
+                        alt={meta.title}
+                        width={600}
+                        height={600}
+                        className="
+                            rounded-md object-cover 
+                            w-[500px] h-auto 
+                            md:w-[500px]
+                        "
+                        />
+                    </div>
                 )}
                 </div>
             )}

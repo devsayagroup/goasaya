@@ -28,7 +28,7 @@ function ModalGallery({ content, title }: ModalGalleryProps) {
         className={`grid gap-4 ${
           images.length > 1
             ? "grid-cols-3"
-            : "grid-cols-2 md:grid-cols-1"
+            : "grid-cols-1"
         }`}
       >
         {images.map((img, i) => (
@@ -40,8 +40,8 @@ function ModalGallery({ content, title }: ModalGalleryProps) {
             <Image
               src={img}
               alt={`${title} - image ${i + 1}`}
-              width={220}
-              height={220}
+              width={250}
+              height={250}
               className="rounded-md object-cover w-full h-auto transition-transform duration-300 group-hover:scale-105"
             />
 

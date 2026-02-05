@@ -10,6 +10,21 @@ export async function generateStaticParams() {
   return getEventSlugs().map((slug) => ({ slug }));
 }
 
+// export async function generateMetadata({
+//   params,
+// }: {
+//   params: Promise<{ slug: string }>;
+// }) {
+//   const { slug } = await params;
+//   const event = await getEventBySlug(slug);
+//   if (!event) return {};
+
+//   return {
+//     title: `Event | ${event.meta.metaTitle ?? event.meta.title}`,
+//     description: event.meta.metaDescription,
+//   };
+// }
+
 export async function generateMetadata({
   params,
 }: {
@@ -19,11 +34,49 @@ export async function generateMetadata({
   const event = await getEventBySlug(slug);
   if (!event) return {};
 
+  const meta = event.meta;
+
+  const title = meta.metaTitle ?? meta.title;
+  const description = meta.metaDescription ;
+
+  const image = meta.heroImage
+    ? `${process.env.NEXT_PUBLIC_SITE_URL}${meta.heroImage}`
+    : `${process.env.NEXT_PUBLIC_SITE_URL}/images/og-default.jpg`;
+
+  const url = `${process.env.NEXT_PUBLIC_SITE_URL}/events/${meta.slug}`;
+
   return {
-    title: `Event | ${event.meta.metaTitle ?? event.meta.title}`,
-    description: event.meta.metaDescription,
+    title: `Event | ${title}`,
+    description,
+
+    alternates: {
+      canonical: url,
+    },
+
+    openGraph: {
+      title,
+      description,
+      url,
+      type: "website",
+      images: [
+        {
+          url: image,
+          width: 1200,
+          height: 630,
+          alt: meta.title,
+        },
+      ],
+    },
+
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: [image],
+    },
   };
 }
+
 
 export default async function EventPage({
   params,
