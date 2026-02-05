@@ -9,10 +9,8 @@ export async function POST(req: Request) {
 
     const {
       event,
-      activity,
       date,
       time,
-      location,
       name,
       phone,
       pax,
@@ -31,10 +29,8 @@ export async function POST(req: Request) {
           [
             new Date().toISOString(),
             event,
-            activity,
             date,
             time,
-            location,
             name,
             phone,
             pax,

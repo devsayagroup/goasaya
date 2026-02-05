@@ -163,7 +163,7 @@ export default function JournalClient({
           {journals.map((j) => (
             <Link key={j.slug} href={`/journal/${j.slug}`} className="group">
               <div className="grid md:grid-cols-[120px_1fr] gap-8 items-center">
-                <div className="relative aspect-[8/12] overflow-hidden bg-black/5">
+                <div className="relative aspect-[9/6] md:aspect-[3/4] rounded-md overflow-hidden bg-black/5">
                   <Image
                     src={j.heroImage}
                     alt={j.title}
