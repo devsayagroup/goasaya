@@ -1,10 +1,11 @@
 import Link from "next/link";
 import EventCTA from "./eventCTA";
-
+import { EventAccordion } from "./eventAccordion";
 import type { MDXComponents } from "mdx/types";
 
 export const eventMdxComponents: MDXComponents = {
     EventCTA,
+    EventAccordion,
     a: ({ href, children }) => (
         <Link
         href={href ?? "#"}

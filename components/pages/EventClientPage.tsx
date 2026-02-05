@@ -42,8 +42,8 @@ export default function EventClient({
                 className="object-cover"
                 priority
             />
-            <div className="absolute inset-0 bg-black/10 md:bg-black/15" />
-            <div className="absolute bottom-6 left-4 md:left-8 flex flex-col">
+            <div className="absolute inset-0 bg-black/55 md:bg-black/55" />
+            <div className="absolute bottom-6 left-4 md:left-8 flex flex-col text-white">
                 <h1 className="text-2xl md:text-5xl mb-2 font-style  uppercase">
                 {meta.title}
                 </h1>
@@ -56,7 +56,7 @@ export default function EventClient({
             </div>
 
             {/* CONTENT GRID */}
-            <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-left font-text max-w-7xl">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-12  text-left font-text max-w-7xl">
 
             {/* IMAGE content */}
             {meta.content && (
@@ -83,12 +83,12 @@ export default function EventClient({
             )}
 
             {/* TEXT + CTA */}
-            <div className="flex-1">
-                <div className="rounded-xl bg-white/50 p-4 md:py-6 md:px-8">
-                    <div className="prose prose-invert max-w-3xl text-lg leading-relaxed">
+            <div className="flex-1 md:px-8">
+                {/* <div className="rounded-xl bg-white/20 p-4 md:py-6 md:px-8"> */}
+                    <div className="prose prose-invert max-w-2xl text-lg leading-relaxed">
                     {children}
                     </div>
-                </div>
+                {/* </div> */}
 
                 <div className="pt-6 flex flex-col items-start gap-6">
                 {meta.cta && (

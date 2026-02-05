@@ -4,10 +4,10 @@ export const meta = {
   slug: "clay-photo-holder-workshop",
   tracking: "valentine_clay_workshop_rsvp",
   heroImage: "/events/valentine/clay-holder.webp",
-  background: "/events/valentine/bg.webp",
+  background: "/images/bg-goa2.png",
   content: ["/events/valentine/clay-holder.webp"],
   date: "14 February 2026",
-  time: "11:00 AM - 02:00 PM",
+  time: "11:00 AM - 01:00 PM",
   location: "Glass Room",
   price: 450000,
   capacity: 24,
@@ -24,36 +24,96 @@ export const meta = {
   metaDescription: "Create a handmade clay photo holder together this Valentine’s Day at GoaSaya.",
 };
 
-Create a handmade clay polaroid holder together and capture a moment worth keeping 
-a tactile memory crafted side by side in an intimate setting.
+Create something meaningful together this Valentine’s Day. Slow, tactile, and deeply personal.
+<br />
+
+The **Clay Photo Holder Workshop** invites couples to work with their hands, shaping clay into a keepsake that holds not just a photograph, but a shared moment in time.
 
 <br />
 
-### Experience Details
-- **Date:** 14 February 2026
-- **Time:** 12:00 PM - 02:00 PM
-- **Location:** Glass Room
-- **Availability:** 24 Pax · 12 Couples
-- **Price:** IDR **450.000 / pax**  
-  <span className="text-sm text-black/60">
-    Inclusive of curated meal & drinks
-  </span>
+<EventAccordion
+  items={[
+    {
+      title: "Date, Time & Location",
+      children: (
+        <>
+          <p><strong>Date:</strong> Saturday, 14 February 2026</p>
+          <p><strong>Time:</strong> 11:00 AM – 01:00 PM</p>
+          <p>
+            <strong>Location:</strong> GoaSaya – Glass Room<br />
+            <a href="https://share.google/ioljZe8EVfE67ygBn">View on Google Maps</a>
+          </p>
+          <p className="text-sm text-black/60">
+            Beginner-friendly session — no prior clay or crafting experience required.
+          </p>
+        </>
+      ),
+    },
+    {
+      title: "What You Will Create",
+      children: (
+        <>
+          <p>
+            In this guided workshop, you and your partner will create a
+            <strong> handmade clay photo holder</strong>, shaped and textured entirely
+            by hand.
+          </p>
+
+          <p>
+            The process emphasizes presence over perfection — encouraging conversation,
+            laughter, and quiet focus as you create side by side.
+          </p>
+
+          <ul className="list-disc pl-5">
+            <li>Hands-on clay shaping and molding</li>
+            <li>Guided workshop with on-site facilitator</li>
+            <li>All clay tools and materials provided</li>
+            <li>A finished photo holder to take home</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: "Pricing & Availability",
+      children: (
+        <>
+          <p><strong>Price:</strong> IDR 450.000 / pax</p>
+          <p><strong>Availability:</strong> 24 Pax</p>
+          <p className="text-sm text-black/60">
+            Price includes workshop materials, curated meal, and drinks.
+          </p>
+        </>
+      ),
+    },
+    {
+      title: "Notes & Policies",
+      children: (
+        <>
+          <p>
+            Seats are intentionally limited to preserve a calm, intimate workshop
+            atmosphere.
+          </p>
+          <p>
+            Reservations are non-refundable.  
+            Class credit may be issued with prior notice.
+          </p>
+        </>
+      ),
+    },
+  ]}
+/>
 
 <br />
-
 
 <EventCTA
   eventSlug={meta.slug}
   activity={{
     id: "clay-photo-holder",
-    price: 450000
+    price: 450000,
   }}
-  tracking="valentine_clay_workshop_rsvp"
+  tracking="valentine_clay_holder_rsvp"
 >
-  Reserve Clay Workshop
+  Reserve Clay Photo Holder Workshop
 </EventCTA>
 
-<br />
-<br />
 
-<i>RSVP Only · Limited Seats Available</i>

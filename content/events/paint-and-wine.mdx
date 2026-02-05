@@ -4,17 +4,17 @@ export const meta = {
   slug: "paint-and-wine-workshop",
   tracking: "valentine_paint_wine_rsvp",
   heroImage: "/events/valentine/paint-wine.webp",
-  background: "/events/valentine/bg.webp",
+  background: "/events/valentine/paint&wine.png",
   content: ["/events/valentine/paint-wine.webp"],
   date: "15 February 2026",
-  time: "12:00 PM",
+  time: "11:00 AM - 01:00 PM",
   price: 600000,
   capacity: 24,
   theme: {
     background: "#fbf1f6",
-    text: "#800000",
+    text: "#3c0303",
     cta: {
-      color: "#800000",
+      color: "#690303",
       hoverColor: "#800000",
       text: "#ffffff",
     },
@@ -23,19 +23,82 @@ export const meta = {
   metaDescription: "A romantic Paint & Wine workshop for couples at GoaSaya this Valentine’s Day.",
 };
 
-Paint side by side on connected canvases while enjoying a curated wine experience 
-relaxed, expressive, and quietly romantic.
-
+Paint side by side on connected canvases while enjoying a curated wine experience **relaxed, expressive, and quietly romantic**.
 <br />
 
-### Experience Details
-- **Date:** 15 February 2026
-- **Time:** 12:00 PM
-- **Availability:** 24 Pax · 12 Couples
-- **Price:** IDR **600.000 / pax**  
-  <span className="text-sm text-black/60">
-    Inclusive of all painting tools & materials
-  </span>
+This intimate session invites you to slow down, sip thoughtfully, and create something meaningful together.
+<br />
+
+<EventAccordion
+  items={[
+    {
+      title: "Date, Time & Location",
+      children: (
+        <>
+          <p><strong>Date:</strong> Sunday, 15 February 2026</p>
+          <p><strong>Time:</strong> 11:00 AM - 01:00 PM</p>
+          <p>
+            <strong>Location:</strong> GoaSaya – Glass Room<br />
+            <a href="https://share.google/ioljZe8EVfE67ygBn">View on Google Maps</a>
+          </p>
+          <p className="text-sm text-black/60">
+            This session is suitable for beginners — no prior painting experience required.
+          </p>
+        </>
+      ),
+    },
+    {
+      title: "What You Will Experience",
+      children: (
+        <>
+          <p>
+            In this Paint & Wine session, you’ll create a
+            <strong> diptych-style artwork</strong> — painting either a full canvas
+            individually or half of a connected scene with your partner.
+          </p>
+
+          <p>
+            The featured artwork captures a serene riverside moment at golden hour,
+            with warm reflections, gentle brushstrokes, and a romantic color palette.
+          </p>
+
+          <ul className="list-disc pl-5">
+            <li>Guided painting session with on-site facilitator</li>
+            <li>All painting tools & materials provided</li>
+            <li>Curated wine selection during the session</li>
+            <li>A finished artwork to take home</li>
+          </ul>
+        </>
+      ),
+    },
+    {
+      title: "Pricing & Availability",
+      children: (
+        <>
+          <p><strong>Price:</strong> IDR 600.000 / pax</p>
+          <p><strong>Availability:</strong> 24 Pax</p>
+          <p className="text-sm text-black/60">
+            Price includes painting materials and wine pairing.
+          </p>
+        </>
+      ),
+    },
+    {
+      title: "Notes & Policies",
+      children: (
+        <>
+          <p>
+            Seats are limited to maintain an intimate experience.
+          </p>
+          <p>
+            In case of cancellation, refunds are not available.
+            Class credit may be issued with prior notice.
+          </p>
+        </>
+      ),
+    },
+  ]}
+/>
 
 <br />
 
@@ -50,7 +113,3 @@ relaxed, expressive, and quietly romantic.
   Reserve Paint & Wine Workshop
 </EventCTA>
 <br />
-<br />
-
-
-<i>RSVP Only · Limited Seats Available</i>

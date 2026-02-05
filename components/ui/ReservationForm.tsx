@@ -208,11 +208,11 @@ export default function ReservationForm() {
         {/* Submit */}
         <div className="pt-6 text-center">
           <motion.button
-            whileHover={!isSubmitting ? { scale: 1.05 } : undefined}
-            whileTap={!isSubmitting ? { scale: 0.97 } : undefined}
+            whileHover={!isSubmitting ? { scale: 1.01 } : undefined}
+            whileTap={!isSubmitting ? { scale: 0.98 } : undefined}
             type="submit"
             disabled={isSubmitting || isFull}
-            className={`w-full md:w-auto px-10 py-3 rounded-md uppercase text-sm tracking-wide ${
+            className={`w-full md:w-auto px-10 py-3 rounded-md  cursor-pointer font-style text-sm tracking-wide ${
               isSubmitting || isFull
                 ? "bg-gray-600 cursor-not-allowed"
                 : "bg-[#FFE3AF] text-black"
