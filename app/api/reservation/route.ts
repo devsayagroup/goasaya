@@ -1,6 +1,8 @@
 import { NextResponse } from "next/server";
 import { getSheetsClient } from "@/lib/googleSheets";
 
+export const runtime = "nodejs";
+
 export async function POST(req: Request) {
   try {
     const body = await req.json();
@@ -22,7 +24,7 @@ export async function POST(req: Request) {
 
     await sheets.spreadsheets.values.append({
       spreadsheetId: process.env.GOOGLE_SHEETS_SPREADSHEET_ID,
-      range: "Sheet1!A1",
+      range: "Sheet1!A:J",
       valueInputOption: "USER_ENTERED",
       requestBody: {
         values: [
