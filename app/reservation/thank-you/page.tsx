@@ -111,11 +111,11 @@ export default function ReservationThankYouPage() {
           priority
           className="object-cover object-center brightness-75"
         />
-        <div className="absolute inset-0 bg-black/90" />
+        <div className="absolute inset-0 bg-black/55" />
       </div>
 
-      <div className="relative container px-6 md:px-14 py-28">
-        <div className="max-w-xl mx-auto w-full bg-black/75 rounded-xl p-10 md:p-12 text-center">
+      <div className="relative mx-auto container px-6 md:px-14 py-28">
+        <div className="max-w-xl mx-auto w-full bg-black/85 rounded-xl p-10 md:p-12 text-center">
 
           {/* Header */}
           <h1 className="text-3xl md:text-4xl font-style mb-3">
