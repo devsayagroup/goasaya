@@ -24,7 +24,7 @@ export default async function ArticlePage({
 
   return (
     <main className="bg-cream">
-      <section className="relative max-w-7xl mx-auto h-[35vh] mt-28">
+      <section className="relative max-w-7xl mx-auto h-[35vh] mt-12 md:mt-28">
         <Image
           src={meta.heroImage}
           alt={meta.title}

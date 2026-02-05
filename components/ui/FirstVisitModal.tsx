@@ -226,7 +226,7 @@ export default function FirstVisitModal() {
   return (
     <div
       className="
-        fixed inset-0 z-[99999] px-6
+        fixed inset-0 z-[99999] px-12
         flex items-center justify-center
         bg-black/60 backdrop-blur-sm
         pointer-events-auto
@@ -260,7 +260,7 @@ export default function FirstVisitModal() {
         </div>
 
         {/* Image */}
-        <div className="relative h-110 w-full">
+        <div className="relative h-80 w-full">
           <Image
             src={highlightedEvent.image}
             alt={highlightedEvent.title}
@@ -270,8 +270,8 @@ export default function FirstVisitModal() {
         </div>
 
         {/* Content */}
-        <div className="px-5 py-4 space-y-2 text-sm text-neutral-700">
-          <h4 className="text-base font-semibold text-neutral-900">
+        <div className="px-5 py-4 text-sm text-neutral-700 mb-2">
+          <h4 className="text-base font-style text-xl mb-1 font-semibold text-maroon">
             {highlightedEvent.title}
           </h4>
           <p>

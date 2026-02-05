@@ -23,7 +23,7 @@ export default function EventClient({
                 "--cta-hover": meta.theme?.cta?.hoverColor,
                 "--cta-text": meta.theme?.cta?.text,
             } as React.CSSProperties}
-            className="min-h-screen bg-[var(--event-bg)] text-[var(--event-text)] px-6 md:px-16 py-24"
+            className="min-h-screen bg-[var(--event-bg)] text-[var(--event-text)] px-6 md:px-16 py-24 md:py-28"
             >
     
             <motion.div
