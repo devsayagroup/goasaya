@@ -4,6 +4,7 @@ import Image from "next/image";
 import { mdxComponents } from "@/components/mdx/mdx-components";
 import MoreJournals from "@/components/mdx/MoreJournals";
 import { articles } from "@/content/articles";
+import type { JournalMeta } from "@/content/articles/types";
 
 export const runtime = "nodejs";
 
@@ -35,7 +36,7 @@ export default async function ArticlePage({
   const article = await getArticleBySlug(slug);
   if (!article) return notFound();
   const Content = article.Content;
-  const meta = article.meta
+  const meta = article.meta as JournalMeta;
 
   const current = articles.find(a => a.slug === slug);
   if (!current) return null;
@@ -65,9 +66,9 @@ export default async function ArticlePage({
           </div>
         </article>
       </section>
-
+      
       <MoreJournals
-        journals={articles.map(a => a.meta)}
+        journals={articles.map(a => a.meta as JournalMeta)}
         currentSlug={slug}
       />
     </main>
