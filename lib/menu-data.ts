@@ -124,7 +124,7 @@ export const menuData: MenuCategory[] = [
         image: "/menu/pasta/seafood-marinara.webp",
       },
       {
-        title: "Spicy Creamy Arrabiata",
+        title: "Lobster Pasta",
         description: "Al Dente Pasta Tossed in Spicy Tomato Arrabbiata with Slowcook Lobster.",
         price: "252.000",
         image: "/menu/pasta/lobster-pasta.webp",
