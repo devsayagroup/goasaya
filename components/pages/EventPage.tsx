@@ -212,10 +212,6 @@ export default function EventsPage({ events }: { events: any[] }) {
                   <p className="text-xs font-text text-white/70 mt-1">
                     {event.metaDescription}
                   </p>
-                  <p className="text-xs text-white/80 mt-4 line-clamp-3">
-                    {event.homedesc}
-                  </p>
-
                   <Link
                     href={`/events/${event.slug}`}
                     className="inline-block mt-4 underline text-sm"

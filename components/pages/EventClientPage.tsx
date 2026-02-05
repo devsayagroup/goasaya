@@ -34,7 +34,7 @@ export default function EventClient({
                 className="max-w-6xl mx-auto"
             >
             {/* HERO */}
-            <div className="relative w-full h-[200px] md:h-[200px] overflow-hidden rounded-md shadow-lg mb-10">
+            <div className="relative w-full h-[140px] md:h-[200px] overflow-hidden rounded-md shadow-lg mb-10">
             <Image
                 src={meta.background}
                 alt={meta.title}
@@ -44,11 +44,11 @@ export default function EventClient({
             />
             <div className="absolute inset-0 bg-black/10 md:bg-black/15" />
             <div className="absolute bottom-6 left-4 md:left-8 flex flex-col">
-                <h1 className="text-2xl md:text-5xl mb-2 font-style text-white uppercase">
+                <h1 className="text-2xl md:text-5xl mb-2 font-style  uppercase">
                 {meta.title}
                 </h1>
                 {meta.date && (
-                <p className="text-white font-semibold">
+                <p className=" font-semibold">
                     {meta.date}
                 </p>
                 )}
@@ -56,7 +56,7 @@ export default function EventClient({
             </div>
 
             {/* CONTENT GRID */}
-            <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-left font-text max-w-5xl">
+            <div className="flex flex-col md:flex-row gap-6 md:gap-12 text-left font-text max-w-7xl">
 
             {/* IMAGE content */}
             {meta.content && (
@@ -70,12 +70,12 @@ export default function EventClient({
                     <Image
                     src={meta.content}
                     alt={meta.title}
-                    width={500}
-                    height={500}
+                    width={600}
+                    height={600}
                     className="
                         rounded-md object-cover 
                         w-[500px] h-auto 
-                        md:w-[420px] lg:w-[480px]
+                        md:w-[900px]
                     "
                     />
                 )}
@@ -84,8 +84,10 @@ export default function EventClient({
 
             {/* TEXT + CTA */}
             <div className="flex-1">
-                <div className="prose prose-invert max-w-2xl text-lg leading-relaxed">
-                {children}
+                <div className="rounded-xl bg-white/50 p-4 md:py-6 md:px-8">
+                    <div className="prose prose-invert max-w-3xl text-lg leading-relaxed">
+                    {children}
+                    </div>
                 </div>
 
                 <div className="pt-6 flex flex-col items-start gap-6">

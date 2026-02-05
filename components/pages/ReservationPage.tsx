@@ -16,7 +16,7 @@ export default function ReservationPage() {
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-black/75"></div>
             </div>
-            <div className="relative container mx-auto px-6 md:px-14 py-30">
+            <div className="relative container mx-auto px-6 md:px-14 py-28">
                 <ReservationForm/>
             </div>
         </section>

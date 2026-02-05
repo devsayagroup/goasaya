@@ -73,10 +73,10 @@ export default async function EventsSection() {
               <h1 className="mt-6 text-xl font-semibold font-style uppercase">
                 {event.title}
               </h1>
-              <h3 className="text-lg font-text">{event.metaDescription}</h3>
-              <p className="text-black/80 text-sm mt-1 font-text">
+              <p className="text-black text-sm mt-1 font-text">
                 {event.date}
               </p>
+              <h3 className="text-sm text-black/80 mt-2 font-text">{event.metaDescription}</h3>
             </Link>
           </motion.div>
         ))}

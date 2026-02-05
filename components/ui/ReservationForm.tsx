@@ -1,406 +1,233 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { useMemo, useState } from "react";
+import { motion } from "framer-motion";
+import { eventIndex } from "@/content/events/event-index";
 import { trackEvent } from "@/lib/analytics";
 
 export default function ReservationForm() {
   const searchParams = useSearchParams();
-  const eventName = searchParams.get("event");
-  const eventDate = searchParams.get("date");
-  const eventTime = searchParams.get("time");
-  const eventTracking = searchParams.get("tracking");
+  const slug = searchParams.get("event");
+  const priceParam = searchParams.get("price");
+  const priceFromUrl = priceParam ? Number(priceParam) : undefined;
 
-  const isEventReservation = !!eventName; 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [isSuccess, setIsSuccess] = useState(false);
+
+  const event = useMemo(
+    () => eventIndex.find((e) => e.slug === slug),
+    [slug]
+  );
+
+  if (!event) {
+    return (
+      <section className="py-24 text-center text-gray-400">
+        Invalid reservation link
+      </section>
+    );
+  }
+
+  const { remainingSeats, isFull } = event;
+
+  const pricePerPax =
+    typeof priceFromUrl === "number" && !Number.isNaN(priceFromUrl)
+      ? priceFromUrl
+      : event.price;
 
   const [form, setForm] = useState({
     name: "",
     phone: "",
-    date: "",
-    time: "",
-    smoking: "No",
-    pax: "",
+    pax: 1,
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setForm({ ...form, [name]: value });
-  };
+  const totalPrice =
+    typeof pricePerPax === "number"
+      ? pricePerPax * form.pax
+      : undefined;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (isFull || form.pax > remainingSeats || isSubmitting) return;
 
-    trackEvent(eventTracking || "reservation_submit", {
-      category: "Events Tracking",
-      label: eventName || "General Reservation",
-      pax: form.pax ? Number(form.pax) : 1,
+    setIsSubmitting(true);
+
+    trackEvent(event.tracking ?? "event_reservation_submit", {
+      event: event.title,
+      pax: form.pax,
+      price: pricePerPax,
+      total: totalPrice,
     });
 
-    const lines = [];
-
-    lines.push("*New Reservation Request - GOASAYA*");
-    lines.push("-----------------------------------");
-
-    // Event info (if applicable)
-    if (isEventReservation) {
-      if (eventName) lines.push(`*Event:* ${eventName}`);
-      if (eventDate) lines.push(`*Date:* ${eventDate}`);
-      lines.push("-----------------------------------");
+    try {
+      await fetch("/api/reservation", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          event: event.title,
+          date: event.date,
+          time: event.time,
+          name: form.name,
+          phone: form.phone,
+          pax: form.pax,
+          pricePerPax,
+          total: totalPrice,
+        }),
+      });
+    } catch (error) {
+      console.error("Failed to submit reservation:", error);
     }
+    setIsSuccess(true);
 
-    // Customer info
-    if (form.name) lines.push(`*Name:* ${form.name}`);
-    if (form.phone) lines.push(`*Phone:* ${form.phone}`);
-    if(!isEventReservation) {
-      if (form.date) lines.push(`*Date:* ${form.date}`);
-      if (form.time) lines.push(`*Time:* ${form.time}`);
-      if (form.smoking) lines.push(`*Area:* ${form.smoking}`);
-    }
-    if (form.pax) lines.push(`*Pax:* ${form.pax}`);
+    setTimeout(() => {
+      const query = new URLSearchParams({
+        event: event.title,
+        pax: form.pax.toString(),
+        total: totalPrice?.toString() ?? "",
+      }).toString();
 
-    lines.push("-----------------------------------");
+      window.location.href = `/reservation/thank-you?${query}`;
+    }, 1500);
 
-    lines.push("Please confirm my reservation.");
-
-    const message = lines.join("\n");
-
-    const phoneNumber = "6281338382845";
-    const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-    window.open(whatsappURL, "_blank");
+    setIsSubmitting(false);
   };
 
   return (
-    <section className="bg-black/85 rounded-md text-white py-12 md:py-20 px-6 md:px-12">
-      <div className="md:max-w-2xl mx-auto">
-        <motion.h2
+    <section className="bg-black/85 max-w-7xl mx-auto text-white rounded-xl py-12 md:py-16 px-6">
+    <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12">
+
+      <div className="flex flex-col justify-center md:justify-start">
+        <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          className="text-4xl md:text-6xl font-style leading-tight uppercase mb-8 text-center"
+          className="text-2xl md:text-5xl font-style uppercase mb-8"
         >
-          {isEventReservation ? "Event Reservation" : "Reservation"}
-        </motion.h2>
+          Event Reservation
+        </motion.h1>
 
-        {isEventReservation && (
-          <div className="text-center mb-10 border border-gray-700 rounded-lg p-6 bg-white/5">
-            <p className="text-xl font-semibold text-[#FFE3AF]">{eventName}</p>
-            <p className="text-sm mt-1 text-gray-300">
-              {eventDate} · {eventTime}
+        <div className="rounded-lg border border-white/10 bg-white/5 p-6">
+          <p className="text-xl font-semibold">{event.title}</p>
+
+          {(event.date || event.time) && (
+            <p className="text-sm text-gray-300 mt-1">
+              {event.date} {event.time && `· ${event.time}`}
             </p>
-            <p className="text-xs mt-2 text-gray-400 italic">Pre-reserved event slot</p>
+          )}
+
+          <p className="mt-4 text-sm">
+            {isFull ? (
+              <span className="text-red-400">Fully Booked</span>
+            ) : (
+              <span className="text-gray-300">
+                {remainingSeats} seats left
+              </span>
+            )}
+          </p>
+
+          {/* Optional helper copy */}
+          {!isFull && (
+            <p className="text-xs text-gray-400 mt-2 leading-relaxed">
+              Seats are limited. Reservations are confirmed after submission.
+            </p>
+          )}
+        </div>
+      </div>
+
+      {/* RIGHT — FORM */}
+      <form onSubmit={handleSubmit} className="space-y-6">
+
+        {/* Name */}
+        <div>
+          <label className="block text-sm mb-2 text-gray-300">Name</label>
+          <input
+            required
+            value={form.name}
+            onChange={(e) =>
+              setForm({ ...form, name: e.target.value })
+            }
+            className="w-full bg-transparent border-b border-gray-600 py-2 outline-none"
+          />
+        </div>
+
+        {/* Phone */}
+        <div>
+          <label className="block text-sm mb-2 text-gray-300">
+            Phone Number
+          </label>
+          <input
+            required
+            value={form.phone}
+            onChange={(e) =>
+              setForm({ ...form, phone: e.target.value })
+            }
+            className="w-full bg-transparent border-b border-gray-600 py-2 outline-none"
+          />
+        </div>
+
+        {/* Pax */}
+        <div>
+          <label className="block text-sm mb-2 text-gray-300">Pax</label>
+          <input
+            type="number"
+            min={1}
+            max={remainingSeats}
+            value={form.pax}
+            disabled={isFull || isSubmitting}
+            onChange={(e) =>
+              setForm({ ...form, pax: Number(e.target.value) })
+            }
+            className="w-full bg-transparent border-b border-gray-600 py-2 outline-none"
+          />
+          {!isFull && (
+            <p className="text-xs text-gray-400 mt-1">
+              Maximum {remainingSeats} pax available
+            </p>
+          )}
+        </div>
+
+        {/* Price Summary */}
+        {typeof pricePerPax === "number" && (
+          <div className="rounded-md bg-white/5 p-4 text-sm">
+            <div className="flex justify-between text-gray-300">
+              <span>Price / Pax</span>
+              <span>IDR {pricePerPax.toLocaleString()}</span>
+            </div>
+            <div className="flex justify-between font-semibold mt-2">
+              <span>Total</span>
+              <span>IDR {totalPrice?.toLocaleString()}</span>
+            </div>
           </div>
         )}
 
-        <motion.form
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.1 }}
-          onSubmit={handleSubmit}
-          className="space-y-6 font-text"
-        >
-          {/* Name */}
-          <div>
-            <label className="block text-sm mb-2 text-gray-300">Name</label>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              required
-              className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all"
-            />
+        {isSuccess && (
+          <div className="text-sm text-green-400 text-center">
+            Registration successful. Redirecting…
           </div>
+        )}
 
-          {/* Phone */}
-          <div>
-            <label className="block text-sm mb-2 text-gray-300">Phone Number</label>
-            <input
-              type="tel"
-              name="phone"
-              value={form.phone}
-              onChange={handleChange}
-              required
-              className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all"
-            />
-          </div>
+        {/* Submit */}
+        <div className="pt-6 text-center">
+          <motion.button
+            whileHover={!isSubmitting ? { scale: 1.05 } : undefined}
+            whileTap={!isSubmitting ? { scale: 0.97 } : undefined}
+            type="submit"
+            disabled={isSubmitting || isFull}
+            className={`w-full md:w-auto px-10 py-3 rounded-md uppercase text-sm tracking-wide ${
+              isSubmitting || isFull
+                ? "bg-gray-600 cursor-not-allowed"
+                : "bg-[#FFE3AF] text-black"
+            }`}
+          >
+            {isFull
+              ? "Fully Booked"
+              : isSubmitting
+              ? "Submitting..."
+              : "Confirm Reservation"}
+          </motion.button>
+        </div>
+      </form>
 
-          {!isEventReservation && (
-            <>
-              <div className="flex flex-col md:flex-row gap-6">
-                <div className="flex-1">
-                  <label className="block text-sm mb-2 text-gray-300">Date</label>
-                  <input
-                    type="date"
-                    name="date"
-                    value={form.date}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all text-white"
-                  />
-                </div>
-                <div className="flex-1">
-                  <label className="block text-sm mb-2 text-gray-300">Time</label>
-                  <input
-                    type="time"
-                    name="time"
-                    value={form.time}
-                    onChange={handleChange}
-                    required
-                    className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all text-white"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm mb-2 text-gray-300">Area</label>
-                <select
-                  name="smoking"
-                  value={form.smoking}
-                  onChange={handleChange}
-                  className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all"
-                >
-                  <option value="Main Dining" className="text-black">Main Dining Room</option>
-                  <option value="Glass Room" className="text-black">Glass Room (Smoking)</option>
-                  <option value="The Cave" className="text-black">VIP The Cave (up to 8 pax)</option>
-                  <option value="The Hole" className="text-black">VIP The Hole (up to 12 pax)</option>
-                </select>
-              </div>
-            </>
-          )}
-
-          {/* Pax */}
-          <div>
-            <label className="block text-sm mb-2 text-gray-300">Pax</label>
-            <input
-              type="number"
-              name="pax"
-              min="1"
-              value={form.pax}
-              onChange={handleChange}
-              required
-              className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all"
-            />
-          </div>
-
-          {/* Button */}
-          <div className="pt-8 text-center">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.97 }}
-              type="submit"
-              className="bg-[#FFE3AF] rounded-md text-black px-10 py-3 uppercase text-sm tracking-wider hover:bg-gray-200 transition-all"
-            >
-              Confirm Reservation
-            </motion.button>
-          </div>
-        </motion.form>
-      </div>
-    </section>
+    </div>
+  </section>
   );
 }
-
-// "use client";
-
-// import { motion } from "framer-motion";
-// import { useState, useRef, useCallback } from "react";
-// import { useSearchParams } from "next/navigation";
-// import { trackEvent } from "@/lib/analytics";
-
-// export default function ReservationForm() {
-//   const searchParams = useSearchParams();
-//   const eventName = searchParams.get("event");
-//   const eventDate = searchParams.get("date");
-//   const eventTime = searchParams.get("time");
-//   const eventTracking = searchParams.get("tracking");
-
-//   const isEventReservation = !!eventName;
-//   const isSubmitting = useRef(false);
-
-//   const [form, setForm] = useState({
-//     name: "",
-//     phone: "",
-//     date: "",
-//     time: "",
-//     smoking: "No Smoking",
-//     pax: "",
-//   });
-
-//   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
-//     const { name, value } = e.target;
-//     setForm((prev) => ({ ...prev, [name]: value }));
-//   };
-
-//   const handleSubmit = useCallback((e: React.FormEvent) => {
-//     e.preventDefault();
-
-//     if (isSubmitting.current) return;
-//     isSubmitting.current = true;
-
-//     trackEvent(eventTracking || "reservation_submit", {
-//       category: "Events Tracking",
-//       label: eventName || "General Reservation",
-//       pax: form.pax ? Number(form.pax) : 1,
-//     });
-
-//     // Build WhatsApp message
-//     const lines: string[] = [];
-//     lines.push("*New Reservation Request - GOASAYA*");
-//     lines.push("-----------------------------------");
-
-//     if (isEventReservation) {
-//       if (eventName) lines.push(`*Event:* ${eventName}`);
-//       if (eventDate) lines.push(`*Date:* ${eventDate}`);
-//       lines.push("-----------------------------------");
-//     }
-
-//     if (form.name) lines.push(`*Name:* ${form.name}`);
-//     if (form.phone) lines.push(`*Phone:* ${form.phone}`);
-//     if (!isEventReservation) {
-//       if (form.date) lines.push(`*Date:* ${form.date}`);
-//       if (form.time) lines.push(`*Time:* ${form.time}`);
-//       if (form.smoking) lines.push(`*Area:* ${form.smoking}`);
-//     }
-//     if (form.pax) lines.push(`*Pax:* ${form.pax}`);
-
-//     lines.push("-----------------------------------");
-//     lines.push("Please confirm my reservation.");
-
-//     const message = lines.join("\n");
-//     const phoneNumber = "6281338382845";
-//     const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
-
-//     setTimeout(() => {
-//         window.open(whatsappURL, "_blank");
-//         setTimeout(() => {
-//           isSubmitting.current = false;
-//         }, 1500); 
-//       }, 300);
-//   }, [form, eventTracking, eventName, eventDate, eventTime]);
-
-//   return (
-//     <section className="bg-black/75 rounded-md text-white py-12 md:py-20 px-6 md:px-12">
-//       <div className="md:max-w-2xl mx-auto">
-//         <motion.h2
-//           initial={{ opacity: 0, y: 20 }}
-//           animate={{ opacity: 1, y: 0 }}
-//           transition={{ duration: 0.6 }}
-//           className="text-4xl md:text-6xl font-style leading-tight uppercase mb-8 text-center"
-//         >
-//           {isEventReservation ? "Event Reservation" : "Reservation"}
-//         </motion.h2>
-
-//         {isEventReservation && (
-//           <div className="text-center mb-10 border border-gray-700 rounded-lg p-6 bg-white/5">
-//             <p className="text-xl font-semibold text-[#FFE3AF]">{eventName}</p>
-//             <p className="text-sm mt-1 text-gray-300">
-//               {eventDate} · {eventTime}
-//             </p>
-//             <p className="text-xs mt-2 text-gray-400 italic">Pre-reserved event slot</p>
-//           </div>
-//         )}
-
-//         <motion.form
-//           initial={{ opacity: 0 }}
-//           animate={{ opacity: 1 }}
-//           transition={{ duration: 0.8, delay: 0.1 }}
-//           onSubmit={handleSubmit}
-//           className="space-y-6 font-text"
-//         >
-//           <div>
-//             <label className="block text-sm mb-2 text-gray-300">Name</label>
-//             <input
-//               type="text"
-//               name="name"
-//               value={form.name}
-//               onChange={handleChange}
-//               required
-//               className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all"
-//             />
-//           </div>
-
-//           <div>
-//             <label className="block text-sm mb-2 text-gray-300">Phone Number</label>
-//             <input
-//               type="tel"
-//               name="phone"
-//               value={form.phone}
-//               onChange={handleChange}
-//               required
-//               className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all"
-//             />
-//           </div>
-
-//           {!isEventReservation && (
-//             <>
-//               <div className="flex flex-col md:flex-row gap-6">
-//                 <div className="flex-1">
-//                   <label className="block text-sm mb-2 text-gray-300">Date</label>
-//                   <input
-//                     type="date"
-//                     name="date"
-//                     value={form.date}
-//                     onChange={handleChange}
-//                     required
-//                     className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all text-white"
-//                   />
-//                 </div>
-//                 <div className="flex-1">
-//                   <label className="block text-sm mb-2 text-gray-300">Time</label>
-//                   <input
-//                     type="time"
-//                     name="time"
-//                     value={form.time}
-//                     onChange={handleChange}
-//                     required
-//                     className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all text-white"
-//                   />
-//                 </div>
-//               </div>
-
-//               <div>
-//                 <label className="block text-sm mb-2 text-gray-300">Area</label>
-//                 <select
-//                   name="smoking"
-//                   value={form.smoking}
-//                   onChange={handleChange}
-//                   className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all"
-//                 >
-//                   <option value="No Smoking" className="text-black">No Smoking</option>
-//                   <option value="Smoking" className="text-black">Smoking</option>
-//                   <option value="E-Cigarette" className="text-black">E-Cigarette</option>
-//                   <option value="The Cave" className="text-black">VIP The Cave (up to 8 pax)</option>
-//                   <option value="The Hole" className="text-black">VIP The Hole (up to 12 pax)</option>
-//                 </select>
-//               </div>
-//             </>
-//           )}
-
-//           <div>
-//             <label className="block text-sm mb-2 text-gray-300">Pax</label>
-//             <input
-//               type="number"
-//               name="pax"
-//               min="1"
-//               value={form.pax}
-//               onChange={handleChange}
-//               required
-//               className="w-full bg-transparent border-b border-gray-600 focus:border-white outline-none py-2 transition-all"
-//             />
-//           </div>
-
-//           <div className="pt-8 text-center">
-//             <motion.button
-//               whileHover={{ scale: 1.05 }}
-//               whileTap={{ scale: 0.97 }}
-//               type="submit"
-//               className="bg-[#FFE3AF] rounded-md text-black px-10 py-3 uppercase text-sm tracking-wider hover:bg-gray-200 transition-all"
-//             >
-//               Confirm Reservation
-//             </motion.button>
-//           </div>
-//         </motion.form>
-//       </div>
-//     </section>
-//   );
-// }

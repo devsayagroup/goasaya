@@ -38,7 +38,6 @@ export default async function EventPage({
 
   return (
     <EventClient meta={event.meta}>
-      {/* ✅ MDX rendered in SERVER */}
       <Content components={eventMdxComponents} />
     </EventClient>
   );
