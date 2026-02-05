@@ -1,30 +1,13 @@
 import { notFound } from "next/navigation";
-import { getArticleBySlug, getArticleSlugs } from "@/lib/articles";
 import Image from "next/image";
 import { mdxComponents } from "@/components/mdx/mdx-components";
-import MoreJournals from "@/components/mdx/MoreJournals";
+import { getArticleBySlug, getArticleSlugs } from "@/lib/articles";
 import { articles } from "@/content/articles";
 import type { JournalMeta } from "@/content/articles/types";
-
-export const runtime = "nodejs";
+import MoreJournals from "@/components/mdx/MoreJournals";
 
 export async function generateStaticParams() {
   return getArticleSlugs().map((slug) => ({ slug }));
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
-  const { slug } = await params;
-  const article = await getArticleBySlug(slug);
-  if (!article) return {};
-
-  return {
-  title: `Journal | ${article.meta.metaTitle ?? article.meta.title} `,
-    description: article.meta.metaDescription,
-  };
 }
 
 export default async function ArticlePage({
@@ -33,42 +16,40 @@ export default async function ArticlePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const article = await getArticleBySlug(slug);
+  const article = getArticleBySlug(slug);
   if (!article) return notFound();
-  const Content = article.Content;
+
   const meta = article.meta as JournalMeta;
-
-  const current = articles.find(a => a.slug === slug);
-  if (!current) return null;
-
+  const Content = article.Content;
 
   return (
-     <main className="bg-cream text-black">
-      <section className="relative max-w-7xl mt-12 md:mt-28 mx-auto h-[30vh] md:h-[35vh] w-full">
+    <main className="bg-cream">
+      <section className="relative max-w-7xl mx-auto h-[35vh] mt-28">
         <Image
           src={meta.heroImage}
           alt={meta.title}
           fill
           priority
-          className="object-cover rounded-md"
+          className="object-cover"
         />
-        <div className="absolute inset-0 bg-black/75 rounded-md" />
+        <div className="absolute inset-0 bg-black/75" />
       </section>
-
-      <section className="relative -mt-50 px-6 pb-20">
-        <article className="max-w-3xl mx-auto">
-          <h1 className="text-white mt-6 text-2xl font-style md:text-4xl font-light leading-tight">
-            {meta.title}
-          </h1>
-          <div className="mt-4 mb-24 h-px w-24 bg-white" />
-          <div className="prose prose-invert prose-lg md:prose-xl article-content">
-            <Content components={mdxComponents} />
-          </div>
-        </article>
-      </section>
+     
+       <section className="relative -mt-50 px-6 pb-20">
+         <article className="max-w-3xl mx-auto">
+           <h1 className="text-white mt-6 text-2xl font-style md:text-4xl font-light leading-tight">
+             {meta.title}
+           </h1>
+           <div className="mt-4 mb-24 h-px w-24 bg-white" />
+           <div className="prose prose-invert prose-lg md:prose-xl article-content">
+             <Content components={mdxComponents} />
+           </div>
+         </article>
+       </section>
       
+
       <MoreJournals
-        journals={articles.map(a => a.meta as JournalMeta)}
+        journals={articles.map((a) => a.meta as JournalMeta)}
         currentSlug={slug}
       />
     </main>
