@@ -193,12 +193,12 @@ export const menuData: MenuCategory[] = [
         price: "269.000",
         image: "/menu/foryou/lemon-salmon.webp",
       },
-      {
-        title: "Beef of Goa",
-        description: "Healthy meal served with broccoli and aromatic rice.",
-        price: "288.000",
-        image: "/menu/foryou/beef-goa.webp",
-      },
+      // {
+      //   title: "Beef of Goa",
+      //   description: "Healthy meal served with broccoli and aromatic rice.",
+      //   price: "288.000",
+      //   image: "/menu/foryou/beef-goa.webp",
+      // },
       {
         title: "Goa Roasted Ribs",
         description: "Slow cooked beef short ribs infused with kecombrang flower and Indonesian spices.",
