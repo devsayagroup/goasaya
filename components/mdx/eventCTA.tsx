@@ -21,22 +21,18 @@ export default function EventCTA({
 }: EventCTAProps) {
   const params = new URLSearchParams();
 
-  // Event-based reservation
   if (eventSlug) {
     params.set("event", eventSlug);
   }
 
-  // Activity-based reservation (Valentine, Workshop, etc)
   if (activity?.id) {
     params.set("activity", activity.id);
   }
 
-  // Price (only if exists)
   if (typeof activity?.price === "number") {
     params.set("price", activity.price.toString());
   }
 
-  // ✅ Final href
   const href =
     params.toString().length > 0
       ? `/reservation?${params.toString()}`

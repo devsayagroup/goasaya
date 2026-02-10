@@ -152,6 +152,12 @@ export const menuData: MenuCategory[] = [
         image: "/menu/foryou/beef-burger.webp",
       },
       {
+        title: "Desa Fried Rice",
+        description: "Expertly Stir-fried with The Balance of The Authentic Indonesia Seasoning",
+        price: "185.000",
+        image: "/menu/foryou/desa-rice.webp",
+      },
+      {
         title: "Minang Fried Rice",
         description: "Bold fragrant flavour with braised beef tongue.",
         price: "199.000",
