@@ -62,7 +62,7 @@ export const menuData: MenuCategory[] = [
       },
       {
         title: "Truffle Fries",
-        description: "French fries with a rich earthy flavour, comes with dipping sauce.",
+        description: "French fries with a rich earthy flavour.",
         price: "120.000",
         image: "/menu/toshare/truffle-fries.webp",
       },
@@ -113,7 +113,7 @@ export const menuData: MenuCategory[] = [
       },
       {
         title: "Beef Pappardelle",
-        description: "Tender beef tossed with herbs and rich pasta sauce.",
+        description: "Wide, Slow Cooked Beef in Savory Aromatic Sauce, Its a Rich & Comforting.",
         price: "220.000",
         image: "/menu/pasta/beef-pappardelle.webp",
       },
