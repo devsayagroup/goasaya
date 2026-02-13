@@ -1,24 +1,87 @@
+// "use client";
+
+// import { ReactNode, useEffect } from "react";
+// import Lenis from "lenis";
+
+// export default function SmoothScroll({ children }: { children: ReactNode }) {
+//   useEffect(() => {
+//     const lenis = new Lenis({
+//       duration: 1.2,
+//       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+//     });
+
+//     function raf(time: number) {
+//       lenis.raf(time);
+//       requestAnimationFrame(raf);
+//     }
+
+//     requestAnimationFrame(raf);
+
+//     return () => lenis.destroy();
+//   }, []);
+
+//   return <>{children}</>;
+// }
+
+
 "use client";
 
-import { ReactNode, useEffect } from "react";
+import { ReactNode, useEffect, useRef } from "react";
 import Lenis from "lenis";
+import { useAnimationFrame } from "framer-motion";
+import { usePathname, useSearchParams } from "next/navigation";
 
 export default function SmoothScroll({ children }: { children: ReactNode }) {
+  const lenisRef = useRef<Lenis | null>(null);
+  const pathname = usePathname();
+  const searchParams = useSearchParams(); 
+
+  useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    return () => {
+      if ("scrollRestoration" in window.history) {
+        window.history.scrollRestoration = "auto";
+      }
+    };
+  }, []);
+
   useEffect(() => {
     const lenis = new Lenis({
-      duration: 1.2,
-      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      lerp: 0.1,          
+      smoothWheel: true,
+      wheelMultiplier: 0.9,
+      // smoothTouch: false,
     });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    lenisRef.current = lenis;
 
-    requestAnimationFrame(raf);
-
-    return () => lenis.destroy();
+    return () => {
+      lenis.destroy();
+      lenisRef.current = null;
+    };
   }, []);
+
+  useAnimationFrame((time) => {
+    lenisRef.current?.raf(time);
+  });
+
+  useEffect(() => {
+    const lenis = lenisRef.current;
+
+    requestAnimationFrame(() => {
+      lenis?.stop?.();
+
+      window.scrollTo({ top: 0, left: 0, behavior: "auto" });
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+
+      lenis?.scrollTo?.(0, { immediate: true });
+
+      lenis?.start?.();
+    });
+  }, [pathname, searchParams]);
 
   return <>{children}</>;
 }

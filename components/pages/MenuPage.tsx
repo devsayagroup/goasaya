@@ -64,17 +64,15 @@ export default function MenuPage() {
           <div className="absolute inset-0 bg-black/95" />
         </div>
 
+        <div id="menu-top" />
+
         <div className="container mx-auto flex flex-col md:flex-row gap-6 md:gap-16">
-          {/* ================= SIDEBAR ================= */}
           <aside className="w-full md:w-64 md:sticky md:top-24 self-start">
-            {/* Mobile */}
-            {/* ================= MOBILE FLOATING MENU ================= */}
             <div className="md:hidden fixed top-22 left-0 right-0 z-50 px-6">
               <motion.details
                 ref={detailsRef}
                 className="bg-maroon/80 backdrop-blur-xl rounded-lg border border-white/10 shadow-2xl"
               >
-                {/* Trigger */}
                 <summary className="flex items-center justify-between p-4 cursor-pointer list-none">
                   <span className="text-sm font-medium truncate">
                     {active}
@@ -84,7 +82,6 @@ export default function MenuPage() {
                   </span>
                 </summary>
 
-                {/* Bottom Sheet */}
                 <div className="max-h-[75vh] overflow-y-auto px-3 pb-4 pt-2">
                   {menuData.map((cat, index) => (
                     <div key={cat.name}>
@@ -99,6 +96,10 @@ export default function MenuPage() {
                           setActive(cat.name);
                           setHasInteracted(true);
                           detailsRef.current && (detailsRef.current.open = false);
+                          if (typeof window !== "undefined") {
+                          window.lenis?.scrollTo("#menu-top", { duration: 0.8 });
+                          if (!window.lenis) window.scrollTo({ top: 0, behavior: "smooth" });
+                        }
                         }}
                         className={`w-full text-left py-2 px-3 rounded-lg text-sm ${
                           cat.name === active ? activeClass : inactiveClass
@@ -154,7 +155,7 @@ export default function MenuPage() {
                 GOASAYA Menu
               </h1>
 
-              <nav className="space-y-2">
+              {/* <nav className="space-y-2">
                 {menuData.map((cat, index) => (
                   <div key={cat.name}>
                     {index === beverageStartIndex && (
@@ -175,7 +176,37 @@ export default function MenuPage() {
                     </motion.button>
                   </div>
                 ))}
+              </nav> */}
+              <nav className="space-y-2">
+                {menuData.map((cat, index) => (
+                  <div key={cat.name}>
+                    {index === beverageStartIndex && (
+                      <div className="my-4 border-t border-white/20 pt-4 text-xs tracking-widest text-white/40">
+                        BEVERAGES
+                      </div>
+                    )}
+
+                    <motion.button
+                      type="button"
+                      onClick={() => {
+                        setHasInteracted(true);
+                        setActive(cat.name);
+
+                        if (typeof window !== "undefined") {
+                          window.lenis?.scrollTo("#menu-top", { duration: 0.8 });
+                          if (!window.lenis) window.scrollTo({ top: 0, behavior: "smooth" });
+                        }
+                      }}
+                      className={`w-full text-left py-2 px-3 rounded-lg ${
+                        cat.name === active ? activeClass : inactiveClass
+                      }`}
+                    >
+                      {cat.name}
+                    </motion.button>
+                  </div>
+                ))}
               </nav>
+
             </div>
           </aside>
 
@@ -224,7 +255,6 @@ export default function MenuPage() {
                       </h2>
                     )}
 
-                    {/* ===== FEATURED ITEMS ===== */}
                     {/* {category.featured && category.featured.length > 0 && (
                       <div>
                         <p className="text-xs tracking-widest text-white/40 mb-4">
@@ -233,7 +263,6 @@ export default function MenuPage() {
                       </div>
                     )} */}
 
-                    {/* ===== MENU LIST ===== */}
                     <div className="space-y-6">
                       {category.isBeverage ? (
                         <motion.div
@@ -331,7 +360,6 @@ export default function MenuPage() {
                 ))}
             </AnimatePresence>
 
-            {/* Image Popup Modul  */}
             <AnimatePresence>
               {activeItem && (
                 <motion.div
