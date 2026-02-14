@@ -1,8 +1,9 @@
 export interface EventIndexItem {
-    id: number;
+  id: number;
   title: string;
   slug: string;
   tracking: string;
+  image: string;
   metaTitle: string;
   metaDescription: string;
   publishedAt: string;
@@ -13,4 +14,5 @@ export interface EventIndexItem {
   time: string;
   content: string | string[];
 }
+
 

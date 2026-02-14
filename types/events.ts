@@ -1,5 +1,5 @@
 export interface EventMeta {
-   id: number;
+  id: number;
   title: string;
   slug: string;
   tracking: string;

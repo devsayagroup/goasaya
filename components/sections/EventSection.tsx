@@ -9,12 +9,6 @@ import { getEventIndex } from "@/lib/event-index";
 export default async function EventsSection() {
   const events = await getEventIndex();
 
-  // const sortedEvents = [events].sort((a, b) => {
-  //   const idA = Number(a.id);
-  //   const idB = Number(b.id);
-  //   return idB - idA; 
-  // });
-
   const filterEvents = events.slice(0, 3);
 
   return (

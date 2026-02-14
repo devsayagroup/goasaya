@@ -148,7 +148,7 @@ export default function JournalClient({
   journals: JournalMeta[];
 }) {
   return (
-    <section className="w-full bg-cream">
+    <section className="w-full bg-cream text-black">
       <div className="container mx-auto pt-32 pb-20 px-6 md:px-16">
 
         <motion.h1

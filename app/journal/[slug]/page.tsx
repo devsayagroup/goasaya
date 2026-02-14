@@ -23,7 +23,7 @@ export default async function ArticlePage({
   const Content = article.Content;
 
   return (
-    <main className="bg-cream">
+    <main className="bg-cream text-black">
       <section className="relative max-w-7xl mx-auto h-[35vh] mt-12 md:mt-28">
         <Image
           src={meta.heroImage}

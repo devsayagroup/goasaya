@@ -40,8 +40,8 @@ function ModalGallery({ content, title }: ModalGalleryProps) {
             <Image
               src={img}
               alt={`${title} - image ${i + 1}`}
-              width={250}
-              height={250}
+              width={100}
+              height={100}
               className="rounded-md object-cover w-full h-auto transition-transform duration-300 group-hover:scale-105"
             />
 
