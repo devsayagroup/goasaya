@@ -11,10 +11,15 @@ export default function Floor1Section() {
         { src: "/images/goalt1-5.jpg", span: "col-span-1" },
         { src: "/images/goalt1-4.jpg", span: "col-span-1" },
     ];
+     const realiImages = [
+        { src: "/rooms/main.jpeg", span: "col-span-2" },
+        { src: "/rooms/glass.jpeg", span: "col-span-1" },
+        { src: "/rooms/hole.jpeg", span: "col-span-1" },
+        { src: "/rooms/main-2.jpeg", span: "col-span-1" },
+    ];
     return (
         <section className="w-full bg-black text-white overflow-hidden">
             <div className="relative container mx-auto px-6 md:px-14 py-30">
-                {/* Header Content */}
                 <div className="flex flex-col md:flex-row justify-between items-start mb-20 md:items-center">
                     <div className="flex items-start mb-16 md:mb-0">
                         <Image
@@ -72,7 +77,7 @@ export default function Floor1Section() {
                     viewport={{ once: true }}
                     className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3"
                 >
-                    {images.map((img, i) => (
+                    {realiImages.map((img, i) => (
                     <motion.div
                         key={i}
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}

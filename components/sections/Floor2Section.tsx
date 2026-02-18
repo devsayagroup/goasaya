@@ -11,6 +11,13 @@ export default function Floor2Section() {
         { src: "/images/goalt2-4.jpg", span: "col-span-1" },
         { src: "/images/goalt2-5.jpg", span: "col-span-1" },
     ];
+    const realImages = [
+        { src: "/rooms/op/classic.JPG", span: "col-span-2" },
+        { src: "/rooms/op/chinese.JPG", span: "col-span-1" },
+        { src: "/rooms/op/pink.jpg", span: "col-span-1" },
+        { src: "/rooms/op/japanese.JPG", span: "col-span-1" },
+
+    ];
     return (
         <section className="relative w-full bg-maroon text-black overflow-hidden">
             <div className="absolute inset-0">
@@ -81,7 +88,7 @@ export default function Floor2Section() {
                     viewport={{ once: true }}
                     className="grid grid-cols-2 md:grid-cols-3 gap-2 md:gap-3"
                 >
-                    {images.map((img, i) => (
+                    {realImages.map((img, i) => (
                     <motion.div
                         key={i}
                         initial={{ opacity: 0, scale: 0.95, y: 20 }}
@@ -92,7 +99,7 @@ export default function Floor2Section() {
                     >
                         <Image
                         src={img.src}
-                        alt={`Goasaya interior ${i + 1}`}
+                        alt={`GoaSaya KTV ${i + 1}`}
                         fill
                         sizes="(max-width: 768px) 100vw, 50vw"
                         className="object-cover brightness-95 hover:brightness-110 transition-all duration-700"

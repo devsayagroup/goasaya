@@ -426,7 +426,7 @@ export default function ReservationForm() {
                 <select
                   value={selectedSlug}
                   onChange={(e) => setSelectedSlug(e.target.value)}
-                  className="w-full bg-black/30 border border-white/10 rounded-md px-4 py-3 outline-none text-white"
+                  className="w-full bg-black/30 border border-white/10 rounded-md py-3 outline-none text-white"
                 >
                   <option value={GENERAL_SLUG} className="text-black">
                     General Reservation
@@ -478,7 +478,7 @@ export default function ReservationForm() {
                   required
                   value={form.manualTitle}
                   onChange={(e) => setForm({ ...form, manualTitle: e.target.value })}
-                  placeholder="e.g. Coffee tasting / Inquiry"
+                  placeholder="e.g. Dinner / Anniversary / Birthday"
                   className="w-full bg-transparent border-b border-gray-600 py-2 outline-none"
                 />
               </div>
