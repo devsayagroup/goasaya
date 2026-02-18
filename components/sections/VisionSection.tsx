@@ -15,7 +15,7 @@ export default function VisionSection() {
                 priority
                 className="object-cover object-center brightness-75"
                 />
-                <div className="absolute inset-0 bg-black/60"> </div>
+                <div className="absolute inset-0 bg-black/70"> </div>
             </div>
             <div className="relative container mx-auto px-6 md:px-14 py-30 md:py-42 ">
                 <div className="flex flex-col md:flex-row justify-evenly items-start md:items-center">
