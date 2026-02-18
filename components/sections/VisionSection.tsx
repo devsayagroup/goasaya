@@ -9,7 +9,7 @@ export default function VisionSection() {
         <section className="relative w-full bg-black text-white overflow-hidden">
             <div className="absolute inset-0">
                 <Image
-                src="/images/goalt1-3.jpg"
+                src="/rooms/main.jpeg"
                 alt="Goasaya"
                 fill
                 priority

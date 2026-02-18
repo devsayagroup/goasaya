@@ -23,18 +23,13 @@ export default function AboutPage() {
                             className="mt-8 md:mt-0 max-w-md text-gray-300"
                         >
                             <Image
-                                src="/images/about-goa.webp"
-                                alt="About GOASAYA"
-                                width={400}
+                                src="/rooms/main-2.jpeg"
+                                alt="GoaSaya PIK 2"
+                                width={500}
                                 height={400}
                                 className="mb-6"
                             />
-                            <Image
-                                src="/images/goalt1-6.jpg"
-                                alt="Goasaya Ambience"
-                                width={500}
-                                height={500}
-                            />
+                          
                         </motion.div>
                     </motion.div>
                     <motion.div
@@ -48,9 +43,9 @@ export default function AboutPage() {
                             Goa Saya means more than just “the cave”. It represents mystery, intimacy, and discovery. Each floor is a chapter in a journey, whether you’re seeking taste, vibe, or expression.
                         </p>
                         <Image
-                            src="/images/goalt2-1.jpg"
+                            src="/rooms/op/classic-1.JPG"
                             alt="Goasaya Ambience"
-                            width={600}
+                            width={500}
                             height={500}
                         />
                     </motion.div>

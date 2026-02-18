@@ -9,7 +9,7 @@ export default function GroupSection() {
         <section className="relative w-full bg-black text-white overflow-hidden">
             <div className="absolute inset-0">
                 <Image
-                src="/images/goalt2-1.jpg"
+                src="/rooms/op/classic.JPG"
                 alt="Goasaya"
                 fill
                 priority
