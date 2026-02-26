@@ -1,45 +1,4 @@
-export interface EventMeta {
-  id: number;
-  title: string;
-  slug: string;
 
-  tracking?: string;
-
-  metaTitle?: string;
-  metaDescription?: string;
-
-  publishedAt?: string;
-
-  background?: string;
-  heroImage?: string;
-  heroAlt?: string;
-  content?: string | string[];
-
-  date?: string;
-  time?: string;
-
-  availability?: {
-    activities: {
-      id: string;
-      title: string;
-      date: string;
-      time: string;
-      location: string;
-      capacity: number;
-      price: number;
-    }[];
-  };
-
-  theme?: {
-    background?: string;
-    text?: string;
-    cta?: {
-      color?: string;
-      hoverColor?: string;
-      text?: string;
-    };
-  };
-}
 
 export const highlightedEventSlug = "clay-photo-holder-workshop";
 
