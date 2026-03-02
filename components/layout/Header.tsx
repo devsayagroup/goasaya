@@ -28,7 +28,7 @@ export default function Header() {
   }
 
   return (
-    <header className="fixed top-0 z-9999 w-full bg-black backdrop-blur-sm py-6">
+    <header className="fixed top-0 z-9999 w-full bg-black backdrop-blur-sm py-4">
       <div className="container mx-auto grid grid-cols-3 items-center px-6 md:px-14">
         <nav className="hidden lg:flex col-start-1 space-x-6 text-sm font-medium">
           {navLinks.map((link, idx) => (
