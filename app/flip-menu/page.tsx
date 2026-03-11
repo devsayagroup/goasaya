@@ -51,7 +51,6 @@ export default function MenuPage() {
 
   return (
     <main className="min-h-screen bg-[#4A3326] text-white">
-      {/* Top bar (Heyzine-ish) */}
       <header className="sticky top-0 z-10 h-14 bg-black/80 backdrop-blur">
         <div className="mx-auto flex h-full max-w-5xl items-center justify-center px-4">
           <div className="text-sm tracking-[0.35em]">GOASAYA</div>
