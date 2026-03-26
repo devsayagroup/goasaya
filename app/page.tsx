@@ -30,7 +30,7 @@ import { orgJsonLd,websiteJsonLd } from "@/lib/seo/jsonLd";
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.goasaya.com"; 
 const SITE_NAME = "GOASAYA"; 
-const OG_IMAGE = `${SITE_URL}/logo/orange.webp`;
+const OG_IMAGE = `${SITE_URL}/rooms/frontview.webp`;
 
 export const metadata: Metadata = {
   title: `${SITE_NAME} – Cave-Inspired Dining & Experiences in PIK 2 Jakarta`,
@@ -51,14 +51,13 @@ export const metadata: Metadata = {
     url: SITE_URL,
     siteName: SITE_NAME,
     type: "website",
-    images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: SITE_NAME }],
+    images: [{ url: OG_IMAGE, width: 1000, height: 1000, alt: SITE_NAME }],
   },
 
   twitter: {
     card: "summary_large_image",
     title: `${SITE_NAME} – Cave-Inspired Dining & Experiences in PIK 2 Jakarta`,
-    description:
-      "Immersive cave-inspired dining in PIK 2, Jakarta. Curated meals, events, and unforgettable nights.",
+    description:"Immersive cave-inspired dining in PIK 2, Jakarta. Curated meals, events, and unforgettable nights.",
     images: [OG_IMAGE],
   },
 };

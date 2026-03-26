@@ -44,6 +44,7 @@ import SpotFoto, { meta as spotFotoMeta } from "./instagrammable-photo-spots-goa
 import MustVisit, { meta as mustVisitMeta } from "./must-visit-pik-2-jakarta.mdx";
 import Musttry, { meta as mustTryMeta } from "./must-try-desert-goasaya.mdx";
 import Firework, { meta as fireworkMeta } from "./chinese-firework-goasaya.mdx";
+import Dinner, {meta as dinnerMeta} from "./romantic-dinner-goasaya.mdx"
 
 import type { JournalMeta } from "./types";
 
@@ -76,5 +77,10 @@ export const articles = [
     slug: fireworkMeta.slug,
     meta: assertJournalMeta(fireworkMeta),
     Content: Firework,
+  },
+  {
+    slug: dinnerMeta.slug,
+    meta: assertJournalMeta(dinnerMeta),
+    Content: Dinner,
   },
 ];
