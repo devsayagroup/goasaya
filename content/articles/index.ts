@@ -45,6 +45,7 @@ import MustVisit, { meta as mustVisitMeta } from "./must-visit-pik-2-jakarta.mdx
 import Musttry, { meta as mustTryMeta } from "./must-try-desert-goasaya.mdx";
 import Firework, { meta as fireworkMeta } from "./chinese-firework-goasaya.mdx";
 import Dinner, {meta as dinnerMeta} from "./romantic-dinner-goasaya.mdx"
+import Entertainment, {meta as entertainmentMeta} from "./live-entertainment-goasaya.mdx"
 
 import type { JournalMeta } from "./types";
 
@@ -82,5 +83,10 @@ export const articles = [
     slug: dinnerMeta.slug,
     meta: assertJournalMeta(dinnerMeta),
     Content: Dinner,
+  },
+  {
+    slug: entertainmentMeta.slug,
+    meta: assertJournalMeta(entertainmentMeta),
+    Content: Entertainment,
   },
 ];

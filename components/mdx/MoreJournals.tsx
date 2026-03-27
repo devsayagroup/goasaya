@@ -29,7 +29,7 @@ export default function MoreJournals({
       </h3>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 space-y-12">
-        {filtered.slice(0, 3).map((journal) => (
+        {filtered.slice(0, 4).map((journal) => (
           <Link
             key={journal.slug}
             href={`/journal/${journal.slug}`}
