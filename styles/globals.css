@@ -3,6 +3,7 @@
 @theme inline {
   --font-text: var(--font-text);
   --font-style: var(--font-style);
+  --font-special: var(--font-special);
   --color-maroon: #461B13;
   --color-orange: #D44F27;
   --color-orangecream: #E47406;

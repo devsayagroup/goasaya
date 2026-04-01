@@ -16,9 +16,15 @@ const textFont = Inria_Serif({
   weight: ["300", "400", "700"],
 });
 
-const styeFont = localFont({
+const styleFont = localFont({
   src: "../styles/Civane.otf",
   variable: "--font-style",
+});
+
+
+const specialFont = localFont({
+  src: "../styles/Bavex.ttf",
+  variable: "--font-special",
 });
 
 export default function ClientLayout({
@@ -34,7 +40,7 @@ export default function ClientLayout({
   }, []);
 
   return (
-    <div className={`${textFont.variable} ${styeFont.variable} font-text`}>
+    <div className={`${textFont.variable} ${styleFont.variable} ${specialFont.variable} font-text`}>
       {loading ? (
         <Loading />
       ) : (
