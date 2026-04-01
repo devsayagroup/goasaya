@@ -220,7 +220,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence, Easing } from 'framer-motion';
 
-// Your existing data structure
 const GOASAYA_WEEKDAYS = [
   { day: "Monday", slug: "matcha-monday", title: "Matcha Monday", offer: "Buy 1 Get 1 Ceremonial Matcha", price: "135K", description: "Exclusively shipped all the way from Kyoto. Enjoy a complimentary serving.", image: "/promo/WS-2.jpg", accent: "#2D5A27" },
   { day: "Tuesday", slug: "tipsy-tuesday", title: "Tipsy Tuesday", offer: "Free Flow Cocktails", price: "299K/Guest", description: "Elevate your Tuesday with our premium mixology selection.", image: "/promo/WS-3.jpg", accent: "#9B1B30" },
@@ -244,14 +243,13 @@ export default function WeekdaysGallery() {
   }, [selectedPromo]);
 
   return (
-    <main className="bg-maroon min-h-screen py-24 px-4 sm:px-6 md:px-12 font-serif selection:bg-stone-200 selection:text-black">
-      {/* bg-[#FAF9F6] */}
-        <header className="text-white mb-16 md:mb-24 text-center px-4 overflow-hidden">
+    <main className="bg-maroon min-h-screen py-28 px-4 sm:px-6 md:px-12 font-serif selection:bg-stone-200 selection:text-black">
+        <header className="text-white mb-12 md:mb-20 text-center px-4 overflow-hidden">
             <motion.h1 
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 1.2, ease: transitionEasing }}
-              className="text-[4em] sm:text-[6em] md:text-[10em] font-special font-extralight leading-[0.9] tracking-[2px] uppercase break-words"
+              className="text-[5em] md:text-[10em] leading-[1.1em] font-special font-extralight uppercase"
             >
             Weekday Specials
             </motion.h1>
@@ -259,7 +257,7 @@ export default function WeekdaysGallery() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 1 }}
-              className="text-[10px] md:text-xs uppercase tracking-[0.5em] font-sans text-stone-500 mt-6"
+              className="text-sm md:text-lg uppercase tracking-[0.3em] mt-[1em] md:mt-[-.2em] font-sans text-stone-100"
             >
             A Curated Deals for Every Day of the Week
             </motion.p>
@@ -298,7 +296,7 @@ export default function WeekdaysGallery() {
                   layoutId={`image-${promo.slug}`}
                   src={promo.image}
                   alt={promo.title}
-                  className="w-full h-full object-cover transition-transform duration-[2s] group-hover:scale-105"
+                  className="w-full h-full object-cover"
                 />
             </motion.div>
             ))}
@@ -313,16 +311,14 @@ export default function WeekdaysGallery() {
                   exit={{ opacity: 0 }}
                   transition={{ duration: 0.5 }}
                   onClick={() => setSelectedPromo(null)}
-                  className="fixed inset-0 bg-stone-900/40 backdrop-blur-md z-40 cursor-pointer"
+                  className="fixed inset-0 bg-stone-900/40 backdrop-blur-md  z-40 cursor-pointer"
                 />
 
-                {/* Modal Wrapper - Full screen on mobile, padded on desktop */}
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-0 md:p-12 pointer-events-none">
+                <div className="fixed inset-0 z-50 flex items-center justify-center p-0 md:p-30 pointer-events-none">
                   <motion.div
                       layoutId={`card-${selectedPromo.slug}`}
-                      className="bg-white flex flex-col md:flex-row w-full h-full md:h-auto md:max-h-[90vh] max-w-6xl shadow-2xl pointer-events-auto overflow-y-auto overflow-x-hidden md:overflow-hidden relative"
+                      className="bg-white flex flex-col md:flex-row w-full h-full md:h-auto md:max-h-[70vh] max-w-6xl shadow-2xl pointer-events-auto overflow-y-auto overflow-x-hidden md:overflow-hidden relative rounded-md"
                   >
-                      {/* Mobile Sticky Close Button */}
                       <button 
                           onClick={() => setSelectedPromo(null)}
                           className="md:hidden absolute top-4 right-4 z-50 bg-white/80 backdrop-blur text-black p-3 rounded-full text-[10px] uppercase tracking-widest font-sans font-bold shadow-sm"
@@ -330,17 +326,15 @@ export default function WeekdaysGallery() {
                           Close
                       </button>
 
-                      {/* Left: Image Container */}
                       <div className="w-full md:w-1/2 bg-stone-100 flex items-center justify-center p-6 md:p-12 min-h-[50vh] md:min-h-0 relative">
                         <motion.img
                             layoutId={`image-${selectedPromo.slug}`}
                             src={selectedPromo.image}
                             alt={selectedPromo.title}
-                            className="max-h-[60vh] md:max-h-[75vh] w-auto object-contain shadow-xl"
+                            className="max-h-[60vh] md:max-h-[60vh] w-auto object-contain shadow-xl"
                         />
                       </div>
 
-                      {/* Right: Content - Staggered Fade In */}
                       <motion.div 
                         initial={{ opacity: 0, x: 20 }}
                         animate={{ opacity: 1, x: 0 }}
@@ -348,7 +342,6 @@ export default function WeekdaysGallery() {
                         transition={{ delay: 0.3, duration: 0.8, ease: transitionEasing }}
                         className="w-full md:w-1/2 p-8 sm:p-12 md:p-16 flex flex-col justify-center relative bg-white text-[#1a1a1a]"
                       >
-                        {/* Desktop Close Button */}
                         <button 
                             onClick={() => setSelectedPromo(null)}
                             className="hidden md:block absolute top-8 right-10 text-[10px] uppercase tracking-[0.3em] font-sans text-stone-400 hover:text-black transition-colors"
@@ -373,9 +366,9 @@ export default function WeekdaysGallery() {
                             {selectedPromo.description}
                             </p>
 
-                            <div className="pt-6 md:pt-8 flex items-end gap-4">
+                            {/* <div className="pt-6 md:pt-8 flex items-end gap-4">
                             <span className="text-3xl md:text-4xl font-extralight italic tracking-tighter">{selectedPromo.price}</span>
-                            </div>
+                            </div> */}
 
                             <div className="pt-8 md:pt-12 pb-10 md:pb-0">
                               <button className="w-full group relative overflow-hidden py-4 border border-black hover:border-black transition-colors duration-500">
