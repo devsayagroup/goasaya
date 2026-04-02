@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 import { motion, AnimatePresence, Easing } from 'framer-motion';
 
 const GOASAYA_WEEKDAYS = [
@@ -26,8 +27,18 @@ export default function WeekdaysGallery() {
   }, [selectedPromo]);
 
   return (
-    <main className="bg-maroon min-h-screen py-28 px-4 sm:px-6 md:px-12 font-serif selection:bg-stone-200 selection:text-black">
-        <header className="text-white mb-12 md:mb-20 text-center px-4 overflow-hidden">
+    <main className="relative bg-black min-h-screen py-28 px-4 sm:px-6 md:px-12 font-serif selection:bg-stone-200 selection:text-black">
+        <div className="absolute inset-0">
+            <Image
+            src="/images/goa9.JPG"
+            alt="Goa Saya"
+            fill
+            priority
+            className="object-cover object-center brightness-75"
+            />
+            <div className="absolute inset-0 bg-black/90"></div>
+        </div>
+        <header className="relative text-white mb-12 md:mb-20 text-center px-4 overflow-hidden">
             <motion.h1 
               initial={{ y: 50, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
@@ -56,7 +67,7 @@ export default function WeekdaysGallery() {
               transition: { staggerChildren: 0.1 }
             }
           }}
-          className="max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8"
+          className="relative max-w-[1400px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 md:gap-8"
         >
             {GOASAYA_WEEKDAYS.map((promo) => (
             <motion.div
@@ -97,10 +108,10 @@ export default function WeekdaysGallery() {
                   className="fixed inset-0 bg-stone-900/40 backdrop-blur-md  z-40 cursor-pointer"
                 />
 
-                <div className="fixed inset-0 z-50 flex items-center justify-center p-0 md:p-30 pointer-events-none">
+                <div className="fixed inset-0 z-50 flex items-center justify-center py-20 px-6 md:p-30 pointer-events-none">
                   <motion.div
                       layoutId={`card-${selectedPromo.slug}`}
-                      className="bg-[#ffffff] flex flex-col md:flex-row w-full h-full md:h-auto md:max-h-[70vh] max-w-6xl shadow-2xl pointer-events-auto overflow-y-auto overflow-x-hidden md:overflow-hidden relative rounded-md"
+                      className="bg-[#ffffff] flex flex-col md:flex-row w-full h-full md:h-auto md:max-h-[70vh] max-w-6xl shadow-2xl pointer-events-auto overflow-y-auto overflow-x-hidden md:overflow-hidden relative"
                   >
                       <button 
                           onClick={() => setSelectedPromo(null)}
@@ -114,7 +125,7 @@ export default function WeekdaysGallery() {
                             layoutId={`image-${selectedPromo.slug}`}
                             src={selectedPromo.image}
                             alt={selectedPromo.title}
-                            className="max-h-[60vh] md:max-h-[60vh] w-auto object-contain"
+                            className="max-h-[40vh] md:max-h-[60vh] w-auto object-contain"
                         />
                       </div>
 
