@@ -1,6 +1,9 @@
 import Head from "../head";
-import ReservationPage from "@/components/pages/ReservationPage";
-export default function Events() {
+import dynamic from "next/dynamic";
+
+const ReservationPage = dynamic(() => import('@/components/pages/ReservationPage'), {ssr: true});
+
+export default function Reservation() {
   return (
     <>
         <Head 

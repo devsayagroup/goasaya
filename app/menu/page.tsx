@@ -1,6 +1,6 @@
-// import Head from "../head";
-import MenuPage from "@/components/pages/MenuPage";
 import type { Metadata } from "next";
+import dynamic from "next/dynamic";
+const MenuPage = dynamic(() => import('@/components/pages/MenuPage'), {ssr: true});
 
 const baseUrl = "https://goasaya.com";
 

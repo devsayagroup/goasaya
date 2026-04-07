@@ -22,11 +22,13 @@
 
 import type { Metadata } from "next";
 import Script from "next/script";
-import HeroSection from "@/components/sections/HeroSection";
-import AboutSection from "@/components/sections/AboutSection";
-import SpecialEventSection from "@/components/sections/SpecialEventSection";
-import EventSection from "@/components/sections/EventSection";
+import dynamic from 'next/dynamic';
 import { orgJsonLd,websiteJsonLd } from "@/lib/seo/jsonLd";
+
+const HeroSection = dynamic(() => import('@/components/sections/HeroSection'), {ssr: true});
+const AboutSection = dynamic(() => import('@/components/sections/AboutSection'), {ssr: true});
+const SpecialEventSection = dynamic(() => import('@/components/sections/SpecialEventSection'), {ssr: true});
+const EventSection = dynamic(() => import('@/components/sections/EventSection'), {ssr: true});
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.goasaya.com"; 
 const SITE_NAME = "GOASAYA"; 
