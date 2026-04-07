@@ -155,7 +155,6 @@ const navLinks = [
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
 
-  // Lock body scroll when the luxury menu is open
   useEffect(() => {
     if (menuOpen) {
       document.body.style.overflow = "hidden";
@@ -177,11 +176,8 @@ export default function Header() {
 
   return (
     <>
-      {/* HEADER BAR (Stays on top of everything) */}
       <header className="fixed top-0 z-[9999] w-full bg-black backdrop-blur-md py-6 transition-colors duration-500">
         <div className="container mx-auto grid grid-cols-3 items-center px-6 md:px-14">
-          
-          {/* LEFT: Desktop Nav (Hidden on Mobile/Tablet) */}
           <div className="col-start-1 flex items-center">
             <nav className="hidden min-[1300px]:flex space-x-8 text-sm font-medium tracking-wide">
               {navLinks.map((link, idx) => (
@@ -199,7 +195,6 @@ export default function Header() {
             </nav>
           </div>
 
-          {/* CENTER: Logo */}
           <motion.div
             className="col-start-2 justify-self-center"
             initial={{ opacity: 0 }}
@@ -218,10 +213,7 @@ export default function Header() {
             </Link>
           </motion.div>
 
-          {/* RIGHT: CTA Button (Tablet/Desktop) & Hamburger Icon */}
           <div className="col-start-3 justify-self-end flex items-center gap-4 sm:gap-6">
-            
-            {/* CTA Button - Hidden on mobile header, shown on tablet/desktop */}
             <motion.div
               className="hidden md:block" 
               initial={{ opacity: 0, x: 10 }}
@@ -241,7 +233,6 @@ export default function Header() {
               </button>
             </motion.div>
 
-            {/* Hamburger Icon - Placed firmly on the right side */}
             <button
               className="min-[1300px]:hidden text-white hover:text-[#FFE3AF] transition-colors"
               onClick={() => setMenuOpen((v) => !v)}
@@ -254,7 +245,6 @@ export default function Header() {
         </div>
       </header>
 
-      {/* LUXURY FULL-SCREEN MENU OVERLAY */}
       <AnimatePresence>
         {menuOpen && (
           <motion.div
@@ -284,7 +274,6 @@ export default function Header() {
                 </motion.div>
               ))}
 
-              {/* Minimalist Separator Line */}
               <motion.div 
                 className="h-px w-24 bg-white/20 mt-8"
                 initial={{ opacity: 0, scaleX: 0 }}
@@ -292,7 +281,6 @@ export default function Header() {
                 transition={{ delay: 0.6, duration: 0.8 }}
               />
 
-              {/* MOBILE ONLY: CTA Button inside the menu */}
               <motion.div
                 className="mt-8 w-full max-w-[280px] md:hidden" 
                 initial={{ opacity: 0, y: 20 }}

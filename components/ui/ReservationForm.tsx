@@ -406,7 +406,7 @@ export default function ReservationForm() {
           <motion.h1
             initial={{ opacity: 0, y: 16 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-2xl md:text-5xl font-style uppercase mb-8"
+            className="text-center text-3xl md:text-5xl font-style uppercase mb-8"
           >
             Reservation
           </motion.h1>

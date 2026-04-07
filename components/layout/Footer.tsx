@@ -2,6 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function Footer() {
+    const d = new Date();
+    let year = d.getFullYear();
+
     return (
       <footer className="relative bg-maroon text-white py-8 px-6 md:py-12" id="contact">
         <div className="absolute inset-0">
@@ -19,18 +22,6 @@ export default function Footer() {
                 <Link href="/">
                     <Image src="/logo/LogotypeIcon-01.png" alt='Logo Goasaya' width={200} height={200} />
                 </Link>
-            
-                {/* <div className="grid grid-rows gap-8 mt-12">
-                    <div className="flex space-x-8">
-                        {navItems.map((item) => (
-                        <div key={item.href}>
-                            <Link href={item.href} scroll className="font-reguler transition-colors hover-underline-animation">
-                            {item.name}
-                            </Link>
-                        </div>
-                        ))}
-                    </div>
-                </div> */}
 
                 <div className="relative grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 mt-12">
                     <div className="hidden md:block absolute inset-y-0 left-1/4 w-px bg-gradient-to-b from-transparent via-white/80 to-transparent"></div>
@@ -63,7 +54,7 @@ export default function Footer() {
                     <div className="flex flex-col justify-start items-center text-center">
                         <h1 className="font-style text-lg mb-6">Opening Hours</h1>
                         <div className="flex flex-col text-center text-sm">
-                        <span className="font-bold">Tuesday - Sunday</span>
+                        <span className="font-bold">Everyday</span>
                         <span>11:00 AM - 00:00 AM</span>
                         </div>
                     </div>
@@ -102,7 +93,7 @@ export default function Footer() {
   
             <div className="border-t border-cream/75 mt-6 md:mt-2 pt-8 text-center text-sm md:text-md">
                 <p>
-                    © 2025 GOASAYA by {" "}
+                    © {year} GOASAYA by {" "}
                     <Link href="https://www.sayagroup.id" target="_blank" rel="noreferrer" className="hover:underline">
                        Saya Group
                     </Link>
