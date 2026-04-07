@@ -5,13 +5,13 @@
 // import Link from "next/link";
 
 // const images = [
-//   "/images/goa9.JPG",
-//   "/images/goa2.jpg",
-//   "/images/goa3.jpg",
-//   "/images/goa4.jpg",
+//   "/images/goa9.webp",
+//   "/images/goa2.webp",
+//   "/images/goa3.webp",
+//   "/images/goa4.webp",
 //   "/images/goa7.webp",
-//   "/images/goa5.jpg",
-//   "/images/goa6.jpg",
+//   "/images/goa5.webp",
+//   "/images/goa6.webp",
 // ];
 
 // export default function HeroSection() {
@@ -88,13 +88,14 @@ import Image from "next/image";
 import Link from "next/link";
 
 const images = [
-  "/images/goa9.JPG", // Note: Update these extensions when you switch to webp
-  "/images/goa2.jpg",
-  "/images/goa3.jpg",
-  "/images/goa4.jpg",
-  "/images/goa7.webp",
-  "/images/goa5.jpg",
-  "/images/goa6.jpg",
+  "/images/webp/goa1.webp", 
+  "/images/webp/goa2.webp",
+  "/images/webp/goa3.webp",
+  "/images/webp/goa4.webp",
+  "/images/webp/goa5.webp",
+  "/images/webp/goa6.webp",
+  "/images/webp/goa7.webp",
+  "/images/webp/goa8.webp",
 ];
 
 export default function HeroSection() {

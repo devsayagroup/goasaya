@@ -25,16 +25,14 @@ export default function Loading() {
           height={120} 
           alt="Goasaya Logo"
           className="w-auto h-auto object-contain"
-          priority // Prioritize loading this image immediately
+          priority 
         />
-        
         <div className="flex flex-col items-center gap-4">
           <div className="h-px w-16 bg-[#FFE3AF]/40" />
           <p className="text-white/70 text-[10px] uppercase tracking-[0.5em] font-light">
             A Place Called Home
           </p>
         </div>
-        
       </div>
     </div>
   );
