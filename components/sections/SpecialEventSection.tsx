@@ -166,7 +166,7 @@ export default function CelebrateGoasaya() {
       </div>
 
       <div className="container mx-auto px-6 md:px-14">
-        <div className="flex flex-col md:flex-row justify-between items-center text-white mb-16">
+        <div className="flex flex-col lg:flex-row justify-between lg:items-center text-white mb-16">
           <motion.h1
             style={{ y: yLeft }} 
             initial={{ opacity: 0, y: 20 }}
@@ -184,13 +184,13 @@ export default function CelebrateGoasaya() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 1 }}
-            className="mt-8 md:mt-0 md:text-right max-w-lg"
+            className="mt-0 lg:text-right max-w-lg"
           >
             <p className="font-text text-md leading-loose text-white/90">
               From birthdays to corporate gatherings, we help bring your ideas to life with a space that
               feels warm, intimate, and memorable.
             </p>
-            <div className="mt-6 flex justify-start md:justify-end gap-4">
+            <div className="mt-6 flex justify-start lg:justify-end gap-4">
               <Link
                 href="/facilities"
                 className="text-sm font-medium text-[#FFE3AF] border-b border-[#FFE3AF]/40 hover:border-[#FFE3AF] pb-1 transition-all duration-300"

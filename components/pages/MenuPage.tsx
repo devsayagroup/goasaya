@@ -51,7 +51,7 @@ export default function MenuPage() {
 
   return (
     <section className="w-full">
-      <div className="relative text-white mx-auto px-6 md:px-20 py-24 md:py-32">
+      <div className="relative text-white mx-auto px-6 lg:px-20 py-24 lg:py-32">
         {/* Background */}
         <div className="absolute inset-0 -z-10">
           <Image
@@ -66,9 +66,9 @@ export default function MenuPage() {
 
         <div id="menu-top" />
 
-        <div className="container mx-auto flex flex-col md:flex-row gap-6 md:gap-16">
-          <aside className="w-full md:w-64 md:sticky md:top-24 self-start">
-            <div className="md:hidden fixed top-22 left-0 right-0 z-50 px-6">
+        <div className="container mx-auto flex flex-col lg:flex-row gap-6 lg:gap-16">
+          <aside className="w-full lg:w-64 lg:sticky lg:top-24 self-start">
+            <div className="lg:hidden fixed top-22 left-0 right-0 z-50 px-6">
               <motion.details
                 ref={detailsRef}
                 className="bg-maroon/80 backdrop-blur-xl rounded-lg border border-white/10 shadow-2xl"
@@ -150,7 +150,7 @@ export default function MenuPage() {
             </div> */}
 
             {/* Desktop */}
-            <div className="hidden md:block bg-black/40 p-6 rounded-2xl border border-white/5">
+            <div className="hidden lg:block bg-black/40 p-6 rounded-2xl border border-white/5">
               <h1 className="text-2xl font-style font-light mb-6 tracking-wide">
                 GOASAYA Menu
               </h1>
@@ -211,7 +211,7 @@ export default function MenuPage() {
           </aside>
 
           {/* ================= CONTENT ================= */}
-          <div className="flex-1 mt-10 md:mt-0">
+          <div className="flex-1 mt-12 lg:mt-0">
             <AnimatePresence mode="wait">
               {menuData
                 .filter((c) => c.name === active)
@@ -320,7 +320,7 @@ export default function MenuPage() {
                                   show: { opacity: 1, y: 0 },
                                 }}
                                 transition={{ duration: 0.35 }}
-                                className="bg-white/5 p-6 rounded-xl shadow-xl border border-white/10 flex gap-5"
+                                className="bg-white/5 p-6 rounded-xl shadow-xl border border-white/10 flex  gap-5"
                             >
                               <div
                                 onClick={() => setActiveItem(item)}
@@ -338,7 +338,7 @@ export default function MenuPage() {
 
 
                               <div className="flex-1">
-                                <div className="flex flex-col md:flex-row  justify-between items-start mb-2 gap-1.5">
+                                <div className="flex flex-col lg:flex-row  justify-between items-start mb-2 gap-1.5">
                                   <h3 className="text-lg font-medium tracking-wide">
                                     {item.title}
                                   </h3>

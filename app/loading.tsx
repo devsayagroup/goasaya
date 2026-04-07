@@ -30,7 +30,7 @@ export default function Loading() {
         
         <div className="flex flex-col items-center gap-4">
           <div className="h-px w-16 bg-[#FFE3AF]/40" />
-          <p className="text-[#FFE3AF]/70 text-[10px] uppercase tracking-[0.5em] font-light">
+          <p className="text-white/70 text-[10px] uppercase tracking-[0.5em] font-light">
             A Place Called Home
           </p>
         </div>

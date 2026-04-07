@@ -13,7 +13,7 @@ export default async function EventsSection() {
 
   return (
     <section className="container mx-auto bg-cream text-black py-24 px-8 md:px-16 overflow-hidden">
-      <div className="flex flex-col md:flex-row justify-between items-start mb-12 md:mb-24 md:items-center">
+      <div className="flex flex-col lg:flex-row justify-between items-start mb-12 md:mb-24 lg:items-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -27,7 +27,7 @@ export default async function EventsSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mt-8 md:mt-0 md:text-right max-w-lg text-black"
+          className="mt-8 lg:mt-0 lg:text-right max-w-lg text-black"
         >
           <p className="font-text text-md mb-4 leading-loose">
             From private celebrations to quiet reflections, GoaSaya holds space
@@ -37,7 +37,7 @@ export default async function EventsSection() {
         </motion.div>
       </div>
 
-      <div className="grid md:grid-cols-4 gap-8">
+      <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
         {filterEvents.map((event, idx) => (
           <motion.div
             key={idx}

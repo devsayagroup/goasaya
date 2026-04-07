@@ -27,7 +27,7 @@ export default function AboutSection() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
-            className="mt-8 md:mt-0"
+            className="hidden lg:block mt-8 md:mt-0"
           >
             <Image
               src="/images/goa8.JPG"

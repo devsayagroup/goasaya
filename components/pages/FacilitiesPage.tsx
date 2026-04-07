@@ -485,7 +485,7 @@ const FacilitiesPage: React.FC = () => {
             <div className="absolute inset-0 bg-black/75"></div>
         </div>
         <section className="relative container mx-auto pt-32 overflow-hidden">
-            <div className="flex flex-col md:flex-row justify-between items-start px-6 md:px-14 md:items-center">
+            <div className="flex flex-col lg:flex-row justify-between items-start px-6 md:px-14 lg:items-center">
                 <motion.h1
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -499,14 +499,14 @@ const FacilitiesPage: React.FC = () => {
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1 }}
-                    className="mt-8 md:mt-0 md:text-right max-w-lg text-gray-300"
+                    className="mt-8 lg:mt-0 lg:text-right max-w-lg text-gray-300"
                 >
                     <p className="font-text text-md leading-loose">
                         GoaSaya is a hidden sanctuary inspired by the intimacy of a cave.
                         Natural stone textures, warm lighting and considered service
                         create a calm, memorable place for gatherings of any kind.
                     </p>
-                    <div className="mt-4 flex justify-start md:justify-end gap-4">
+                    <div className="mt-4 flex justify-start lg:justify-end gap-4">
                         <Link
                         href="/reservation"
                         className="text-sm font-medium border-b border-gray-500 hover:border-white transition-all duration-300"
@@ -524,7 +524,7 @@ const FacilitiesPage: React.FC = () => {
             </div>
         </section>
 
-        <section className="relative container flex flex-col md:flex-row items-center justify-between mx-auto px-6 md:px-14 py-6 md:py-32">
+        <section className="relative container flex flex-col lg:flex-row items-center justify-between mx-auto px-6 md:px-8 lg:px-14 py-6 md:py-16 lg:py-32">
             <SectionTitle
                 title="About Our Home"
                 intro="Perfectly positioned within PIK 2’s entertainment district, GoaSaya is surrounded by Jakarta’s most exciting lifestyle destinations."
