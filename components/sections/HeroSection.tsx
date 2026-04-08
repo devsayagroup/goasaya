@@ -19,7 +19,6 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen w-full bg-[#0a0a0a] text-white overflow-hidden flex items-center">
       
-      {/* CSS Injection for GPU-accelerated Marquee */}
       <style dangerouslySetInnerHTML={{ __html: `
         @keyframes custom-marquee {
           0% { transform: translateX(0%); }
@@ -31,14 +30,13 @@ export default function HeroSection() {
       `}} />
 
       <div className="absolute inset-0 overflow-hidden opacity-85">
-        {/* Switched from Framer Motion to pure CSS animation for zero JS overhead */}
         <div
           className="flex flex-nowrap will-change-transform animate-custom-marquee"
           style={{ width: "200%" }}
         >
           {[...images, ...images].map((src, i) => {
-            // ONLY prioritize the very first image to free up the network for LCP
-            const isPriority = i === 0; 
+            // ✅ FIX: Prioritize the first TWO images because goa2 (i=1) peeks into the 80vw viewport
+            const isPriority = i < 2; 
 
             return (
               <div
@@ -50,17 +48,16 @@ export default function HeroSection() {
                   alt={`Goasaya ambience ${i + 1}`}
                   fill
                   sizes="(max-width: 768px) 80vw, 40vw"
-                  quality={60} // Lowered slightly; saves massive data under the dark overlay
-                  className="object-cover object-center bg-[#0a0a0a]" // Added fallback bg color
+                  quality={60} 
+                  className="object-cover object-center bg-[#0a0a0a]" 
                   priority={isPriority}
-                  loading={isPriority ? "eager" : "lazy"}
+                  // Let Next.js handle the exact loading attribute automatically based on priority
                 />
               </div>
             );
           })}
         </div>
 
-        {/* Gradient Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a]/80 via-black/40 to-[#0a0a0a]/90 pointer-events-none" />
       </div>
 
