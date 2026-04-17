@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { EVENTS } from "@/lib/event-data";
 import { getEventIndex } from "@/lib/event-index";
 
 export default async function EventsSection() {

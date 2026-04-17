@@ -205,8 +205,8 @@ export default function Header() {
               <Image
                 src="/logo/Logotype-01.png"
                 alt="Logo Goasaya"
-                width={160}
-                height={160}
+                width={140}
+                height={140}
                 className="w-auto h-auto"
                 priority
               />
