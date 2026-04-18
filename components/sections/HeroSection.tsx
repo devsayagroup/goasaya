@@ -20,7 +20,7 @@ export default function HeroSection() {
   return (
     <section className="relative h-screen w-full bg-[#0a0a0a] text-white overflow-hidden flex items-center">
       <div className="absolute inset-0 overflow-hidden bg-[#0a0a0a]">
-        <div className="absolute inset-0 z-0">
+        <div className="absolute inset-0 z-0 mt-[-18rem] md:mt-0">
           <Marquee 
               speed={30} 
               gradient={false} 
@@ -52,7 +52,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/60 to-[#0a0a0a] pointer-events-none" />
       </div>
 
-      <div className="relative container flex flex-col lg:flex-row mx-auto justify-between lg:items-center px-6 pt-96 lg:pt-0 md:px-14 z-20">
+      <div className="relative container flex flex-col lg:flex-row mx-auto justify-between lg:items-center px-6 pt-120 lg:pt-0 md:px-14 z-20">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -66,9 +66,9 @@ export default function HeroSection() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
-          className="mt-8 md:mt-0 lg:text-right max-w-lg text-white/90 drop-shadow-xl"
+          className="mt-4 md:mt-0 lg:text-right max-w-lg text-white/90 drop-shadow-xl"
         >
-          <p className="font-text mb-8 text-sm leading-loose md:text-base">
+          <p className="font-text mb-4 md:mb-8 text-sm leading-loose md:text-base">
             A short escape from modern life to an intimate man-made cave.
             A sanctuary where light, stone, and sound come together in quiet harmony.
             Here, comfort finds you and the world fades away.
