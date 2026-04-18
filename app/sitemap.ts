@@ -18,6 +18,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/event`, changeFrequency: "weekly", priority: 0.85 },
     { url: `${SITE_URL}/journal`, changeFrequency: "weekly", priority: 0.8 },
     { url: `${SITE_URL}/reservation`, changeFrequency: "weekly", priority: 0.7 },
+    {
+      url: `${SITE_URL}/cafe-di-pik`,
+      lastModified: new Date(),
+      changeFrequency: 'daily', // Signal to Google this is an active, important page
+      priority: 0.9,
+    },
   ];
 
   const journalRoutes: MetadataRoute.Sitemap = journalSlugs.map((p) => ({
