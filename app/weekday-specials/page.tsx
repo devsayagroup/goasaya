@@ -12,7 +12,7 @@ const GOASAYA_WEEKDAYS = [
     offer: "Buy 1 Get 1 Ceremonial Matcha", 
     price: "135K", 
     description: "Exclusively shipped all the way from Kyoto. Enjoy a complimentary serving.", 
-    image: "/promo/WS-2.jpg", 
+    image: "/promo/WS-2.webp", 
     accent: "#2D5A27",
     waLink: "https://wa.me/6281338382845?text=%5BMatcha%20Monday%20on%20Weekday%20Specials%5D%20Hi%20GOASAYA%2C%20I%E2%80%99d%20like%20to%20book%20for%20the%20Matcha%20Monday%20B1G1%20special."
   },
@@ -23,7 +23,7 @@ const GOASAYA_WEEKDAYS = [
     offer: "Free Flow Cocktails", 
     price: "299K/Guest", 
     description: "Elevate your Tuesday with our premium mixology selection.", 
-    image: "/promo/WS-3.jpg", 
+    image: "/promo/WS-3.webp", 
     accent: "#9B1B30",
     waLink: "https://wa.me/6281338382845?text=%5BTipsy%20Tuesday%20on%20Weekday%20Specials%5D%20Hi%20GOASAYA%2C%20I%E2%80%99m%20interested%20in%20the%20Tipsy%20Tuesday%20Free%20Flow%20Cocktails."
   },
@@ -34,7 +34,7 @@ const GOASAYA_WEEKDAYS = [
     offer: "Buy 1 Get 1 Wine by the Glass", 
     price: "160K", 
     description: "Enjoy a complimentary glass of wine with every glass ordered.", 
-    image: "/promo/WS-4.jpg", 
+    image: "/promo/WS-4.webp", 
     accent: "#722F37",
     waLink: "https://wa.me/6281338382845?text=%5BWinesday%20on%20Weekday%20Specials%5D%20Hi%20GOASAYA%2C%20I%E2%80%99d%20like%20to%20reserve%20a%20table%20for%20the%20Winesday%20wine%20promo."
   },
@@ -45,7 +45,7 @@ const GOASAYA_WEEKDAYS = [
     offer: "Bucket 4 Corona", 
     price: "299K/Bucket", 
     description: "The ultimate mid-week refresher. Available every Thursday.", 
-    image: "/promo/WS-5.jpg", 
+    image: "/promo/WS-5.webp", 
     accent: "#D4AF37",
     waLink: "https://wa.me/6281338382845?text=%5BThirsty%20Thursday%20on%20Weekday%20Specials%5D%20Hi%20GOASAYA%2C%20I%E2%80%99m%20interested%20in%20the%20Corona%20Bucket%20for%20Thirsty%20Thursday."
   },
@@ -56,7 +56,7 @@ const GOASAYA_WEEKDAYS = [
     offer: "The Goa Steak + 2 Glasses of Wine", 
     price: "999,000", 
     description: "A thoughtfully curated steak pairing to end your week.", 
-    image: "/promo/WS-6.jpg", 
+    image: "/promo/WS-6.webp", 
     accent: "#1A1A1A",
     waLink: "https://wa.me/6281338382845?text=%5BTGIF%20Steak%20%26%20Wine%20on%20Weekday%20Specials%5D%20Hi%20GOASAYA%2C%20I%E2%80%99d%20like%20to%20book%20the%20Friday%20Steak%20%26%20Wine%20pairing."
   }

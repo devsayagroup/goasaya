@@ -3,15 +3,13 @@
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
-import { getEventIndex } from "@/lib/event-index";
+import { EventType } from "@/lib/event-data";
 
-export default async function EventsSection() {
-  const events = await getEventIndex();
-
+export default function EventsSection({ events = []}: {events : EventType[]}) {
   const filterEvents = events.slice(0, 3);
 
   return (
-    <section className="container mx-auto bg-cream text-black py-24 px-8 md:px-16 overflow-hidden">
+    <section className="container mx-auto bg-cream text-black py-32 px-8 md:px-16 overflow-hidden">
       <div className="flex flex-col lg:flex-row justify-between items-start mb-12 md:mb-24 lg:items-center">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
@@ -59,6 +57,7 @@ export default async function EventsSection() {
                   src={event.image}
                   alt={event.title}
                   fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
                   className="object-cover duration-700 brightness-90"
                 />
               </div>
@@ -85,6 +84,7 @@ export default async function EventsSection() {
             src="/images/goa11.JPG"
             alt="Explore More GOASAYA Events"
             fill
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 25vw"
             className="object-cover brightness-75 group-hover:brightness-100 duration-700 transition-all"
           />
 

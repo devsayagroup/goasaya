@@ -24,6 +24,7 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import dynamic from 'next/dynamic';
 import { orgJsonLd,websiteJsonLd } from "@/lib/seo/jsonLd";
+import { getEventIndex } from "@/lib/event-index";
 
 const HeroSection = dynamic(() => import('@/components/sections/HeroSection'), {ssr: true});
 const AboutSection = dynamic(() => import('@/components/sections/AboutSection'), {ssr: true});
@@ -35,7 +36,7 @@ const SITE_NAME = "GOASAYA";
 const OG_IMAGE = `${SITE_URL}/rooms/frontview.webp`;
 
 export const metadata: Metadata = {
-  title: `${SITE_NAME} – Cave-Inspired Dining & Experiences in PIK 2 Jakarta`,
+  title: `${SITE_NAME} – Cave-Inspired Dining & Experiences in PIK 2`,
   description: "GoaSaya is a cave-inspired dining destination in PIK 2, Jakarta—crafted for immersive meals, curated experiences, and unforgettable nights.",
   keywords: [
     "GoaSaya",
@@ -44,6 +45,8 @@ export const metadata: Metadata = {
     "immersive dining Jakarta",
     "private dining PIK",
     "event venue Jakarta",
+    "Cafe di PIK",
+    "PIK must visit",
   ],
   alternates: { canonical: "/" },
 
@@ -64,7 +67,9 @@ export const metadata: Metadata = {
   },
 };
 
-export default function HomePage() {
+export default async function HomePage() {
+  const events = await getEventIndex();
+
   return (
     <>
       <Script
@@ -82,7 +87,7 @@ export default function HomePage() {
       <HeroSection/>
       <AboutSection/>
       <SpecialEventSection/>
-      <EventSection/>
+      <EventSection events={events}/>
     </>
   );
 }

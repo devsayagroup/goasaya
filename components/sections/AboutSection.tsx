@@ -6,7 +6,6 @@ import Image from "next/image";
 export default function AboutSection() {
   return (
     <section className="relative w-full text-white overflow-hidden">
-      {/* Background */}
       <div className="absolute inset-0">
         <Image
           src="/images/Japanese_Theme_Karaoke_3.jpg"
@@ -30,7 +29,7 @@ export default function AboutSection() {
             className="hidden lg:block mt-8 md:mt-0"
           >
             <Image
-              src="/images/goa8.JPG"
+              src="/images/webp/goa5.webp"
               alt="Goasaya Ambience"
               width={400}
               height={500}
