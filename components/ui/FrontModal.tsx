@@ -42,7 +42,7 @@ export default function FrontModal() {
   return (
     <AnimatePresence>
       {isOpen && (
-        <div className="fixed inset-0 z-[99999] flex items-center justify-center px-4 sm:px-12 pointer-events-auto">
+        <div className="fixed inset-0 z-[99999] flex items-center justify-center px-6 sm:px-12 pointer-events-auto">
           
           {/* Backdrop */}
           <motion.div
@@ -93,27 +93,27 @@ export default function FrontModal() {
                 Featured Experience
               </span>
               
-              <h4 className="text-3xl font-style uppercase text-white mb-3">
+              <h4 className="text-2xl md:text-3xl font-style uppercase text-white mb-3">
                 {activeCampaign.title}
               </h4>
               
-              <p className="text-sm text-white/70 leading-relaxed mb-8">
+              <p className="text-xs md:text-sm text-white/70 leading-relaxed mb-8">
                 {activeCampaign.description}
               </p>
 
               {/* Actions */}
-              <div className="flex flex-row w-full gap-3">
+              <div className="flex flex-col md:flex-row w-full gap-3">
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
-                  className="w-full py-3 px-4 text-xs font-medium text-white/50 uppercase tracking-widest hover:text-white transition-colors"
+                  className="w-full py-3 px-4 text-xs font-medium text-white/50 uppercase tracking-wider hover:text-white transition-colors"
                 >
                   Maybe Later
                 </button>
                 <Link
                   href={activeCampaign.ctaLink}
                   onClick={() => setIsOpen(false)}
-                  className="w-full bg-[#FFE3AF] text-black py-3 px-4 text-sm font-medium uppercase tracking-widest hover:bg-white transition-colors"
+                  className="w-full bg-[#FFE3AF] text-black py-3 px-4 text-sm font-medium uppercase tracking-wider hover:bg-white transition-colors"
                 >
                   {activeCampaign.ctaText}
                 </Link>
