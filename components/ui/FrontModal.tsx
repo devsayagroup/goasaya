@@ -97,12 +97,12 @@ export default function FrontModal() {
                 {activeCampaign.title}
               </h4>
               
-              <p className="text-xs md:text-sm text-white/70 leading-relaxed mb-8">
+              <p className="text-[10px] md:text-sm text-white/70 leading-relaxed mb-8">
                 {activeCampaign.description}
               </p>
 
               {/* Actions */}
-              <div className="flex flex-col md:flex-row w-full gap-3">
+              <div className="flex flex-row w-full gap-3">
                 <button
                   type="button"
                   onClick={() => setIsOpen(false)}
@@ -113,7 +113,7 @@ export default function FrontModal() {
                 <Link
                   href={activeCampaign.ctaLink}
                   onClick={() => setIsOpen(false)}
-                  className="w-full bg-[#FFE3AF] text-black py-3 px-4 text-sm font-medium uppercase tracking-wider hover:bg-white transition-colors"
+                  className="w-full bg-[#FFE3AF] text-black py-3 px-4 text-xs md:text-sm font-medium  rounded-sm uppercase tracking-wider hover:bg-white transition-colors"
                 >
                   {activeCampaign.ctaText}
                 </Link>

@@ -52,7 +52,7 @@ export default function HeroSection() {
         <div className="absolute inset-0 z-10 bg-gradient-to-b from-black/80 via-black/60 to-[#0a0a0a] pointer-events-none" />
       </div>
 
-      <div className="relative container flex flex-col lg:flex-row mx-auto justify-between lg:items-center px-6 pt-120 lg:pt-0 md:px-14 z-20">
+      <div className="relative container flex flex-col lg:flex-row mx-auto justify-between lg:items-center px-6 pt-110 lg:pt-0 md:px-14 z-20">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
