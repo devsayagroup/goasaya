@@ -1,12 +1,8 @@
 import type { MetadataRoute } from "next";
+import { articles } from "@/content/articles";
+import { events } from "@/content/events";
 
 const SITE_URL = "https://www.goasaya.com";
-
-const journalSlugs: { slug: string; lastModified?: string }[] = [
-];
-
-const eventSlugs: { slug: string; lastModified?: string }[] = [
-];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
@@ -26,16 +22,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const journalRoutes: MetadataRoute.Sitemap = journalSlugs.map((p) => ({
-    url: `${SITE_URL}/journal/${p.slug}`,
-    lastModified: p.lastModified,
+  const journalRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
+    url: `${SITE_URL}/journal/${article.slug}`,
+    // If your MDX meta has a date field (like meta.date), use it: new Date(article.meta.date)
+    // Otherwise, we fallback to new Date()
+    lastModified: new Date(),
     changeFrequency: "monthly",
     priority: 0.65,
   }));
 
-  const eventRoutes: MetadataRoute.Sitemap = eventSlugs.map((e) => ({
-    url: `${SITE_URL}/event/${e.slug}`,
-    lastModified: e.lastModified,
+  const eventRoutes: MetadataRoute.Sitemap = events.map((event) => ({
+    url: `${SITE_URL}/event/${event.slug}`,
+    lastModified: new Date(),
     changeFrequency: "weekly",
     priority: 0.75,
   }));

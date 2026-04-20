@@ -6,6 +6,7 @@ import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import Link from "next/link";
 import { trackEvent } from '@/lib/analytics'
 import { admin } from "@/lib/contact";
+
 interface FacilityItem {
     title: string;
     icon: React.FC;
@@ -24,10 +25,6 @@ interface RoomItem {
         icon: React.FC;
     }[];
 }
-
-type IconDotProps = {
-  className?: string;
-};
 
 const IconBase: React.FC<{ children: React.ReactNode; className?: string }> = ({
   children,
@@ -377,6 +374,7 @@ const RoomPanel: React.FC<{ room: RoomItem; idx: number, handleReserve:any }> = 
             src={room.image}
             alt={room.title}
             fill
+            sizes="100vw"
             className="object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />

@@ -8,7 +8,8 @@ import Loading from "./loading";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import WhatsappButton from "@/components/ui/WhatsappButton";
 import SmoothScroll from "@/components/ui/SmoothScroll";
-import FirstVisitModal from "@/components/ui/FirstVisitModal";
+// import FirstVisitModal from "@/components/ui/FirstVisitModal";
+import FrontModal from "@/components/ui/FrontModal";
 
 const textFont = Inria_Serif({
   variable: "--font-text",
@@ -20,7 +21,6 @@ const styleFont = localFont({
   src: "../styles/Civane.otf",
   variable: "--font-style",
 });
-
 
 const specialFont = localFont({
   src: "../styles/Bavex.ttf",
@@ -48,6 +48,7 @@ export default function ClientLayout({
           <Header />
           <ScrollToTop />
           <WhatsappButton />
+          <FrontModal/>
           {/* <FirstVisitModal/> */}
           <SmoothScroll>{children}</SmoothScroll>
           <Footer />
