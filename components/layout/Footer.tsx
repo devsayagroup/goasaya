@@ -3,19 +3,17 @@ import Link from "next/link";
 
 export default function Footer() {
     const d = new Date();
-    let year = d.getFullYear();
+    const year = d.getFullYear();
 
     return (
       <footer className="relative bg-maroon text-white py-8 px-6 md:py-12" id="contact">
-        {/* ✅ FIX: Added -z-10 so the background is cleanly separated from content, fixing CLS */}
-        <div className="absolute inset-0 -z-10">
+        <div className="absolute inset-0 ">
             <Image
                 src="/images/footer-goa.png"
                 alt="Asian dining background"
                 fill
                 sizes="100vw"
                 className="object-cover object-center brightness-75 bg-maroon"
-                // ✅ FIX: Removed "priority" so it doesn't steal loading speed from the Hero section!
             />
             <div className="absolute inset-0 bg-maroon/85"></div>
         </div>

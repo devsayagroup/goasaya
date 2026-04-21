@@ -300,7 +300,6 @@ export default function Floor1Section() {
                     </h2>
                 </motion.div>
 
-                {/* THE GALLERY GRID */}
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
                     {realiImages.map((img, i) => (
                         <motion.div
@@ -319,7 +318,7 @@ export default function Floor1Section() {
                                 alt={`Goasaya 1st Floor Experience ${i + 1}`}
                                 fill
                                 sizes={i === 0 ? "100vw" : "(max-width: 768px) 100vw, 33vw"}
-                                className="object-cover brightness-90 group-hover:brightness-110 transition-all duration-[3s] group-hover:scale-105"
+                                className="object-cover"
                             />
                             {/* Luxury Dark Overlay that fades on hover */}
                             <div className="absolute inset-0 bg-[#230c0f]/20 group-hover:bg-transparent transition-colors duration-1000 z-10 pointer-events-none"></div>
