@@ -50,10 +50,10 @@ export default function Loading() {
       {/* Layer 1: The Wallpaper Fade */}
       <div className="absolute inset-0 z-0 animate-fade-bg">
         <Image 
-          src="/images/webp/goa2.webp" // Reusing a hero image for the wallpaper
+          src="/images/webp/goa10.webp" 
           alt="Goasaya Background"
           fill
-          className="object-cover object-center grayscale" // Grayscale keeps it subtle
+          className="object-cover" // Grayscale keeps it subtle
           priority
         />
         {/* Dark overlay so the wallpaper doesn't overpower the logo */}

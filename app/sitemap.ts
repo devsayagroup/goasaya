@@ -20,6 +20,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily', // Signal to Google this is an active, important page
       priority: 0.9,
     },
+    {
+      url: `${SITE_URL}/may-madness`,
+      lastModified: new Date(),
+      changeFrequency: 'daily', // Signal to Google this is an active, important page
+      priority: 0.9,
+    },
   ];
 
   const journalRoutes: MetadataRoute.Sitemap = articles.map((article) => ({

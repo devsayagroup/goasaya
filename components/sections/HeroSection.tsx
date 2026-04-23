@@ -7,7 +7,7 @@ import Marquee from "react-fast-marquee";
 
 const images = [
   "/images/webp/goa1.webp", 
-  "/images/webp/goa2.webp",
+  "/images/webp/goa10.webp",
   "/images/webp/goa3.webp",
   "/images/webp/goa4.webp",
   "/images/webp/goa5.webp",
