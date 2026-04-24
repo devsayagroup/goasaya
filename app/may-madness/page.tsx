@@ -1,6 +1,6 @@
 // app/campaigns/may-madness/page.tsx
 import type { Metadata } from 'next';
-import MayMadnessPage from '@/components/pages/MayMadnessPage'; // Adjust path if needed
+import MayMadnessPage from '@/components/pages/Campaigns/MayMadnessPage'; // Adjust path if needed
 
 // High-converting SEO targeting "AYCE di PIK2"
 export const metadata: Metadata = {
