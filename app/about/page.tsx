@@ -1,18 +1,53 @@
-import Head from "../head";
-import dynamic from "next/dynamic";
-const AboutPage = dynamic(() => import('@/components/pages/AboutPage'), {ssr: true});
+// app/about/page.tsx (or wherever your about page is located)
+import type { Metadata } from "next";
+
+// Standard import is faster and better for server-side rendering
+import AboutPage from "@/components/pages/AboutPage";
+
+export const metadata: Metadata = {
+  title: "Our Story & Philosophy | GOASAYA PIK 2",
+  description: "Learn the story behind GOASAYA — where ancient cave aesthetics meet progressive Asian culinary innovation. Discover our philosophy, refined design, and exceptional hospitality in PIK 2, Jakarta.",
+  keywords: [
+    "About GOASAYA",
+    "Asian fine dining concept PIK 2",
+    "Cave design restaurant Jakarta",
+    "Luxury dining story",
+    "Progressive Asian cuisine Jakarta",
+    "Fine dining philosophy",
+    "Immersive restaurant PIK 2",
+    "GOASAYA culinary journey"
+  ],
+  openGraph: {
+    title: "About GOASAYA | The Art of Cave-Inspired Asian Dining",
+    description: "Discover the philosophy behind GOASAYA. A transcendent dining experience blending Asian artistry, refined design, and exceptional hospitality.",
+    url: "https://www.goasaya.com/about", 
+    siteName: "GOASAYA",
+    images: [
+      {
+        url: "https://www.goasaya.com/rooms/frontview.webp", // Ensure this is a high-quality landscape image
+        width: 1200,
+        height: 630,
+        alt: "The Story and Design of GOASAYA",
+      },
+    ],
+    locale: "en_US", // or "id_ID" depending on your primary target audience
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About GOASAYA | The Art of Cave-Inspired Asian Dining",
+    description: "Learn the story behind GOASAYA — where ancient cave aesthetics meet modern culinary innovation.",
+    images: ["https://www.goasaya.com/rooms/frontview.webp"],
+  },
+  alternates: {
+    canonical: "https://www.goasaya.com/about",
+  },
+};
 
 export default function About() {
   return (
-    <>
-      <Head 
-          title= "About GOASAYA | The Art of Cave-Inspired Asian Dining"
-          description= "Learn the story behind GOASAYA — where ancient cave aesthetics meet modern culinary innovation. Our philosophy blends Asian artistry, refined design, and exceptional hospitality to create a transcendent dining experience."
-          url="https://www.goasaya.com"
-          keywords="Asian fine dining concept, restaurant story, cave design restaurant, luxury dining story, fine dining philosophy, GOASAYA culinary journey"
-          image="https://www.goasaya.com/logo/09.jpg"
-      />
-      <AboutPage/>
-    </>
+    <main className="bg-[#0a0a0a]">
+      <AboutPage />
+    </main>
   );
 }

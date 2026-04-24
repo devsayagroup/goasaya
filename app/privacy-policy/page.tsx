@@ -45,7 +45,7 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-2xl font-style text-[#FFE3AF] mb-4">1. Introduction</h2>
             <p>
-              Welcome to GOASAYA ("we," "our," or "us"), a brand managed by Saya Group. We respect your privacy and are committed to protecting the personal data you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (goasaya.com) and use our services, including making restaurant reservations.
+              Welcome to GOASAYA (&quot;we,&quot; &quot;our,&quot; or &quot;us&quot;), a brand managed by Saya Group. We respect your privacy and are committed to protecting the personal data you share with us. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website (goasaya.com) and use our services, including making restaurant reservations.
             </p>
             <p className="mt-4">
               By accessing or using our website, you agree to the terms of this Privacy Policy.
@@ -69,7 +69,7 @@ export default function PrivacyPolicyPage() {
               <li>To process and manage your dining reservations.</li>
               <li>To communicate with you regarding your booking, inquiries, or customer service requests.</li>
               <li>To send you promotional materials, newsletters, and marketing communications (only if you have opted in to receive them).</li>
-              <li>To analyze website usage and improve our website's performance, layout, and user experience.</li>
+              <li>To analyze website usage and improve our website&apos;s performance, layout, and user experience.</li>
               <li>To comply with legal obligations and enforce our Terms of Service.</li>
             </ul>
           </section>
@@ -78,7 +78,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-2xl font-style text-[#FFE3AF] mb-4">4. Third-Party Services & Data Sharing</h2>
             <p className="mb-4">We do not sell, trade, or rent your personal information to third parties. However, we may share your information with trusted third-party service providers who assist us in operating our business:</p>
             <ul className="list-disc pl-5 space-y-2">
-              <li><strong className="text-white/90">Reservation Partners:</strong> We use <strong className="text-white">Chope</strong> to process our online reservations. When you click "Book a table," you are directed to Chope's platform. The information you provide there is governed by Chope’s own Privacy Policy, though we receive your booking details to fulfill your reservation.</li>
+              <li><strong className="text-white/90">Reservation Partners:</strong> We use <strong className="text-white">Chope</strong> to process our online reservations. When you click &quot;Book a table,&quot; you are directed to Chope&apos;s platform. The information you provide there is governed by Chope’s own Privacy Policy, though we receive your booking details to fulfill your reservation.</li>
               <li><strong className="text-white/90">Analytics Providers:</strong> We use <strong className="text-white">Google Analytics and Google Tag Manager</strong> to monitor and analyze the use of our website. Google may use the collected data to contextualize and personalize the ads of its own advertising network.</li>
               <li><strong className="text-white/90">Legal Requirements:</strong> We may disclose your information if required to do so by law or in response to valid requests by public authorities (e.g., a court or government agency).</li>
             </ul>
@@ -106,14 +106,14 @@ export default function PrivacyPolicyPage() {
           <section>
             <h2 className="text-2xl font-style text-[#FFE3AF] mb-4">7. Third-Party Links</h2>
             <p>
-              Our website may contain links to other websites or social media platforms (e.g., Instagram, TikTok) that are not operated by us. If you click on a third-party link, you will be directed to that third party's site. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
+              Our website may contain links to other websites or social media platforms (e.g., Instagram, TikTok) that are not operated by us. If you click on a third-party link, you will be directed to that third party&apos;s site. We strongly advise you to review the Privacy Policy of every site you visit. We have no control over and assume no responsibility for the content, privacy policies, or practices of any third-party sites or services.
             </p>
           </section>
 
           <section>
             <h2 className="text-2xl font-style text-[#FFE3AF] mb-4">8. Changes to This Privacy Policy</h2>
             <p>
-              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date. You are advised to review this Privacy Policy periodically for any changes.
+              We may update our Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the &quot;Last Updated&quot; date. You are advised to review this Privacy Policy periodically for any changes.
             </p>
           </section>
 

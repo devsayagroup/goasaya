@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Clock, CalendarDays } from "lucide-react"; 
+import RelatedExperiences from "@/components/ui/RelatedExperiences";
 
 const premiumEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -142,14 +143,6 @@ export default function MayMadnessPage() {
 
       <section className="relative w-full bg-[#0B0502] text-black overflow-hidden py-32 md:py-48 px-6 md:px-14">
             <div className="absolute inset-0 z-0">
-                <Image
-                    src="/images/may-madness-bar.png" 
-                    alt="Luxury Cave Bar area GOASAYA"
-                    fill
-                    sizes="100vw"
-                    className="object-cover object-center"
-                    priority
-                />
                 <div className="absolute inset-0 bg-[#4A1B07]/80 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-[#0B0502] via-transparent to-[#0B0502]"></div>
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-xl h-[400px] bg-[#FF8C00]/15 blur-[130px] rounded-full pointer-events-none" />
@@ -180,7 +173,6 @@ export default function MayMadnessPage() {
                     </div>
                     
                     <p className="text-sm md:text-lg text-white font-style italic max-w-2xl drop-shadow-xl leading-relaxed">
-                        {/* Redefining All You Can Eat means redefined inclusions. <br className="hidden sm:block"/> */}
                         Your lunch experience comes to an intimate close with authentic Italian <br className="hidden sm:block"/> Gelato from Venchi. <span className="text-[#FFB85C] font-semibold">Enjoy it as much as you like.</span>
                     </p>
                 </motion.div>
@@ -203,7 +195,6 @@ export default function MayMadnessPage() {
                             viewport={{ once: true, margin: "-50px" }}
                             className="flex flex-col items-center gap-5 group cursor-pointer"
                         >
-                            {/* Image Container (Aspect Square for Ice Cream/Gelato) */}
                             <div className="relative w-full aspect-square rounded-sm overflow-hidden border border-white/5 shadow-2xl">
                                 <Image
                                     src={variant.src}
@@ -291,6 +282,7 @@ export default function MayMadnessPage() {
             </motion.div>
         </div>
       </section>
+      <RelatedExperiences currentCampaignId="may-madness" />
     </main>
   );
 }

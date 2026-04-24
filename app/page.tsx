@@ -24,12 +24,13 @@ import type { Metadata } from "next";
 import Script from "next/script";
 import dynamic from 'next/dynamic';
 import { orgJsonLd,websiteJsonLd } from "@/lib/seo/jsonLd";
-import { getEventIndex } from "@/lib/event-index";
+// import { getEventIndex } from "@/lib/event-index";
 
 const HeroSection = dynamic(() => import('@/components/sections/HeroSection'), {ssr: true});
 const AboutSection = dynamic(() => import('@/components/sections/AboutSection'), {ssr: true});
 const SpecialEventSection = dynamic(() => import('@/components/sections/SpecialEventSection'), {ssr: true});
-const EventSection = dynamic(() => import('@/components/sections/EventSection'), {ssr: true});
+// const EventSection = dynamic(() => import('@/components/sections/EventSection'), {ssr: true});
+const ExperienceSection = dynamic(() => import('@/components/sections/ExperienceSection'), {ssr: true});
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.goasaya.com"; 
 const SITE_NAME = "GOASAYA"; 
@@ -68,8 +69,6 @@ export const metadata: Metadata = {
 };
 
 export default async function HomePage() {
-  const events = await getEventIndex();
-
   return (
     <>
       <Script
@@ -87,7 +86,7 @@ export default async function HomePage() {
       <HeroSection/>
       <AboutSection/>
       <SpecialEventSection/>
-      <EventSection events={events}/>
+      <ExperienceSection/>
     </>
   );
 }
