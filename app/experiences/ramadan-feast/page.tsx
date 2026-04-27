@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Ramadan Feast at GOASAYA | PIK 2',
     description: 'Relive the warmth of togetherness with our best value set menu featuring authentic Indonesian flavors.',
-    url: 'https://www.goasaya.com/campaigns/ramadan-feast',
+    url: 'https://www.goasaya.com/experiences/ramadan-feast',
     siteName: 'GOASAYA',
     images: [
       {

@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'May Madness: Premium AYCE Lunch di PIK 2 | GOASAYA',
     description: 'Not Your Usual All You Can Eat. Freshly prepared to order, 50+ menus, and free-flow Venchi gelato. Book your table at PIK 2 today.',
-    url: 'https://www.goasaya.com/campaigns/may-madness',
+    url: 'https://www.goasaya.com/experiences/may-madness',
     siteName: 'GOASAYA',
     images: [
       {

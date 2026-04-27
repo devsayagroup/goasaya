@@ -27,7 +27,7 @@ export const campaigns = [
     description: "Relive the warmth of togetherness. A look back at our curated culinary journey of authentic Indonesian flavors.",
     image: "/images/webp/RF1.webp", 
     ctaText: "View Archive",
-    ctaLink: "/ramadan-feast", 
+    ctaLink: "/experiences/ramadan-feast", 
     isActive: false, 
   },
   {
@@ -36,7 +36,7 @@ export const campaigns = [
     description: "Elevate your mid-week dining. Enjoy exclusive privileges and curated tasting menus from Monday to Thursday.",
     image: "/promo/WS-1.webp", 
     ctaText: "Discover More",
-    ctaLink: "/weekday-specials", 
+    ctaLink: "/experiences/weekday-specials", 
     isActive: false, 
   },
   {
@@ -45,7 +45,7 @@ export const campaigns = [
     description: "A lunch experience, redefined. Freshly prepared by order, thoughtfully served to your table.",
     image: "/images/webp/MM-FULL.webp", 
     ctaText: "Discover More",
-    ctaLink: "/may-madness", 
+    ctaLink: "/experiences/may-madness", 
     isActive: true, 
   },
 ];

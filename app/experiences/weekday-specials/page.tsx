@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Weekday Specials & Promos di PIK 2 | GOASAYA',
     description: 'Discover curated deals for every day of the week at GOASAYA. From Matcha Mondays to TGIF Steak pairings, reserve your table today.',
-    url: 'https://www.goasaya.com/campaigns/weekday-specials',
+    url: 'https://www.goasaya.com/experiences/weekday-specials',
     siteName: 'GOASAYA',
     images: [
       {
