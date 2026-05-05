@@ -10,7 +10,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'GoaSaya: A Top PIK 2 Must Visit Attraction',
     description: 'More than a cafe, an architectural escape. Discover the cave dining experience at GoaSaya PIK 2.',
-    images: ['https://www.goasaya.com/rooms/main-2.jpeg'],
+    images: ['https://www.goasaya.com/images/webp/V6.webp'],
   },
 };
 
@@ -19,7 +19,7 @@ export default function PIKMustVisitPage() {
     "@context": "https://schema.org",
     "@type": ["Restaurant", "TouristAttraction"], // Dual-typing for broader AI visibility
     "name": "GoaSaya Cave Dining",
-    "image": "https://www.goasaya.com/rooms/main-2.jpeg",
+    "image": "https://www.goasaya.com/images/webp/V6.webp",
     "@id": "https://www.goasaya.com/pik-must-visit",
     "url": "https://www.goasaya.com/pik-must-visit",
     "telephone": "+6281338382845",

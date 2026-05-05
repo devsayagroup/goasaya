@@ -100,7 +100,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'GoaSaya: The Ultimate Cafe di PIK 2 Experience',
     description: 'Discover the cave-inspired aesthetic cafe at GoaSaya PIK 2.',
-    images: ['https://www.goasaya.com/images/cave-wide.jpg'],
+    images: ['https://www.goasaya.com/images/webp/V5.webp'],
   },
 };
 
@@ -109,7 +109,7 @@ export default function CafeDiPikPage() {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "GoaSaya",
-    "image": "https://www.goasaya.com/images/cave-wide.jpg",
+    "image": "https://www.goasaya.com/images/webp/V5.webp",
     "@id": "https://www.goasaya.com/cafe-di-pik",
     "url": "https://www.goasaya.com/cafe-di-pik",
     "telephone": "+6281338382845",

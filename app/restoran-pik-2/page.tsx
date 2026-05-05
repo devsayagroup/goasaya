@@ -8,9 +8,9 @@ export const metadata: Metadata = {
     canonical: 'https://www.goasaya.com/restoran-pik-2',
   },
   openGraph: {
-    title: 'GoaSaya: Restoran Mewah di Entertainment District PIK 2',
+    title: 'GoaSaya: Restoran di Entertainment District PIK 2',
     description: 'Destinasi kuliner terbaik di Pantai Indah Kapuk 2. Experience premium cave dining.',
-    images: ['https://www.goasaya.com/rooms/main-2.jpeg'],
+    images: ['https://www.goasaya.com/images/webp/V3.webp'],
   },
 };
 
@@ -19,7 +19,7 @@ export default function RestoranPik2Page() {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "GoaSaya",
-    "image": "https://www.goasaya.com/rooms/main-2.jpeg",
+    "image": "https://www.goasaya.com/images/webp/V3.webp",
     "@id": "https://www.goasaya.com/restoran-pik-2",
     "url": "https://www.goasaya.com/restoran-pik-2",
     "telephone": "+6281338382845",
