@@ -36,7 +36,7 @@ export default function Header() {
       category: 'tracking',
       label: 'CTA Book Now',
     });
-    window.open('https://cho.pe/web_goasayarestaurant', '_blank', 'noopener,noreferrer');
+    window.open('https://cho.pe/web_goasayarestaurant', '_blank', 'noopener,noreferrer,nofollow');
   };
 
   return (

@@ -22,13 +22,13 @@ export default function PIKMustVisitPage() {
     "image": "https://www.goasaya.com/rooms/main-2.jpeg",
     "@id": "https://www.goasaya.com/pik-must-visit",
     "url": "https://www.goasaya.com/pik-must-visit",
-    "telephone": "+62XXXXXXXXX",
+    "telephone": "+6281338382845",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Pantai Indah Kapuk 2 (PIK 2)",
-      "addressLocality": "Jakarta Utara",
-      "addressRegion": "DKI Jakarta",
-      "postalCode": "14470",
+      "streetAddress": "Entertainment District 2 PIK 2, Jl HR Jl. Rasuna Said, Salembaran, Kec. Kosambi",
+      "addressLocality": "Kabupaten Tangerang",
+      "addressRegion": "Banten",
+      "postalCode": "15214",
       "addressCountry": "ID"
     },
     // GEO SIGNAL: Feeding the AI exact phrases
