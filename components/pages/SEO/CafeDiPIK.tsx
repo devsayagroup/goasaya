@@ -31,30 +31,26 @@ export default function CafeDiPikClient() {
 
   const faqs = [
     {
-      question: "What makes GoaSaya the best cafe di PIK?",
-      answer: "Our unique man-made cave architecture provides an intimate escape from the modern world. Combined with premium hospitality, it's a deeply relaxing ambiance unlike any other cafe in PIK 2."
+      question: "What makes GoaSaya the most aesthetic cafe di PIK 2?",
+      answer: "Unlike standard coffee shops, GoaSaya introduces Indonesia's first luxury cave dining concept. The combination of carved stone walls, cozy lighting, and premium hospitality makes it the ultimate aesthetic cafe in Pantai Indah Kapuk 2."
     },
     {
-      question: "Where is the best place for a PIK must visit experience?",
-      answer: "GoaSaya is located in the heart of PIK 2. We offer a safe space surrounded by stone walls and soft lights, perfect for those who appreciate the finer things."
+      question: "Is GoaSaya suitable for a cozy hangout or aesthetic photos?",
+      answer: "Absolutely. We designed GoaSaya to be highly photogenic and cozy. Every angle of our 1st Floor Cave and 2nd Floor Lounge provides a unique visual backdrop, making it a highly recommended PIK 2 must-visit for content and relaxation."
     },
     {
-      question: "Do I need a reservation?",
-      answer: "While we welcome walk-ins, we highly recommend reserving your table in advance to ensure you get the best experience in our 1st Floor Cave or the exclusive 2nd Floor Lounge."
+      question: "Do I need a reservation to visit this cafe di PIK?",
+      answer: "Because GoaSaya is a highly sought-after destination in PIK 2, we strongly recommend booking a table in advance via our official reservation system, though walk-ins are welcomed based on availability."
     }
   ];
 
   return (
-    // Replaced flat maroon with a rich, dark gradient to simulate cave depth
     <main className="bg-gradient-to-b from-[#1a0b08] via-[#230c0f] to-[#120806] text-[#f5f5f5] min-h-screen font-sans selection:bg-[#e6d5b8] selection:text-black overflow-hidden">
-      
-      {/* 1. HERO SECTION (Full bleed with parallax background) */}
       <section ref={heroRef} className="relative h-screen flex flex-col justify-center overflow-hidden">
         <motion.div 
           style={{ y: heroY, opacity: heroOpacity }}
           className="absolute inset-0 z-0"
         >
-          {/* Subtle background texture/image for the hero */}
           <Image 
             src="/rooms/main-2.jpeg" 
             alt="GoaSaya Cave Texture" 
@@ -64,7 +60,6 @@ export default function CafeDiPikClient() {
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#230c0f] via-transparent to-transparent"></div>
         </motion.div>
-
         <div className="relative z-10 flex flex-col items-center text-center px-6 mt-20">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -73,7 +68,7 @@ export default function CafeDiPikClient() {
           >
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-style mb-6 leading-[1.1] tracking-tighter drop-shadow-2xl">
               The Definitive <br />
-              <span className="italic text-[#e6d5b8] font-light">Cafe di PIK</span>
+              <span className="italic text-[#e6d5b8] font-light">Cafe di PIK 2</span> {/* Added the '2' */}
             </h1>
           </motion.div>
           
@@ -83,14 +78,12 @@ export default function CafeDiPikClient() {
             transition={{ duration: 1.5, delay: 0.4, ease: premiumEase }}
             className="text-sm md:text-lg text-white/70 max-w-2xl leading-relaxed font-light md:mt-6"
           >
-            A short escape from the modern life to an intimate man-made cave. 
-            Your safe space surrounded by stone walls and soft lights. 
-            Discover the ultimate PIK must visit.
+            A short escape from modern life into an intimate, aesthetic cave concept. 
+            Discover why GoaSaya is recognized as the most cozy and unique cafe di Pantai Indah Kapuk 2.
           </motion.p>
         </div>
       </section>
 
-      {/* 2. A GLIMPSE INSIDE */}
       <section className="max-w-[1500px] mx-auto px-4 md:px-8 py-32 relative z-10">
         <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
            <motion.div 
@@ -127,7 +120,7 @@ export default function CafeDiPikClient() {
               transition={{ duration: 1.2, delay: 0.2, ease: premiumEase }}
               className="relative h-[242px] md:h-[342px] overflow-hidden group rounded-sm"
             >
-              <Image src="/images/goa1.jpg" alt="Aesthetic Cafe di PIK seating" fill className="object-cover transition-transform duration-[4s] group-hover:scale-105" />
+              <Image src="/images/webp/goa8.webp" alt="Aesthetic Cafe di PIK seating" fill className="object-cover transition-transform duration-[4s] group-hover:scale-105" />
             </motion.div>
             <motion.div 
               initial={{ opacity: 0, y: 50 }}
@@ -136,13 +129,12 @@ export default function CafeDiPikClient() {
               transition={{ duration: 1.2, delay: 0.4, ease: premiumEase }}
               className="relative h-[242px] md:h-[342px] overflow-hidden group rounded-sm"
             >
-              <Image src="/images/goa2.jpg" alt="PIK Must Visit Dining Table" fill className="object-cover transition-transform duration-[4s] group-hover:scale-105" />
+              <Image src="/images/webp/goa3.webp" alt="PIK Must Visit Dining Table" fill className="object-cover transition-transform duration-[4s] group-hover:scale-105" />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* 3. WHY GOASAYA PIK MUST VISIT (Editorial Asymmetrical Layout) */}
       <section className="py-40 relative">
         <div className="max-w-[1300px] mx-auto px-6">
           <motion.div 
@@ -159,7 +151,6 @@ export default function CafeDiPikClient() {
           </motion.div>
 
           <div className="flex flex-col gap-32">
-            {/* Feature 1 - Image Right */}
             <div className="flex flex-col-reverse md:flex-row items-center gap-16 md:gap-24">
               <motion.div 
                 initial={{ opacity: 0, x: -50 }}
@@ -169,8 +160,8 @@ export default function CafeDiPikClient() {
                 className="md:w-1/2"
               >
                 <span className="text-[#e6d5b8] font-style text-3xl mb-4 block">01.</span>
-                <h3 className="text-3xl md:text-5xl font-style mb-6 text-white">Intimate Architecture</h3>
-                <p className="text-white/50 text-base md:text-lg font-light leading-relaxed">Carved aesthetics inspired by nature, providing the ultimate visual backdrop and a deeply relaxing ambiance for your social moments.</p>
+                <h3 className="text-3xl md:text-5xl font-style mb-6 text-white">Aesthetic Cave Concept</h3>
+                <p className="text-white/50 text-base md:text-lg font-light leading-relaxed">As the most unique aesthetic cafe di PIK 2, our carved stone architecture provides a breathtaking, highly photogenic backdrop that you won&apos;t find anywhere else in Jakarta.</p>
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -179,11 +170,10 @@ export default function CafeDiPikClient() {
                 transition={{ duration: 1.2, ease: premiumEase }}
                 className="md:w-1/2 relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-sm"
               >
-                <Image src="/images/goa1.jpg" alt="Intimate Architecture" fill className="object-cover" />
+                <Image src="/images/webp/goa2.webp" alt="Intimate Architecture" fill className="object-cover" />
               </motion.div>
             </div>
 
-            {/* Feature 2 - Image Left */}
             <div className="flex flex-col md:flex-row items-center gap-16 md:gap-24">
               <motion.div 
                 initial={{ opacity: 0, scale: 0.95 }}
@@ -192,7 +182,7 @@ export default function CafeDiPikClient() {
                 transition={{ duration: 1.2, ease: premiumEase }}
                 className="md:w-1/2 relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-sm"
               >
-                <Image src="/images/goa2.jpg" alt="Artisanal Dining" fill className="object-cover" />
+                <Image src="/images/webp/goa4.webp" alt="Artisanal Dining" fill className="object-cover" />
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, x: 50 }}
@@ -202,15 +192,14 @@ export default function CafeDiPikClient() {
                 className="md:w-1/2"
               >
                 <span className="text-[#e6d5b8] font-style text-3xl mb-4 block">02.</span>
-                <h3 className="text-3xl md:text-5xl font-style mb-6 text-white">Artisanal Dining</h3>
-                <p className="text-white/50 text-base md:text-lg font-light leading-relaxed">Here we gather to share meals and create memories. Precision-crafted menus elevating standard cafe fare into a culinary journey.</p>
+                <h3 className="text-3xl md:text-5xl font-style mb-6 text-white">Cozy & Exclusive Dining</h3>
+                <p className="text-white/50 text-base md:text-lg font-light leading-relaxed">More than just a coffee shop, GoaSaya offers a deeply cozy and private ambiance. We elevate standard cafe fare with precision-crafted culinary experiences and artisanal desserts.</p>
               </motion.div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 4. FAQ SECTION */}
       <section className="py-32 px-6 max-w-4xl mx-auto border-t border-[#e6d5b8]/10">
         <div className="mb-20 flex flex-col items-center text-center">
           <h2 className="text-4xl md:text-6xl font-style">Frequently Asked</h2>
@@ -258,9 +247,7 @@ export default function CafeDiPikClient() {
         </div>
       </section>
 
-      {/* 5. PARALLAX CTA SECTION */}
       <section ref={ctaRef} className="relative py-40 md:py-42 flex flex-col items-center text-center overflow-hidden">
-        {/* Parallax Background Image */}
         <motion.div 
           style={{ y: ctaY }}
           className="absolute inset-0 z-0 w-full h-[150%]"
@@ -288,7 +275,6 @@ export default function CafeDiPikClient() {
           </Link>
         </div>
       </section>
-
     </main>
   );
 }

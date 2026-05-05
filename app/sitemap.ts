@@ -21,6 +21,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'daily', 
       priority: 0.9,
     },
+    {
+      url: `${SITE_URL}/pik-must-visit`,
+      lastModified: new Date(),
+      changeFrequency: 'daily', 
+      priority: 0.9,
+    },
   ];
 
   const journalRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
@@ -31,7 +37,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   const campaignRoutes: MetadataRoute.Sitemap = campaigns.map((campaign) => ({
-    url: `${SITE_URL}${campaign.ctaLink}`,
+    url: `${SITE_URL}/${campaign.ctaLink}`,
     lastModified: new Date(),
     changeFrequency: campaign.isActive ? "daily" : "monthly",
     priority: campaign.isActive ? 0.9 : 0.5,
