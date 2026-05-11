@@ -21,9 +21,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/links`, changeFrequency: "weekly", priority: 0.7 },
 
     // SEO Pages
-    { url: `${SITE_URL}/experiences/cafe-di-pik`, changeFrequency: "daily", priority: 0.9 },
-    { url: `${SITE_URL}/experiences/pik-must-visit`, changeFrequency: "daily", priority: 0.9 },
-    { url: `${SITE_URL}/experiences/restoran-pik-2`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${SITE_URL}/cafe-di-pik`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${SITE_URL}/pik-must-visit`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${SITE_URL}/restoran-pik-2`, changeFrequency: "daily", priority: 0.9 },
   ];
 
   const journalRoutes: MetadataRoute.Sitemap = articles.map((article) => {
