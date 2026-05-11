@@ -170,7 +170,7 @@ export default function CafeDiPikClient() {
                 transition={{ duration: 1.2, ease: premiumEase }}
                 className="md:w-1/2 relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-sm"
               >
-                <Image src="/images/webp/goa2.webp" alt="Intimate Architecture" fill className="object-cover" />
+                <Image src="/images/webp/goa2.webp" alt="Intimate Architecture" fill className="object-cover" priority />
               </motion.div>
             </div>
 
@@ -182,7 +182,7 @@ export default function CafeDiPikClient() {
                 transition={{ duration: 1.2, ease: premiumEase }}
                 className="md:w-1/2 relative h-[400px] md:h-[600px] w-full overflow-hidden rounded-sm"
               >
-                <Image src="/images/webp/goa4.webp" alt="Artisanal Dining" fill className="object-cover" />
+                <Image src="/images/webp/goa4.webp" alt="Artisanal Dining" fill className="object-cover" priority />
               </motion.div>
               <motion.div 
                 initial={{ opacity: 0, x: 50 }}
@@ -257,6 +257,7 @@ export default function CafeDiPikClient() {
             alt="GoaSaya Cave Experience" 
             fill 
             className="object-cover opacity-40 mix-blend-luminosity"
+            priority
           />
           <div className="absolute inset-0 bg-[#1a0b08]/40"></div>
         </motion.div>

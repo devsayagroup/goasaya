@@ -6,6 +6,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { trackEvent } from "@/lib/analytics";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
   { name: "About", href: "/about" },
@@ -30,7 +31,10 @@ export default function Header() {
       document.body.style.overflow = "unset";
     };
   }, [menuOpen]);
-
+    
+  const pathname = usePathname();
+  if (pathname === "/links") return null;
+    
   const handleReserve = () => {
     trackEvent('cta_button_header', {
       category: 'tracking',

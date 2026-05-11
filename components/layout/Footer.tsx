@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export default function Footer() {
     const d = new Date();
     const year = d.getFullYear();
+    
+    const pathname = usePathname();
+      if (pathname === "/links") return null;
 
     return (
       <footer className="relative bg-maroon text-white py-8 px-6 md:py-12" id="contact">

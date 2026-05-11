@@ -54,14 +54,15 @@ export default function MayMadness() {
     "location": {
       "@type": "Restaurant",
       "name": "GoaSaya",
+      "telephone": "+6281338382845",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Entertainment District, Pantai Indah Kapuk 2 (PIK 2)",
-        "addressLocality": "Jakarta Utara",
-        "addressRegion": "DKI Jakarta",
-        "postalCode": "14470",
+        "streetAddress": "Entertainment District PIK 2, Jl HR Jl. Rasuna Said, Salembaran, Kec. Kosambi",
+        "addressLocality": "Kabupaten Tangerang",
+        "addressRegion": "Banten",
+        "postalCode": "15214",
         "addressCountry": "ID"
-      }
+      },
     },
     "offers": {
       "@type": "Offer",

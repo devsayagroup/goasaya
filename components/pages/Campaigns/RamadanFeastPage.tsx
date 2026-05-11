@@ -157,7 +157,6 @@ export default function RamadanFeastPage() {
             </div>
         </section>
 
-        {/* 3. CTA TO CURRENT EXPERIENCES */}
         <section className="relative w-full border-t border-[#D4AF37]/20 bg-[#020A06] py-24 px-6 text-center">
             <motion.div
                 initial={{ opacity: 0, y: 30 }}
