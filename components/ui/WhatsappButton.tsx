@@ -1,10 +1,13 @@
 'use client'
+import { usePathname } from 'next/navigation'
 import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { trackEvent } from '@/lib/analytics'
 import { admin } from '@/lib/contact'
 
 const WhatsappButton = () => {
+  const pathname = usePathname();
+    if (pathname === "/links") return null;
   const handleReserve = () => {
     trackEvent('whatsapp_button', {
       category: 'tracking',

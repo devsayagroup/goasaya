@@ -1,5 +1,6 @@
 "use client";
 
+import { usePathname } from "next/navigation";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -20,6 +21,7 @@ type Campaign = {
 
 export default function FrontModal() {
   const [isOpen, setIsOpen] = useState(false);
+  
 
   // Calculate the active campaign synchronously
   const activeCampaign: Campaign | undefined = campaigns.find((c) => c.isActive);
@@ -35,6 +37,9 @@ export default function FrontModal() {
 
     return () => clearTimeout(timer);
   }, [activeCampaign]);
+
+  const pathname = usePathname();
+  if (pathname === "/links") return null;
 
   // If there's no active campaign to show, render nothing
   if (!activeCampaign) return null;
