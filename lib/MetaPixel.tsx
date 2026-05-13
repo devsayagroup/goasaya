@@ -1,11 +1,12 @@
 // components/analytics/MetaPixel.tsx
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, Suspense } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 
-export default function MetaPixel() {
+// 1. Move the hook logic into its own internal component
+function MetaPixelEvents() {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
@@ -16,6 +17,11 @@ export default function MetaPixel() {
     }
   }, [pathname, searchParams]);
 
+  return null; // This component doesn't render anything visual
+}
+
+// 2. Export your main component, wrapping the events inside Suspense
+export default function MetaPixel() {
   return (
     <>
       <Script id="meta-pixel" strategy="afterInteractive">
@@ -40,6 +46,11 @@ export default function MetaPixel() {
           alt="Meta Pixel"
         />
       </noscript>
+      
+      {/* 3. Wrap the hooks in Suspense to fix the Vercel build error */}
+      <Suspense fallback={null}>
+        <MetaPixelEvents />
+      </Suspense>
     </>
   );
 }

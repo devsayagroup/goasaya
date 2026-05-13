@@ -12,23 +12,23 @@ interface Dish {
 const row1: Dish[] = [
   { id: 1, name: "Spicy Tofu Nugget", src: "/images/ayce/1.png" },
   { id: 2, name: "Oyster Mushroom Satai", src: "/images/ayce/2.png" },
-  { id: 3, name: "Signature Peking Duck", src: "/images/ayce/3.png" },
-  { id: 4, name: "Lobster Garlic Noodles", src: "/images/ayce/4.png" },
+  { id: 3, name: "Tropical salt Kiss", src: "/images/ayce/3.png" },
+  { id: 4, name: "Kecap Manis Cheesecake", src: "/images/ayce/4.png" },
   { id: 5, name: "Crispy Prawn Signature Roll", src: "/images/ayce/5.png" },
 ];
 
 const row2: Dish[] = [
   { id: 6, name: "Grill Kraken", src: "/images/ayce/6.png" },
-  { id: 7, name: "Caviar & Bone Marrow", src: "/images/ayce/7.png" },
-  { id: 8, name: "Foie Gras Nigiri", src: "/images/ayce/8.png" },
-  { id: 9, name: "Miso Glazed Black Cod", src: "/images/ayce/9.png" },
+  { id: 7, name: "Raspberry Chocolate Rose", src: "/images/ayce/7.png" },
+  { id: 8, name: "Coconut Butterfly", src: "/images/ayce/8.png" },
+  { id: 9, name: "Atlantic Soyu Salmon", src: "/images/ayce/9.png" },
   { id: 10, name: "Grilled Enoki Mushroom", src: "/images/ayce/10.png" },
 ];
 
 const row3: Dish[] = [
-  { id: 11, name: "Bluefin Tuna Tartare", src: "/images/ayce/11.png" },
-  { id: 12, name: "Uni Pasta Carbonara", src: "/images/ayce/12.png" },
-  { id: 13, name: "Dry Aged Duck Breast", src: "/images/ayce/13.png" },
+  { id: 11, name: "Vegetable Quesadillas", src: "/images/ayce/11.png" },
+  { id: 12, name: "Strawberry Matcha Latte Mille Feuille", src: "/images/ayce/12.png" },
+  { id: 13, name: "Chicken Corn Soup", src: "/images/ayce/13.png" },
   { id: 14, name: "Chukaidako Fritter", src: "/images/ayce/14.png" },
   { id: 15, name: "Wagyu Carpaccio", src: "/images/ayce/15.png" },
 ];
