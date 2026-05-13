@@ -15,13 +15,12 @@
 declare global {
   interface Window {
     gtag: (...args: unknown[]) => void;
+    fbq: (...args: unknown[]) => void;
   }
 }
 
-
 export const GA_TRACKING_ID = 'G-LB5MBXKJCG';
 
-// 1. Define a strict type for GA4 parameters instead of using 'any'
 type EventParams = Record<string, string | number | boolean | null | undefined>;
 
 /**
@@ -32,5 +31,10 @@ type EventParams = Record<string, string | number | boolean | null | undefined>;
 export const trackEvent = (action: string, params?: EventParams) => {
   if (typeof window !== 'undefined' && typeof window.gtag === 'function') {
     window.gtag('event', action, params);
+  }
+
+  if (typeof window !== 'undefined' && typeof window.fbq === 'function') {
+    // fbq('trackCustom', actionName, parameters)
+    window.fbq('trackCustom', action, params);
   }
 };

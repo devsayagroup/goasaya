@@ -79,17 +79,6 @@ const IconDining: React.FC = () => (
   </IconBase>
 );
 
-const IconPet: React.FC = () => (
-  <IconBase>
-    <path
-      d="M12 11c1.5-2 3-2 4-2s2 1 2 2-1 2-2 2-2 0-4-2z"
-      stroke="currentColor"
-      strokeWidth="1.6"
-    />
-    <circle cx="6" cy="9" r="1.8" stroke="currentColor" strokeWidth="1.6" />
-    <circle cx="18" cy="9" r="1.8" stroke="currentColor" strokeWidth="1.6" />
-  </IconBase>
-);
 
 const IconCapacity: React.FC = () => (
   <IconBase>
@@ -218,13 +207,6 @@ const IconClock: React.FC = () => (
     <path d="M12 7v5l3 2" stroke="currentColor" strokeWidth="1.6" />
   </IconBase>
 );
-
-const IconDot: React.FC<{ className?: string }> = ({ className }) => (
-  <svg className={className} width="12" height="12" viewBox="0 0 24 24">
-    <circle cx="12" cy="12" r="5" fill="currentColor" />
-  </svg>
-);
-
 
 const FACILITIES_OVERVIEW: FacilityItem[] = [
   { title: "4 Goa Areas", icon: IconCave },
@@ -361,9 +343,8 @@ const SectionTitle: React.FC<{
 };
 
 
-const RoomPanel: React.FC<{ room: RoomItem; idx: number, handleReserve:any }> = ({
+const RoomPanel: React.FC<{ room: RoomItem; idx: number, handleReserve: () => void; }> = ({
   room,
-  idx,
   handleReserve
 }) => {
   return (
@@ -447,17 +428,6 @@ const RoomPanel: React.FC<{ room: RoomItem; idx: number, handleReserve:any }> = 
 
 const FacilitiesPage: React.FC = () => {
   const ref = useRef<HTMLDivElement | null>(null);
-
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "end start"],
-  });
-
-  const leftRaw = useTransform(scrollYProgress, [0, 1], ["-60px", "40px"]);
-  const rightRaw = useTransform(scrollYProgress, [0, 1], ["40px", "-60px"]);
-
-  const yLeft = useSpring(leftRaw, { stiffness: 60, damping: 22, mass: 0.25 });
-  const yRight = useSpring(rightRaw, { stiffness: 60, damping: 22, mass: 0.25 });
 
   const handleReserve = () => {
     trackEvent('special_event', {

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Clock, CalendarDays } from "lucide-react"; 
 import RelatedExperiences from "@/components/ui/RelatedExperiences";
+import DishMarquee from "@/components/ui/DishMarquee";
 
 const premiumEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -141,6 +142,28 @@ export default function MayMadnessPage() {
         </div>
       </section>
 
+      {/* <section className="relative w-full py-20 z-10 flex flex-col items-center overflow-hidden">
+        <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2, ease: premiumEase }}
+            viewport={{ once: true, margin: "-100px" }}
+            className="w-full max-w-5xl flex flex-col items-center text-center gap-6 mb-10 px-6"
+        >
+            <span className="text-[10px] uppercase tracking-[0.4em] font-medium text-[#FFE3AF]/75">
+                The Culinary Archive
+            </span>
+            <h2 className="text-3xl md:text-6xl font-style uppercase text-white drop-shadow-sm">
+                Explore The Menu
+            </h2>
+            <p className="text-xs text-white/50 italic tracking-wide">
+               Hover to discover our signature highlights
+            </p>
+        </motion.div>
+
+        <DishMarquee />
+      </section> */}
+
       <section className="relative w-full bg-[#0B0502] text-black overflow-hidden py-32 md:py-48 px-6 md:px-14">
             <div className="absolute inset-0 z-0">
                 <div className="absolute inset-0 bg-[#4A1B07]/80 mix-blend-multiply"></div>
@@ -205,7 +228,6 @@ export default function MayMadnessPage() {
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[#0B0502]/60 to-transparent pointer-events-none" />
                             </div>
-                            
                             {/* <h4 className="text-sm md:text-base font-style font-medium uppercase tracking-[0.2em] text-white/80 group-hover:text-[#FFB85C] transition-colors duration-500">
                                 {variant.name}
                             </h4> */}
@@ -217,7 +239,6 @@ export default function MayMadnessPage() {
 
       <section className="relative container mx-auto px-6 md:px-14 py-32 z-10">
         <div className="grid md:grid-cols-2 gap-16 md:gap-24 items-start">
-            
             <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 whileInView={{ opacity: 1, x: 0 }}
@@ -266,10 +287,10 @@ export default function MayMadnessPage() {
                 <Link 
                     href="https://cho.pe/web_goasayarestaurant" 
                     target="_blank" 
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     className="relative group w-full max-w-sm"
                 >
-                    <div className="absolute inset-0 group-hover:bg-[#FFB85C]/5 transition-colors rounded-lg pointer-events-none" />
+                    <div className="absolute inset-0 rounded-lg pointer-events-none" />
                     <Image
                         src="/images/reservewhite.png" 
                         alt="Book GOASAYA May Madness Lunch Now"

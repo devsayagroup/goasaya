@@ -39,7 +39,7 @@ export default function FrontModal() {
   }, [activeCampaign]);
 
   const pathname = usePathname();
-  if (pathname === "/links") return null;
+  if (pathname === "/links" || pathname === "/experiences/may-madness" ) return null;
 
   // If there's no active campaign to show, render nothing
   if (!activeCampaign) return null;
