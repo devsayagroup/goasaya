@@ -34,7 +34,7 @@ export default function Loading() {
 
       <div className="absolute inset-0 z-0 animate-fade-bg">
         <Image 
-          src="/images/webp/goa10.webp" 
+          src="/images/webp/goa9.webp" 
           alt="Goasaya Background"
           fill
           className="object-cover"
@@ -46,10 +46,11 @@ export default function Loading() {
       <div className="relative z-10 flex flex-col items-center gap-6 animate-reveal">
         <Image 
           src="/logo/LogotypeIcon-01.png" 
-          width={100} 
-          height={100} 
           alt="Goasaya Logo"
-          className="object-contain w-auto h-auto"
+          width={110} 
+          height={110} 
+          style={{ width: '110px', height: 'auto' }}
+          className="object-contain drop-shadow-2xl"
           priority
         />
       </div>

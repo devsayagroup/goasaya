@@ -1,3 +1,4 @@
+// components/pages/LinksClient.tsx
 "use client";
 
 import { motion, Easing} from "framer-motion";
@@ -66,8 +67,13 @@ export default function LinksClient() {
   };
 
   return (
-    <div className="relative min-h-[100dvh] w-full flex flex-col items-center py-12 px-6">
-      <div className="fixed inset-0 z-0">
+    // ✅ FIX 1: Changed `min-h-[100dvh]` to `min-h-screen` and added `bg-black`. 
+    // If the image fails to cover the over-scroll, it will show black instead of a white glitch!
+    // Also added `pb-24` to ensure there is plenty of scrolling room at the bottom.
+    <div className="relative min-h-screen w-full flex flex-col items-center py-12 px-6 pb-24 bg-black overflow-y-auto">
+      
+      {/* ✅ FIX 2: Added `bg-black` to this wrapper as well to double-layer the dark background */}
+      <div className="fixed inset-0 z-0 bg-black pointer-events-none">
         <Image
           src="/images/webp/goa6.webp"
           alt="GOASAYA Ambience"
