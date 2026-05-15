@@ -2,12 +2,13 @@ import SpotFoto, { meta as spotFotoMeta } from "./instagrammable-photo-spots-goa
 import MustVisit, { meta as mustVisitMeta } from "./must-visit-pik-2-jakarta.mdx";
 import Musttry, { meta as mustTryMeta } from "./must-try-desert-goasaya.mdx";
 import Firework, { meta as fireworkMeta } from "./chinese-firework-goasaya.mdx";
-import Dinner, {meta as dinnerMeta} from "./romantic-dinner-goasaya.mdx"
-import Entertainment, {meta as entertainmentMeta} from "./live-entertainment-goasaya.mdx"
+import Dinner, { meta as dinnerMeta } from "./romantic-dinner-goasaya.mdx";
+import Entertainment, { meta as entertainmentMeta } from "./live-entertainment-goasaya.mdx";
+import Cakes, { meta as cakesMeta } from "./best-signature-custom-cakes-pik-2.mdx";
 
 import type { JournalMeta } from "./types";
 
-function assertJournalMeta(meta: any): JournalMeta {
+function assertJournalMeta(meta: Partial<JournalMeta>): JournalMeta {
   if (!meta.slug || !meta.title || !meta.heroImage) {
     throw new Error(
       `Invalid journal meta: missing slug/title/heroImage`
@@ -46,5 +47,10 @@ export const articles = [
     slug: entertainmentMeta.slug,
     meta: assertJournalMeta(entertainmentMeta),
     Content: Entertainment,
+  },
+  {
+    slug: cakesMeta.slug,
+    meta: assertJournalMeta(cakesMeta),
+    Content: Cakes,
   },
 ];

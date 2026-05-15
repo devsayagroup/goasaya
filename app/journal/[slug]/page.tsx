@@ -22,23 +22,34 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const url = `https://goasaya.com/journal/${slug}`;
 
   return {
-    title: `${meta.metaTitle} | Goasaya Journal`,
+    title: `${meta.metaTitle} | GOASAYA Journal`,
     description: meta.metaDescription || `Discover more about ${meta.title} on Goasaya.`,
     alternates: { canonical: url },
+    authors: [{ name: "GOASAYA" }],
+    // Force Google to show large image previews in search results
+    robots: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
     openGraph: {
       title: meta.metaTitle,
       description: meta.metaDescription,
       url: url,
-      siteName: "Goasaya",
-      images: [{ url: meta.heroImage, width: 1200, height: 630 }],
+      siteName: "GOASAYA",
+      images: [{ url: meta.heroImage, width: 1200, height: 630, alt: meta.title }],
       type: "article",
-      publishedTime: meta.publishedAt, // Ensure your meta has a date field
+      publishedTime: meta.publishedAt, 
+      authors: ["GOASAYA"],
     },
     twitter: {
       card: "summary_large_image",
       title: meta.metaTitle,
       description: meta.metaDescription,
       images: [meta.heroImage],
+      creator: "@goasaya", // Replace with actual Twitter handle if available
     },
   };
 }
@@ -53,7 +64,7 @@ export default async function ArticlePage({ params }: Props) {
   if (!article) return notFound();
 
   const meta = article.meta as JournalMeta;
-  const Content = article.Content;
+  const Content = article.Content as React.ElementType;
   const currentUrl = `https://goasaya.com/journal/${slug}`;
 
   const jsonLd = {
@@ -72,8 +83,8 @@ export default async function ArticlePage({ params }: Props) {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
 
-      <header>
-        <section className="relative max-w-7xl mx-auto rounded-md overflow-hidden h-[35vh] mt-12 md:mt-22">
+      <header className="pt-12 md:pt-24">
+        <section className="relative max-w-6xl mx-auto rounded-md overflow-hidden min-h-[30vh] md:min-h-[40vh] flex flex-col justify-center items-center text-center p-6 md:p-12">
           <Image
             src={meta.heroImage}
             alt={meta.title}
@@ -81,19 +92,21 @@ export default async function ArticlePage({ params }: Props) {
             priority
             className="object-cover"
           />
-          <div className="absolute inset-0 bg-black/75" aria-hidden="true" />
+          {/* Dark overlay to ensure white text is readable */}
+          <div className="absolute inset-0 bg-black/60" aria-hidden="true" />
+          
+          {/* The Headline (Moved from the content section below) */}
+          <div className="relative z-10 max-w-4xl mx-auto flex flex-col items-center">
+            <h1 className="text-white text-3xl md:text-5xl font-style font-light leading-tight mb-6">
+              {meta.title}
+            </h1>
+            <div className="h-[1px] w-24 bg-white/50" aria-hidden="true" />
+          </div>
         </section>
       </header>
       
-      <section className="relative max-w-7xl mx-auto -mt-50 px-6 pb-20">
-        <article className="max-w-3xl mx-auto">
-          {/* Use H1 for the main title (Crucial for SEO) */}
-          <h1 className="text-white mt-6 text-2xl font-style md:text-4xl font-light leading-tight">
-            {meta.title}
-          </h1>
-          <div className="mt-4 mb-24 h-px w-24 bg-white" aria-hidden="true" />
-          
-          {/* Ensure your prose-invert classes match your background for accessibility */}
+      <section className="relative max-w-4xl mx-auto px-6 pt-8 pb-20">
+        <article className="mx-auto w-full">       
           <div className="prose prose-invert prose-lg md:prose-xl article-content">
             <Content components={mdxComponents} />
           </div>

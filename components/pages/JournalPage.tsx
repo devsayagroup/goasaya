@@ -1,142 +1,157 @@
+// // "use client";
+
+// // import { motion } from "framer-motion";
+// // import Image from "next/image";
+// // import Link from "next/link";
+// // import type { JournalMeta } from "@/content/articles/types";
+
+// // export default function JournalClient({
+// //   journals,
+// // }: {
+// //   journals: JournalMeta[];
+// // }) {
+// //   return (
+// //     <section className="w-full bg-cream text-black">
+// //       <div className="container mx-auto pt-32 pb-20 px-6 md:px-16">
+
+// //         <motion.h1
+// //           initial={{ opacity: 0, y: 20 }}
+// //           animate={{ opacity: 1, y: 0 }}
+// //           className="text-4xl md:text-7xl font-style mb-20"
+// //         >
+// //           Stories & Spaces
+// //         </motion.h1>
+
+// //         <div className="grid md:grid-cols-2 gap-24">
+// //           {journals.map((j) => (
+// //             <Link key={j.slug} href={`/journal/${j.slug}`} className="group">
+// //               <div className="grid md:grid-cols-[120px_1fr] gap-8 items-center">
+// //                 <div className="relative aspect-[9/6] md:aspect-[3/4] rounded-md overflow-hidden bg-black/5">
+// //                   <Image
+// //                     src={j.heroImage}
+// //                     alt={j.title}
+// //                     fill
+// //                     className="object-cover group-hover:scale-105 transition"
+// //                   />
+// //                 </div>
+
+// //                 <div>
+// //                   <h2 className="font-style text-xl mb-3">{j.title}</h2>
+// //                   {j.metaDescription && (
+// //                     <p className="text-black/80 line-clamp-2">
+// //                       {j.metaDescription}
+// //                     </p>
+// //                   )}
+// //                   <span className="inline-block mt-2 text-xs underline">
+// //                     Read Journal
+// //                   </span>
+// //                 </div>
+// //               </div>
+// //             </Link>
+// //           ))}
+// //         </div>
+
+// //       </div>
+// //     </section>
+// //   );
+// // }
+
+
 // "use client";
 
 // import { motion } from "framer-motion";
 // import Image from "next/image";
 // import Link from "next/link";
-// import { getAllArticles } from "@/lib/articles";
+// import type { JournalMeta } from "@/content/articles/types";
 
-// export default async function JournalPage() {
-//   const journals = await getAllArticles();
+// export default function JournalClient({
+//   journals,
+// }: {
+//   journals: JournalMeta[];
+// }) {
 //   return (
-//     <section className="w-full bg-cream overflow-hidden">
-//         <div className="relative text-black pt-32 pb-20">
-//             <div className="container mx-auto md:py-12 px-6 md:px-14 flex flex-col md:flex-row justify-between items-start md:items-center gap-6 md:gap-12">
-//                 <motion.h1
-//                     initial={{ opacity: 0, y: 20 }}
-//                     animate={{ opacity: 1, y: 0 }}
-//                     transition={{ duration: 0.8 }}
-//                     className="text-4xl text-black md:text-7xl font-style leading-[1] max-w-xl"
-//                 >
-//                     Stories & Spaces
-//                 </motion.h1>
+//     // ✅ 1. Applied the dark, premium GOASAYA background with a subtle maroon glow
+//     <section className="relative w-full min-h-screen bg-black text-white overflow-hidden">
+//       <div className="absolute inset-0 bg-gradient-to-b from-[#2F0F10]/20 to-black/80 pointer-events-none" />
 
-//                 <motion.div
-//                     initial={{ opacity: 0, y: 20 }}
-//                     animate={{ opacity: 1, y: 0 }}
-//                     transition={{ duration: 1 }}
-//                     className="max-w-md md:text-right text-gray-950"
-//                 >
-//                     <p className="font-text text-md leading-loose">
-//                     A quiet space where memories linger from shared tables to
-//                     thoughtful pauses, written as they unfold.
-//                     </p>
-//                 </motion.div>
-//             </div>
+//       <div className="relative z-10 container mx-auto pt-32 pb-24 px-6 md:px-14">
 
-//             <div className="container mx-auto px-6 md:px-16 py-12 md:py-24">
-//                 <div className="grid grid-cols-1 md:grid-cols-2 gap-24 md:gap-18">
-//                 {journals.map((journal) => (
-//                     <Link
-//                     key={journal.slug}
-//                     href={`/journal/${journal.slug}`}
-//                     className="group block"
-//                     >
-//                     <div className="grid md:grid-cols-[120px_1fr] gap-4 md:gap-8 px-4 items-center">
-//                         {/* <div className="relative aspect-[3/4] overflow-hidden">
-//                             <Image
-//                                 src={journal.heroImage}
-//                                 alt={journal.title}
-//                                 fill
-//                                 className="object-cover"
-//                             />
-//                         </div> */}
-//                         <div className="relative aspect-[8/6] md:aspect-[8/12] overflow-hidden rounded-sm bg-black/5">
-//                             <Image
-//                             src={journal.heroImage}
-//                             alt={journal.title}
-//                             fill
-//                             className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-//                             sizes="140px"
-//                             />
-//                         </div>
-//                         <div>
-//                             {/* <h2 className="font-style text-2xl font-light leading-snug">
-//                                 {journal.title}
-//                             </h2>
+//         {/* ✅ 2. Upgraded Header Typography */}
+//         <motion.div
+//           initial={{ opacity: 0, y: 20 }}
+//           animate={{ opacity: 1, y: 0 }}
+//           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+//           className="mb-16 md:mb-24 text-center md:text-left"
+//         >
+//           <h1 className="text-4xl md:text-6xl lg:text-7xl font-style uppercase tracking-wide text-white mb-4">
+//             Stories & Spaces
+//           </h1>
+//           <p className="font-text text-sm md:text-base text-white/60 tracking-widest uppercase max-w-xl">
+//             Chronicles of our subterranean sanctuary.
+//           </p>
+//         </motion.div>
 
-//                             {journal.metaDescription && (
-//                                 <p className="mt-2 text-md max-w-xl text-black/85 leading-relaxed">
-//                                 {journal.metaDescription}
-//                                 </p>
-//                             )} */}
+//         {/* ✅ 3. Redesigned to a High-End Magazine Grid Layout */}
+//         <div className="grid md:grid-cols-2 gap-x-12 gap-y-16 lg:gap-x-16 lg:gap-y-24">
+//           {journals.map((j, idx) => (
+//             <motion.div
+//               key={j.slug}
+//               initial={{ opacity: 0, y: 30 }}
+//               whileInView={{ opacity: 1, y: 0 }}
+//               viewport={{ once: true, margin: "-50px" }}
+//               transition={{ duration: 0.8, delay: idx * 0.1, ease: [0.16, 1, 0.3, 1] }}
+//             >
+//               <Link href={`/journal/${j.slug}`} className="group block">
+//                 <div className="flex flex-col gap-6">
 
-//                             <h2 className="font-style text-xl font-light leading-snug mb-3">
-//                                 {journal.title}
-//                             </h2>
+//                   {/* Large Premium Image Thumbnail */}
+//                   <div className="relative w-full aspect-[4/3] rounded-lg overflow-hidden bg-[#1a0a07] border border-white/5 shadow-2xl">
+//                     <Image
+//                       src={j.heroImage}
+//                       alt={j.title}
+//                       fill
+//                       className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+//                     />
+//                     {/* Subtle overlay that lifts on hover for image depth */}
+//                     <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500" />
+//                   </div>
 
-//                             {journal.metaDescription && (
-//                             <p className="max-w-xl text-black/80 leading-relaxed font-text line-clamp-2">
-//                                 {journal.metaDescription}
-//                             </p>
-//                             )}
-
-//                             <span className="inline-block mt-2 text-xs uppercase tracking-widest underline underline-offset-4 text-black">
-//                                 Read Journal
-//                             </span>
-//                         </div>
-//                     </div>
-//                     </Link>
-//                 ))}
+//                   {/* Text Content Below Image */}
+//                   <div className="flex flex-col items-start px-2">
+//                     <h2 className="font-style text-2xl md:text-3xl text-white mb-3 group-hover:text-[#FFE3AF] transition-colors duration-300">
+//                       {j.title}
+//                     </h2>
+                    
+//                     {j.metaDescription && (
+//                       <p className="font-text text-white/70 line-clamp-2 leading-relaxed mb-5">
+//                         {j.metaDescription}
+//                       </p>
+//                     )}
+                    
+//                     {/* Animated "Read Journal" button with an arrow */}
+//                     <span className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.2em] uppercase text-[#FFE3AF] font-semibold group-hover:translate-x-2 transition-transform duration-300">
+//                       Read Journal
+//                       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+//                         <path d="M5 12h14"></path>
+//                         <path d="M12 5l7 7-7 7"></path>
+//                       </svg>
+//                     </span>
+//                   </div>
 //                 </div>
-//             </div>
-
-//             {/* <div className="container mx-auto px-6 md:px-16 py-16 md:py-28">
-//                 <div className="space-y-24">
-//                     {journals.map((journal) => (
-//                     <Link
-//                         key={journal.slug}
-//                         href={`/journal/${journal.slug}`}
-//                         className="group block"
-//                     >
-//                         <article className="grid md:grid-cols-[140px_1fr] gap-8 items-start">
-//                         <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-black/5">
-//                             <Image
-//                             src={journal.heroImage}
-//                             alt={journal.title}
-//                             fill
-//                             className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-//                             sizes="140px"
-//                             />
-//                         </div>
-
-//                         <div>
-//                             <h2 className="font-style text-2xl md:text-3xl font-light leading-snug mb-4 group-hover:opacity-80 transition">
-//                             {journal.title}
-//                             </h2>
-
-//                             {journal.metaDescription && (
-//                             <p className="max-w-2xl text-black/80 leading-relaxed font-text">
-//                                 {journal.metaDescription}
-//                             </p>
-//                             )}
-
-//                             <span className="inline-block mt-6 text-sm uppercase tracking-widest underline underline-offset-4 text-black">
-//                             Read Journal
-//                             </span>
-//                         </div>
-//                         </article>
-//                     </Link>
-//                     ))}
-//                 </div>
-//             </div> */}
-
+//               </Link>
+//             </motion.div>
+//           ))}
 //         </div>
+//       </div>
 //     </section>
 //   );
 // }
 
+
+
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
@@ -147,46 +162,117 @@ export default function JournalClient({
 }: {
   journals: JournalMeta[];
 }) {
-  return (
-    <section className="w-full bg-cream text-black">
-      <div className="container mx-auto pt-32 pb-20 px-6 md:px-16">
+  // ✅ 1. State to track how many journals to show (Starts at 4)
+  const [visibleCount, setVisibleCount] = useState(4);
+  
+  // ✅ 2. Slice the array to only show the visible ones
+  const visibleJournals = journals.slice(0, visibleCount);
+  
+  // ✅ 3. Check if there are more journals left to load
+  const hasMore = visibleCount < journals.length;
 
-        <motion.h1
+  const handleLoadMore = () => {
+    // Load 4 more articles each time the button is clicked
+    setVisibleCount((prevCount) => prevCount + 4);
+  };
+
+  return (
+    // ✅ Restored the bg-cream and text-black classic editorial theme
+    <section className="relative w-full min-h-screen bg-cream text-black overflow-hidden">
+      <div className="relative z-10 container mx-auto pt-32 pb-24 px-6 md:px-14">
+
+        {/* Header Section */}
+        <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-4xl md:text-7xl font-style mb-20"
+          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+          className="mb-16 md:mb-24 text-center md:text-left"
         >
-          Stories & Spaces
-        </motion.h1>
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-style uppercase tracking-wide text-black mb-4">
+            Stories & Spaces
+          </h1>
+          <p className="font-text text-sm md:text-base text-black/60 tracking-widest uppercase max-w-xl">
+            Chronicles of our subterranean sanctuary.
+          </p>
+        </motion.div>
 
-        <div className="grid md:grid-cols-2 gap-24">
-          {journals.map((j) => (
-            <Link key={j.slug} href={`/journal/${j.slug}`} className="group">
-              <div className="grid md:grid-cols-[120px_1fr] gap-8 items-center">
-                <div className="relative aspect-[9/6] md:aspect-[3/4] rounded-md overflow-hidden bg-black/5">
-                  <Image
-                    src={j.heroImage}
-                    alt={j.title}
-                    fill
-                    className="object-cover group-hover:scale-105 transition"
-                  />
-                </div>
+        {/* Article Grid */}
+        <div className="grid md:grid-cols-2 gap-x-12 gap-y-16 lg:gap-x-16 lg:gap-y-24">
+          {visibleJournals.map((j, idx) => (
+            <motion.div
+              key={j.slug}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.8, delay: (idx % 4) * 0.1, ease: [0.16, 1, 0.3, 1] }}
+            >
+              <Link href={`/journal/${j.slug}`} className="group block">
+                <div className="flex flex-col gap-6">
 
-                <div>
-                  <h2 className="font-style text-xl mb-3">{j.title}</h2>
-                  {j.metaDescription && (
-                    <p className="text-black/80 line-clamp-2">
-                      {j.metaDescription}
-                    </p>
-                  )}
-                  <span className="inline-block mt-2 text-xs underline">
-                    Read Journal
-                  </span>
+                  {/* Image Thumbnail */}
+                  <div className="relative w-full aspect-[4/3] rounded-sm overflow-hidden bg-black/5">
+                    <Image
+                      src={j.heroImage}
+                      alt={j.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                    />
+                    <div className="absolute inset-0 bg-black/5 group-hover:bg-transparent transition-colors duration-500" />
+                  </div>
+
+                  {/* Text Content */}
+                  <div className="flex flex-col items-start px-2">
+                    
+                    {j.publishedAt && (
+                      <time 
+                        dateTime={j.publishedAt}
+                        className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-black/50 mb-3 font-text font-semibold"
+                      >
+                        {new Date(j.publishedAt).toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}
+                      </time>
+                    )}
+
+                    <h2 className="font-style text-2xl md:text-3xl text-black mb-3 group-hover:text-black/60 transition-colors duration-300">
+                      {j.title}
+                    </h2>
+                    
+                    {j.metaDescription && (
+                      <p className="font-text text-black/70 line-clamp-2 leading-relaxed mb-5">
+                        {j.metaDescription}
+                      </p>
+                    )}
+                    
+                    <span className="inline-flex items-center gap-2 font-sans text-xs tracking-[0.2em] uppercase text-black font-semibold group-hover:translate-x-2 transition-transform duration-300">
+                      Read Journal
+                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                        <path d="M5 12h14"></path>
+                        <path d="M12 5l7 7-7 7"></path>
+                      </svg>
+                    </span>
+                  </div>
+
                 </div>
-              </div>
-            </Link>
+              </Link>
+            </motion.div>
           ))}
         </div>
+
+        {/* ✅ Load More Button */}
+        {hasMore && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="mt-24 flex justify-center"
+          >
+            <button
+              onClick={handleLoadMore}
+              className="px-8 py-3 border border-black text-black uppercase tracking-widest text-xs font-semibold hover:bg-black hover:text-white transition-colors duration-300 rounded-sm"
+            >
+              Load More
+            </button>
+          </motion.div>
+        )}
 
       </div>
     </section>
