@@ -295,7 +295,7 @@ export default function CustomCakeView() {
         </svg>
 
         {/* 1. IMMERSIVE FULL-SCREEN HERO */}
-        <section className="relative h-screen w-full flex flex-col items-center md:justify-center overflow-hidden z-10">
+        <section className="relative h-screen w-full flex flex-col items-center justify-center overflow-hidden z-10">
             <motion.div 
                 initial={{ scale: 1.1 }}
                 animate={{ scale: 1 }}
@@ -304,7 +304,7 @@ export default function CustomCakeView() {
             >
                 {/* Desktop Background Image */}
                 <Image 
-                    src="/images/cakes/whole-cakes.webp" 
+                    src="/images/cakes/whole-cakes-2.webp" 
                     alt="GoaSaya Custom and Whole Cakes"
                     fill
                     quality={100}
@@ -315,7 +315,7 @@ export default function CustomCakeView() {
                 />
                 {/* Mobile Background Image */}
                 <Image 
-                    src="/images/cakes/whole-cakes-mobile.webp" 
+                    src="/images/cakes/whole-cakes-mobile-2.webp" 
                     alt="GoaSaya Custom and Whole Cakes Mobile"
                     fill
                     quality={100}
@@ -329,7 +329,7 @@ export default function CustomCakeView() {
 
             <motion.div
                 style={{ y: yText, opacity: opacityText }}
-                className="relative z-20 flex flex-col items-center text-center px-6 mt-42 md:mt-20"
+                className="relative z-20 flex flex-col items-center text-center px-6 md:mt-20"
             >
                 <motion.span 
                     initial={{ opacity: 0, y: 20 }}
@@ -396,7 +396,7 @@ export default function CustomCakeView() {
                 <div className="lg:w-1/2 flex flex-col items-center lg:items-end gap-16 md:gap-24 w-full mt-10 lg:mt-0">
                     {[
                         { src: "/images/cakes/manjari.webp", title: "Manjari Chocolate Cake", desc: "Rich, intense, and impeccably smooth." },
-                        { src: "/images/cakes/golden.webp", title: "The Golden Cake", desc: "A luxurious testament to the GoaSaya aesthetic." },
+                        { src: "/images/cakes/golden-2.webp", title: "The Golden Cake", desc: "A luxurious testament to the GoaSaya aesthetic." },
                         { src: "/images/cakes/bumblebee.webp", title: "The Bumblebee Cake", desc: "Vibrant, precise, and flavor-forward."  }
                     ].map((img, i) => (
                         <motion.div 
@@ -510,7 +510,7 @@ export default function CustomCakeView() {
                     Whether pre-ordering from our Signature Collection or commissioning a time-intensive Custom Cake design, reach out to our team to secure your date.
                 </p>
                 <Link 
-                    href="https://wa.me/6281338382845?text=Hello%20GoaSaya,%20I%20would%20like%20to%20inquire%20about%20a%20custom%20cake%20commission." 
+                    href="https://wa.me/6281338382845?text=Hello%20GoaSaya,%20I%20would%20like%20to%20inquire%20about%20a%20custom%20cake." 
                     target="_blank" 
                     rel="noopener noreferrer"
                     onClick={() => {

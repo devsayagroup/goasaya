@@ -5,7 +5,7 @@ import Firework, { meta as fireworkMeta } from "./chinese-firework-goasaya.mdx";
 import Dinner, { meta as dinnerMeta } from "./romantic-dinner-goasaya.mdx";
 import Entertainment, { meta as entertainmentMeta } from "./live-entertainment-goasaya.mdx";
 import Cakes, { meta as cakesMeta } from "./best-signature-custom-cakes-pik-2.mdx";
-
+import Birthday, {meta as birthdayMeta} from "./birthday-venue-pik-2.mdx"
 import type { JournalMeta } from "./types";
 
 function assertJournalMeta(meta: Partial<JournalMeta>): JournalMeta {
@@ -52,5 +52,10 @@ export const articles = [
     slug: cakesMeta.slug,
     meta: assertJournalMeta(cakesMeta),
     Content: Cakes,
+  },
+  {
+    slug: birthdayMeta.slug,
+    meta: assertJournalMeta(birthdayMeta),
+    Content: Birthday,
   },
 ];

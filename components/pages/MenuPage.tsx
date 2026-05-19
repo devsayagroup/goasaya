@@ -149,7 +149,6 @@ export default function MenuPage() {
               </motion.details>
             </div> */}
 
-            {/* Desktop */}
             <div className="hidden lg:block bg-black/40 p-6 rounded-2xl border border-white/5">
               <h1 className="text-2xl font-style font-light mb-6 tracking-wide">
                 GOASAYA Menu
