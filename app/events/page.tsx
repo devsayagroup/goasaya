@@ -4,7 +4,7 @@ import EventsView from "@/components/pages/SEO/EventsView";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.goasaya.com";
 
 export const metadata: Metadata = {
-  title: "Private Events & Corporate Venue PIK 2 | GoaSaya",
+  title: "Private Events & Corporate Venue PIK 2 | GOASAYA",
   description: "Host your next milestone or corporate gathering at GoaSaya PIK 2. An exclusive, cave-inspired event space offering bespoke dining, mixology, and total privacy.",
   keywords: [
     "Private Dining PIK 2",
@@ -19,13 +19,13 @@ export const metadata: Metadata = {
     canonical: `${SITE_URL}/events`, 
   },
   openGraph: {
-    title: "Host the Extraordinary: Private Events | GoaSaya",
+    title: "Host the Extraordinary: Private Events | GOASAYA",
     description: "From intimate VIP dinners to full exclusive buyouts. Explore the premier cave-inspired event space in PIK 2.",
     url: `${SITE_URL}/events`, 
     siteName: "GoaSaya",
     images: [
       {
-        url: "/images/articles/birthday/2.webp", // Upload a wide shot of the empty lounge/cave
+        url: "/articles/birthday/2.webp", // Upload a wide shot of the empty lounge/cave
         width: 1200,
         height: 630,
         alt: "GoaSaya Private Events and Corporate Venue PIK 2",
