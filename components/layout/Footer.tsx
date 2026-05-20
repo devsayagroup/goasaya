@@ -22,11 +22,10 @@ export default function Footer() {
             <div className="absolute inset-0 bg-maroon/85"></div>
         </div>
         
-        {/* ✅ FIX: Added relative z-10 so content stays firmly on top of the background image */}
         <div className="relative z-10 container mx-auto px-2 md:px-4">
             <div className="flex flex-col justify-center items-center my-8 font-text">
                 <Link href="/">
-                    <Image src="/logo/LogotypeIcon-01.png" alt='Logo Goasaya' width={200} height={200} />
+                    <Image src="/logo/LogotypeIcon-01.png" alt='Logo Goasaya' width={180} height={180} />
                 </Link>
 
                 <div className="relative grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-16 mt-12 w-full">

@@ -39,8 +39,8 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" data-scroll-behavior="smooth">
-      <body>
+    <html lang="en" data-scroll-behavior="smooth" suppressHydrationWarning>
+      <body suppressHydrationWarning>
         <ClientLayout>{children}</ClientLayout>
         <GoogleAnalytics gaId="G-LB5MBXKJCG" />
         <MetaPixel />
