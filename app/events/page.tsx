@@ -1,34 +1,34 @@
 import type { Metadata } from "next";
-import EventsView from "@/components/pages/SEO/EventsView";
+import PublicEventsView from "@/components/pages/EventPage"; // Adjust path if needed
+import { EVENTS } from "@/lib/event-data"; // Adjust path to where your EVENTS array is stored
 
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.goasaya.com";
 
 export const metadata: Metadata = {
-  title: "Private Events & Corporate Venue PIK 2 | GOASAYA",
-  description: "Host your next milestone or corporate gathering at GoaSaya PIK 2. An exclusive, cave-inspired event space offering bespoke dining, mixology, and total privacy.",
+  title: "Upcoming Events & Curated Experiences | GOASAYA PIK 2",
+  description: "Discover curated happenings at GoaSaya. Reserve your table for exclusive guest chef takeovers, tasting menus, and ambient DJ nights in PIK 2.",
   keywords: [
-    "Private Dining PIK 2",
-    "Corporate Event Space Jakarta",
-    "Luxury Venue Hire PIK 2",
-    "Wedding Reception Venue PIK",
-    "Exclusive Buyout Restaurant Jakarta",
-    "VIP Lounge PIK 2",
-    "Brand Activation Venue Indonesia"
+    "GoaSaya Events",
+    "Upcoming Events PIK 2",
+    "Guest Chef Dinner Jakarta",
+    "Live DJ Restaurant PIK",
+    "Fine Dining Events Jakarta",
+    "Special Menu PIK 2"
   ],
   alternates: {
     canonical: `${SITE_URL}/events`, 
   },
   openGraph: {
-    title: "Host the Extraordinary: Private Events | GOASAYA",
-    description: "From intimate VIP dinners to full exclusive buyouts. Explore the premier cave-inspired event space in PIK 2.",
+    title: "Curated Happenings & Events | GOASAYA",
+    description: "Reserve your table for exclusive culinary events and ambient nights at GoaSaya.",
     url: `${SITE_URL}/events`, 
     siteName: "GoaSaya",
     images: [
       {
-        url: "/articles/birthday/2.webp", // Upload a wide shot of the empty lounge/cave
+        url: `${SITE_URL}/events/cave-party.jpeg`, 
         width: 1200,
         height: 630,
-        alt: "GoaSaya Private Events and Corporate Venue PIK 2",
+        alt: "GoaSaya Upcoming Events PIK 2",
       },
     ],
     locale: "id_ID",
@@ -37,57 +37,35 @@ export const metadata: Metadata = {
 };
 
 export default function EventsPage() {
-  // 1. Event Venue Schema (Massive local SEO signal)
-  const venueJsonLd = {
+  // Dynamically map your EVENTS array into Google's structured data format
+  const eventsJsonLd = EVENTS.map((event) => ({
     "@context": "https://schema.org",
-    "@type": "EventVenue",
-    "name": "GoaSaya Private Events",
-    "url": `${SITE_URL}/events`,
-    "description": "Exclusive, cave-inspired venue in PIK 2 available for corporate events, private dining, brand activations, and milestone celebrations.",
-    "address": {
-      "@type": "PostalAddress",
-      "addressLocality": "PIK 2",
-      "addressRegion": "Jakarta",
-      "addressCountry": "ID"
-    },
-    "amenityFeature": [
-      { "@type": "LocationFeatureSpecification", "name": "Private Dining", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Exclusive Buyout", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Bespoke Catering", "value": true },
-      { "@type": "LocationFeatureSpecification", "name": "Dedicated Mixologist", "value": true }
-    ]
-  };
-
-  // 2. FAQ Schema for High-Intent Commercial Queries
-  const faqJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Does GoaSaya offer exclusive restaurant buyouts for events in PIK 2?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Yes, GoaSaya offers full venue buyouts for brand activations, large corporate events, and wedding receptions, providing total privacy within our luxury cave environment."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can I book a private dining space for a birthday or corporate dinner?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Absolutely. We offer semi-private and fully private dining configurations tailored to intimate milestone birthdays, VIP client dinners, and executive board meetings."
-        }
+    "@type": "Event",
+    "name": event.title,
+    "description": event.homedesc,
+    "image": `${SITE_URL}${event.image}`,
+    "url": `${SITE_URL}/events/${event.slug}`,
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "GoaSaya PIK 2",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "PIK 2",
+        "addressRegion": "Jakarta",
+        "addressCountry": "ID"
       }
-    ]
-  };
+    }
+  }));
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(venueJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
+      {/* Inject the dynamic array of events into the DOM for SEO */}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(eventsJsonLd) }} />
       
-      <EventsView />
+      {/* Pass the data to the client view */}
+      <PublicEventsView events={EVENTS} />
     </>
   );
 }

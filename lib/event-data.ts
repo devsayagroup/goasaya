@@ -1,6 +1,7 @@
 export interface EventType {
   id: number;
   title: string;
+  subtitle: string;
   slug: string;
   tracking?: string;
   metaTitle?: string;
@@ -9,6 +10,7 @@ export interface EventType {
   date?: string;
   time?: string;
   content?: string | string[];
+  homedesc?: string;
   desc?: string;
 }
 

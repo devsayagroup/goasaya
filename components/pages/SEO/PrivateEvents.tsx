@@ -9,7 +9,7 @@ import { trackEvent } from "@/lib/analytics";
 
 const premiumEase: Easing = [0.16, 1, 0.3, 1];
 
-export default function EventsView() {
+export default function PrivateEvents() {
   const containerRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({ target: containerRef });
 
@@ -105,9 +105,11 @@ export default function EventsView() {
             </div>
 
             <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden">
-                <Image src="/images/webp/V1.webp" alt="VIP Private Dining Room PIK 2" fill unoptimized className="object-cover brightness-50" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0B0502]/90 to-transparent" />
-                <div className="relative z-10 container mx-auto px-6 md:px-14 flex flex-col justify-center h-full">
+                <div className="absolute inset-0 z-0">
+                    <Image src="/images/webp/V1.webp" alt="VIP Private Dining Room PIK 2" fill unoptimized className="object-cover brightness-50" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0B0502]/90 to-transparent z-10" />
+                <div className="relative z-20 container mx-auto px-6 md:px-14 flex flex-col justify-center h-full">
                     <span className="text-[#FFE3AF] uppercase tracking-[0.3em] text-sm mb-4">01 Private Dining</span>
                     <h3 className="text-5xl md:text-8xl font-style uppercase text-white mb-6">The VIP <br/> Lounge</h3>
                     <p className="max-w-md text-white/70 text-lg mb-8">Completely enclosed and highly discreet. Built specifically for executive board dinners, milestone birthdays, and tasting menus. Comfortably seats up to 20 guests.</p>
@@ -115,9 +117,11 @@ export default function EventsView() {
             </div>
 
             <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.8)]">
-                <Image src="/images/webp/V3.webp" alt="Corporate Event Space Jakarta Main Dining" fill unoptimized className="object-cover brightness-50" />
-                <div className="absolute inset-0 bg-gradient-to-r from-[#0B0502]/90 to-transparent" />
-                <div className="relative z-10 container mx-auto px-6 md:px-14 flex flex-col justify-center h-full">
+                <div className="absolute inset-0 z-0">
+                    <Image src="/images/webp/V3.webp" alt="Corporate Event Space Jakarta Main Dining" fill unoptimized className="object-cover brightness-50" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-r from-[#0B0502]/90 to-transparent z-10" />
+                <div className="relative z-20 container mx-auto px-6 md:px-14 flex flex-col justify-center h-full">
                     <span className="text-[#FFE3AF] uppercase tracking-[0.3em] text-sm mb-4">02 Corporate Events</span>
                     <h3 className="text-5xl md:text-8xl font-style uppercase text-white mb-6">Main <br/> Dining</h3>
                     <p className="max-w-md text-white/70 text-lg mb-8">Set right in the heart of the cave. We can zone off sections of the main floor for networking events, product showcases, and larger team dinners. Seats up to 60 guests.</p>
@@ -125,9 +129,11 @@ export default function EventsView() {
             </div>
 
             <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden shadow-[0_-20px_50px_rgba(0,0,0,0.8)]">
-                <Image src="/images/webp/goa5.webp" alt="Wedding Reception Venue Buyout PIK 2" fill unoptimized className="object-cover brightness-[0.35]" />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0502] via-transparent to-[#0B0502]/80" />
-                <div className="relative z-10 container mx-auto px-6 md:px-14 flex flex-col justify-center h-full">
+                <div className="absolute inset-0 z-0">
+                    <Image src="/images/webp/goa5.webp" alt="Wedding Reception Venue Buyout PIK 2" fill unoptimized className="object-cover brightness-[0.35]" />
+                </div>
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B0502] via-transparent to-[#0B0502]/80 z-10" />
+                <div className="relative z-20 container mx-auto px-6 md:px-14 flex flex-col justify-center h-full">
                     <span className="text-[#FFE3AF] uppercase tracking-[0.3em] text-sm mb-4">03 Full Exclusivity</span>
                     <h3 className="text-5xl md:text-8xl font-style uppercase text-white mb-6">Entire Venue <br/> Buyout</h3>
                     <p className="max-w-md text-white/70 text-lg mb-8">Take over the entire restaurant. You get absolute privacy, DJ flexibility, and a customized menu. Ideal for wedding receptions or major company parties. Up to 100 guests standing.</p>
