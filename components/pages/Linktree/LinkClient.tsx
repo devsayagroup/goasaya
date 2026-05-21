@@ -7,6 +7,7 @@ import { trackEvent } from "@/lib/analytics";
 import { FiCalendar, FiPhone, FiBookOpen, FiMapPin, FiGlobe} from "react-icons/fi";
 import { FaInstagram, FaTiktok, FaWhatsapp } from "react-icons/fa"; 
 import { LuCakeSlice } from "react-icons/lu";
+import { BiParty } from "react-icons/bi";
 
 const biolinksData = [
   {
@@ -34,6 +35,11 @@ const biolinksData = [
     title: "Whole Cakes Order",
     icon: LuCakeSlice,
     url: "/cakes", 
+  },
+  {
+    title: "Private Events",
+    icon: BiParty,
+    url: "/private-events", 
   },
   {
     title: "Location",

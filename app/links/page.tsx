@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     siteName: "GOASAYA",
     images: [
       {
-        url: "https://www.goasaya.com/logo/09.jpg", 
+        url: "https://www.goasaya.com/rooms/frontview.webp", 
         width: 1200,
         height: 630,
         alt: "GOASAYA Official Links",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Official Links | GOASAYA",
     description: "Connect with GOASAYA. Reserve your table, view our menus, or explore curated experiences.",
-    images: ["https://www.goasaya.com/logo/09.jpg"],
+    images: ["https://www.goasaya.com/rooms/frontview.webp"],
   },
   alternates: {
     canonical: "https://www.goasaya.com/links",
@@ -47,7 +47,7 @@ export default function LinksPage() {
     "mainEntity": {
       "@type": "Restaurant", // ...about a restaurant!
       "name": "GOASAYA",
-      "image": "https://www.goasaya.com/logo/09.jpg",
+      "image": "https://www.goasaya.com/rooms/frontview.webp",
       "url": "https://www.goasaya.com",
       "telephone": "+6281338382845", // ✅ Added Contact
       "servesCuisine": "Asian Progressive", // ✅ Added Cuisine (Huge for Google Search)
