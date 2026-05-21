@@ -9,8 +9,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   const staticRoutes: MetadataRoute.Sitemap = [
     { url: `${SITE_URL}/`, changeFrequency: "weekly", priority: 1.0 },
     { url: `${SITE_URL}/about`, changeFrequency: "monthly", priority: 0.75 },
-    
-    // UPDATED: Changed from /experience to /experiences to match your new Hub architecture
     { url: `${SITE_URL}/experiences`, changeFrequency: "monthly", priority: 0.8 }, 
     
     { url: `${SITE_URL}/menu`, changeFrequency: "weekly", priority: 0.9 },
@@ -20,7 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/reservation`, changeFrequency: "weekly", priority: 0.7 },
     { url: `${SITE_URL}/links`, changeFrequency: "weekly", priority: 0.7 },
 
-    // SEO Pages
     { url: `${SITE_URL}/cafe-di-pik`, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE_URL}/pik-must-visit`, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE_URL}/restoran-pik-2`, changeFrequency: "daily", priority: 0.9 },
@@ -29,7 +26,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   const journalRoutes: MetadataRoute.Sitemap = articles.map((article) => {
-    // Removes accidental leading slashes from data file
     const cleanSlug = article.slug.replace(/^\/+/, ''); 
     return {
       url: `${SITE_URL}/journal/${cleanSlug}`,
@@ -40,10 +36,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
   });
 
   const campaignRoutes: MetadataRoute.Sitemap = campaigns.map((campaign) => {
-    // 1. Removes accidental leading slashes to prevent //
     let cleanPath = campaign.ctaLink.replace(/^\/+/, '');
     
-    // 2. Automatically prepends the 'experiences/' silo path if it's missing from your data file
     if (!cleanPath.startsWith('experiences/')) {
       cleanPath = `experiences/${cleanPath}`;
     }
