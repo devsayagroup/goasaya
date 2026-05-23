@@ -192,10 +192,10 @@ export default function CelebrateGoasaya() {
             </p>
             <div className="mt-6 flex justify-start lg:justify-end gap-4">
               <Link
-                href="/facilities"
+                href="/private-events"
                 className="text-sm font-medium text-[#FFE3AF] border-b border-[#FFE3AF]/40 hover:border-[#FFE3AF] pb-1 transition-all duration-300"
               >
-                See Facilities
+                See Private Events
               </Link>
             </div>
           </motion.div>

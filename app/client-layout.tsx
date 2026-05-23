@@ -1,15 +1,17 @@
 "use client";
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from "react";
 import { Inria_Serif } from "next/font/google";
 import localFont from "next/font/local";
-import Header from "@/components/layout/Header";
-import Footer from "@/components/layout/Footer";
-import Loading from "./loading";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import WhatsappButton from "@/components/ui/WhatsappButton";
 import SmoothScroll from "@/components/ui/SmoothScroll";
 // import FirstVisitModal from "@/components/ui/FirstVisitModal";
 import FrontModal from "@/components/ui/FrontModal";
+
+const Header = dynamic(() => import('@/components/layout/Header'), { ssr: true });
+const Footer = dynamic(() => import('@/components/layout/Footer'), { ssr: true });
+const Loading = dynamic(() => import('./loading'), { ssr: true });
 
 const textFont = Inria_Serif({
   variable: "--font-text",

@@ -8,7 +8,6 @@ export default function PrivacyPolicyPage() {
     <main className="min-h-screen bg-[#0a0a0a] text-white/80 py-32 px-6 md:px-14 font-text selection:bg-[#FFE3AF] selection:text-black">
       <div className="max-w-3xl mx-auto">
         
-        {/* Back Navigation */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
           animate={{ opacity: 1, y: 0 }}
@@ -23,7 +22,6 @@ export default function PrivacyPolicyPage() {
           </Link>
         </motion.div>
 
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -34,7 +32,6 @@ export default function PrivacyPolicyPage() {
           <p className="text-sm tracking-widest uppercase text-[#FFE3AF]/70">Last Updated: April 16, 2026</p>
         </motion.div>
 
-        {/* Content */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
