@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     siteName: "GoaSaya",
     images: [
       {
-        url: `${SITE_URL}/romantic-3.png`, // Updated to match your new hero image
+        url: `${SITE_URL}/images/romantic/romantic-3.webp`,
         width: 1200,
         height: 630,
         alt: "Romantic Dinner at GoaSaya PIK 2",
@@ -41,6 +41,7 @@ export default function RomanticDinnerPage() {
     "@context": "https://schema.org",
     "@type": "Restaurant",
     "name": "GoaSaya PIK 2 - Romantic Dinner",
+    "image": "https://www.goasaya.com/images/romantic/romantic-3.webp",
     "url": `${SITE_URL}/romantic-dinner`,
     "description": "Jakarta's premier destination for romantic dinners, anniversaries, and private proposals, located in the heart of PIK 2.",
     "address": {

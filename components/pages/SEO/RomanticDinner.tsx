@@ -55,13 +55,13 @@ export default function RomanticDinnerView() {
             <div className="w-full h-[60vh] md:h-[65vh] mt-12 mb-8 relative overflow-hidden rounded-sm group">
                 <motion.div style={{ y: heroY }} className="absolute inset-0 w-full h-[120%] -top-[10%] will-change-transform">
                     <Image 
-                        src="/romantic-1.png" 
+                        src="/images/romantic/romantic-1.webp" 
                         alt="Romantic Fine Dining at GoaSaya (Mobile)"
                         fill unoptimized priority sizes="100vw"
                         className="object-cover object-[center_50%] grayscale-[15%] group-hover:grayscale-0 transition-all duration-1000 md:hidden block" 
                     />
                     <Image 
-                        src="/romantic-3.png" 
+                        src="/images/romantic/romantic-3.webp" 
                         alt="Romantic Fine Dining at GoaSaya"
                         fill unoptimized priority sizes="100vw"
                         className="object-cover object-[center_80%] grayscale-[15%] group-hover:grayscale-0 transition-all duration-1000 hidden md:block" 
