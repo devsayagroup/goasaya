@@ -387,7 +387,7 @@ export default function CustomCakeView() {
                             }}
                             className="inline-flex items-center gap-4 w-max px-8 py-4 border border-[#FFE3AF]/30 text-[#FFE3AF] rounded-full text-xs font-medium uppercase tracking-[0.2em] group transition-all hover:bg-[#FFE3AF] hover:text-[#0B0502]"
                         >
-                            Pre-Order Whole Cake <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
+                            Order Whole Cake <ChevronRight size={16} className="transition-transform group-hover:translate-x-1" />
                         </Link>
                     </div>
                 </div>
