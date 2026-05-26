@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight, Clock, CalendarDays } from "lucide-react"; 
 import RelatedExperiences from "@/components/ui/RelatedExperiences";
+import MobileStickyCta from "@/components/ui/MobileStickyCta";
 import DishMarquee from "@/components/ui/DishMarquee";
 
 const premiumEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
@@ -303,6 +304,13 @@ export default function MayMadnessPage() {
             </motion.div>
         </div>
       </section>
+
+      <MobileStickyCta 
+        href="https://wa.me/6281338382845?text=I+want+to+book+may+madness+lunch"
+        text="Book Your Lunch"
+        eventName="book_may_madness"
+        eventLabel="May Madness Mobile"
+      />
       <RelatedExperiences currentCampaignId="may-madness" />
     </main>
   );

@@ -4,6 +4,7 @@
   --font-text: var(--font-text);
   --font-style: var(--font-style);
   --font-special: var(--font-special);
+  --font-special-2: var(--font-special-2);
   --color-maroon: #461B13;
   --color-orange: #D44F27;
   --color-orangecream: #E47406;
@@ -42,3 +43,7 @@ html {
   font-family: var(--font-text);
 }
 
+
+.neon-accent {
+  text-shadow: 0 0 12px rgba(255, 214, 0, 0.25);
+}
