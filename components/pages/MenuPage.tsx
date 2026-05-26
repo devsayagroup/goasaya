@@ -60,6 +60,7 @@ export default function MenuPage() {
             fill
             className="object-cover"
             priority
+            sizes="100vw" /* ✅ FIX 1: Full viewport width */
           />
           <div className="absolute inset-0 bg-black/95" />
         </div>
@@ -113,69 +114,11 @@ export default function MenuPage() {
               </motion.details>
             </div>
 
-            {/* <div className="md:hidden">
-              <motion.details
-                ref={detailsRef}
-                className="bg-black/40 py-2 px-4 rounded-2xl border border-white/5"
-              >
-                <summary className="text-lg cursor-pointer py-2 flex justify-between">
-                  <span>{active}</span>
-                  <span className="text-white/50 text-sm">All Menu</span>
-                </summary>
-
-                <div className="mt-4 space-y-1">
-                  {menuData.map((cat, index) => (
-                    <div key={cat.name}>
-                      {index === beverageStartIndex && (
-                        <div className="my-4 border-t border-white/20 pt-4 text-xs tracking-widest">
-                          BEVERAGES
-                        </div>
-                      )}
-                      <button
-                        onClick={() => {
-                          setActive(cat.name);
-                          setHasInteracted(true);
-                          detailsRef.current && (detailsRef.current.open = false);
-                        }}
-                        className={`w-full text-left py-2 px-3 rounded-lg ${
-                          cat.name === active ? activeClass : inactiveClass
-                        }`}
-                      >
-                        {cat.name}
-                      </button>
-                    </div>
-                  ))}
-                </div>
-              </motion.details>
-            </div> */}
-
             <div className="hidden lg:block bg-black/40 p-6 rounded-2xl border border-white/5">
               <h1 className="text-2xl font-style font-light mb-6 tracking-wide">
                 GOASAYA Menu
               </h1>
 
-              {/* <nav className="space-y-2">
-                {menuData.map((cat, index) => (
-                  <div key={cat.name}>
-                    {index === beverageStartIndex && (
-                      <div className="my-4 border-t border-white/20 pt-4 text-xs tracking-widest text-white/40">
-                        BEVERAGES
-                      </div>
-                    )}
-                    <motion.button
-                      onClick={() => {
-                        setHasInteracted(true);
-                        setActive(cat.name);
-                      }}
-                      className={`w-full text-left py-2 px-3 rounded-lg ${
-                        cat.name === active ? activeClass : inactiveClass
-                      }`}
-                    >
-                      {cat.name}
-                    </motion.button>
-                  </div>
-                ))}
-              </nav> */}
               <nav className="space-y-2">
                 {menuData.map((cat, index) => (
                   <div key={cat.name}>
@@ -233,6 +176,7 @@ export default function MenuPage() {
                             alt={category.name}
                             fill
                             className="object-cover"
+                            sizes="(max-width: 1024px) 100vw, 66vw" /* ✅ FIX 2: 100vw on mobile, ~66vw on desktop */
                           />
                           <div className="absolute inset-0 bg-black/40" />
                         </div>
@@ -253,14 +197,6 @@ export default function MenuPage() {
                         {category.name}
                       </h2>
                     )}
-
-                    {/* {category.featured && category.featured.length > 0 && (
-                      <div>
-                        <p className="text-xs tracking-widest text-white/40 mb-4">
-                          SIGNATURE SELECTION
-                        </p>
-                      </div>
-                    )} */}
 
                     <div className="space-y-6">
                       {category.isBeverage ? (
@@ -323,13 +259,14 @@ export default function MenuPage() {
                             >
                               <div
                                 onClick={() => setActiveItem(item)}
-                                className="w-28 h-24 relative rounded-md overflow-hidden bg-white/10 cursor-pointer group"
+                                className="w-28 h-24 relative rounded-md overflow-hidden bg-white/10 cursor-pointer group shrink-0"
                               >
                                 <Image
                                   src={item.image || "/placeholder.jpg"}
                                   alt={item.title}
                                   fill
                                   className="object-cover"
+                                  sizes="112px" /* ✅ FIX 3: Container is specifically w-28 (112px) */
                                 />
 
                                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition" />
@@ -387,6 +324,7 @@ export default function MenuPage() {
                         alt={activeItem.title}
                         fill
                         className="object-cover"
+                        sizes="(max-width: 768px) 100vw, 512px" /* ✅ FIX 4: Modal is max-w-lg (512px) */
                       />
                     </div>
 
@@ -425,4 +363,3 @@ export default function MenuPage() {
     </section>
   );
 }
-

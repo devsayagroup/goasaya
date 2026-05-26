@@ -17,7 +17,7 @@ export const metadata: Metadata = {
     siteName: "GOASAYA",
     images: [
       {
-        url: `${baseUrl}/logo/09.jpg`, 
+        url: `${baseUrl}/menu/final-touch.webp`, 
         width: 1200,
         height: 630,
         alt: "GOASAYA Menu",
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     title: "Menu | GoaSaya",
     description:
       "Explore the full GOASAYA culinary experience. From appetizers, mains, desserts, premium beverages, cocktails, and signature drinks.",
-    images: [`${baseUrl}/images/og-menu.jpg`],
+    images: [`${baseUrl}/menu/final-touch.webp`],
   },
 };
 
