@@ -45,7 +45,6 @@ export default function OnePercentLoungeView() {
               className="relative w-full max-w-6xl h-full bg-[#050302] border border-[#FFE3AF]/20 rounded-sm overflow-hidden flex flex-col md:flex-row shadow-[0_0_50px_rgba(0,0,0,0.8)] selection:bg-[#FFE3AF] selection:text-black"
             >
               
-              {/* Close Button */}
               <button 
                 onClick={() => setSelectedRoom(null)}
                 className="absolute top-4 right-4 z-50 p-2 bg-black/40 backdrop-blur-md rounded-full text-white/50 hover:text-[#FFE3AF] hover:bg-black transition-all"
@@ -54,7 +53,6 @@ export default function OnePercentLoungeView() {
                 <X size={20} strokeWidth={1} />
               </button>
 
-              {/* LEFT: Cinematic Hero Image with Thumbnails */}
               <div className="w-full md:w-1/2 h-64 md:h-full relative z-0 bg-black group">
                 <Image 
                   src={activeImage} 
@@ -65,7 +63,6 @@ export default function OnePercentLoungeView() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#050302] via-transparent to-transparent opacity-80" />
                 
-                {/* Minimalist Gallery Selector (Scrollbars forcefully hidden) */}
                 <div className="absolute bottom-6 left-6 right-6 flex gap-3 z-10 overflow-x-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
                   {[selectedRoom.coverImage, ...selectedRoom.gallery].filter((v, i, a) => a.indexOf(v) === i).map((img, idx) => (
                     <button 
@@ -79,7 +76,6 @@ export default function OnePercentLoungeView() {
                 </div>
               </div>
 
-              {/* RIGHT: Minimalist & Rich Typography (Scrollbars forcefully hidden) */}
               <div className="w-full md:w-1/2 p-8 md:p-14 overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] text-white flex flex-col border-l border-white/5 relative z-10 bg-gradient-to-b from-[#050302] to-[#0A0604]">
                 
                 <div className="flex flex-col h-full justify-between">
@@ -162,7 +158,7 @@ export default function OnePercentLoungeView() {
             Enter the circle of 1%
           </h1>
           <p className="text-sm mx-auto w-[90%] md:w-[80%] md:text-md leading-loose tracking-[0.01em] opacity-80 font-light">
-            Step into a space shaped for people who appreciate <span className="text-[#FFE3AF] opacity-100 font-normal">calm, beauty, and a higher standard of taste</span>.
+            Step into a space shaped for people who appreciate <span className=" font-normal">calm, beauty, and a higher standard of taste</span>.
           </p>
         </motion.div>
       </section>
