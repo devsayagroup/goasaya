@@ -173,7 +173,7 @@ export default function Floor2Section() {
                             2nd Floor
                         </h1>
                         <Link 
-                            href="/1-percent-lounge" 
+                            href="/one-percent-lounge" 
                             className="inline-block transition-transform duration-500 hover:scale-105 hover:brightness-125"
                         >
                             <Image

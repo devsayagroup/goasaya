@@ -216,7 +216,7 @@ export default function OnePercentLoungeView() {
                   <motion.div
                     whileHover={{ scale: 1 }}
                     transition={{ duration: 0.4, ease: "easeOut" }}
-                    className="h-full w-full overflow-hidden cursor-pointer will-change-transform"
+                    className="relative h-full w-full overflow-hidden cursor-pointer will-change-transform"
                   >
                     <Image
                       src={room.coverImage}
@@ -244,7 +244,7 @@ export default function OnePercentLoungeView() {
                       viewport={{ once: true, amount: 0.3 }}
                       className="absolute bottom-6 left-6 z-10"
                     >
-                      <h3 className="text-xl sm:text-xl md:text-3xl font-special-2 font-light tracking-wide text-white group-hover:text-[#FFE3AF] transition-colors duration-500 drop-shadow">
+                      <h3 className="text-lg sm:text-xl md:text-3xl font-special-2 font-light tracking-wide text-white group-hover:text-[#FFE3AF] transition-colors duration-500 drop-shadow">
                         {room.name}
                       </h3>
                       <p className="text-[10px] uppercase tracking-[0.3em] text-white/50 group-hover:text-white/80 transition-all duration-500 mt-2 font-light">{room.subtitle}</p>
