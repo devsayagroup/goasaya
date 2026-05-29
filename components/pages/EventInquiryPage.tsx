@@ -65,8 +65,8 @@ export default function EventInquiryClient() {
             Host Your Event
           </h1>
           <p className="font-text text-white/70 tracking-wide max-w-lg mx-auto leading-relaxed text-sm md:text-base">
-            From intimate gatherings to grand celebrations, tell us about your vision and our team will bring it to life in our subterranean sanctuary.
-          </p>
+            From intimate gatherings to grand celebrations, tell us about your vision and our team will bring it to life in our home          
+            </p>
         </motion.div>
 
         {isSuccess ? (
