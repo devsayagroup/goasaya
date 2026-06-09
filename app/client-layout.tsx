@@ -57,7 +57,7 @@ export default function ClientLayout({
           <Header />
           <ScrollToTop />
           <WhatsappButton />
-          {/* <FrontModal/> */}
+          <FrontModal/>
           {/* <FirstVisitModal/> */}
           <SmoothScroll>{children}</SmoothScroll>
           <Footer />

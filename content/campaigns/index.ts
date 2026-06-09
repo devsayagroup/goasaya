@@ -1,6 +1,3 @@
-
-
-
 export const campaigns = [
   {
     id: "ramadan-feast", 
@@ -19,7 +16,7 @@ export const campaigns = [
     ctaText: "Discover More",
     ctaLink: "/experiences/weekday-specials", 
     isActive: false, 
-  },
+  }, 
   {
     id: "may-madness", 
     title: "May Madness",
@@ -27,6 +24,15 @@ export const campaigns = [
     image: "/images/webp/MM-FULL.webp", 
     ctaText: "Discover More",
     ctaLink: "/experiences/may-madness", 
+    isActive: false, 
+  },
+  {
+    id: "june-table", 
+    title: "June Table",
+    description: "Discover our exclusive lifestyle lunch set. A 4-course culinary journey designed for the perfect midday escape.",
+    image: "/images/june/junetable.webp", 
+    ctaText: "Discover More",
+    ctaLink: "/experiences/june-table", 
     isActive: true, 
   },
 ];

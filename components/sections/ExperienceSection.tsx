@@ -8,7 +8,6 @@ import Link from "next/link";
 import { campaigns } from "@/content/campaigns/index";
 
 export default function ExperienceSection() {
-  // Create a copy of the array and reverse it so the newest (bottom-most in the index) appears first
   const sortedCampaigns = [...campaigns].reverse();
   const filterCampaigns = sortedCampaigns.slice(0, 3);
 
@@ -30,10 +29,14 @@ export default function ExperienceSection() {
           transition={{ duration: 1 }}
           className="mt-8 lg:mt-0 lg:text-right max-w-lg text-black"
         >
-          <p className="font-text text-md mb-4 leading-loose">
+          {/* <p className="font-text text-md mb-4 leading-loose">
             From private celebrations to quiet reflections, GoaSaya holds space
             for every moment worth remembering. Under the glow of soft lights,
             we celebrate togetherness in its purest form.
+          </p> */}
+          <p className="font-text text-md mb-4 leading-loose">
+            Every month brings a new reason to gather. Discover our rotating culinary campaigns, 
+            seasonal menus, and curated specials designed to make every visit unforgettable
           </p>
         </motion.div>
       </div>
