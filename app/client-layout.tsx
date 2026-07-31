@@ -29,7 +29,6 @@ const specialFont = localFont({
   variable: "--font-special",
 });
 
-
 const special2Font = Cinzel({
   variable: "--font-special-2",
   subsets: ["latin"],

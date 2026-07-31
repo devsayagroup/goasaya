@@ -1,25 +1,4 @@
 
-// import { generatePageMetadata } from "@/lib/metadata";
-// import type { Metadata } from "next";
-
-// export const metadata = generatePageMetadata({
-//   title: "GOASAYA | Asian Progressive Dining Experience",
-//   description:"Discovered the flavors of adventures at cave, where grilled dishes, unique drinks, and cozy cave vibes come together in one unforgetables experience",
-//   image: "/logo/09.jpg",
-//   url: "https://goasaya.com",
-// });
-
-// export default function Home() {
-//   return (
-//     <>
-//       <HeroSection/>
-//       <AboutSection/>
-//       <SpecialEventSection/>
-//       <EventSection/>
-//     </>
-//   );
-// }
-
 import type { Metadata } from "next";
 import Script from "next/script";
 import dynamic from 'next/dynamic';

@@ -230,7 +230,7 @@ export default function OnePercentLoungeView() {
                         duration-[2s]
                         ease-out
                         brightness-[1]
-                        md:brightness-[0.7]
+                        md:brightness-[0.8]
                         group-hover:brightness-100
                         will-change-transform
                       "

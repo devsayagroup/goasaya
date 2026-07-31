@@ -33,6 +33,15 @@ export const campaigns = [
     image: "/images/june/junetable.webp", 
     ctaText: "Discover More",
     ctaLink: "/experiences/june-table", 
+    isActive: false, 
+  },
+   {
+    id: "house-music", 
+    title: "",
+    description: "",
+    image: "/campaigns/house-music.jpg", 
+    ctaText: "Discover More",
+    ctaLink: "/experiences/house-music", 
     isActive: true, 
   },
 ];

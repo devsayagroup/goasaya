@@ -18,12 +18,14 @@ export const metadata: Metadata = {
     "Tempat nongkrong VIP PIK 2"
   ],
   alternates: {
-    canonical: `${SITE_URL}/1-percent-lounge`,
+    // UPDATED TO MATCH IG SPELLING
+    canonical: `${SITE_URL}/one-percent-lounge`, 
   },
   openGraph: {
     title: "The 1% Lounge | VIP Speakeasy & Private Rooms PIK 2",
     description: "Ascend to exclusivity. 5 themed private chambers, bespoke cocktails, and elite bottle service hidden above GoaSaya.",
-    url: `${SITE_URL}/1-percent-lounge`,
+    // UPDATED TO MATCH IG SPELLING
+    url: `${SITE_URL}/one-percent-lounge`,
     siteName: "GoaSaya",
     images: [
       {

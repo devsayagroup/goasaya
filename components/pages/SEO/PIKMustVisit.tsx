@@ -74,8 +74,9 @@ export default function PIKMustVisitClient() {
             transition={{ duration: 1.5, delay: 0.6, ease: premiumEase }}
             className="text-sm md:text-lg text-white/60 max-w-xl leading-relaxed font-light mt-8"
           >
-            Not just a place to dine, but an architectural destination to be experienced. 
-            Step inside the main cave and discover the most breathtaking escape in Jakarta.
+            Not just a place to dine, but an architectural destination to be experienced.
+            Step inside the main cave and discover the most breathtaking escape in PIK 2 — 
+            minutes from Urban Farm PIK, Sunset Pier, and San Antonio Beach.
           </motion.p>
         </div>
       </section>
@@ -88,9 +89,16 @@ export default function PIKMustVisitClient() {
                 An Immersive <br className="hidden md:block" />
                 <span className="text-[#e6d5b8] italic">Sanctuary</span>
               </h2>
-              
+
               <p className="text-white/60 text-sm md:text-base font-light leading-relaxed mb-8 max-w-xl lg:max-w-none pr-0 lg:pr-8">
-                GoaSaya transcends standard dining. As a definitive PIK 2 attraction, the sprawling main dining area is enveloped entirely in textured stone walls, creating a secluded, photogenic universe.
+                GoaSaya transcends standard dining. As a definitive PIK 2 attraction, the sprawling 
+                main dining area is enveloped entirely in textured stone walls, creating a secluded, 
+                photogenic universe unlike anywhere else in Pantai Indah Kapuk 2.
+                <br /><br />
+                While PIK 2 is best known for its open-air attractions and waterfront promenades, 
+                GoaSaya offers something different: an indoor architectural escape, designed for 
+                the moments before or after a day exploring the area — a dinner reservation, a 
+                celebration, or simply a place to sit inside something unlike anything else in the city.
               </p>
               
               <Link href="/reservation" className="inline-flex items-center gap-4 text-[10px] tracking-[0.2em] uppercase text-[#e6d5b8] hover:text-white transition-colors group">
@@ -134,6 +142,22 @@ export default function PIKMustVisitClient() {
             </motion.div>
 
           </div>
+        </div>
+      </section>
+
+      <section className="py-32 ">
+        <div className="max-w-[1500px] mx-auto px-6 md:px-12">
+          <h2 className="text-3xl md:text-5xl font-style mb-8 text-white">
+            Part of Your <span className="text-[#e6d5b8] italic">PIK 2 Itinerary</span>
+          </h2>
+          <p className="max-w-4xl  text-white/60 text-sm md:text-base font-light leading-relaxed">
+            Pantai Indah Kapuk 2 has become one of Jakarta's most visited coastal 
+            destinations — home to Urban Farm PIK, Sunset Pier, and the long waterfront 
+            walk at San Antonio Beach. GoaSaya sits just minutes away, offering the 
+            dining counterpart to a day spent exploring the area: a reservation for 
+            dinner, a private celebration through our connected 1% Lounge KTV rooms, 
+            or simply a striking place to end the evening.
+          </p>
         </div>
       </section>
 
@@ -233,7 +257,6 @@ export default function PIKMustVisitClient() {
         </div>
       </section>
 
-      {/* 5. PARALLAX DESTINATION CTA */}
       <section ref={ctaRef} className="relative py-48 flex flex-col items-center text-center overflow-hidden">
         <motion.div style={{ y: ctaY }} className="absolute inset-0 z-0 w-full h-[150%]">
           <Image 
