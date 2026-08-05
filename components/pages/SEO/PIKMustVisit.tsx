@@ -151,7 +151,7 @@ export default function PIKMustVisitClient() {
             Part of Your <span className="text-[#e6d5b8] italic">PIK 2 Itinerary</span>
           </h2>
           <p className="max-w-4xl  text-white/60 text-sm md:text-base font-light leading-relaxed">
-            Pantai Indah Kapuk 2 has become one of Jakarta's most visited coastal 
+            Pantai Indah Kapuk 2 has become one of Jakarta&apos;s most visited coastal 
             destinations — home to Urban Farm PIK, Sunset Pier, and the long waterfront 
             walk at San Antonio Beach. GoaSaya sits just minutes away, offering the 
             dining counterpart to a day spent exploring the area: a reservation for 

@@ -212,7 +212,7 @@ export default function FrontModal() {
             </button>
 
             {/* Campaign Image (STRICT 3:4 ASPECT RATIO) */}
-            <div className="relative w-full aspect-[3/4]">
+            <div className="relative w-full aspect-[7/8]">
               <Image
                 src={activeCampaign.image}
                 alt={activeCampaign.title}

@@ -42,6 +42,15 @@ export const campaigns = [
     image: "/campaigns/house-music.jpg", 
     ctaText: "Discover More",
     ctaLink: "/experiences/house-music", 
+    isActive: false, 
+  },
+   {
+    id: "after-eight", 
+    title: "",
+    description: "",
+    image: "/campaigns/after-eight.webp", 
+    ctaText: "Discover More",
+    ctaLink: "/experiences/after-eight", 
     isActive: true, 
   },
 ];
