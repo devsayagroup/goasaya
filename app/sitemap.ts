@@ -26,6 +26,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/romantic-dinner`, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE_URL}/one-percent-lounge`, changeFrequency: "daily", priority: 0.9 },
     { url: `${SITE_URL}/makan-cantik`, changeFrequency: "daily", priority: 0.9 },
+    { url: `${SITE_URL}/all-you-can-eat`, changeFrequency: "daily", priority: 0.9 },
   ];
 
   const journalRoutes: MetadataRoute.Sitemap = articles.map((article) => {
