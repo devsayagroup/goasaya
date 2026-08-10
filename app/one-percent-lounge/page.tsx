@@ -4,27 +4,14 @@ import OnePercentLoungeView from "@/components/pages/SEO/OnePercentLounge";
 const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.goasaya.com";
 
 export const metadata: Metadata = {
-  title: "The 1% Lounge | VIP Speakeasy & Private Rooms PIK 2 | GoaSaya",
+  title: "The 1% Lounge | VIP Speakeasy & Private Rooms PIK 2 | GOASAYA",
   description: "Discover PIK 2's most exclusive nightlife sanctuary hidden above GoaSaya. Featuring 5 bespoke VIP private rooms, premium bottle service, and artisan mixology.",
-  keywords: [
-    "VIP lounge Jakarta",
-    "Speakeasy bar PIK 2",
-    "Nightlife PIK 2",
-    "Private room restaurant Jakarta",
-    "Premium cocktail bar Tangerang",
-    "Bottle service PIK 2",
-    "Hidden bar PIK",
-    "Exclusive bar Tangerang",
-    "Tempat nongkrong VIP PIK 2"
-  ],
   alternates: {
-    // UPDATED TO MATCH IG SPELLING
     canonical: `${SITE_URL}/one-percent-lounge`, 
   },
   openGraph: {
     title: "The 1% Lounge | VIP Speakeasy & Private Rooms PIK 2",
     description: "Ascend to exclusivity. 5 themed private chambers, bespoke cocktails, and elite bottle service hidden above GoaSaya.",
-    // UPDATED TO MATCH IG SPELLING
     url: `${SITE_URL}/one-percent-lounge`,
     siteName: "GoaSaya",
     images: [
@@ -41,7 +28,7 @@ export const metadata: Metadata = {
 };
 
 export default function OnePercentLoungePage() {
-  // Rich SEO Schema to tell Google exactly what you are offering
+  // 1. Existing Product/Offer Schema
   const loungeJsonLd = {
     "@context": "https://schema.org",
     "@type": "BarOrPub",
@@ -50,7 +37,7 @@ export default function OnePercentLoungePage() {
       "@type": "Restaurant",
       "name": "GoaSaya"
     },
-    "url": `${SITE_URL}/1-percent-lounge`,
+    "url": `${SITE_URL}/one-percent-lounge`,
     "description": "PIK 2's most exclusive VIP speakeasy and nightlife sanctuary, featuring 5 bespoke private rooms for elite bottle service and intimate gatherings.",
     "address": {
       "@type": "PostalAddress",
@@ -99,13 +86,37 @@ export default function OnePercentLoungePage() {
         },
         "price": "6500000",
         "priceCurrency": "IDR"
+      }
+    ]
+  };
+
+  // 2. NEW AEO FAQ Schema (Feeds ChatGPT & Google AI Overviews)
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "How many people can fit in the private rooms at The 1% Lounge PIK 2?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 1% Lounge offers 5 bespoke private rooms ranging in capacity from an intimate 12 pax in The Pink Room up to 32 pax in The Classic Room, making it perfect for VIP gatherings and exclusive corporate events."
+        }
       },
       {
-        "@type": "Offer",
-        "itemOffered": {
-          "@type": "Service",
-          "name": "The Inner Circle",
-          "description": "Invitation-only ultra-private VIP room offering the highest level of discretion."
+        "@type": "Question",
+        "name": "What is the minimum spend for a VIP room at The 1% Lounge?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Minimum spends start at IDR 3,500,000 for The Pink Room and scale up based on the room size and capacity. We also feature an invitation-only Inner Circle room for ultimate discretion."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Where is the hidden speakeasy in GoaSaya located?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "The 1% Lounge is an exclusive speakeasy and VIP nightlife sanctuary hidden directly above GoaSaya in PIK 2, Tangerang."
         }
       }
     ]
@@ -113,10 +124,8 @@ export default function OnePercentLoungePage() {
 
   return (
     <>
-      <script 
-        type="application/ld+json" 
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(loungeJsonLd) }} 
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(loungeJsonLd) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <OnePercentLoungeView />
     </>
   );
