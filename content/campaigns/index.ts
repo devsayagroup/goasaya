@@ -51,6 +51,15 @@ export const campaigns = [
     image: "/campaigns/after-eight.webp", 
     ctaText: "Discover More",
     ctaLink: "/experiences/after-eight", 
-    isActive: true, 
+    isActive: false, 
   },
+  {
+    id: "all-you-can-eat", 
+    title: "Lunch Like No Other",
+    description: "Experience our premium All You Can Eat lunch. Explore up to 22 Asian Progressive menus for IDR 318.000 from 11:00 to 15:00.",
+    image: "/campaigns/all-you-can-eat.webp", // Matches the image file you uploaded
+    ctaText: "Discover More",
+    ctaLink: "/all-you-can-eat", // Maps to your new SEO-optimized server page
+    isActive: true, // Set to true to launch it for August
+  }
 ];

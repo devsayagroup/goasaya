@@ -1,5 +1,39 @@
 import { SITE } from "./site";
 
+export const restaurantJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Restaurant",
+  "@id": "https://www.goasaya.com/#restaurant",
+  "name": "GOASAYA",
+  "image": "https://www.goasaya.com/rooms/frontview.webp",
+  "url": "https://www.goasaya.com",
+  "telephone": "+6281338382845",
+  "priceRange": "$$$",
+  "menu": "https://www.goasaya.com/menu",
+  "servesCuisine": ["Asian Progressive", "Cocktails", "Fine Dining"],
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "PIK 2",
+    "addressLocality": "Tangerang",
+    "addressRegion": "Banten",
+    "postalCode": "15214",
+    "addressCountry": "ID"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": -6.0645,
+    "longitude": 106.7042
+  },
+  "openingHoursSpecification": [
+    {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      "opens": "11:00",
+      "closes": "23:00"
+    }
+  ]
+};
+
 export function orgJsonLd() {
     return {
         "@context": "https://schema.org",
