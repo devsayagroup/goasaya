@@ -1,7 +1,7 @@
 "use client";
 import dynamic from 'next/dynamic';
 import { useEffect, useState } from "react";
-import { Inria_Serif, Cinzel} from "next/font/google";
+import { Inria_Serif, Cinzel, Inter, Damion} from "next/font/google";
 import localFont from "next/font/local";
 import ScrollToTop from "@/components/ui/ScrollToTop";
 import WhatsappButton from "@/components/ui/WhatsappButton";
@@ -35,6 +35,19 @@ const special2Font = Cinzel({
   weight: ["400", "700"],
 });
 
+const baseFont = Inter({
+  variable: "--font-base",
+  subsets: ["latin"],
+  weight: ["300", "400", "500","700", "800", "900"],
+});
+
+const afterFont = Damion({
+  variable: "--font-after",
+  subsets: ["latin"],
+  weight: ["400"],
+});
+
+
 export default function ClientLayout({
   children,
 }: {
@@ -48,7 +61,7 @@ export default function ClientLayout({
   }, []);
 
   return (
-    <div className={`${textFont.variable} ${styleFont.variable} ${specialFont.variable} ${special2Font.variable} font-text`}>
+    <div className={`${textFont.variable} ${styleFont.variable} ${specialFont.variable} ${special2Font.variable} ${baseFont.variable} ${afterFont.variable} font-text`}>
       {loading ? (
         <Loading />
       ) : (

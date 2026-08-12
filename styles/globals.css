@@ -5,6 +5,8 @@
   --font-style: var(--font-style);
   --font-special: var(--font-special);
   --font-special-2: var(--font-special-2);
+  --font-base: var(--font-base);
+  --font-after: var(--font-after);
   --color-maroon: #461B13;
   --color-orange: #D44F27;
   --color-orangecream: #E47406;
