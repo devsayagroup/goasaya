@@ -36,7 +36,7 @@ export default function GlobalCta({
   buttonClassName = "bg-[#FFE3AF] text-black hover:bg-white shadow-[0_0_20px_rgba(255,227,175,0.15)]"
 }: GlobalCtaProps) {
   return (
-    <section className={`relative w-full py-24 md:py-32 z-20 flex flex-col items-center justify-center text-center px-6 overflow-hidden border-t ${sectionClassName}`}>
+    <section className={`relative w-full py-36 md:py-48 z-20 flex flex-col items-center justify-center text-center px-6 overflow-hidden border-t ${sectionClassName}`}>
       
       {/* Background Image & Overlay */}
       <div className="absolute inset-0 z-0 pointer-events-none">

@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "GOASAYA",
     images: [
       {
-        url: `${SITE_URL}/campaigns/after-eight.webp`, // Ensure you have a moody/red-tinted image here
+        url: `${SITE_URL}/seo/goasaya-after-eight.webp`, // Ensure you have a moody/red-tinted image here
         width: 1200,
         height: 630,
         alt: "GoaSaya After Eight Bar and Lounge PIK 2",
@@ -39,6 +39,13 @@ export default function AfterEightServerPage() {
       "@type": "Restaurant",
       "name": "GoaSaya"
     },
+    "address": {
+  "@type": "PostalAddress",
+  "streetAddress": " Entertainment District 2, Jl HR Jl. Rasuna Said, Salembaran, Kec. Kosambi, Kabupaten Tangerang, Banten 15214",
+  "addressLocality": "Pantai Indah Kapuk 2",
+  "addressRegion": "Tangerang",
+  "addressCountry": "ID"
+},
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -77,7 +84,15 @@ export default function AfterEightServerPage() {
           "@type": "Answer",
           "text": "Yes, GoaSaya features a premium bar. Our 'After Eight' experience introduces an entirely new cocktail menu designed specifically for the late-night lounge crowd."
         }
-      }
+      },
+      {
+       "@type": "Question",
+       "name": "Dimana lokasi dan jam buka GoaSaya After Eight?",
+       "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GoaSaya After Eight buka setiap malam pukul 20.00 – 02.00, berlokasi di kawasan PIK 2, Tangerang. Salah satu bar dan tempat nongkrong malam di PIK 2 dengan konsep gua pasir yang tidak akan kamu temukan di tempat lain."
+        }
+    }
     ]
   };
 
