@@ -10,6 +10,11 @@ const SITE_NAME = "GOASAYA";
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   applicationName: SITE_NAME,
+  alternates: {
+    types: {
+      "text/markdown": "/llms.txt",
+    },
+  },
   robots: {
     index: true,
     follow: true,
