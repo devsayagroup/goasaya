@@ -12,6 +12,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/experiences`, changeFrequency: "monthly", priority: 0.8, lastModified: "2026-06-01" },
  
     { url: `${SITE_URL}/menu`, changeFrequency: "weekly", priority: 0.9, lastModified: "2026-07-15" },
+    { url: `${SITE_URL}/spaces`, changeFrequency: "weekly", priority: 0.9, lastModified: "2026-07-15" },
     { url: `${SITE_URL}/facilities`, changeFrequency: "monthly", priority: 0.7, lastModified: "2026-06-01" },
     { url: `${SITE_URL}/event`, changeFrequency: "weekly", priority: 0.85, lastModified: "2026-07-15" },
     { url: `${SITE_URL}/journal`, changeFrequency: "weekly", priority: 0.8, lastModified: "2026-07-15" },
@@ -26,11 +27,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/romantic-dinner`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-06-10" },
     { url: `${SITE_URL}/one-percent-lounge`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-06-10" },
     { url: `${SITE_URL}/makan-cantik`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-06-10" },
+    { url: `${SITE_URL}/visit`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-06-10" },
  
     // Touched today (13 Aug 2026) — content/schema fixes shipped this session
     { url: `${SITE_URL}/all-you-can-eat`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-13" },
     { url: `${SITE_URL}/after-eight`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-13" },
     { url: `${SITE_URL}/bar-di-pik-2`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-13" },
+    { url: `${SITE_URL}/vip-dining`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-19" },
   ];
 
   const journalRoutes: MetadataRoute.Sitemap = articles.map((article) => {
