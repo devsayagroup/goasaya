@@ -34,6 +34,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/after-eight`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-13" },
     { url: `${SITE_URL}/bar-di-pik-2`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-13" },
     { url: `${SITE_URL}/vip-dining`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-19" },
+
+    { url: `${SITE_URL}/must-visit-pik-2`, changeFrequency: "daily", priority: 0.95, lastModified: "2026-08-20" },
   ];
 
   const journalRoutes: MetadataRoute.Sitemap = articles.map((article) => {

@@ -108,7 +108,7 @@ export default function MakanCantikView() {
             >
               <div className="relative w-full aspect-[4/5] mb-6 overflow-hidden border border-[#FFE3AF]/20">
                 <Image 
-                  src="/campaigns/arisan-goa.webp" // A shot showing a group of friends having fun
+                  src="/campaigns/makan-cantik.webp" // A shot showing a group of friends having fun
                   alt="Tempat Arisan PIK 2" 
                   fill 
                   className="object-cover object-top" 
