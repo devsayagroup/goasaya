@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "GOASAYA",
     images: [
       {
-        url: `${SITE_URL}/seo/bar-di-pik-2.webp`,
+        url: `${SITE_URL}/seo/goasaya-after-eight.webp`,
         width: 1200,
         height: 630,
         alt: "Bar dan Hangout Spot di PIK 2 - GoaSaya",

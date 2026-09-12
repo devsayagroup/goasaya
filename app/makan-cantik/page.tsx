@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     siteName: "GOASAYA",
     images: [
       {
-        url: `${SITE_URL}/rooms/frontview.webp`, // Replace with your best bright/aesthetic interior shot
+        url: `${SITE_URL}/romantic.png`, // Replace with your best bright/aesthetic interior shot
         width: 1200,
         height: 630,
         alt: "Spot Makan Cantik dan Estetik di GoaSaya PIK 2",
