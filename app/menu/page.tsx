@@ -69,7 +69,7 @@ export default function Menu() {
       <MenuPage />
 
      <GlobalCta 
-        href="https://wa.me/6281338382845?text=I+want+to+book+a+table+at+GoaSaya+after+looking+at+the+menu"
+        href="https://www.goasaya.com/reservation?utm_source=website&utm_medium=global_cta"
         bgImage="/menu/final-touch.webp"
         sectionClassName="bg-[#EEEDE5] border-[#461B13]/10" 
         overlayClassName="bg-cream/10 bg-gradient-to-b from-cream to-creamlight" 
@@ -80,7 +80,7 @@ export default function Menu() {
       />
       
       <MobileStickyCta 
-        href="https://wa.me/6281338382845?text=I+want+to+book+a+table+at+GoaSaya"
+        href="https://www.goasaya.com/reservation?utm_source=website&utm_medium=mobile_cta"
         text="Book a Table"
         eventName="click_menu_cta"
         eventLabel="Menu Page Sticky CTA"

@@ -11,7 +11,7 @@ export default function CTASection() {
       category: 'tracking',
       label: 'Special Event',
     })
-    window.open('https://wa.me/62895428289088?text=Hi%20Goasaya,%20I%20want%20to%20have%20a%20special%20event.', '_blank', 'noopener,noreferrer')
+    window.open('https://www.goasaya.com/reservation?utm_source=website&utm_medium=global_cta', '_blank', 'noopener,noreferrer')
   }
   return (
     <section className="relative mt-32 h-[500px] flex items-center justify-center text-center overflow-hidden">

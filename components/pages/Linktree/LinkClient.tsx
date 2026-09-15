@@ -13,7 +13,7 @@ const biolinksData = [
   {
     title: "Book Now via Chope",
     icon: FiCalendar,
-    url: "https://cho.pe/web_goasayarestaurant",
+    url: "https://www.goasaya.com/reservation?utm_source=website&utm_medium=linktree",
     highlight: true, 
   },
   {

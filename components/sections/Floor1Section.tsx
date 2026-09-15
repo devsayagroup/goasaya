@@ -47,7 +47,7 @@ export default function Floor1Section() {
                             1st Floor
                         </h1>
                         <Link 
-                            href="https://cho.pe/web_goasayarestaurant" 
+                            href="https://www.goasaya.com/reservation?utm_source=website&utm_medium=spaces_page" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="inline-block transition-transform duration-500 hover:scale-105 hover:brightness-125"
