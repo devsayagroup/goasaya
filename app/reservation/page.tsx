@@ -6,16 +6,20 @@ import { Suspense } from "react";
 
 function ReservationContent() {
     const searchParams = useSearchParams();
-    const source = searchParams.get('utm_source') || searchParams.get('source') || 'website_direct';
-    const campaign = searchParams.get('utm_campaign') || '';
-    
-    const iframeSrc = `https://reservation.goasaya.com/embed?source=${encodeURIComponent(source)}&utm_campaign=${encodeURIComponent(campaign)}`;
+    // 1. Grab ONLY the utm_source, ignore medium and Facebook/Google trackers
+    const utmSource = searchParams.get('utm_source');
+
+    // 2. Attach it to the clean embed URL
+    const iframeUrl = new URL('https://reservation.goasaya.com/embed');
+    if (utmSource) {
+        iframeUrl.searchParams.set('utm_source', utmSource);
+    }
 
     return (
         // Stripped away h-screen and min-h-screen limits
         <div className="w-full bg-black pt-12"> 
             <iframe 
-                src={iframeSrc} 
+                src={iframeUrl.toString()}
                 // CRITICAL FIX: Hardcoded a massive height so the inner scrollbar never appears
                 className="w-full h-[1200px] border-none"
                 title="GoaSaya Reservations"
