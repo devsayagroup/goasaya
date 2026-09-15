@@ -1,34 +1,40 @@
-'use client';
+// ON THE MAIN DOMAIN: components/pages/ReservationPage.tsx
+"use client";
 
-import { useSearchParams } from 'next/navigation';
-import { Suspense } from 'react';
+import { useSearchParams } from "next/navigation";
+import { Suspense } from "react";
 
-function BookingIframe() {
-  const searchParams = useSearchParams();
-  const utmSource = searchParams.get('utm_source');
+function ReservationContent() {
+    const searchParams = useSearchParams();
+    const utmSource = searchParams.get('utm_source');
 
-  // Derive the URL directly. No useEffect or useState needed!
-  const iframeSrc = utmSource 
-    ? `https://reservation.goasaya.com/embed?utm_source=${utmSource}` 
-    : 'https://reservation.goasaya.com/embed';
+    // Derive the URL directly. No useEffect or useState needed!
+    const iframeSrc = utmSource 
+        ? `https://reservation.goasaya.com/embed?utm_source=${utmSource}` 
+        : 'https://reservation.goasaya.com/embed';
 
-  return (
-    <iframe 
-      // The key forces the iframe to reload if the URL changes upon hydration
-      key={iframeSrc} 
-      src={iframeSrc} 
-      className="w-full h-[1200px] border-none"
-      title="GoaSaya Reservation"
-    />
-  );
+
+    return (
+        // Stripped away h-screen and min-h-screen limits
+        <div className="w-full bg-black pt-12"> 
+            <iframe 
+                key={iframeSrc} 
+                src={iframeSrc} 
+                // CRITICAL FIX: Hardcoded a massive height so the inner scrollbar never appears
+                className="w-full h-[1200px] border-none"
+                title="GoaSaya Reservations"
+                loading="lazy"
+                // Prevent iOS from trying to zoom or mess with the iframe bounds
+                style={{ width: '1px', minWidth: '100%', borderRadius: "50px", padding: "30px" }}
+            />
+        </div>
+    );
 }
 
 export default function ReservationPage() {
-  return (
-    <main>
-       <Suspense fallback={<div>Loading reservation...</div>}>
-         <BookingIframe />
-       </Suspense>
-    </main>
-  );
+    return (
+        <Suspense fallback={<div className="min-h-screen bg-black " />}>
+            <ReservationContent />
+        </Suspense>
+    );
 }
