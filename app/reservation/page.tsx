@@ -6,13 +6,9 @@ import { Suspense } from "react";
 
 function ReservationContent() {
     const searchParams = useSearchParams();
-    const utmSource = searchParams.get('utm_source');
-
-    // Derive the URL directly. No useEffect or useState needed!
-    const iframeSrc = utmSource 
-        ? `https://reservation.goasaya.com/embed?utm_source=${utmSource}` 
-        : 'https://reservation.goasaya.com/embed';
-
+    const source = searchParams.get('utm_source') || 'website_direct';
+    
+    const iframeSrc = `https://reservation.goasaya.com/embed?source=${encodeURIComponent(source)}`;
 
     return (
         // Stripped away h-screen and min-h-screen limits
