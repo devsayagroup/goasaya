@@ -16,7 +16,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/facilities`, changeFrequency: "monthly", priority: 0.7, lastModified: "2026-06-01" },
     { url: `${SITE_URL}/event`, changeFrequency: "weekly", priority: 0.85, lastModified: "2026-07-15" },
     { url: `${SITE_URL}/journal`, changeFrequency: "weekly", priority: 0.8, lastModified: "2026-07-15" },
-    { url: `${SITE_URL}/reservation`, changeFrequency: "weekly", priority: 0.7, lastModified: "2026-06-01" },
+    { url: `${SITE_URL}/reservation`, changeFrequency: "weekly", priority: 0.7, lastModified: "2026-09-16" },
     { url: `${SITE_URL}/links`, changeFrequency: "weekly", priority: 0.7, lastModified: "2026-06-01" },
  
     { url: `${SITE_URL}/cafe-di-pik`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-07-20" },

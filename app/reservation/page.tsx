@@ -1,36 +1,69 @@
-// ON THE MAIN DOMAIN: components/pages/ReservationPage.tsx
-"use client";
+// app/reservation/page.tsx
+import { Metadata } from "next";
+import ReservationClient from "./ReservationClient";
 
-import { useSearchParams } from "next/navigation";
-import { Suspense } from "react";
-
-function ReservationContent() {
-    const searchParams = useSearchParams();
-    const source = searchParams.get('utm_source') || 'website_direct';
-    
-    const iframeSrc = `https://reservation.goasaya.com/embed?utm_source=${encodeURIComponent(source)}`;
-
-    return (
-        // Stripped away h-screen and min-h-screen limits
-        <div className="w-full bg-black pt-12"> 
-            <iframe 
-                key={iframeSrc} 
-                src={iframeSrc} 
-                // CRITICAL FIX: Hardcoded a massive height so the inner scrollbar never appears
-                className="w-full h-[1200px] border-none"
-                title="GoaSaya Reservations"
-                loading="lazy"
-                // Prevent iOS from trying to zoom or mess with the iframe bounds
-                style={{ width: '1px', minWidth: '100%', borderRadius: "50px", padding: "30px" }}
-            />
-        </div>
-    );
-}
+export const metadata: Metadata = {
+  title: "Book a Table | GoaSaya PIK 2",
+  description: "Reserve your dining experience at GoaSaya. Step into our iconic sand cave-inspired destination and secure your table for progressive Asian cuisine in PIK 2.",
+  alternates: {
+    canonical: "https://www.goasaya.com/reservation"
+  },
+  openGraph: {
+    title: "Book a Table | GoaSaya PIK 2",
+    description: "Reserve your dining experience at GoaSaya in Entertainment District PIK 2.",
+    url: "https://www.goasaya.com/reservation",
+    siteName: "GoaSaya",
+    locale: "en_US",
+    type: "website",
+    // Make sure you have a good OG image in your public folder!
+    images: [{ url: "https://www.goasaya.com/og-image.jpg" }] 
+  }
+};
 
 export default function ReservationPage() {
-    return (
-        <Suspense fallback={<div className="min-h-screen bg-black " />}>
-            <ReservationContent />
-        </Suspense>
-    );
+  // Structured Data for Generative Engine Optimization (GEO/AEO)
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "FoodEstablishment",
+    "name": "GoaSaya",
+    "image": "https://www.goasaya.com/og-image.jpg",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Entertainment District 2, Jl HR Jl. Rasuna Said, Salembaran",
+      "addressLocality": "Tangerang",
+      "addressRegion": "Banten",
+      "postalCode": "15214",
+      "addressCountry": "ID"
+    },
+    "telephone": "0813-3838-2845",
+    "acceptsReservations": "True",
+    "url": "https://www.goasaya.com/reservation",
+    "potentialAction": {
+      "@type": "ReserveAction",
+      "target": {
+        "@type": "EntryPoint",
+        "urlTemplate": "https://www.goasaya.com/reservation",
+        "inLanguage": "en-US",
+        "actionPlatform": [
+          "http://schema.org/DesktopWebPlatform",
+          "http://schema.org/MobileWebPlatform"
+        ]
+      },
+      "result": {
+        "@type": "FoodEstablishmentReservation"
+      }
+    }
+  };
+
+  return (
+    <>
+      {/* Inject the Schema invisibly into the DOM */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      {/* Load your Client Component with the iframe */}
+      <ReservationClient />
+    </>
+  );
 }
