@@ -8,7 +8,7 @@ function ReservationContent() {
     const searchParams = useSearchParams();
     const source = searchParams.get('utm_source') || 'website_direct';
     
-    const iframeSrc = `https://reservation.goasaya.com/embed?source=${encodeURIComponent(source)}`;
+    const iframeSrc = `https://reservation.goasaya.com/embed?utm_source=${encodeURIComponent(source)}`;
 
     return (
         // Stripped away h-screen and min-h-screen limits
