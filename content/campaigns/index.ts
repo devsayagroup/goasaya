@@ -48,10 +48,10 @@ export const campaigns = [
     id: "after-eight", 
     title: "",
     description: "",
-    image: "/campaigns/after-eight.webp", 
+    image: "/campaigns/new-after-eight.webp", 
     ctaText: "Discover More",
     ctaLink: "/experiences/after-eight", 
-    isActive: false, 
+    isActive: true, 
   },
   {
     id: "all-you-can-eat", 
@@ -60,6 +60,6 @@ export const campaigns = [
     image: "/campaigns/ayce-kv.webp", // Matches the image file you uploaded
     ctaText: "Discover More",
     ctaLink: "/all-you-can-eat", // Maps to your new SEO-optimized server page
-    isActive: true, // Set to true to launch it for August
+    isActive: false, // Set to true to launch it for August
   }
 ];

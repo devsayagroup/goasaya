@@ -212,7 +212,7 @@ export default function FrontModal() {
             </button>
 
             {/* Campaign Image (STRICT 3:4 ASPECT RATIO) */}
-            <div className="relative w-full aspect-[1/1]">
+            <div className="relative w-full aspect-[3/4]">
               <Image
                 src={activeCampaign.image}
                 alt={activeCampaign.title}
@@ -229,13 +229,13 @@ export default function FrontModal() {
                 Featured Experience
               </span> */}
               
-              <h4 className="text-2xl md:text-3xl font-style uppercase text-white mb-3">
+              {/* <h4 className="text-2xl md:text-3xl font-style uppercase text-white mb-3">
                 {activeCampaign.title}
               </h4>
               
               <p className="text-[10px] md:text-sm text-white/70 leading-relaxed mb-8">
                 {activeCampaign.description}
-              </p>
+              </p> */}
 
               {/* Actions */}
               <div className="flex flex-row w-full gap-3">
