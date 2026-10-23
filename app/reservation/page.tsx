@@ -36,7 +36,7 @@ export default function ReservationPage() {
       "addressCountry": "ID"
     },
     "telephone": "0813-3838-2845",
-    "acceptsReservations": "True",
+    "acceptsReservations": true,
     "url": "https://www.goasaya.com/reservation",
     "potentialAction": {
       "@type": "ReserveAction",
@@ -50,7 +50,8 @@ export default function ReservationPage() {
         ]
       },
       "result": {
-        "@type": "FoodEstablishmentReservation"
+        "@type": "FoodEstablishmentReservation",
+        "name": "Table Reservation"
       }
     }
   };
