@@ -36,17 +36,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/vip-dining`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-19" },
 
     { url: `${SITE_URL}/must-visit-pik-2`, changeFrequency: "daily", priority: 0.95, lastModified: "2026-08-20" },
+    { url: `${SITE_URL}/must-visit-in-jakarta`, changeFrequency: "daily", priority: 0.95, lastModified: "2026-11-12" },
   ];
 
-  const journalRoutes: MetadataRoute.Sitemap = articles.map((article) => {
-    const cleanSlug = article.slug.replace(/^\/+/, ''); 
-    return {
-      url: `${SITE_URL}/journal/${cleanSlug}`,
-      lastModified: new Date(),
-      changeFrequency: "monthly",
-      priority: 0.65,
-    };
-  });
+  
+const journalRoutes: MetadataRoute.Sitemap = articles.map((article) => ({
+  url: `${SITE_URL}/journal/${article.slug.replace(/^\/+/, "")}`,
+  lastModified: article.meta.publishedAt, // real date, not build time
+}));
 
   const campaignRoutes: MetadataRoute.Sitemap = campaigns.map((campaign) => {
     let cleanPath = campaign.ctaLink.replace(/^\/+/, '');

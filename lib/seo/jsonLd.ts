@@ -3,7 +3,7 @@ import { SITE } from "./site";
 export const restaurantJsonLd = {
   "@context": "https://schema.org",
   "@type": "Restaurant",
-  "@id": "https://www.goasaya.com/#restaurant",
+  "@id": "https://www.goasaya.com",
   "name": "GOASAYA",
   "image": "https://www.goasaya.com/rooms/frontview.webp",
   "url": "https://www.goasaya.com",
@@ -38,6 +38,7 @@ export function orgJsonLd() {
     return {
         "@context": "https://schema.org",
         "@type": "Organization",
+        "@id": `${SITE.url}`,
         name: SITE.name,
         url: SITE.url,
         logo: `${SITE.url}${SITE.logo}`,
@@ -51,7 +52,7 @@ export function orgJsonLd() {
 export const websiteJsonLd = () => ({
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${SITE.url}/#website`,
+    "@id": `${SITE.url}`,
     name: "GOASAYA",
     url: SITE.url,
     logo: `${SITE.url}/images/logo.png`, 

@@ -1,7 +1,7 @@
 export const SITE = {
   name: "GOASAYA",
   domain: "goasaya.com",
-  url: "https://www.goasaya.com,",
+  url: "https://www.goasaya.com",
   locale: "en_US",
   twitter: "@goasaya", 
   logo: "/logo/orange.webp", 
