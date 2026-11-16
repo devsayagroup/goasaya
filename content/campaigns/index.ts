@@ -51,7 +51,7 @@ export const campaigns = [
     image: "/campaigns/new-after-eight.webp", 
     ctaText: "Discover More",
     ctaLink: "/experiences/after-eight", 
-    isActive: true, 
+    isActive: false, 
   },
   {
     id: "all-you-can-eat", 
@@ -61,5 +61,16 @@ export const campaigns = [
     ctaText: "Discover More",
     ctaLink: "/all-you-can-eat", // Maps to your new SEO-optimized server page
     isActive: false, // Set to true to launch it for August
-  }
+  },
+  // content/campaigns/index.ts
+  {
+    id: "omakase-journey",
+    title: "Omakase Journey",   // used as the image alt text
+    description: "",
+    image: "/campaigns/omakase-journey.webp",
+    ctaText: "Reserve Now",
+    ctaLink: "/experiences/omakase-journey",
+    isActive: true,
+  },
+  // and set after-eight: isActive: false
 ];

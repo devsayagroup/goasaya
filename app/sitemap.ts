@@ -31,6 +31,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
  
     // Touched today (13 Aug 2026) — content/schema fixes shipped this session
     { url: `${SITE_URL}/all-you-can-eat`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-13" },
+    { url: `${SITE_URL}/omakase-journey`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-11-16" },
     { url: `${SITE_URL}/after-eight`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-13" },
     { url: `${SITE_URL}/bar-di-pik-2`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-13" },
     { url: `${SITE_URL}/vip-dining`, changeFrequency: "daily", priority: 0.9, lastModified: "2026-08-19" },
